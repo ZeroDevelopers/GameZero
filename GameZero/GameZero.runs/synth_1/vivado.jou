@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Fri Apr 21 22:26:52 2017
-# Process ID: 9888
-# Current directory: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.runs/synth_1
+# Start of session at: Tue Apr 25 18:54:03 2017
+# Process ID: 13980
+# Current directory: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1
 # Command line: vivado.exe -log vga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga.tcl
-# Log file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.runs/synth_1/vga.vds
-# Journal file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.runs/synth_1\vivado.jou
+# Log file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/vga.vds
+# Journal file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source vga.tcl -notrace

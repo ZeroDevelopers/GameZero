@@ -9,21 +9,21 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr} [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {c:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files -quiet {{c:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.srcs/sources_1/ip/PixelClkGen/PixelClkGen.dcp}}
-set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.srcs/sources_1/ip/PixelClkGen/PixelClkGen.dcp}}]
-read_vhdl -library xil_defaultlib {{C:/Users/Andrea Diecidue/Desktop/vga.vhd}}
+add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/PixelClkGen/PixelClkGen.dcp}}
+set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/PixelClkGen/PixelClkGen.dcp}}]
+read_vhdl -library xil_defaultlib {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd}}
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.srcs/constrs_1/Nexys4_Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/vga/vga.srcs/constrs_1/Nexys4_Master.xdc}}]
+read_xdc {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc}}]
 
 
 synth_design -top vga -part xc7a100tcsg324-1

@@ -1,0 +1,1 @@
+BRAM_VGA_Clock_sim_netlist.vhdl,vhdl,xil_defaultlib,../../../../GameZero.srcs/sources_1/ip/BRAM_VGA_Clock/BRAM_VGA_Clock_sim_netlist.vhdl,incdir="../../../../GameZero.srcs/sources_1/ip/BRAM_VGA_Clock"
