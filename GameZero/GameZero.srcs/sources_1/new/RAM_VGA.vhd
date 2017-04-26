@@ -46,43 +46,24 @@ end entity RAM_VGA;
 
 architecture Behavioral of RAM_VGA is
 
-type ram is array (307199 downto 0) of std_logic_vector (11 downto 0);
+type ram_row is array (0 to 639) of std_logic_vector (11 downto 0);
+type ram is array(0 to 479) of ram_row;
+
+signal row_w, row_r : ram_row;
 signal BRAM : ram;
-
-component BRAM_VGA_Clock
-    PORT(
-      clk_out1: out STD_LOGIC;
-      reset: in STD_LOGIC;
-      locked: out STD_LOGIC;
-      clk_in1: in STD_LOGIC
-    );
-end component;
-
-signal RAM_clk : STD_LOGIC := '0';
-
-begin
-
---clock for the ram, freq should be twice the one of the vga (25MHZ)
-inst_BRAM_VGA_Clock : BRAM_VGA_Clock
-port map 
-    (   clk_in1 => clk,
-        clk_out1 => RAM_clk,
-        locked => open,
-        reset => '0'
-     );
-
-
+   
     
-    
-process(RAM_clk, wen)
+process(clk, wen)
 begin
-        if rising_edge(RAM_clk) then 
+        if rising_edge(clk) then 
             if wen = '1' then
-               BRAM(conv_integer(waddress)) <= datain;	 
+               row_w <= BRAM(conv_integer(waddress(18 downto 10)))
+               row_w(conv_integer(waddress(9 downto 0))) <= datain;
             end if;
          end if;   
 end process;
 
-pixel <= BRAM(conv_integer(raddress));
-
+row_r <= BRAM(conv_integer(raddress(18 downto 10)));
+pixel <= row_r(conv_integer(raddress(9 downto 0)));
+                     
 end Behavioral;
