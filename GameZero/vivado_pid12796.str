@@ -195,3 +195,4 @@ selectTab((HResource) null, (HResource) null, "Messages", 1); // aA:FrameContain
 // Elapsed time: 33 seconds
 selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
 dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 586 MB. GUI used memory: 63 MB. Current time: 4/26/17 11:31:36 PM CEST
