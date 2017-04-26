@@ -86,8 +86,8 @@ signal pixel, datain : STD_LOGIC_VECTOR(11 downto 0);
 
 
 signal start, black : std_logic := '1';
-signal i, n: STD_LOGIC_VECTOR (8 downto 0);
-signal j, m: STD_LOGIC_VECTOR (9 downto 0);
+signal i, n: STD_LOGIC_VECTOR (8 downto 0) := (others => '0');
+signal j, m: STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 signal waddress_reg : STD_LOGIC_VECTOR(18 downto 0);
 
 
@@ -126,18 +126,20 @@ end process;
 process (pixel_clk)
 begin
     if rising_edge(pixel_clk) then 
-         raddress (18 downto 10) <= n;
-         raddress (9 downto 0) <= m;
-         if m = 639 then 
-             m <= (others => '0');
-             if n = 479 then 
-                n <= (others => '0');
+         if start = '0' then
+              raddress (18 downto 10) <= n;
+              raddress (9 downto 0) <= m;
+              if m = 639 then 
+                  m <= (others => '0');
+                  if n = 479 then 
+                     n <= (others => '0');
+                  else
+                     n <= n+1;
+                  end if;
              else
-                n <= n+1;
+                  m <= m+1;
              end if;
-        else
-             m <= m+1;
-        end if;
+         end if;
     end if;    
 end process;
 
