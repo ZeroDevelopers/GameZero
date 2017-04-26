@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity vga is
-    Port ( clk : in STD_LOGIC;
+    Port ( pixel_clk : in STD_LOGIC;
            pixel : in STD_LOGIC_VECTOR (11 downto 0); 
            red : out STD_LOGIC_VECTOR (3 downto 0);
            green : out STD_LOGIC_VECTOR (3 downto 0);
@@ -40,14 +40,6 @@ entity vga is
 end vga;
 
 architecture Behavioral of vga is
-
-component PixelClkGen
-Port (  clk_in1 : in std_logic;
-        clk_out1 : out std_logic;
-        locked : out std_logic;
-        reset : in std_logic
-      );
-end component;
 
 constant FRAME_WIDTH : natural := 640;
 constant FRAME_HEIGHT : natural := 480;
@@ -63,23 +55,12 @@ constant V_MAX : natural := 525; --V total period (lines)
 constant H_POL : std_logic := '0';
 constant V_POL : std_logic := '0';
  
-signal pixel_clk : std_logic := '0';
 signal h_sync : std_logic := not(H_POL);
 signal v_sync : std_logic := not(V_POL);
 signal h_counter, v_counter : std_logic_vector(9 downto 0) := (others => '0');
 signal video_on, video_on_h, video_on_v : std_logic := '0';
 
 begin
-
-
--- Clock divider at 25 MHZ
-Inst_PixelClkGen : PixelClkGen
-port map 
-    (   clk_in1 => clk,
-        clk_out1 => pixel_clk,
-        locked => open,
-        reset => '0'
-     );
 
 HS <= h_sync;
 VS <= v_sync;

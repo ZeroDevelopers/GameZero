@@ -1,11 +1,11 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Wed Apr 26 15:44:39 2017
+// Date        : Wed Apr 26 15:40:01 2017
 // Host        : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Andrea
-//               Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/BRAM_VGA_Clock/BRAM_VGA_Clock_sim_netlist.v}
-// Design      : BRAM_VGA_Clock
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ clk_wiz_0_sim_netlist.v
+// Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a100tcsg324-1
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
-module BRAM_VGA_Clock
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_out1,
     reset,
     locked,
@@ -28,15 +28,14 @@ module BRAM_VGA_Clock
   wire locked;
   wire reset;
 
-  BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
         .locked(locked),
         .reset(reset));
 endmodule
 
-(* ORIG_REF_NAME = "BRAM_VGA_Clock_clk_wiz" *) 
-module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz
    (clk_out1,
     reset,
     locked,
@@ -47,11 +46,11 @@ module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
   input clk_in1;
 
   wire clk_in1;
-  wire clk_in1_BRAM_VGA_Clock;
+  wire clk_in1_clk_wiz_0;
   wire clk_out1;
-  wire clk_out1_BRAM_VGA_Clock;
-  wire clkfbout_BRAM_VGA_Clock;
-  wire clkfbout_buf_BRAM_VGA_Clock;
+  wire clk_out1_clk_wiz_0;
+  wire clkfbout_buf_clk_wiz_0;
+  wire clkfbout_clk_wiz_0;
   wire locked;
   wire reset;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
@@ -73,8 +72,8 @@ module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
 
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkf_buf
-       (.I(clkfbout_BRAM_VGA_Clock),
-        .O(clkfbout_buf_BRAM_VGA_Clock));
+       (.I(clkfbout_clk_wiz_0),
+        .O(clkfbout_buf_clk_wiz_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
@@ -83,10 +82,10 @@ module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
        (.I(clk_in1),
-        .O(clk_in1_BRAM_VGA_Clock));
+        .O(clk_in1_clk_wiz_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
-       (.I(clk_out1_BRAM_VGA_Clock),
+       (.I(clk_out1_clk_wiz_0),
         .O(clk_out1));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
@@ -139,15 +138,15 @@ module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
     .SS_MOD_PERIOD(10000),
     .STARTUP_WAIT("FALSE")) 
     mmcm_adv_inst
-       (.CLKFBIN(clkfbout_buf_BRAM_VGA_Clock),
-        .CLKFBOUT(clkfbout_BRAM_VGA_Clock),
+       (.CLKFBIN(clkfbout_buf_clk_wiz_0),
+        .CLKFBOUT(clkfbout_clk_wiz_0),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_BRAM_VGA_Clock),
+        .CLKIN1(clk_in1_clk_wiz_0),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_out1_BRAM_VGA_Clock),
+        .CLKOUT0(clk_out1_clk_wiz_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),

@@ -1,11 +1,11 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
--- Date        : Wed Apr 26 15:44:39 2017
+-- Date        : Wed Apr 26 15:40:02 2017
 -- Host        : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/Andrea
---               Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/BRAM_VGA_Clock/BRAM_VGA_Clock_sim_netlist.vhdl}
--- Design      : BRAM_VGA_Clock
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ clk_wiz_0_sim_netlist.vhdl
+-- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a100tcsg324-1
@@ -14,22 +14,20 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz : entity is "BRAM_VGA_Clock_clk_wiz";
-end BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz;
 
-architecture STRUCTURE of BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz is
-  signal clk_in1_BRAM_VGA_Clock : STD_LOGIC;
-  signal clk_out1_BRAM_VGA_Clock : STD_LOGIC;
-  signal clkfbout_BRAM_VGA_Clock : STD_LOGIC;
-  signal clkfbout_buf_BRAM_VGA_Clock : STD_LOGIC;
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz is
+  signal clk_in1_clk_wiz_0 : STD_LOGIC;
+  signal clk_out1_clk_wiz_0 : STD_LOGIC;
+  signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
+  signal clkfbout_clk_wiz_0 : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -60,8 +58,8 @@ architecture STRUCTURE of BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz is
 begin
 clkf_buf: unisim.vcomponents.BUFG
      port map (
-      I => clkfbout_BRAM_VGA_Clock,
-      O => clkfbout_buf_BRAM_VGA_Clock
+      I => clkfbout_clk_wiz_0,
+      O => clkfbout_buf_clk_wiz_0
     );
 clkin1_ibufg: unisim.vcomponents.IBUF
     generic map(
@@ -69,11 +67,11 @@ clkin1_ibufg: unisim.vcomponents.IBUF
     )
         port map (
       I => clk_in1,
-      O => clk_in1_BRAM_VGA_Clock
+      O => clk_in1_clk_wiz_0
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_out1_BRAM_VGA_Clock,
+      I => clk_out1_clk_wiz_0,
       O => clk_out1
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
@@ -128,15 +126,15 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       STARTUP_WAIT => false
     )
         port map (
-      CLKFBIN => clkfbout_buf_BRAM_VGA_Clock,
-      CLKFBOUT => clkfbout_BRAM_VGA_Clock,
+      CLKFBIN => clkfbout_buf_clk_wiz_0,
+      CLKFBOUT => clkfbout_clk_wiz_0,
       CLKFBOUTB => NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED,
       CLKFBSTOPPED => NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED,
-      CLKIN1 => clk_in1_BRAM_VGA_Clock,
+      CLKIN1 => clk_in1_clk_wiz_0,
       CLKIN2 => '0',
       CLKINSEL => '1',
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
-      CLKOUT0 => clk_out1_BRAM_VGA_Clock,
+      CLKOUT0 => clk_out1_clk_wiz_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
       CLKOUT1 => NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
@@ -167,7 +165,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity BRAM_VGA_Clock is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
@@ -175,12 +173,12 @@ entity BRAM_VGA_Clock is
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of BRAM_VGA_Clock : entity is true;
-end BRAM_VGA_Clock;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of BRAM_VGA_Clock is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 begin
-inst: entity work.BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
+inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_clk_wiz_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1,

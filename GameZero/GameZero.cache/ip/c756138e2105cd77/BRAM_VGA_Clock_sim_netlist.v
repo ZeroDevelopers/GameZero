@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Wed Apr 26 15:44:39 2017
+// Date        : Wed Apr 26 15:44:38 2017
 // Host        : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Andrea
-//               Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/BRAM_VGA_Clock/BRAM_VGA_Clock_sim_netlist.v}
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ BRAM_VGA_Clock_sim_netlist.v
 // Design      : BRAM_VGA_Clock
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
-module BRAM_VGA_Clock
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_out1,
     reset,
     locked,
@@ -28,15 +28,14 @@ module BRAM_VGA_Clock
   wire locked;
   wire reset;
 
-  BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_VGA_Clock_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
         .locked(locked),
         .reset(reset));
 endmodule
 
-(* ORIG_REF_NAME = "BRAM_VGA_Clock_clk_wiz" *) 
-module BRAM_VGA_Clock_BRAM_VGA_Clock_clk_wiz
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_VGA_Clock_clk_wiz
    (clk_out1,
     reset,
     locked,

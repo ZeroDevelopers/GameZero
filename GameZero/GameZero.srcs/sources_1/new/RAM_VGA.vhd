@@ -51,13 +51,15 @@ type ram is array(0 to 479) of ram_row;
 
 signal row_w, row_r : ram_row;
 signal BRAM : ram;
-   
+
+
+begin
     
 process(clk, wen)
 begin
         if rising_edge(clk) then 
             if wen = '1' then
-               row_w <= BRAM(conv_integer(waddress(18 downto 10)))
+               row_w <= BRAM(conv_integer(waddress(18 downto 10)));
                row_w(conv_integer(waddress(9 downto 0))) <= datain;
             end if;
          end if;   
