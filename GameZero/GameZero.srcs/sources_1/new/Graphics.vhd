@@ -98,7 +98,12 @@ begin
 
      
 -- activating the vga component
-process(s
+process(start)
+begin
+     if falling_edge(start) then
+          reset_vga <= '0';
+     end if;
+end process;
 
 -- writing initial map on ram
 process(pixel_clk, start)
