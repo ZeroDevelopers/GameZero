@@ -103,7 +103,7 @@ begin
             waddress_reg (9 downto 0) <= j;
             
             if j = 639 then 
-                if i > 10 then
+                if i > 50 then
                     black <= '0';
                 end if;
                 j <= (others => '0');
@@ -147,7 +147,7 @@ waddress <= waddress_reg;
 
 datain <= (others => '1') when black = '0' else 
           (others => '0');
-wen <= '1';  
+wen <= start;  
 
 inst_BRAM_VGA_Clock : BRAM_VGA_Clock
 port map (   
