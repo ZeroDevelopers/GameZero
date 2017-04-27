@@ -97,14 +97,6 @@ signal reset_vga : std_logic := '1';
 begin
 
      
--- activating the vga component
-process(start)
-begin
-     if falling_edge(start) then
-          reset_vga <= '0';
-     end if;
-end process;
-
 -- writing initial map on ram
 process(pixel_clk, start)
 begin
@@ -159,7 +151,8 @@ waddress <= waddress_reg;
 datain <= (others => '1') when black = '0' else 
           (others => '0');
 wen <= start;  
-
+reset_vga <= start;
+                  
 inst_BRAM_VGA_Clock : BRAM_VGA_Clock
 port map (   
         clk_in1 => clk,
