@@ -1,1 +1,0 @@
---relax --debug typical --mt auto -L xil_defaultlib -L secureip -L xpm --snapshot BRAM_VGA_Clock xil_defaultlib.BRAM_VGA_Clock -log elaborate.log
