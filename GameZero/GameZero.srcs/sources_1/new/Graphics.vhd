@@ -158,13 +158,6 @@ begin
     end if;    
 end process;
          
-         
-process (pixel_clk)
-begin
-     if rising_edge(pixel_clk) then
-          if start = '0' then
-               
-end process;
 
 waddress <= waddress_reg;
 
