@@ -31,7 +31,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity vga is
     Port ( pixel_clk : in STD_LOGIC;
-           pixel : in STD_LOGIC_VECTOR (11 downto 0); 
+           pixel : in STD_LOGIC_VECTOR (11 downto 0);
+           reset : in STD_LOGIC;
            red : out STD_LOGIC_VECTOR (3 downto 0);
            green : out STD_LOGIC_VECTOR (3 downto 0);
            blue : out STD_LOGIC_vector (3 downto 0);
@@ -65,6 +66,8 @@ begin
 HS <= h_sync;
 VS <= v_sync;
 
+h_counter <= (others => '0') when reset = '1';
+v_counter <= (others => '0') when reset = '1';
 
 --Horizontal counting
 process(pixel_clk)
