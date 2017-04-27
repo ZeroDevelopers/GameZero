@@ -72,7 +72,7 @@ v_counter <= (others => '0') when reset = '1';
 --Horizontal counting
 process(pixel_clk)
 begin
-    if rising_edge(pixel_clk) then
+    if (rising_edge(pixel_clk) and reset = '0') then
         if h_counter = H_MAX -1 then
             h_counter <= (others => '0');
         else
@@ -84,7 +84,7 @@ end process;
 -- Vertical counting
 process (pixel_clk)
   begin
-    if (rising_edge(pixel_clk)) then
+    if (rising_edge(pixel_clk) and reset = '0') then
       if ((h_counter = (H_MAX - 1)) and (v_counter = (V_MAX - 1))) then
         v_counter <= (others =>'0');
       elsif (h_counter = (H_MAX - 1)) then
@@ -96,7 +96,7 @@ end process;
 -- Horizontal sync
  process (pixel_clk)
  begin
-   if (rising_edge(pixel_clk)) then
+   if (rising_edge(pixel_clk) and reset = '0') then
      if (h_counter >= (H_FP + FRAME_WIDTH)) and (h_counter <= (H_FP + FRAME_WIDTH + H_PW -1)) then
        h_sync <= H_POL;
      else
@@ -108,7 +108,7 @@ end process;
  -- Vertical sync
 process (pixel_clk)
 begin
-   if (rising_edge(pixel_clk)) then
+   if (rising_edge(pixel_clk) and reset = '0') then
       if (v_counter >= (V_FP + FRAME_HEIGHT)) and (v_counter <= (V_FP + FRAME_HEIGHT + V_PW - 1)) then
         v_sync <= V_POL;
       else
