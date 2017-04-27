@@ -92,6 +92,8 @@ signal j, m: STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 signal waddress_reg : STD_LOGIC_VECTOR(18 downto 0);
 signal reset_vga : std_logic := '1';
 
+signal blank_h_cnt : natural range 0 to 159;
+signal blank_v_cnt : natural range 0 to 44;
 
 
 begin
@@ -132,18 +134,36 @@ begin
          if start = '0' then
               raddress (18 downto 10) <= n;
               raddress (9 downto 0) <= m;
-              if m = 639 then 
-                  m <= (others => '0');
-                  if n = 479 then 
-                     n <= (others => '0');
+              if m = 639 then
+                  if blank_h_cnt = 159 then
+                      m <= (others => '0');
+                      blank_h_cnt <= 0;
+                      if n = 479 then
+                         if blank_v_cnt = 44 then
+                              n <= (others => '0');
+                              blank_v_cnt <= 0;
+                         else
+                              blank_v_cnt <= blank_v_cnt + 1;
+                         end if;
+                      else
+                         n <= n + 1;
+                      end if;
                   else
-                     n <= n+1;
+                       blank_h_cnt <= blank_h_cnt + 1;
                   end if;
              else
-                  m <= m+1;
+                  m <= m + 1;
              end if;
          end if;
     end if;    
+end process;
+         
+         
+process (pixel_clk)
+begin
+     if rising_edge(pixel_clk) then
+          if start = '0' then
+               
 end process;
 
 waddress <= waddress_reg;
