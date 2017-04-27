@@ -162,7 +162,7 @@ end process;
 waddress <= waddress_reg;
 
 datain <= (others => '1') when black = '0' else 
-          (others => '0');
+          "111100000000";
 wen <= start;  
 reset_vga <= start;
                   
