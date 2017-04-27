@@ -57,7 +57,8 @@ end component;
 component vga
     port (
           pixel_clk : in STD_LOGIC;
-          pixel : in STD_LOGIC_VECTOR (11 downto 0); 
+          pixel : in STD_LOGIC_VECTOR (11 downto 0);
+          reset : in std_logic;
           red : out STD_LOGIC_VECTOR (3 downto 0);
           green : out STD_LOGIC_VECTOR (3 downto 0);
           blue : out STD_LOGIC_vector (3 downto 0);
@@ -89,10 +90,15 @@ signal start, black : std_logic := '1';
 signal i, n: STD_LOGIC_VECTOR (8 downto 0) := (others => '0');
 signal j, m: STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 signal waddress_reg : STD_LOGIC_VECTOR(18 downto 0);
+signal reset_vga : std_logic := '1';
 
 
 
 begin
+
+     
+-- activating the vga component
+process(s
 
 -- writing initial map on ram
 process(pixel_clk, start)
@@ -172,6 +178,7 @@ inst_vga : vga
 port map (
     pixel_clk => pixel_clk,
     pixel => pixel,
+    reset => reset_vga,
     red => red,
     green => green,
     blue => blue,
