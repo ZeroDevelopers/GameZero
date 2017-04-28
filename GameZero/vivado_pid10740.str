@@ -1,0 +1,336 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 10740
+
+Current time: 	4/28/17 6:47:11 PM CEST
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/.Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	Andrea Diecidue
+User home directory: C:/Users/Andrea Diecidue
+User working directory: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI base root directory: C:/.Xilinx/Vivado
+RDI data directory: C:/.Xilinx/Vivado/2016.4/data
+RDI bin directory: C:/.Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: C:/Users/Andrea Diecidue/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: C:/Users/Andrea Diecidue/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	231 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 413 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Andrea Diecidue\Documents\GitHub\GameZero\GameZero\GameZero.xpr. Version: Vivado v2016.4 
+// [GUI Memory]: 32 MB (+31516kb) [00:00:10]
+// [Engine Memory]: 395 MB (+262220kb) [00:00:10]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 64 MB (+31752kb) [00:00:15]
+// [Engine Memory]: 430 MB (+16775kb) [00:00:15]
+// [GUI Memory]: 73 MB (+5394kb) [00:00:16]
+// [Engine Memory]: 457 MB (+5304kb) [00:00:16]
+// [Engine Memory]: 490 MB (+10610kb) [00:00:17]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/.Xilinx/Vivado/2016.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 491 MB. GUI used memory: 31 MB. Current time: 4/28/17 6:47:17 PM CEST
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 794.125 ; gain = 116.520 
+// Project name: GameZero; location: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero; part: xc7a100tcsg324-1
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cd:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (C:JPanel, b:g)
+// Elapsed time: 21 seconds
+String[] filenames31467 = {"C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/graphic.vhd", "C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/map_rom.vhd", "C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/vga.vhd"};
+setFileChooser(filenames31467);
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (C:JPanel, b:g)
+dismissFileChooser();
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'h' command handler elapsed time: 38 seconds
+dismissDialog("Add Sources"); // b:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/graphic.vhd} {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/vga.vhd} {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/map_rom.vhd}} 
+// bt:g (cd:JFrame):  Add Sources  : addNotify
+dismissDialog("Add Sources"); // bt:g (cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 517 MB (+3126kb) [00:01:11]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 537 MB. GUI used memory: 35 MB. Current time: 4/28/17 6:48:14 PM CEST
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 25 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_pixelClkGen - pixelClkGen]", 2, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_pixelClkGen - pixelClkGen]", 2, false, false, false, false, true, false); // y:i (D:JPanel, cd:JFrame) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_pixelClkGen - pixelClkGen]", 2, false, false, false, false, true, false); // y:i (D:JPanel, cd:JFrame) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// bt:g (cd:JFrame):  IP Catalog : addNotify
+// 'a' command handler elapsed time: 6 seconds
+dismissDialog("IP Catalog"); // bt:g (cd:JFrame)
+setText("PAResourceItoN.IPCoreView_IP_CATALOG_SEARCH_FIELD", "clock"); // OverlayTextField:JTextField (DefaultOverlayable:JPanel, cd:JFrame)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3", 14, "Clocking Wizard", 0, true); // M:ab (JViewport:JComponent, cd:JFrame) - Node
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3", 14, "Clocking Wizard", 0, true); // M:ab (JViewport:JComponent, cd:JFrame) - Node
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3", 14, "Clocking Wizard", 0, true, false, false, false, false, true); // M:ab (JViewport:JComponent, cd:JFrame) - Double Click - Node
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// l:bt (cd:JFrame):  Customize IP : addNotify
+// [Engine Memory]: 583 MB (+41882kb) [00:02:13]
+// HMemoryUtils.trashcanNow. Engine heap size: 591 MB. GUI used memory: 37 MB. Current time: 4/28/17 6:49:14 PM CEST
+// [Engine Memory]: 632 MB (+20302kb) [00:02:19]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// p:g (cd:JFrame): Customize IP: addNotify
+// [Engine Memory]: 722 MB (+61903kb) [00:02:27]
+// Elapsed time: 18 seconds
+dismissDialog("Customize IP"); // l:bt (cd:JFrame)
+// Elapsed time: 38 seconds
+setText("Component Name", "pixelClkGen"); // M:ak (bZ:L, p:g)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Output Clocks", 1); // cP:g (C:JPanel, p:g)
+setText("CLKOUT1 REQUESTED OUT FREQ", "25.175", true); // M:ak (cQ:L, p:g)
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, p:g)
+// Elapsed time: 10 seconds
+selectButton("RDIResource.HFileChooser_OK_TO_CREATE_DIRECTORY_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, G:JDialog)
+dismissDialog("Customize IP"); // p:g (cd:JFrame)
+// TclEventType: CREATE_IP_CORE
+// bt:g (cd:JFrame):  Customize IP : addNotify
+// Tcl Message: create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.3 -module_name pixelClkGen -dir {c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip} 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25.175} CONFIG.MMCM_DIVCLK_DIVIDE {4} CONFIG.MMCM_CLKFBOUT_MULT_F {36.375} CONFIG.MMCM_CLKOUT0_DIVIDE_F {36.125} CONFIG.CLKOUT1_JITTER {319.783} CONFIG.CLKOUT1_PHASE_ERROR {246.739}] [get_ips pixelClkGen] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// Tcl Message: generate_target {instantiation_template} [get_files {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen.xci}}] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pixelClkGen'... 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// at:q (cd:JFrame): Generate Output Products: addNotify
+dismissDialog("Customize IP"); // bt:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a:JButton (JPanel:JComponent, at:q)
+// bt:g (cd:JFrame):  Managing Output Products : addNotify
+// Tcl Message: generate_target all [get_files  {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen.xci}}] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pixelClkGen'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pixelClkGen'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'pixelClkGen'... 
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pixelClkGen'... 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1028.461 ; gain = 0.000 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen.xci}}] -no_script -sync -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_NEW
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen.xci}}] 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs -jobs 4 pixelClkGen_synth_1 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Apr 28 18:50:53 2017] Launched pixelClkGen_synth_1... Run output will be captured here: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1/runme.log 
+// Tcl Message: INFO: [Vivado 12-4357] Exporting simulation files for 'pixelClkGen'... please wait for 'pixelClkGen_synth_1' run to finish... 
+// Tcl Message: wait_on_run pixelClkGen_synth_1 
+// Tcl Message: [Fri Apr 28 18:50:54 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:50:59 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:04 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:09 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:19 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:29 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:39 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:51:49 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:52:09 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:52:30 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// Tcl Message: [Fri Apr 28 18:52:50 2017] Waiting for pixelClkGen_synth_1 to finish... 
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Tcl Message: [Fri Apr 28 18:53:00 2017] pixelClkGen_synth_1 finished 
+// Tcl Message: wait_on_run: Time (s): cpu = 00:00:07 ; elapsed = 00:02:06 . Memory (MB): peak = 1028.461 ; gain = 0.000 
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 79 MB (+2662kb) [00:06:16]
+// [GUI Memory]: 84 MB (+789kb) [00:06:31]
+// Elapsed time: 171 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUNS_WERE_LAUNCHED_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, F:JDialog)
+closeView(PAResourceOtoP.PAViews_IP_CATALOG, "IP Catalog"); // ab:aE
+// Elapsed time: 36 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // T:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+// [Engine Memory]: 776 MB (+17899kb) [00:07:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 776 MB. GUI used memory: 54 MB. Current time: 4/28/17 6:54:15 PM CEST
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // T:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// PAPropertyPanels.initPanels (vga.vhd) elapsed time: 0.3s
+// Elapsed time: 43 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_vga - vga - Behavioral (vga.vhd)]", 3, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_map - map_rom - Behavioral (map_rom.vhd)]", 4, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_map - map_rom - Behavioral (map_rom.vhd)]", 4, false); // y:i (D:JPanel, cd:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ar:g (cd:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ar:g)
+dismissDialog("Remove Sources"); // ar:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/vga.vhd} {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/map_rom.vhd}} 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cd:JFrame): Add Sources: addNotify
+dismissDialog("Add Sources"); // b:g (cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ar:g (cd:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ar:g)
+dismissDialog("Remove Sources"); // ar:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/File vhdl funzionanti/graphic.vhd}} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cd:JFrame): Add Sources: addNotify
+// TclEventType: DG_UPDATE_GRAPH
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // y:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ah:JPopupMenu, b:g)
+// Elapsed time: 10 seconds
+String[] filenames16706 = {"C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/graphic.vhd", "C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/map_rom.vhd", "C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/vga.vhd"};
+setFileChooser(filenames16706);
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'h' command handler elapsed time: 21 seconds
+dismissDialog("Add Sources"); // b:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/graphic.vhd} {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/map_rom.vhd} {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/File vhdl funzionanti/vga.vhd}} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 90 MB (+2495kb) [00:08:50]
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_vga - vga - Behavioral (vga.vhd)]", 3, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_vga - vga - Behavioral (vga.vhd)]", 3, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_map - map_rom - Behavioral (map_rom.vhd)]", 4, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, graphic - Behavioral (graphic.vhd), inst_map - map_rom - Behavioral (map_rom.vhd)]", 4, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// [GUI Memory]: 117 MB (+23803kb) [00:09:09]
+// [Engine Memory]: 889 MB (+77958kb) [00:09:09]
+// [GUI Memory]: 123 MB (+0kb) [00:09:09]
+// HMemoryUtils.trashcanNow. Engine heap size: 889 MB. GUI used memory: 127 MB. Current time: 4/28/17 6:56:09 PM CEST
+// [GUI Memory]: 141 MB (+12285kb) [00:09:13]
+closeFrame(RDIResource.RDIViews_PROPERTIES, "Source File Properties"); // as:DockableFrame (aA:FrameContainer, cd:JFrame)
+// [GUI Memory]: 149 MB (+1065kb) [00:09:53]
+// [GUI Memory]: 158 MB (+682kb) [00:10:23]
+// [GUI Memory]: 166 MB (+255kb) [00:10:53]
