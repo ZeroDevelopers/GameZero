@@ -68,7 +68,7 @@ VS <= v_sync;
 
 
 --Horizontal counting
-process(pixel_clk)
+process(pixel_clk, reset)
 begin
     if (rising_edge(pixel_clk) and reset = '0') then
         if h_counter = H_MAX -1 then
@@ -80,7 +80,7 @@ begin
 end process;
 
 -- Vertical counting
-process (pixel_clk)
+process (pixel_clk, reset)
   begin
     if (rising_edge(pixel_clk) and reset = '0') then
       if ((h_counter = (H_MAX - 1)) and (v_counter = (V_MAX - 1))) then
@@ -92,7 +92,7 @@ process (pixel_clk)
 end process;
 
 -- Horizontal sync
- process (pixel_clk)
+ process (pixel_clk, reset)
  begin
    if (rising_edge(pixel_clk) and reset = '0') then
      if (h_counter >= (H_FP + FRAME_WIDTH)) and (h_counter <= (H_FP + FRAME_WIDTH + H_PW -1)) then
@@ -104,7 +104,7 @@ end process;
 end process;
 
  -- Vertical sync
-process (pixel_clk)
+process (pixel_clk, reset)
 begin
    if (rising_edge(pixel_clk) and reset = '0') then
       if (v_counter >= (V_FP + FRAME_HEIGHT)) and (v_counter <= (V_FP + FRAME_HEIGHT + V_PW - 1)) then
@@ -125,7 +125,7 @@ video_on <= '1' when (video_on_h = '1') and (video_on_v = '1')
                 else '0';
 
 -- Writing on the screen
-process(pixel_clk, video_on,  pixel)
+process(pixel_clk, video_on,  pixel, reset)
 begin
     if (rising_edge(pixel_clk) and reset = '0') then
         if video_on = '1' then
