@@ -1,4 +1,0 @@
-
-*** Running vivado
-    with args -log BRAM_VGA_Clock.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BRAM_VGA_Clock.tcl
-

@@ -1,0 +1,6 @@
+verilog xil_defaultlib "../../../../GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen_clk_wiz.v" --include "../../../ipstatic"
+verilog xil_defaultlib "../../../../GameZero.srcs/sources_1/ip/pixelClkGen/pixelClkGen.v" --include "../../../ipstatic"
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

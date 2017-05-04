@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1'
+HD_PWD='C:/Users/edoardo/GameZero/GameZero.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .write_bitstream.begin.rst
-EAStep vivado -log Graphics.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Graphics.tcl -notrace
+EAStep vivado -log main.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
 
 
