@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu May 04 18:06:31 2017
+# Process ID: 13232
+# Current directory: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/controller_project/controller_project.runs/controller_clock_synth_1
+# Command line: vivado.exe -log controller_clock.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controller_clock.tcl
+# Log file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/controller_project/controller_project.runs/controller_clock_synth_1/controller_clock.vds
+# Journal file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/controller_project/controller_project.runs/controller_clock_synth_1\vivado.jou
+#-----------------------------------------------------------
+source controller_clock.tcl -notrace
