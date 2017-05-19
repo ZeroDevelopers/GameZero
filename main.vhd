@@ -28,12 +28,16 @@ use ieee.numeric_std.all;
 
 entity main is
     Port (  clk : in STD_LOGIC;
-            but_left, but_right : in std_logic;
+            switch :  in STD_LOGIC;
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
             HS : out STD_LOGIC;
-            VS : out STD_LOGIC
+            VS : out STD_LOGIC;
+            btnDx : in STD_LOGIC;
+            btnL : in STD_LOGIC;
+            btnU : in STD_LOGIC;
+            btnD : in STD_LOGIC
             );
 end main;
 
@@ -61,83 +65,67 @@ component graphic is
     );
 end component;
 
---Component for the Wolvie movement
-component Wolverine_movement is
-port (  frame_clk : in std_logic;
-        enable : in std_logic;
-        movement_type : in std_logic_vector (1 downto 0);
-        GreenGoblin_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in std_logic_vector (18 downto 0);
-        Wolvie_curr_pos : in std_logic_vector (18 downto 0);
-        Wolvie_curr_image : in std_logic_vector (3 downto 0);
-        Wolvie_reversed_in : in std_logic;
-        Wolvie_new_pos : out std_logic_vector (18 downto 0);
-        Wolvie_new_image : out std_logic_vector (3 downto 0);
-        dec_disable : out std_logic;
-        Wolvie_reversed_out : out std_logic
-     );
-end component;
-    
--- Generator for the pixel clk
 component pixelClkGen is
 Port (  clk_in1 : in std_logic;
         clk_out1 : out std_logic
       );
 end component;
 
+component actions is
+Port (frame_clk : in STD_LOGIC;
+      switch : in STD_LOGIC;
+      btnDx : in STD_LOGIC;
+      btnL : in STD_LOGIC;
+      btnU : in STD_LOGIC;
+      btnD : in STD_LOGIC;
+      GreenGoblin_pos : out std_logic_vector (18 downto 0);
+      GreenGoblin_reversed : out std_logic;
+      GreenGoblin_image : out std_logic_vector (2 downto 0);
+      Wolvie_pos : out std_logic_vector (18 downto 0);
+      Wolvie_reversed : out std_logic;
+      Wolvie_image : out std_logic_vector (3 downto 0)
+      );
+end component;
+
+
 
 --Constants
 constant WALL_WIDTH : natural := 20;
-constant PLAYER_SIZE : natural := 64;
-constant FIRE_SIZE : natural := 20;
-constant DELAY : natural := 1;
+--constant PLAYER_SIZE : natural := 64;
+--constant FIRE_SIZE : natural := 20;
+--constant DELAY : natural := 1;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
-
---constants for mapping movement
-constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
-constant LEFT : STD_LOGIC_VECTOR (1 downto 0) := "01";
-constant JUMP : STD_LOGIC_VECTOR (1 downto 0) := "10";
 
 
 -- signals to create the FRAME_CLOCK
 constant FRAME_PIXELS : natural := 420000;
 signal frame_clk_cnt : natural range 0 to FRAME_PIXELS / 2;
 
-signal pixel_clk, frame_clk : std_logic := '0';
+signal pixel_clk, frame_clk : std_logic;
 signal frame_mov_cnt : std_logic;
 
 -- Signals for the Green Goblin
 signal GreenGoblin_pos : std_logic_vector (18 downto 0) := "1100100000000010100";
 signal GreenGoblin_reversed : std_logic := '1';
 signal GreenGoblin_image : std_logic_vector (2 downto 0) := (others => '0');
-constant GG_ACTION_FRAMES : natural := 10;
-signal GG_action_cnt : natural range 0 to GG_ACTION_FRAMES -1;
 
 -- Signals for Wolverine
-signal Wolvie_pos, Wolvie_new_pos : std_logic_vector (18 downto 0) := "1100100000101110010";
-signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
-signal Wolvie_image, Wolvie_new_image : std_logic_vector (3 downto 0) := "0000";
-constant W_ACTION_FRAMES : natural := 10;
-signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1;
--- Movement signals
-signal Wolvie_mov_enable : std_logic;
-signal Wolvie_mov_type : std_logic_vector (1 downto 0);
-signal Wolvie_reversed_out : std_logic;
-signal W_dec_mov_disable : std_logic;
+signal Wolvie_pos : std_logic_vector (18 downto 0) := "1100100000101110010";
+signal Wolvie_reversed : std_logic := '0';  -- At the normal orientation it is towrd right
+signal Wolvie_image : std_logic_vector (3 downto 0) := "0000";
+
+
 
 -- Signals for the Pedana
 signal Pedana1_pos: std_logic_vector (18 downto 0) := "0001100100011011100";
 signal Pedana2_pos: std_logic_vector (18 downto 0) := "0101101000001000110";
-signal Pedana3_pos: std_logic_vector (18 downto 0) := "1000110000101110010";
-signal Pedana1_image : std_logic_vector(1 downto 0) := "01";
+signal Pedana3_pos: std_logic_vector (18 downto 0) := "0101101000101110010";
+signal Pedana1_image : std_logic_vector(1 downto 0) := "00";
 signal Pedana2_image : std_logic_vector(1 downto 0) := "01";
-signal Pedana3_image : std_logic_vector(1 downto 0) := "01";
-constant P_ACTION_FRAME : natural := 10;
+signal Pedana3_image : std_logic_vector(1 downto 0) := "10";
+constant P_ACTION_FRAME : natural := 8;
 signal P_action_cnt : natural range 0 to P_ACTION_FRAME -1;
-
-
--- Decoder control signals
-signal dec_disable : std_logic;
 
 ---- Sinals for the Fire Ball
 --signal FireBall_active, FireBall_end, FireBall_start : std_logic := '0';
@@ -161,108 +149,60 @@ begin
 end process;
 
 
-
--- Build the decoder
-dec_disable <= W_dec_mov_disable;  -- Logical or among all the disablers
-process (frame_clk, dec_disable)
-begin
-    if rising_edge(frame_clk) and dec_disable = '0' then
-        if but_right = '1' then
-            Wolvie_mov_enable <= '1';
-            Wolvie_mov_type <= RIGHT;
-        elsif but_left = '1' then
-            Wolvie_mov_enable <= '1';
-            Wolvie_mov_type <= LEFT;
-        else
-            Wolvie_mov_enable <= '0';
-        end if;
-    end if;
-end process;
+--
+--
 
 
----- Process to move the Green Goblin
-
---process(frame_clk, GreenGoblin_reversed)
---begin
---    if rising_edge(frame_clk) then
---        if GreenGoblin_reversed = '0' and GreenGoblin_pos (9 downto 0) <= (WALL_WIDTH) then
---                GreenGoblin_reversed <= '1';
---        elsif GreenGoblin_reversed = '1' and GreenGoblin_pos (9 downto 0) >= (640 - 63 - WALL_WIDTH) then
---            GreenGoblin_reversed <= '0';
---        end if;
---    end if;
---end process;
-
---process(frame_clk, GreenGoblin_reversed)
---begin
---    if rising_edge(frame_clk) then
---        if frame_mov_cnt = '1' then
---            if GreenGoblin_reversed = '1' then
---                GreenGoblin_pos <= GreenGoblin_pos +2;
---            else
---                GreenGoblin_pos <= GreenGoblin_pos -2;
---            end if;
---        else
---            frame_mov_cnt <= not frame_mov_cnt;
---        end if;
---    end if;
---end process;
-
--- Process to animate the Green Goblin
-process (frame_clk)
-begin
-    if rising_edge(frame_clk) then
-        if GG_action_cnt = GG_ACTION_FRAMES -1 then
-            GG_action_cnt <= 0;
-            if GreenGoblin_image < 5 then
-                GreenGoblin_image <= GreenGoblin_image+1;
-            else
-                GreenGoblin_image <= "000";
-            end if;
-        else
-            GG_action_cnt <= GG_action_cnt +1;   
-        end if;
-    end if;
-end process;
 
 
----- Process to animate Wolverine
+
+
+
+
+-- Process to animate the pedanas ;) ahah
 --process (frame_clk)
 --begin
 --    if rising_edge(frame_clk) then
---        if W_action_cnt = W_ACTION_FRAMES -1 then
---            W_action_cnt <= 0;
---            if Wolvie_image < 11 then
---                Wolvie_image <= Wolvie_image+1;
+--        if P_action_cnt = P_ACTION_FRAME -1 then
+--            P_action_cnt <= 0;
+--            if Pedana1_image < 3 then
+--                Pedana1_image <= Pedana1_image +1;
+--                Pedana2_image <= Pedana2_image +1;
+--                Pedana3_image <= Pedana3_image +1;
 --            else
---                Wolvie_image <= "0000";
+--                Pedana1_image <= "00";
+--                Pedana2_image <= "00";
+--                Pedana3_image <= "00";
 --            end if;
 --        else
---            W_action_cnt <= W_action_cnt +1;   
+--            P_action_cnt <= P_action_cnt +1;
 --        end if;
 --    end if;
 --end process;
 
--- Process to animate the pedanas ;) ahah
-process (frame_clk)
-begin
-    if rising_edge(frame_clk) then
-        if P_action_cnt = P_ACTION_FRAME -1 then
-            P_action_cnt <= 0;
-            if Pedana1_image < 3 then
-                Pedana1_image <= Pedana1_image +1;
-                Pedana2_image <= Pedana2_image +1;
-                Pedana3_image <= Pedana3_image +1;
-            else
-                Pedana1_image <= "00";
-                Pedana2_image <= "00";
-                Pedana3_image <= "00";
-            end if;
-        else
-            P_action_cnt <= P_action_cnt +1;
-        end if;
-    end if;
-end process;
+---- Process to move the Silver Surfer
+
+--process(frame_clk, SilverSurfer_reversed)
+--begin
+--    if rising_edge(frame_clk) then
+--        if SilverSurfer_reversed = '1' and SilverSurfer_pos (9 downto 0) = (WALL_WIDTH) then
+--                SilverSurfer_reversed <= '0';
+--        elsif SilverSurfer_reversed = '0' and SilverSurfer_pos (9 downto 0) = (640 - 63 - WALL_WIDTH) then
+--            SilverSurfer_reversed <= '1';
+--        end if;
+--    end if;
+--end process;
+
+--process(frame_clk, SilverSurfer_reversed)
+--begin
+--    if rising_edge(frame_clk) then
+--        if SilverSurfer_reversed = '0' then
+--            SilverSurfer_pos <= SilverSurfer_pos +1;
+--        else
+--            SilverSurfer_pos <= SilverSurfer_pos -1;
+--        end if;
+--    end if;
+--end process;
 
 
 ---- Process to make the Silver Surfer fire
@@ -368,7 +308,7 @@ port map
     GreenGoblin_reversed    => GreenGoblin_reversed,
     GreenGoblin_image       => GreenGoblin_image,
     Wolvie_pos              => Wolvie_pos,
-    Wolvie_reversed         => Wolvie_reversed_out,
+    Wolvie_reversed         => Wolvie_reversed,
     Wolvie_image            => Wolvie_image,
     Pedana1_pos             => Pedana1_pos,
     Pedana2_pos             => Pedana2_pos,
@@ -383,22 +323,22 @@ port map
     VS                      => VS
 );
 
-inst_Wolvie_mov : Wolverine_movement
-port map 
-(   frame_clk           => frame_clk,
-    enable              => wolvie_mov_enable,
-    movement_type       => wolvie_mov_type,
-    GreenGoblin_pos     => GreenGoblin_pos,
-    Pedana1_pos         => Pedana1_pos,
-    Pedana2_pos         => Pedana2_pos,
-    Pedana3_pos         => Pedana3_pos,
-    Wolvie_curr_pos     => Wolvie_pos,
-    Wolvie_curr_image   => Wolvie_image,
-    Wolvie_reversed_in  => Wolvie_reversed_in,
-    dec_disable         => W_dec_mov_disable,
-    Wolvie_reversed_out => Wolvie_reversed_out,
-    Wolvie_new_pos      => Wolvie_pos,
-    Wolvie_new_image    => Wolvie_image
+inst_actions : actions
+port map
+(   frame_clk => frame_clk, 
+    GreenGoblin_pos         => GreenGoblin_pos,
+    GreenGoblin_reversed    => GreenGoblin_reversed,
+    GreenGoblin_image       => GreenGoblin_image,
+    Wolvie_pos              => Wolvie_pos,
+    Wolvie_reversed         => Wolvie_reversed,
+    Wolvie_image            => Wolvie_image,
+    switch => switch,
+    btnDx => btnDx,
+    btnL => btnL,
+    btnU => btnU,
+    btnD => btnD
+
 );
+
 
 end Behavioral;
