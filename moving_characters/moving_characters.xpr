@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/edoardo/Desktop/moving_characters/moving_characters.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="cf94ce20bb4e497e98c753df283e54a5"/>
@@ -77,6 +77,22 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="PixelClkGen.xml"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen.veo"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_stub.v"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen.v"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="mmcm_pll_drp_func_us_mmcm.vh"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="mmcm_pll_drp_func_7s_pll.vh"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="mmcm_pll_drp_func_7s_mmcm.vh"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="doc/clk_wiz_v5_3_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen.xdc"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_clk_wiz.v"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="mmcm_pll_drp_func_us_pll.vh"/>
+        <CompFileExtendedInfo CompFileName="PixelClkGen.xci" FileRelPathName="pixelClkGen_board.xdc"/>
       </File>
       <File Path="$PSRCDIR/sources_1/new/graphic.vhd">
         <FileInfo>

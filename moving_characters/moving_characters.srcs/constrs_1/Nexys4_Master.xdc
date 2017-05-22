@@ -191,11 +191,11 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 #set_property PACKAGE_PIN C12 [get_ports btnCpuReset]
 #set_property IOSTANDARD LVCMOS33 [get_ports btnCpuReset]
 ##Bank = 15, Pin name = IO_L11N_T1_SRCC_15,					Sch name = BTNC
-#set_property PACKAGE_PIN E16 [get_ports btnC]
-#set_property IOSTANDARD LVCMOS33 [get_ports btnC]
+set_property PACKAGE_PIN E16 [get_ports but_mid]
+set_property IOSTANDARD LVCMOS33 [get_ports but_mid]
 ##Bank = 15, Pin name = IO_L14P_T2_SRCC_15,					Sch name = BTNU
-set_property PACKAGE_PIN F15 [get_ports btnU]
-set_property IOSTANDARD LVCMOS33 [get_ports btnU]
+#set_property PACKAGE_PIN F15 [get_ports btnU]
+#set_property IOSTANDARD LVCMOS33 [get_ports btnU]
 ##Bank = CONFIG, Pin name = IO_L15N_T2_DQS_DOUT_CSO_B_14,	Sch name = BTNL
 set_property PACKAGE_PIN T16 [get_ports but_left]
 set_property IOSTANDARD LVCMOS33 [get_ports but_left]
@@ -203,8 +203,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports but_left]
 set_property PACKAGE_PIN R10 [get_ports but_right]
 set_property IOSTANDARD LVCMOS33 [get_ports but_right]
 ##Bank = 14, Pin name = IO_L21P_T3_DQS_14,					Sch name = BTND
-set_property PACKAGE_PIN V10 [get_ports btnD]
-set_property IOSTANDARD LVCMOS33 [get_ports btnD]
+#set_property PACKAGE_PIN V10 [get_ports btnD]
+#set_property IOSTANDARD LVCMOS33 [get_ports btnD]
 
 
 

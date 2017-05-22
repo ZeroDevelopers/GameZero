@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Fri May 19 19:44:50 2017
-| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date             : Mon May 22 17:32:32 2017
+| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -50,17 +50,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1401 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      695 |     63400 |            1.10 |
-|   CARRY4       |    <0.001 |       97 |     15850 |            0.61 |
-|   Register     |    <0.001 |      306 |    126800 |            0.24 |
+| Slice Logic    |    <0.001 |     1388 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      683 |     63400 |            1.08 |
+|   CARRY4       |    <0.001 |       93 |     15850 |            0.59 |
+|   Register     |    <0.001 |      305 |    126800 |            0.24 |
 |   F7/F8 Muxes  |    <0.001 |       54 |     63400 |            0.09 |
-|   Others       |     0.000 |      119 |       --- |             --- |
+|   Others       |     0.000 |      123 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.001 |     1283 |       --- |             --- |
+| Signals        |    <0.001 |     1266 |       --- |             --- |
 | Block RAM      |     0.006 |     51.5 |       135 |           38.15 |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       17 |       210 |            8.10 |
+| I/O            |    <0.001 |       18 |       210 |            8.57 |
 | Static Power   |     0.100 |          |           |                 |
 | Total          |     0.224 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.008 |      0.017 |
+| Vccint    |       1.000 |     0.024 |       0.008 |      0.017 |
 | Vccaux    |       1.800 |     0.082 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -144,6 +144,7 @@ Table of Contents
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
 | main                                           |     0.124 |
+|   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
 |   inst_graphic                                 |     0.008 |
 |     Pedana1_offset_reg[11]                     |    <0.001 |

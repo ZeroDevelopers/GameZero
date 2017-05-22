@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Thu May 18 17:57:08 2017
+// Date        : Thu May 18 17:57:06 2017
 // Host        : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {C:/Users/Andrea Diecidue/Desktop/polito/Computer
-//               Architecture/Projects/moving_characters/moving_characters.srcs/sources_1/ip/BROM_Pedana/BROM_Pedana_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top BROM_Pedana -prefix
+//               BROM_Pedana_ BROM_Pedana_stub.v
 // Design      : BROM_Pedana
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
