@@ -28,7 +28,7 @@ use ieee.numeric_std.all;
 
 entity main is
     Port (  clk : in STD_LOGIC;
-            but_left, but_right : in std_logic;
+            but_left, but_right, but_mid : in std_logic;
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -76,6 +76,24 @@ port (  frame_clk : in std_logic;
         Wolvie_reversed_out : out std_logic
      );
 end component;
+
+--Component for the Wolvie attack
+component Wolvie_attack is
+ Port (
+       frame_clk : in STD_LOGIC;
+       enable : in STD_LOGIC;
+       attack_reset : in std_logic;
+       GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
+       Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+       Wolvie_reversed : in std_logic;
+       Wolvie_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+       Wolvie_dec_disable : out STD_LOGIC;
+       Wolvie_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+       GreenGoblin_life_dec : out std_logic;
+       GreenGoblin_attack_reset_out : out std_logic;
+       Sbam_active_out : out std_logic
+      );
+end component;
     
 -- Generator for the pixel clk
 component pixelClkGen is
@@ -104,26 +122,21 @@ constant FRAME_PIXELS : natural := 420000;
 signal frame_clk_cnt : natural range 0 to FRAME_PIXELS / 2;
 
 signal pixel_clk, frame_clk : std_logic := '0';
-signal frame_mov_cnt : std_logic;
 
 -- Signals for the Green Goblin
 signal GreenGoblin_pos : std_logic_vector (18 downto 0) := "1100100000000010100";
-signal GreenGoblin_reversed : std_logic := '1';
+signal GreenGoblin_reversed : std_logic := '0';
 signal GreenGoblin_image : std_logic_vector (2 downto 0) := (others => '0');
-constant GG_ACTION_FRAMES : natural := 10;
-signal GG_action_cnt : natural range 0 to GG_ACTION_FRAMES -1;
 
 -- Signals for Wolverine
-signal Wolvie_pos, Wolvie_new_pos: std_logic_vector (18 downto 0) := "1100100000101110010";
+signal Wolvie_pos: std_logic_vector (18 downto 0) := "1100100000101110010";
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
-signal Wolvie_image, Wolvie_new_image : std_logic_vector (3 downto 0) := "0000";
-constant W_ACTION_FRAMES : natural := 10;
-signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1;
+signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image : std_logic_vector (3 downto 0) := "0000";
 -- Movement signals
-signal Wolvie_mov_enable : std_logic;
+signal Wolvie_mov_enable, Wolvie_att_enable : std_logic;
 signal Wolvie_mov_type : std_logic_vector (1 downto 0);
 signal Wolvie_reversed_out : std_logic;
-signal W_dec_mov_disable : std_logic;
+signal W_dec_mov_disable, W_dec_att_disable : std_logic;
 
 -- Signals for the Pedana
 signal Pedana1_pos: std_logic_vector (18 downto 0) := "0001100100011011100";
@@ -135,9 +148,19 @@ signal Pedana3_image : std_logic_vector(1 downto 0) := "01";
 constant P_ACTION_FRAME : natural := 10;
 signal P_action_cnt : natural range 0 to P_ACTION_FRAME -1;
 
+-- Signals for the sbam
+signal Sbam_enable : std_logic := '0';
+
 
 -- Decoder control signals
 signal dec_disable : std_logic;
+
+
+-- Tmp signals
+signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset : std_logic := '0';
+
+
+
 
 ---- Sinals for the Fire Ball
 --signal FireBall_active, FireBall_end, FireBall_start : std_logic := '0';
@@ -163,7 +186,7 @@ end process;
 
 
 -- Build the decoder
-dec_disable <= W_dec_mov_disable;  -- Logical or among all the disablers
+dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among all the disablers
 process (frame_clk, dec_disable)
 begin
     if rising_edge(frame_clk) then
@@ -174,12 +197,19 @@ begin
             elsif but_left = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= LEFT;
+           elsif but_mid = '1' then
+                Wolvie_att_enable <= '1';
            end if;
         else
-           Wolvie_mov_enable <= '0';
+            Wolvie_att_enable <= '0';
+            Wolvie_mov_enable <= '0';
         end if;
     end if;
 end process;
+
+-- Choose among the different images
+Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
+                else Wolvie_mov_image when W_dec_mov_disable = '1';
 
 
 ---- Process to move the Green Goblin
@@ -210,22 +240,22 @@ end process;
 --    end if;
 --end process;
 
--- Process to animate the Green Goblin
-process (frame_clk)
-begin
-    if rising_edge(frame_clk) then
-        if GG_action_cnt = GG_ACTION_FRAMES -1 then
-            GG_action_cnt <= 0;
-            if GreenGoblin_image < 5 then
-                GreenGoblin_image <= GreenGoblin_image+1;
-            else
-                GreenGoblin_image <= "000";
-            end if;
-        else
-            GG_action_cnt <= GG_action_cnt +1;   
-        end if;
-    end if;
-end process;
+---- Process to animate the Green Goblin
+--process (frame_clk)
+--begin
+--    if rising_edge(frame_clk) then
+--        if GG_action_cnt = GG_ACTION_FRAMES -1 then
+--            GG_action_cnt <= 0;
+--            if GreenGoblin_image < 5 then
+--                GreenGoblin_image <= GreenGoblin_image+1;
+--            else
+--                GreenGoblin_image <= "000";
+--            end if;
+--        else
+--            GG_action_cnt <= GG_action_cnt +1;   
+--        end if;
+--    end if;
+--end process;
 
 
 ---- Process to animate Wolverine
@@ -400,7 +430,23 @@ port map
     dec_disable         => W_dec_mov_disable,
     Wolvie_reversed_out => Wolvie_reversed_out,
     Wolvie_new_pos      => Wolvie_pos,
-    Wolvie_new_image    => Wolvie_image
+    Wolvie_new_image    => Wolvie_mov_image
+);
+
+inst_Wolvie_att : Wolvie_attack
+port map 
+(   frame_clk           => frame_clk,
+    enable              => wolvie_att_enable,
+    attack_reset        => Wolvie_attack_reset,
+    GreenGoblin_pos     => GreenGoblin_pos,
+    Wolvie_pos          => Wolvie_pos,
+    Wolvie_curr_image   => Wolvie_image,
+    Wolvie_reversed     => Wolvie_reversed_in,
+    Wolvie_dec_disable  => W_dec_att_disable,
+    Wolvie_new_image    => Wolvie_att_image,
+    GreenGoblin_life_dec    => GreenGoblin_life_dec,
+    GreenGoblin_attack_reset_out    => GreenGoblin_attack_reset,
+    Sbam_active_out     => Sbam_enable
 );
 
 end Behavioral;
