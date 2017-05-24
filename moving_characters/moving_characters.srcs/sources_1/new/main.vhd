@@ -28,7 +28,7 @@ use ieee.numeric_std.all;
 
 entity main is
     Port (  clk : in STD_LOGIC;
-            but_left, but_right, but_mid : in std_logic;
+            but_left, but_right, but_mid, but_up : in std_logic;
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -94,6 +94,25 @@ component Wolvie_attack is
        Sbam_active_out : out std_logic
       );
 end component;
+
+-- Component for Wolverine jump
+
+component Wolvie_jump is
+Port (
+       frame_clk : in STD_LOGIC; 
+       enable :  in STD_LOGIC;
+       Wolvie_curr_pos : in std_logic_vector (18 downto 0);
+       Wolvie_curr_image : in std_logic_vector (3 downto 0); 
+       Wolvie_new_pos : out std_logic_vector (18 downto 0);
+       Wolvie_new_image : out std_logic_vector (3 downto 0);
+       Pedana1_pos : in std_logic_vector (18 downto 0);  
+       Pedana1_image : in std_logic_vector (1 downto 0);
+       Pedana2_pos : in std_logic_vector (18 downto 0);
+       Pedana2_image : in std_logic_vector (1 downto 0);
+       Pedana3_pos : in std_logic_vector (18 downto 0);
+       Pedana3_image : in std_logic_vector (1 downto 0)
+     );
+end component;
     
 -- Generator for the pixel clk
 component pixelClkGen is
@@ -131,9 +150,9 @@ signal GreenGoblin_image : std_logic_vector (2 downto 0) := (others => '0');
 -- Signals for Wolverine
 signal Wolvie_pos: std_logic_vector (18 downto 0) := "1100100000101110010";
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
-signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image : std_logic_vector (3 downto 0) := "0000";
+signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image, Wolvie_jump_image : std_logic_vector (3 downto 0) := "0000";
 -- Movement signals
-signal Wolvie_mov_enable, Wolvie_att_enable : std_logic;
+signal Wolvie_mov_enable, Wolvie_att_enable, Wolvie_jump_enable : std_logic;
 signal Wolvie_mov_type : std_logic_vector (1 downto 0);
 signal Wolvie_reversed_out : std_logic;
 signal W_dec_mov_disable, W_dec_att_disable : std_logic;
@@ -199,10 +218,13 @@ begin
                 Wolvie_mov_type <= LEFT;
            elsif but_mid = '1' then
                 Wolvie_att_enable <= '1';
+           elsif but_up = '1' then
+                Wolvie_jump_enable <= '1'; 
            end if;
         else
             Wolvie_att_enable <= '0';
             Wolvie_mov_enable <= '0';
+            Wolvie_jump_enable <= '0';
         end if;
     end if;
 end process;
@@ -447,6 +469,21 @@ port map
     GreenGoblin_life_dec    => GreenGoblin_life_dec,
     GreenGoblin_attack_reset_out    => GreenGoblin_attack_reset,
     Sbam_active_out     => Sbam_enable
+);
+
+inst_Wolvie_jump : Wolvie_jump
+port map
+(   frame_clk           => frame_clk,
+    enable   => Wolvie_jump_enable,
+    Wolvie_new_image    => Wolvie_jump_image,
+    Wolvie_curr_pos     => Wolvie_pos,
+    Wolvie_curr_image   => Wolvie_image,
+    Pedana1_pos         => Pedana1_pos,
+    Pedana1_image       => Pedana1_image,
+    Pedana2_pos         => Pedana2_pos,
+    Pedana2_image       => Pedana2_image,
+    Pedana3_pos         => Pedana3_pos,
+    Pedana3_image       => Pedana3_image
 );
 
 end Behavioral;
