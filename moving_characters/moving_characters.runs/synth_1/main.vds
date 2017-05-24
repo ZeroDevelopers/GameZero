@@ -1,0 +1,743 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Wed May 24 21:34:56 2017
+# Process ID: 10544
+# Current directory: C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/main.vds
+# Journal file: C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: synth_design -top main -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/blk_mem_gen_0/blk_mem_gen_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/blk_mem_gen_0/blk_mem_gen_0.dcp]
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10028 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 296.180 ; gain = 86.660
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:40]
+INFO: [Synth 8-3491] module 'pixelClkGen' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/pixelClkGen_stub.vhdl:5' bound to instance 'inst_pixelClkGen' of component 'pixelClkGen' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:415]
+INFO: [Synth 8-638] synthesizing module 'pixelClkGen' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/pixelClkGen_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'graphic' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:37' bound to instance 'inst_graphic' of component 'graphic' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:421]
+INFO: [Synth 8-638] synthesizing module 'graphic' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:60]
+INFO: [Synth 8-3491] module 'vga' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/vga.vhd:32' bound to instance 'inst_vga' of component 'vga' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:538]
+INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/vga.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'vga' (1#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/vga.vhd:43]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'inst_brom_player' of component 'blk_mem_gen_0' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:550]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/blk_mem_gen_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'BROM_Pedana' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/BROM_Pedana_stub.vhdl:5' bound to instance 'inst_brom_util' of component 'BROM_Pedana' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:557]
+INFO: [Synth 8-638] synthesizing module 'BROM_Pedana' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/realtime/BROM_Pedana_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'graphic' (2#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:60]
+INFO: [Synth 8-3491] module 'Wolverine_movement' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:37' bound to instance 'inst_Wolvie_mov' of component 'Wolverine_movement' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:445]
+INFO: [Synth 8-638] synthesizing module 'Wolverine_movement' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:53]
+WARNING: [Synth 8-614] signal 'W_action_cnt' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'Wolverine_movement' (3#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:53]
+INFO: [Synth 8-3491] module 'Wolvie_attack' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_attack.vhd:37' bound to instance 'inst_Wolvie_att' of component 'Wolvie_attack' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:463]
+INFO: [Synth 8-638] synthesizing module 'Wolvie_attack' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_attack.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'Wolvie_attack' (4#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_attack.vhd:54]
+INFO: [Synth 8-3491] module 'Wolvie_jump' declared at 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:36' bound to instance 'inst_Wolvie_jump' of component 'Wolvie_jump' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:479]
+INFO: [Synth 8-638] synthesizing module 'Wolvie_jump' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:53]
+WARNING: [Synth 8-3848] Net rising in module/entity Wolvie_jump does not have driver. [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:56]
+WARNING: [Synth 8-3848] Net descending in module/entity Wolvie_jump does not have driver. [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:57]
+WARNING: [Synth 8-3848] Net Wolvie_new_image in module/entity Wolvie_jump does not have driver. [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'Wolvie_jump' (5#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'main' (6#1) [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:40]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_new_image[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_new_image[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_new_image[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_new_image[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_image[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_image[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_image[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Wolvie_curr_image[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[18]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[17]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[16]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[15]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[14]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[13]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[12]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[11]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[10]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_image[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana1_image[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[18]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[17]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[16]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[15]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[14]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[13]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[12]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[11]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[10]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_image[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana2_image[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[18]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[17]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[16]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[15]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[14]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[13]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[12]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[11]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[10]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_image[1]
+WARNING: [Synth 8-3331] design Wolvie_jump has unconnected port Pedana3_image[0]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[3]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[2]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[1]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[0]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[18]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[17]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[16]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[15]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[14]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[13]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[12]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[11]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[10]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[9]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[8]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[7]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[6]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[5]
+WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana1_pos[4]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 334.465 ; gain = 124.945
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 334.465 ; gain = 124.945
+---------------------------------------------------------------------------------
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/blk_mem_gen_0/blk_mem_gen_0.dcp]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'BROM_Pedana' instantiated as 'inst_graphic/inst_brom_util' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:557]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'inst_graphic/inst_brom_player' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:550]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'pixelClkGen' instantiated as 'inst_pixelClkGen' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:415]
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp/blk_mem_gen_0_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp/blk_mem_gen_0_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_2/BROM_Pedana_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_2/BROM_Pedana_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/constrs_1/Nexys4_Master.xdc]
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/constrs_1/Nexys4_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/constrs_1/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/dont_touch.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME==PixelClkGen || ORIG_REF_NAME==PixelClkGen}'. [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/dont_touch.xdc:7]
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/dont_touch.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/dont_touch.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/main_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 652.828 ; gain = 0.000
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/blk_mem_gen_0/blk_mem_gen_0.dcp]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/.Xil/Vivado-10544-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for inst_pixelClkGen. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:321]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:278]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:491]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:489]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:410]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:321]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:278]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:491]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:489]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:410]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:321]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:278]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:491]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:489]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:410]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:321]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:278]
+INFO: [Synth 8-5546] ROM "BG_pixel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "GreenGoblin_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Wolvie_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana1_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana2_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana3_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Wolvie_life_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "GreenGoblin_life_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BG_pixel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "GreenGoblin_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Wolvie_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana1_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana2_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana3_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Wolvie_life_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "GreenGoblin_life_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Pedana1_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Pedana1_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Pedana2_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Pedana2_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Pedana3_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Pedana3_offset" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "brom_addr" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:106]
+INFO: [Synth 8-5544] ROM "movement_enable" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "attack_enable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:74]
+INFO: [Synth 8-5546] ROM "frame_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Pedana1_image" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "frame_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Pedana1_image" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Wolvie_mov_type" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Wolvie_mov_type" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'brom_util_addr_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:505]
+WARNING: [Synth 8-327] inferring latch for variable 'brom_addr_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:502]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana3_offset_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:423]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana2_offset_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:419]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana1_offset_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:415]
+WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_offset_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:326]
+WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_offset_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:283]
+WARNING: [Synth 8-327] inferring latch for variable 'movement_enable_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolverine_movement.vhd:91]
+WARNING: [Synth 8-327] inferring latch for variable 'jump_enable_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/Wolvie_jump.vhd:65]
+WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_image_reg' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/main.vhd:236]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     19 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 14    
+	   3 Input     10 Bit       Adders := 5     
+	   2 Input      9 Bit       Adders := 7     
+	   3 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 9     
+	   2 Input      6 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 5     
++---Registers : 
+	               19 Bit    Registers := 2     
+	               18 Bit    Registers := 1     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 9     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 4     
+	   3 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 1     
+	   4 Input     15 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 6     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 36    
+	   5 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module main 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 1     
+Module vga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+Module graphic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 5     
+	   3 Input     10 Bit       Adders := 5     
+	   2 Input      9 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 9     
+	   2 Input      6 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 9     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 4     
+	   3 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 1     
+	   4 Input     15 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   5 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module Wolverine_movement 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     19 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               19 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module Wolvie_attack 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 1     
+Module Wolvie_jump 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               19 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'GreenGoblin_Life_cntV_reg[5:0]' into 'GreenGoblin_Life_cntV_reg[5:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:464]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_Life_cntH_reg[5:0]' into 'GreenGoblin_Life_cntH_reg[5:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:460]
+INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntV_reg[5:0]' into 'Wolvie_Life_cntV_reg[5:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:442]
+INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntH_reg[5:0]' into 'Wolvie_Life_cntH_reg[5:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:438]
+INFO: [Synth 8-4471] merging register 'Wolvie_cntV_reg[6:0]' into 'Wolvie_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:302]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_cntV_reg[6:0]' into 'GreenGoblin_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:260]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:410]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:491]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:278]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:489]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/moving_characters/moving_characters.srcs/sources_1/new/graphic.vhd:321]
+INFO: [Synth 8-5546] ROM "Pedana3_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana2_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Pedana1_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Wolvie_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "GreenGoblin_cntV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "frame_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/GreenGoblin_offset_reg[14] )
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Wolvie_offset_reg[7]' (LD) to 'inst_graphic/Wolvie_offset_reg[8]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_graphic/Wolvie_offset_reg[8] )
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[0]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[0]' (LDC) to 'inst_graphic/Pedana2_offset_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[0]' (LDC) to 'inst_graphic/Pedana3_offset_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[1]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[1]' (LDC) to 'inst_graphic/Pedana2_offset_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[1]' (LDC) to 'inst_graphic/Pedana3_offset_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[2]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[2]' (LDC) to 'inst_graphic/Pedana2_offset_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[2]' (LDC) to 'inst_graphic/Pedana3_offset_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[3]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[3]' (LDC) to 'inst_graphic/Pedana2_offset_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[3]' (LDC) to 'inst_graphic/Pedana3_offset_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[4]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[4]' (LDC) to 'inst_graphic/Pedana2_offset_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[4]' (LDC) to 'inst_graphic/Pedana3_offset_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[5]' (LDCP) to 'inst_graphic/Pedana1_offset_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[5]' (LDCP) to 'inst_graphic/Pedana2_offset_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[5]' (LDCP) to 'inst_graphic/Pedana3_offset_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[6]' (LDC) to 'inst_graphic/Pedana1_offset_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[6]' (LDC) to 'inst_graphic/Pedana2_offset_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[6]' (LDC) to 'inst_graphic/Pedana3_offset_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[7]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[7]' (LDC) to 'inst_graphic/Pedana2_offset_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[7]' (LDC) to 'inst_graphic/Pedana3_offset_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[8]' (LDC) to 'inst_graphic/Pedana1_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[8]' (LDC) to 'inst_graphic/Pedana2_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[8]' (LDC) to 'inst_graphic/Pedana3_offset_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[9]' (LDCP) to 'inst_graphic/Pedana1_offset_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[9]' (LDCP) to 'inst_graphic/Pedana2_offset_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[9]' (LDCP) to 'inst_graphic/Pedana3_offset_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[10]' (LDCP) to 'inst_graphic/Pedana1_offset_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[10]' (LDCP) to 'inst_graphic/Pedana2_offset_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[10]' (LDCP) to 'inst_graphic/Pedana3_offset_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana1_offset_reg[12]' (LDC) to 'inst_graphic/Pedana1_offset_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana2_offset_reg[12]' (LDC) to 'inst_graphic/Pedana2_offset_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst_graphic/Pedana3_offset_reg[12]' (LDC) to 'inst_graphic/Pedana3_offset_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/Pedana1_offset_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/Pedana2_offset_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_graphic/Pedana3_offset_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Wolvie_mov_type_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/Pedana3_offset_reg[13]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/Pedana2_offset_reg[13]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/Pedana1_offset_reg[13]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/Wolvie_offset_reg[8]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[14]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[13]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[12]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[11]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[10]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[9]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[8]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[7]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[6]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[5]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[4]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[3]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[2]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[1]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_offset_reg[0]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_Wolvie_att/GreenGoblin_hit_reg) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_Wolvie_att/Sbam_active_reg) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (inst_Wolvie_att/GreenGoblin_attack_reset_reg) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (Wolvie_mov_type_reg[1]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (Wolvie_jump_enable_reg) is unused and will be removed from module main.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'inst_pixelClkGen/clk_out1' to pin 'inst_pixelClkGen/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 652.828 ; gain = 443.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 703.871 ; gain = 494.352
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |pixelClkGen   |         1|
+|2     |blk_mem_gen_0 |         1|
+|3     |BROM_Pedana   |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |BROM_Pedana_bbox   |     1|
+|2     |blk_mem_gen_0_bbox |     1|
+|3     |pixelClkGen_bbox   |     1|
+|4     |BUFG               |     1|
+|5     |CARRY4             |   109|
+|6     |LUT1               |   206|
+|7     |LUT2               |   188|
+|8     |LUT3               |   104|
+|9     |LUT4               |    90|
+|10    |LUT5               |   113|
+|11    |LUT6               |   129|
+|12    |MUXF7              |     1|
+|13    |FDRE               |   256|
+|14    |FDSE               |     5|
+|15    |LD                 |    50|
+|16    |LDC                |     5|
+|17    |LDCP               |     6|
+|18    |LDP                |     1|
+|19    |IBUF               |     3|
+|20    |OBUF               |    14|
++------+-------------------+------+
+
+Report Instance Areas: 
++------+------------------+-------------------+------+
+|      |Instance          |Module             |Cells |
++------+------------------+-------------------+------+
+|1     |top               |                   |  1306|
+|2     |  inst_Wolvie_att |Wolvie_attack      |    27|
+|3     |  inst_Wolvie_mov |Wolverine_movement |   123|
+|4     |  inst_graphic    |graphic            |  1057|
+|5     |    inst_vga      |vga                |   110|
++------+------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 707.836 ; gain = 498.316
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 96 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 707.836 ; gain = 166.309
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 707.836 ; gain = 498.316
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 174 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 62 instances were transformed.
+  LD => LDCE: 50 instances
+  LDC => LDCE: 5 instances
+  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 6 instances
+  LDP => LDPE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+174 Infos, 147 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 707.836 ; gain = 492.160
+INFO: [Common 17-1381] The checkpoint 'C:/Users/edoardo/Desktop/moving_characters/moving_characters.runs/synth_1/main.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 707.836 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed May 24 21:35:31 2017...
