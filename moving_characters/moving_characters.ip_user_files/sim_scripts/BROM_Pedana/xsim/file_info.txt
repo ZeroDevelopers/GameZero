@@ -1,0 +1,1 @@
+BROM_Pedana_sim_netlist.vhdl,vhdl,xil_defaultlib,../../../../moving_characters.srcs/sources_1/ip/BROM_Pedana/BROM_Pedana_sim_netlist.vhdl,
