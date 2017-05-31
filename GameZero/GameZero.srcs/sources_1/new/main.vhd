@@ -161,9 +161,9 @@ signal Wolvie_reversed_out : std_logic;
 signal W_dec_mov_disable, W_dec_att_disable, W_jump_status: std_logic;
 
 -- Signals for the Pedana
-signal Pedana1_pos: std_logic_vector (18 downto 0) := "0001100100011011100";
-signal Pedana2_pos: std_logic_vector (18 downto 0) := "0101101000001000110";
-signal Pedana3_pos: std_logic_vector (18 downto 0) := "1001111110101110010";
+signal Pedana1_pos: std_logic_vector (18 downto 0) := "0000000000000000000"; --"0001100100011011100";
+signal Pedana2_pos: std_logic_vector (18 downto 0) := "0000000000000000000"; --"0101101000001000110";
+signal Pedana3_pos: std_logic_vector (18 downto 0) := "0000000000000000000"; --"1001111110101110010";
 signal Pedana1_image : std_logic_vector(1 downto 0) := "01";
 signal Pedana2_image : std_logic_vector(1 downto 0) := "01";
 signal Pedana3_image : std_logic_vector(1 downto 0) := "01";

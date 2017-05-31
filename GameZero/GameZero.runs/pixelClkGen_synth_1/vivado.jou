@@ -2,8 +2,8 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Wed May 31 12:34:47 2017
-# Process ID: 12272
+# Start of session at: Wed May 31 12:47:11 2017
+# Process ID: 12020
 # Current directory: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/pixelClkGen_synth_1
 # Command line: vivado.exe -log pixelClkGen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pixelClkGen.tcl
 # Log file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/pixelClkGen_synth_1/pixelClkGen.vds
