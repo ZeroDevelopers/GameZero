@@ -212,3 +212,9 @@ pixelClkGen_synth_1: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/pixelClkGen
 synth_1: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log
 [Wed May 31 12:47:24 2017] Launched impl_1...
 Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Wed May 31 13:15:31 2017] Launched synth_1...
+Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log
+[Wed May 31 13:15:31 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log

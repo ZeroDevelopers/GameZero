@@ -40,7 +40,7 @@ end main;
 architecture Behavioral of main is
 
 component graphic is
-    Port (  pixel_clk : in STD_LOGIC;
+    Port (  pixel_clk, clk : in STD_LOGIC;
             GreenGoblin_pos : in std_logic_vector (18 downto 0);
             GreenGoblin_reversed : in std_logic;
             GreenGoblin_image : in std_logic_vector (2 downto 0);
@@ -436,6 +436,7 @@ port map
 inst_graphic : graphic
 port map
 (   pixel_clk               => pixel_clk,
+    clk                     => clk,
     GreenGoblin_pos         => GreenGoblin_pos,
     GreenGoblin_reversed    => GreenGoblin_reversed,
     GreenGoblin_image       => GreenGoblin_image,
