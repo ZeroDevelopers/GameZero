@@ -432,24 +432,41 @@ Pedana3_offset <= P_OFFSET_1 when Pedana3_image = "00"
 ---------------------------------------
 
 -- Handling the counter for Wolverine Life
-process(pixel_clk, Wolvie_Life_enable, Wolvie_lives)
+--process(pixel_clk, Wolvie_Life_enable, Wolvie_lives)
+--begin
+--    if rising_edge(pixel_clk) and Wolvie_Life_enable = '1' then
+--        if Wolvie_Life_cntH = LIFE_SIZE -1 then  
+--            if Wolvie_life_cnt < Wolvie_lives then
+--                Wolvie_life_cnt <= Wolvie_life_cnt +1;
+--            else
+--                if Wolvie_life_cntV < LIFE_SIZE -1 then
+--                    Wolvie_life_cntV <= Wolvie_life_cntV +1;
+--                else
+--                    Wolvie_life_cntV <= 0;
+--                end if; 
+--                Wolvie_life_cnt <= "01";               
+--            end if;
+--            Wolvie_life_cntH <= 0;
+--        else
+--            Wolvie_life_cntH <= Wolvie_cntH +1;
+--        end if;      
+--    end if;
+--end process;
+
+process(pixel_clk, Wolvie_life_enable)
 begin
-    if rising_edge(pixel_clk) and Wolvie_Life_enable = '1' then
-        if Wolvie_Life_cntH = LIFE_SIZE -1 then
-            if Wolvie_life_cnt < Wolvie_lives then
-                Wolvie_life_cnt <= Wolvie_life_cnt +1;
+    if rising_edge(pixel_clk) and Wolvie_life_enable = '1' then
+        if (Wolvie_life_cntH = LIFE_SIZE -1) then
+            if (Wolvie_life_cntV < LIFE_SIZE -1) then
+                Wolvie_life_cntH <= 0;
+                Wolvie_life_cntV <= Wolvie_life_cntV +1;
             else
-                if Wolvie_life_cntV < LIFE_SIZE -1 then
-                    Wolvie_life_cntV <= Wolvie_life_cntV +1;
-                else
-                    Wolvie_life_cntV <= 0;
-                end if; 
-                Wolvie_life_cnt <= "01";               
+               Wolvie_life_cntH <= 0;
+               Wolvie_life_cntV <= 0;
             end if;
-            Wolvie_life_cntH <= 0;
-        else
-            Wolvie_life_cntH <= Wolvie_cntH +1;
-        end if;      
+        else 
+            Wolvie_life_cntH <= Wolvie_life_cntH +1;
+        end if;
     end if;
 end process;
 
@@ -478,7 +495,7 @@ end process;
 
 -- Defining the enable for Wolverine lives
 Wolvie_Life_enable <= '1' when (map_row - W_LIVES_POS(18 downto 10)) < LIFE_SIZE and 
-                               (map_col - W_LIVES_POS(9 downto 0)) < (LIFE_SIZE * conv_integer(Wolvie_lives))
+                               (map_col - W_LIVES_POS(9 downto 0)) < (LIFE_SIZE)
                         else '0';
 -- Defining the enable for GreenGoblin lives
 GreenGoblin_Life_enable <= '1' when (map_row - GG_LIVES_POS(18 downto 10)) < LIFE_SIZE and 

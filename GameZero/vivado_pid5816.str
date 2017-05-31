@@ -857,3 +857,158 @@ selectTab(PAResourceOtoP.ProjectSummaryTimingPanel_PROJECT_SUMMARY_TIMING_PANEL_
 // Elapsed time: 43 seconds
 selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
 dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// Elapsed time: 284 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd), inst_graphic - graphic - Behavioral (graphic.vhd)]", 3); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd), inst_graphic - graphic - Behavioral (graphic.vhd)]", 3, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd), inst_graphic - graphic - Behavioral (graphic.vhd)]", 3, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+// Elapsed time: 43 seconds
+selectCodeEditor("graphic.vhd", 74, 177); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "graphic.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 353, 178); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "graphic.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 295, 178); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 328, 171); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 340, 175); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("graphic.vhd", 0, 124); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "graphic.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 111, 445); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("graphic.vhd", 0, 126); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // y:JideButton (g:CommandBar, cd:JFrame)
+selectCodeEditor("graphic.vhd", 114, 456); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("graphic.vhd", 1, 207); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "graphic.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 126, 356); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "graphic.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 180, 382); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 154, 388, false, false, false, true, false); // bF:I (JPanel:JComponent, cd:JFrame) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_REPLACE_TEXT, "Replace..."); // ab:JMenuItem (ah:JPopupMenu, Popup:JWindow)
+// Elapsed time: 12 seconds
+selectCodeEditor("graphic.vhd", 287, 90); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 251, 95, false, false, false, true, false); // bF:I (JPanel:JComponent, cd:JFrame) - Popup Trigger
+selectCodeEditor("graphic.vhd", 174, 68); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 179, 56); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 149, 62, false, false, false, true, false); // bF:I (JPanel:JComponent, cd:JFrame) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_REPLACE_TEXT, "Replace..."); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("graphic.vhd", 184, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 151, 242, false, false, false, true, false); // bF:I (JPanel:JComponent, cd:JFrame) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_REPLACE_TEXT, "Replace..."); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Elapsed time: 10 seconds
+selectComboBox("FindAndReplaceDialog:StandardDialog_Trova che:", "Wolvie_ife", -1); // JComboBox:JComponent (JPanel:JComponent, FindAndReplaceDialog:StandardDialog)
+// Elapsed time: 14 seconds
+selectCodeEditor("graphic.vhd", 302, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("graphic.vhd", 335, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 87 seconds
+selectCodeEditor("graphic.vhd", 753, 345); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd), inst_pixelClkGen - pixelClkGen (pixelClkGen.xci)]", 2, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd), inst_pixelClkGen - pixelClkGen (pixelClkGen.xci)]", 2, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// L:bt (cd:JFrame):  Re-customize IP : addNotify
+// p:g (cd:JFrame): Re-customize IP: addNotify
+dismissDialog("Re-customize IP"); // L:bt (cd:JFrame)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Output Clocks", 1); // cP:g (C:JPanel, p:g)
+setText("CLKOUT1 REQUESTED OUT FREQ", "20.000", true); // M:ak (cQ:L, p:g)
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, p:g)
+dismissDialog("Re-customize IP"); // p:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// Tcl Message: set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {20.000} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {8.500} CONFIG.MMCM_CLKOUT0_DIVIDE_F {42.500} CONFIG.CLKOUT1_JITTER {193.154} CONFIG.CLKOUT1_PHASE_ERROR {109.126}] [get_ips pixelClkGen] 
+// at:q (cd:JFrame): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a:JButton (JPanel:JComponent, at:q)
+// bt:g (cd:JFrame):  Managing Output Products : addNotify
+// Tcl Message: generate_target all [get_files  c:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pixelClkGen'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pixelClkGen'... 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pixelClkGen'... INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'pixelClkGen'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pixelClkGen'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all pixelClkGen] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files c:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.xci] -no_script -sync -force -quiet 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run pixelClkGen_synth_1 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 2 pixelClkGen_synth_1 
+// Tcl Message: [Wed May 31 12:08:32 2017] Launched pixelClkGen_synth_1... Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/pixelClkGen_synth_1/runme.log 
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUNS_WERE_LAUNCHED_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, F:JDialog)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 29 seconds
+selectCodeEditor("graphic.vhd", 579, 248); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 209 MB (+16081kb) [00:36:50]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 229 MB (+9789kb) [00:36:56]
+// Tcl Message: reset_run synth_1 
+// 'cn' command handler elapsed time: 4 seconds
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// Tcl Message: [Wed May 31 12:09:22 2017] Launched synth_1... Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log [Wed May 31 12:09:22 2017] Launched impl_1... Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log 
+// [GUI Memory]: 243 MB (+2816kb) [00:36:56]
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 49 seconds
+selectCodeEditor("graphic.vhd", 970, 315); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 321 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
+dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
