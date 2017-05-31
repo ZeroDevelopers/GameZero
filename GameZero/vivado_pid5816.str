@@ -1012,3 +1012,48 @@ selectTab((HResource) null, (HResource) null, "Messages", 1); // aA:FrameContain
 // Elapsed time: 321 seconds
 selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
 dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// [GUI Memory]: 256 MB (+440kb) [00:44:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 981 MB. GUI used memory: 137 MB. Current time: 5/31/17 12:17:03 PM CEST
+// Elapsed time: 621 seconds
+selectCodeEditor("graphic.vhd", 1, 277); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // y:JideButton (g:CommandBar, cd:JFrame)
+selectCodeEditor("graphic.vhd", 242, 297); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, f:q)
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// Tcl Message: [Wed May 31 12:26:39 2017] Launched synth_1... Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log [Wed May 31 12:26:39 2017] Launched impl_1... Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 148 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
+dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)

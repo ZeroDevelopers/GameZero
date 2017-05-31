@@ -154,3 +154,9 @@ launch_runs impl_1 -to_step write_bitstream -jobs 2
 Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log
 [Wed May 31 12:09:22 2017] Launched impl_1...
 Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Wed May 31 12:26:39 2017] Launched synth_1...
+Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/runme.log
+[Wed May 31 12:26:39 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1/runme.log

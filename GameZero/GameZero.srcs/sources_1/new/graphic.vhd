@@ -403,8 +403,9 @@ Pedana1_enable <= '1' when (map_row - Pedana1_pos(18 downto 10)) < PEDANA_HEIGHT
                     else '0';
 Pedana2_enable <= '1' when (map_row - Pedana2_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana2_pos(9 downto 0)) < PEDANA_WIDTH
                     else '0';
-Pedana3_enable <= '1' when (map_row - Pedana3_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana3_pos(9 downto 0)) < PEDANA_WIDTH
-                    else '0';
+--Pedana3_enable <= '1' when (map_row - Pedana3_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana3_pos(9 downto 0)) < PEDANA_WIDTH
+--                    else '0';
+Pedana3_enable <= '0';
 
 -- Defining the address in rom of the Pedana
 Pedana1_address <= Pedana1_cntV * PEDANA_WIDTH + Pedana1_cntH; 

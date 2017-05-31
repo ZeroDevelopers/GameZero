@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Wed May 31 12:11:20 2017
+| Date             : Wed May 31 12:28:35 2017
 | Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1489 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      728 |     63400 |            1.15 |
-|   CARRY4       |    <0.001 |      115 |     15850 |            0.73 |
-|   Register     |    <0.001 |      329 |    126800 |            0.26 |
+| Slice Logic    |    <0.001 |     1495 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      754 |     63400 |            1.19 |
+|   Register     |    <0.001 |      314 |    126800 |            0.25 |
+|   CARRY4       |    <0.001 |      109 |     15850 |            0.69 |
 |   F7/F8 Muxes  |    <0.001 |       54 |     63400 |            0.09 |
-|   Others       |     0.000 |      116 |       --- |             --- |
+|   Others       |     0.000 |      115 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |     1360 |       --- |             --- |
-| Block RAM      |     0.005 |     52.5 |       135 |           38.89 |
+| Signals        |    <0.001 |     1375 |       --- |             --- |
+| Block RAM      |     0.004 |     52.5 |       135 |           38.89 |
 | MMCM           |     0.112 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.100 |          |           |                 |
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.024 |       0.007 |      0.017 |
+| Vccint    |       1.000 |     0.023 |       0.006 |      0.017 |
 | Vccaux    |       1.800 |     0.080 |       0.062 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
