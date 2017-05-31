@@ -65,7 +65,6 @@ constant MOVEMENT_FRAMES : natural := 4;
 --constants for mapping movement
 constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
 constant LEFT : STD_LOGIC_VECTOR (1 downto 0) := "01";
-constant JUMP : STD_LOGIC_VECTOR (1 downto 0) := "10";
 
 -- Signals for Wolverine
 constant W_ACTION_FRAMES : natural := 10;
@@ -76,7 +75,6 @@ signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1;
 signal movement_enable : STD_LOGIC := '0';
 signal right_enable : STD_LOGIC := '0';
 signal left_enable : STD_LOGIC := '0'; 
-signal jump_enable : STD_LOGIC := '0';
 
 
 begin
@@ -100,33 +98,40 @@ end process;
 process(frame_clk, movement_type, movement_enable)
 begin
         if rising_edge(frame_clk) AND movement_enable = '1' then
-            --Wolvie_tmp_pos <= Wolvie_curr_pos;
             if movement_type = RIGHT and right_enable = '1' then
                 Wolvie_hor_new_pos <= Wolvie_curr_pos (9 downto 0)+ PIXEL_INCREMENT;
                 Wolvie_reversed_out <= '0';
             elsif movement_type = LEFT and left_enable = '1' then
                 Wolvie_hor_new_pos <= Wolvie_curr_pos (9 downto 0)- PIXEL_INCREMENT;
                 Wolvie_reversed_out <= '1';
---            elsif movement_type = JUMP and jump_enable = '1' then 
---                Wolvie_new_pos (18 downto 10) <= Wolvie_curr_pos (18 downto 10) + PIXEL_INCREMENT;
             end if;
         end if;
 end process;
 
---enables for moving left, right or jumping
+--enables for moving left, right
 
-left_enable <=  '1' when Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT >= WALL_WIDTH AND 
-                         Wolvie_curr_pos (9 downto 0)  > 0 AND 
-                         (Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT >= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE OR 
-                         Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE <= GreenGoblin_pos (18 downto 10) OR 
-                         Wolvie_curr_pos (18 downto 10) - PLAYER_SIZE >= GreenGoblin_pos (18 downto 10))
-                    else '0';    
+left_enable <=  '0' when Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT = WALL_WIDTH OR 
+                         Wolvie_curr_pos (9 downto 0)  = 0 OR 
+                         (Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE AND
+                          Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT >= GreenGoblin_pos (9 downto 0) AND 
+                          Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE >= GreenGoblin_pos (18 downto 10) AND
+                          Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE <= GreenGoblin_pos (18 downto 10) + PLAYER_SIZE) OR
+                         (Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE AND 
+                          Wolvie_curr_pos (9 downto 0) - PIXEL_INCREMENT >= GreenGoblin_pos (9 downto 0) AND
+                          Wolvie_curr_pos (18 downto 10) <= GreenGoblin_pos (18 downto 10) + PLAYER_SIZE AND
+                          Wolvie_curr_pos (18 downto 10) >= GreenGoblin_pos (18 downto 10)) 
+                    else '1';    
 
-right_enable <=  '1' when Wolvie_curr_pos (9 downto 0) + PIXEL_INCREMENT <= 640 - PLAYER_SIZE - WALL_WIDTH AND 
-                          (Wolvie_curr_pos (9 downto 0) + PIXEL_INCREMENT + PLAYER_SIZE <= GreenGoblin_pos (9 downto 0) OR 
-                          Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE <= GreenGoblin_pos (18 downto 10) OR 
-                          Wolvie_curr_pos (18 downto 10) - PLAYER_SIZE >= GreenGoblin_pos (18 downto 10))
-                     else '0';    
+right_enable <=  '0' when Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE + PIXEL_INCREMENT = 640 - PLAYER_SIZE - WALL_WIDTH OR 
+                          (Wolvie_curr_pos (9 downto 0) + PIXEL_INCREMENT >= GreenGoblin_pos (9 downto 0) AND 
+                           Wolvie_curr_pos (9 downto 0) + PIXEL_INCREMENT <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE AND 
+                           Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE >= GreenGoblin_pos (18 downto 10) AND
+                           Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE <= GreenGoblin_pos (18 downto 10) + PLAYER_SIZE) OR
+                          (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE + PIXEL_INCREMENT >= GreenGoblin_pos (9 downto 0) AND 
+                           Wolvie_curr_pos (9 downto 0) + PIXEL_INCREMENT <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE AND
+                           Wolvie_curr_pos (18 downto 10) <= GreenGoblin_pos (18 downto 10) + PLAYER_SIZE AND
+                           Wolvie_curr_pos (18 downto 10) >= GreenGoblin_pos (18 downto 10)) 
+                     else '1';    
 
 --process to modify the image of wolverine in movement
 

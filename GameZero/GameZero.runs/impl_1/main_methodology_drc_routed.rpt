@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Wed May 31 13:17:40 2017
-| Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
+| Date         : Wed May 31 18:56:09 2017
+| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -23,101 +23,26 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 153
-+-----------+----------+------------------------------------------------------------------+------------+
-| Rule      | Severity | Description                                                      | Violations |
-+-----------+----------+------------------------------------------------------------------+------------+
-| CKLD-2    | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
-| TIMING-4  | Warning  | Invalid primary clock redefinition on a clock tree               | 1          |
-| TIMING-6  | Warning  | No common primary clock between related clocks                   | 1          |
-| TIMING-7  | Warning  | No common node between related clocks                            | 1          |
-| TIMING-16 | Warning  | Large setup violation                                            | 12         |
-| TIMING-17 | Warning  | Non-clocked sequential cell                                      | 71         |
-| TIMING-18 | Warning  | Missing input or output delay                                    | 14         |
-| TIMING-20 | Warning  | Non-clocked latch                                                | 51         |
-| TIMING-27 | Warning  | Invalid primary clock on hierarchical pin                        | 1          |
-+-----------+----------+------------------------------------------------------------------+------------+
+             Violations found: 137
++-----------+----------+------------------------------------------------+------------+
+| Rule      | Severity | Description                                    | Violations |
++-----------+----------+------------------------------------------------+------------+
+| TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
+| TIMING-17 | Warning  | Non-clocked sequential cell                    | 70         |
+| TIMING-18 | Warning  | Missing input or output delay                  | 14         |
+| TIMING-20 | Warning  | Non-clocked latch                              | 51         |
++-----------+----------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-CKLD-2#1 Warning
-Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
-Clock net clk_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): clk_IBUF_inst/O
-Related violations: <none>
-
-TIMING-4#1 Warning
-Invalid primary clock redefinition on a clock tree  
-Invalid clock redefinition on a clock tree. The primary clock inst_pixelClkGen/inst/clk_in1 is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
-Related violations: <none>
-
 TIMING-6#1 Warning
 No common primary clock between related clocks  
-The clocks sys_clk_pin and clk_out1_pixelClkGen are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_out1_pixelClkGen]
+The clocks clk_out1_pixelClkGen and clk_out1_pixelClkGen_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_pixelClkGen] -to [get_clocks clk_out1_pixelClkGen_1]
 Related violations: <none>
 
-TIMING-7#1 Warning
-No common node between related clocks  
-The clocks sys_clk_pin and clk_out1_pixelClkGen are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_out1_pixelClkGen]
-Related violations: <none>
-
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -14.694 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/red_reg[2]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -14.861 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/blue_reg[2]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -14.879 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/red_reg[0]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -14.881 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/green_reg[2]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -14.883 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/green_reg[0]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -14.885 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/green_reg[1]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -14.904 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/blue_reg[3]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -14.936 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/blue_reg[1]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -14.975 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/green_reg[3]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -14.976 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/blue_reg[0]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -15.012 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/red_reg[3]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -15.016 ns between inst_graphic/inst_brom_util/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and inst_graphic/inst_vga/red_reg[1]/D (clocked by clk_out1_pixelClkGen). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+TIMING-6#2 Warning
+No common primary clock between related clocks  
+The clocks clk_out1_pixelClkGen_1 and clk_out1_pixelClkGen are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_pixelClkGen_1] -to [get_clocks clk_out1_pixelClkGen]
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -322,155 +247,150 @@ Related violations: <none>
 
 TIMING-17#41 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/W_action_cnt_reg[7]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[1]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[1]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[2]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[3]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[4]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[5]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[6]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[7]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_vert_new_pos_reg[8]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/W_action_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/W_action_cnt_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/W_action_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/W_action_cnt_reg[1]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/W_action_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/W_action_cnt_reg[2]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/W_action_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/W_action_cnt_reg[3]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[1]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[2]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[3]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#61 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[4]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#62 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[5]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#63 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[6]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#64 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[7]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#65 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[8]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#66 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_hor_new_pos_reg[9]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#67 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#68 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[1]/C is not reached by a timing clock
+The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#69 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#70 Warning
-Non-clocked sequential cell  
 The clock pin inst_Wolvie_mov/Wolvie_new_image_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#71 Warning
+TIMING-17#70 Warning
 Non-clocked sequential cell  
 The clock pin inst_Wolvie_mov/Wolvie_reversed_out_reg/C is not reached by a timing clock
 Related violations: <none>
@@ -798,11 +718,6 @@ Related violations: <none>
 TIMING-20#51 Warning
 Non-clocked latch  
 The latch inst_graphic/brom_util_addr_reg[9] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-27#1 Warning
-Invalid primary clock on hierarchical pin  
-A primary clock inst_pixelClkGen/inst/clk_in1 is created on an inappropriate internal pin inst_pixelClkGen/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
 

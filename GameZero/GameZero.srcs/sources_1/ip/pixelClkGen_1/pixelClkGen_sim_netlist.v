@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 // Date        : Wed May 31 12:47:39 2017
 // Host        : DESKTOP-K472J0U running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top pixelClkGen -prefix
+//               pixelClkGen_ pixelClkGen_sim_netlist.v
 // Design      : pixelClkGen
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,7 +27,6 @@ module pixelClkGen
         .clk_out1(clk_out1));
 endmodule
 
-(* ORIG_REF_NAME = "pixelClkGen_clk_wiz" *) 
 module pixelClkGen_pixelClkGen_clk_wiz
    (clk_out1,
     clk_in1);

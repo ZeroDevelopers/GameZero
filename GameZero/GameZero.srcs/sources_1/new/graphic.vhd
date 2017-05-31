@@ -35,7 +35,7 @@ use ieee.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity graphic is
-    Port (  pixel_clk , clk: in STD_LOGIC;
+    Port (  pixel_clk: in STD_LOGIC;
             GreenGoblin_pos : in std_logic_vector (18 downto 0);
             GreenGoblin_reversed : in std_logic;
             GreenGoblin_image : in std_logic_vector (2 downto 0); -- The corresponding image from which we have to extract the pixels
@@ -569,14 +569,14 @@ port map (
 
 inst_brom_player : playerBROM
 port map
-(   clka    => clk,
+(   clka    => pixel_clk,
     addra   => brom_addr,
     douta   => brom_pixel_out
 );
 
 inst_brom_util : utilBROM
 port map
-(   clka    => clk,
+(   clka    => pixel_clk,
     addra   => brom_util_addr,
     douta   => brom_util_pixel_out
 );

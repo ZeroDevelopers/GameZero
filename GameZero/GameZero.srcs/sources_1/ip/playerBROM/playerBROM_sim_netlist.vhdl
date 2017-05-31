@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 -- Date        : Wed May 31 11:42:02 2017
 -- Host        : DESKTOP-K472J0U running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top playerBROM -prefix
+--               playerBROM_ playerBROM_sim_netlist.vhdl
 -- Design      : playerBROM
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity playerBROM_bindec is
     ena_array : out STD_LOGIC_VECTOR ( 14 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_bindec : entity is "bindec";
 end playerBROM_bindec;
 
 architecture STRUCTURE of playerBROM_bindec is
@@ -245,8 +243,6 @@ entity playerBROM_blk_mem_gen_mux is
     p_19_out : in STD_LOGIC_VECTOR ( 8 downto 0 );
     p_23_out : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end playerBROM_blk_mem_gen_mux;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_mux is
@@ -1441,8 +1437,6 @@ entity playerBROM_blk_mem_gen_prim_wrapper_init is
     ENA : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end playerBROM_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_prim_wrapper_init is
@@ -9117,8 +9111,6 @@ entity playerBROM_blk_mem_gen_prim_width is
     ENA : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end playerBROM_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_prim_width is
@@ -9825,8 +9817,6 @@ entity playerBROM_blk_mem_gen_generic_cstr is
     addra : in STD_LOGIC_VECTOR ( 16 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end playerBROM_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_generic_cstr is
@@ -10131,8 +10121,6 @@ entity playerBROM_blk_mem_gen_top is
     addra : in STD_LOGIC_VECTOR ( 16 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end playerBROM_blk_mem_gen_top;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_top is
@@ -10154,8 +10142,6 @@ entity playerBROM_blk_mem_gen_v8_3_5_synth is
     addra : in STD_LOGIC_VECTOR ( 16 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_v8_3_5_synth : entity is "blk_mem_gen_v8_3_5_synth";
 end playerBROM_blk_mem_gen_v8_3_5_synth;
 
 architecture STRUCTURE of playerBROM_blk_mem_gen_v8_3_5_synth is
@@ -10383,8 +10369,6 @@ entity playerBROM_blk_mem_gen_v8_3_5 is
   attribute C_WRITE_WIDTH_B of playerBROM_blk_mem_gen_v8_3_5 : entity is 12;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of playerBROM_blk_mem_gen_v8_3_5 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of playerBROM_blk_mem_gen_v8_3_5 : entity is "blk_mem_gen_v8_3_5";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of playerBROM_blk_mem_gen_v8_3_5 : entity is "yes";
 end playerBROM_blk_mem_gen_v8_3_5;

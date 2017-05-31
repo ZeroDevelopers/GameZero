@@ -40,7 +40,7 @@ end main;
 architecture Behavioral of main is
 
 component graphic is
-    Port (  pixel_clk, clk : in STD_LOGIC;
+    Port (  pixel_clk: in STD_LOGIC;
             GreenGoblin_pos : in std_logic_vector (18 downto 0);
             GreenGoblin_reversed : in std_logic;
             GreenGoblin_image : in std_logic_vector (2 downto 0);
@@ -144,12 +144,12 @@ signal frame_clk_cnt : natural range 0 to FRAME_PIXELS / 2;
 signal pixel_clk, frame_clk : std_logic := '0';
 
 -- Signals for the Green Goblin
-signal GreenGoblin_pos : std_logic_vector (18 downto 0) := "1100100000000010100";
+signal GreenGoblin_pos : std_logic_vector (18 downto 0);
 signal GreenGoblin_reversed : std_logic := '0';
 signal GreenGoblin_image : std_logic_vector (2 downto 0) := (others => '0');
 
 -- Signals for Wolverine
-signal Wolvie_pos: std_logic_vector (18 downto 0) := "1100100000101110010";
+signal Wolvie_pos: std_logic_vector (18 downto 0);
 signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0) := "0101110010";
 signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0) := "110010000";
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
@@ -180,6 +180,8 @@ signal dec_disable : std_logic;
 
 -- Tmp signals
 signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset : std_logic := '0';
+
+signal start : STD_LOGIC;
 
 
 
@@ -238,13 +240,18 @@ Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
                 else Wolvie_mov_image when W_dec_mov_disable = '1';
                 
 process(frame_clk)
-begin
-        if rising_edge(frame_clk) then
-            Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
-            Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
-            
-        end if;    
-end process;
+                begin   
+                        if rising_edge(frame_clk) then
+                            if start = '1' then
+                                start <= '0';
+                                GreenGoblin_pos (18 downto 0) <= "1100100000000010100";
+                                Wolvie_pos (18 downto 0) <= "1100100000101110010";
+                            else 
+                                Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
+                                Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
+                            end if;        
+                        end if;
+                end process;
 
 ---- Process to move the Green Goblin
 
@@ -436,7 +443,6 @@ port map
 inst_graphic : graphic
 port map
 (   pixel_clk               => pixel_clk,
-    clk                     => clk,
     GreenGoblin_pos         => GreenGoblin_pos,
     GreenGoblin_reversed    => GreenGoblin_reversed,
     GreenGoblin_image       => GreenGoblin_image,

@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/edoardo/Desktop/GameZero/GameZero.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0bd86a4875b1456bb971827f95f78ecf"/>
@@ -199,9 +199,7 @@
     </Run>
     <Run Id="pixelClkGen_synth_1" Type="Ft3:Synth" SrcSet="pixelClkGen" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/pixelClkGen_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -209,9 +207,7 @@
     </Run>
     <Run Id="playerBROM_synth_1" Type="Ft3:Synth" SrcSet="playerBROM" Part="xc7a100tcsg324-1" ConstrsSet="playerBROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/playerBROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -219,9 +215,7 @@
     </Run>
     <Run Id="utilBROM_synth_1" Type="Ft3:Synth" SrcSet="utilBROM" Part="xc7a100tcsg324-1" ConstrsSet="utilBROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/utilBROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -245,9 +239,7 @@
     </Run>
     <Run Id="pixelClkGen_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Default settings for Implementation." SynthRun="pixelClkGen_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -262,9 +254,7 @@
     </Run>
     <Run Id="playerBROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="playerBROM" Description="Default settings for Implementation." SynthRun="playerBROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -279,9 +269,7 @@
     </Run>
     <Run Id="utilBROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="utilBROM" Description="Default settings for Implementation." SynthRun="utilBROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
