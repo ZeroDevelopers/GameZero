@@ -399,12 +399,14 @@ end process;
 
 
 -- defining the Pedana enabler
-Pedana1_enable <= '1' when (map_row - Pedana1_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana1_pos(9 downto 0)) < PEDANA_WIDTH
-                    else '0';
-Pedana2_enable <= '1' when (map_row - Pedana2_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana2_pos(9 downto 0)) < PEDANA_WIDTH
-                    else '0';
+--Pedana1_enable <= '1' when (map_row - Pedana1_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana1_pos(9 downto 0)) < PEDANA_WIDTH
+--                    else '0';
+--Pedana2_enable <= '1' when (map_row - Pedana2_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana2_pos(9 downto 0)) < PEDANA_WIDTH
+--                    else '0';
 --Pedana3_enable <= '1' when (map_row - Pedana3_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana3_pos(9 downto 0)) < PEDANA_WIDTH
 --                    else '0';
+Pedana1_enable <= '0';
+Pedana2_enable <= '0';
 Pedana3_enable <= '0';
 
 -- Defining the address in rom of the Pedana
@@ -521,10 +523,10 @@ brom_addr <= std_logic_vector(to_unsigned(GreenGoblin_address + GreenGoblin_offs
             else std_logic_vector(to_unsigned(Wolvie_address + Wolvie_offset, BROM_DEPTH)) when Wolvie_enable = '1';
             
 brom_util_addr <=   std_logic_vector(to_unsigned(Wolvie_life_address + LIFE_OFFSET, BROM_PEDANA_DEPTH)) when Wolvie_life_enable = '1'
-                    else std_logic_vector(to_unsigned(GreenGoblin_life_address + LIFE_OFFSET, BROM_PEDANA_DEPTH)) when GreenGoblin_life_enable = '1'
-                    else std_logic_vector(to_unsigned(Pedana1_address + Pedana1_offset, BROM_PEDANA_DEPTH)) when Pedana1_enable = '1'
-                    else std_logic_vector(to_unsigned(Pedana2_address + Pedana2_offset, BROM_PEDANA_DEPTH)) when Pedana2_enable = '1'
-                    else std_logic_vector(to_unsigned(Pedana3_address + Pedana3_offset, BROM_PEDANA_DEPTH)) when Pedana3_enable = '1';
+                    else std_logic_vector(to_unsigned(GreenGoblin_life_address + LIFE_OFFSET, BROM_PEDANA_DEPTH)) when GreenGoblin_life_enable = '1';
+--                    else std_logic_vector(to_unsigned(Pedana1_address + Pedana1_offset, BROM_PEDANA_DEPTH)) when Pedana1_enable = '1'
+--                    else std_logic_vector(to_unsigned(Pedana2_address + Pedana2_offset, BROM_PEDANA_DEPTH)) when Pedana2_enable = '1'
+--                    else std_logic_vector(to_unsigned(Pedana3_address + Pedana3_offset, BROM_PEDANA_DEPTH)) when Pedana3_enable = '1';
 
 -- Computing the enabler and the colored signals
 player_enable <= GreenGoblin_enable or Wolvie_enable;  -- Logical OR among all the possible objects
