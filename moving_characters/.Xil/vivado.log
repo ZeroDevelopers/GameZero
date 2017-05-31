@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Mon May 22 17:21:42 2017
+# Process ID: 9120
+# Current directory: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1316 C:\Users\edoardo\Documents\GitHub\GameZero\moving_characters\moving_characters.xpr
+# Log file: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/vivado.log
+# Journal file: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/edoardo/Desktop/moving_characters' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+INFO: [IP_Flow 19-3490] Corrected incorrect value for component_name parameter when reading XCI file 'c:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.srcs/sources_1/ip/PixelClkGen/PixelClkGen.xci'
+reset_run synth_1
+reset_run blk_mem_gen_0_synth_1
+reset_run BROM_Pedana_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.srcs/sources_1/ip/PixelClkGen/PixelClkGen.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'BROM_Pedana'...
+[Mon May 22 17:22:31 2017] Launched blk_mem_gen_0_synth_1, BROM_Pedana_synth_1, synth_1...
+Run output will be captured here:
+blk_mem_gen_0_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/blk_mem_gen_0_synth_1/runme.log
+BROM_Pedana_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/BROM_Pedana_synth_1/runme.log
+synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/synth_1/runme.log
+[Mon May 22 17:22:31 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 786.594 ; gain = 12.613
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.srcs/sources_1/ip/PixelClkGen/PixelClkGen.xci' is already up-to-date
+[Mon May 22 17:26:30 2017] Launched synth_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/synth_1/runme.log
+[Mon May 22 17:26:30 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.srcs/sources_1/ip/PixelClkGen/PixelClkGen.xci' is already up-to-date
+[Mon May 22 17:30:37 2017] Launched synth_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/synth_1/runme.log
+[Mon May 22 17:30:37 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/moving_characters/moving_characters.runs/impl_1/runme.log

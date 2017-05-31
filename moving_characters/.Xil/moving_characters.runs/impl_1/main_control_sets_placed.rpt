@@ -1,0 +1,107 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Tue May 30 19:24:03 2017
+| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    37 |
+| Unused register locations in slices containing registers |   140 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              96 |           52 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              55 |           21 |
+| Yes          | No                    | No                     |              75 |           30 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              90 |           33 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------------+------------------------------------------------+-----------------------------------------------+------------------+----------------+
+|                  Clock Signal                  |                  Enable Signal                 |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
++------------------------------------------------+------------------------------------------------+-----------------------------------------------+------------------+----------------+
+|  inst_Wolvie_mov/movement_enable_reg_i_1_n_0   |                                                | enable                                        |                1 |              1 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | inst_graphic/inst_vga/h_sync0                 |                1 |              1 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | inst_graphic/inst_vga/v_sync0                 |                1 |              1 |
+|  inst_Wolvie_jump/jump_enable_reg_i_1_n_0      |                                                | Wolvie_jump_enable_reg_n_0                    |                1 |              1 |
+|  inst_graphic/brom_addr_reg[16]_i_2_n_0        |                                                | inst_graphic/inst_vga/GreenGoblin_cntV_reg[6] |                1 |              2 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_mov/W_dec_mov_disable              |                                               |                1 |              4 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_att/Wolvie_new_image[3]_i_1__0_n_0 |                                               |                2 |              4 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_mov/Wolvie_new_image[3]_i_2_n_0    | inst_Wolvie_mov/Wolvie_new_image[3]_i_1_n_0   |                1 |              4 |
+|  inst_Wolvie_jump/E[0]                         |                                                |                                               |                3 |              4 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_att/W_dec_att_disable              |                                               |                1 |              5 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/BG_section_cnt                    |                                               |                1 |              5 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Wolvie_cntV0                      | inst_graphic/Wolvie_cntV[6]_i_1_n_0           |                3 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/GreenGoblin_cntV0                 | inst_graphic/GreenGoblin_cntV[6]_i_1_n_0      |                3 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Pedana1_cntV0                     | inst_graphic/Pedana1_cntV[6]_i_1_n_0          |                4 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Pedana2_cntV0                     | inst_graphic/Pedana2_cntV[6]_i_1_n_0          |                3 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/inst_vga/GreenGoblin_cntV_reg[6]  |                                               |                3 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Pedana3_cntV0                     | inst_graphic/Pedana3_cntV[6]_i_1_n_0          |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/inst_vga/Wolvie_enable            |                                               |                4 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/inst_vga/Pedana3_enable           |                                               |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Pedana1_enable                    |                                               |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/Pedana2_enable                    |                                               |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/BG_section_cnt                    | inst_graphic/counter_v                        |                4 |              9 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_jump/p_2_out[0]                    |                                               |                3 |              9 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/counter_v[9]_i_2_n_0              | inst_graphic/counter_v                        |                4 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/sel                               | inst_graphic/eqOp0_in                         |                3 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | inst_graphic/inst_vga/eqOp3_in                |                3 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | inst_graphic/eqOp0_in                         |                3 |             10 |
+|  frame_clk_reg_n_0_BUFG                        | inst_Wolvie_mov/Wolvie_hor_new_pos0            |                                               |                6 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/inst_vga/eqOp3_in                 | inst_graphic/inst_vga/v_counter0              |                3 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | inst_graphic/inst_vga/red[3]_i_1_n_0          |                5 |             12 |
+|  inst_pixelClkGen/inst/clk_out1                | inst_graphic/BG_pixel                          | inst_graphic/counter_v                        |                3 |             12 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                |                                               |                8 |             12 |
+|  inst_graphic/Wolvie_offset_reg[16]_i_2_n_0    |                                                |                                               |                9 |             15 |
+|  inst_graphic/brom_addr_reg[16]_i_2_n_0        |                                                |                                               |                6 |             15 |
+|  inst_graphic/brom_pedana_addr_reg[15]_i_1_n_0 |                                                |                                               |                9 |             16 |
+|  inst_pixelClkGen/inst/clk_out1                |                                                | frame_clk                                     |                5 |             17 |
+|  frame_clk_reg_n_0_BUFG                        |                                                |                                               |               17 |             34 |
++------------------------------------------------+------------------------------------------------+-----------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     4 |
+| 2      |                     1 |
+| 4      |                     4 |
+| 5      |                     2 |
+| 7      |                     7 |
+| 8      |                     3 |
+| 9      |                     2 |
+| 10     |                     6 |
+| 12     |                     3 |
+| 15     |                     2 |
+| 16+    |                     3 |
++--------+-----------------------+
+
+

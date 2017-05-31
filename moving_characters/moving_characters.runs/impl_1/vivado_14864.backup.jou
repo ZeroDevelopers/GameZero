@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun May 28 17:22:46 2017
+# Process ID: 14864
+# Current directory: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/moving_characters/moving_characters.runs/impl_1
+# Command line: vivado.exe -log graphic.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source graphic.tcl -notrace
+# Log file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/moving_characters/moving_characters.runs/impl_1/graphic.vdi
+# Journal file: C:/Users/Andrea Diecidue/Desktop/polito/Computer Architecture/Projects/moving_characters/moving_characters.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source graphic.tcl -notrace
