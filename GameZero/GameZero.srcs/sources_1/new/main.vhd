@@ -114,6 +114,64 @@ Port (
        Pedana3_image : in std_logic_vector (1 downto 0)
      );
 end component;
+
+-- Component for GreenGoblin movement
+
+component Green_Goblin_movement is
+      Port (
+            frame_clk : in STD_LOGIC;
+            enable : in STD_LOGIC;
+            movement_type: in STD_LOGIC_VECTOR (1 downto 0);
+            Wolvie_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Green_Goblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Green_Goblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+            dec_disable : out STD_LOGIC;
+            Green_Goblin_reversed_in : in STD_LOGIC;
+            Green_Goblin_reversed_out : out STD_LOGIC;
+            Green_Goblin_hor_new_pos : out STD_LOGIC_VECTOR (9 downto 0);
+            Green_Goblin_new_image : out STD_LOGIC_VECTOR (3 downto 0)
+       );
+end component;
+
+-- Component for GreenGoblin attack
+
+component Green_Goblin_attack is
+    Port (
+            frame_clk : in STD_LOGIC;
+            enable : in STD_LOGIC;
+            attack_reset : in std_logic;
+            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            GreenGoblin_reversed : in std_logic;
+            GreenGoblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+            GreenGoblin_dec_disable : out STD_LOGIC;
+            GreenGoblin_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+            Wolvie_life_dec : out std_logic;
+            Wolvie_attack_reset_out : out std_logic;
+            Sbam_active_out : out std_logic
+       );
+end component;
+
+-- Component for GreenGoblin jump
+
+component Green_Goblin_jump is
+    Port (
+          frame_clk : in STD_LOGIC;  
+          enable : in STD_LOGIC;
+          GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
+          GreenGoblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+          GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
+          GreenGoblin_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+          GreenGoblin_status : out STD_LOGIC;
+          Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+          Pedana1_pos : in std_logic_vector (18 downto 0);  
+          Pedana1_image : in std_logic_vector (1 downto 0);
+          Pedana2_pos : in std_logic_vector (18 downto 0);
+          Pedana2_image : in std_logic_vector (1 downto 0);
+          Pedana3_pos : in std_logic_vector (18 downto 0);
+          Pedana3_image : in std_logic_vector (1 downto 0)
+    );
+end component;
     
 -- Generator for the pixel clk
 component pixelClkGen is
@@ -145,8 +203,15 @@ signal pixel_clk, frame_clk : std_logic := '0';
 
 -- Signals for the Green Goblin
 signal GreenGoblin_pos : std_logic_vector (18 downto 0);
-signal GreenGoblin_reversed : std_logic := '0';
-signal GreenGoblin_image : std_logic_vector (2 downto 0) := (others => '0');
+signal GreenGoblin_hor_pos : STD_LOGIC_VECTOR (9 downto 0) := "0000010100";
+signal GreenGoblin_vert_pos : STD_LOGIC_VECTOR (8 downto 0) := "110010000";
+signal GreenGoblin_reversed_in : std_logic := '0';
+signal GreenGoblin_image, GreenGoblin_mov_image, GreenGoblin_att_image, GreenGoblin_jump_image : std_logic_vector (2 downto 0) := (others => '0');
+signal GreenGoblin_mov_enable, GreenGoblin_att_enable, GreenGoblin_jump_enable : std_logic;
+signal GreenGoblin_mov_type : std_logic_vector (1 downto 0);
+signal GreenGoblin_reversed_out : std_logic;
+signal GG_dec_mov_disable, GG_dec_att_disable, GG_jump_status: std_logic;
+
 
 -- Signals for Wolverine
 signal Wolvie_pos: std_logic_vector (18 downto 0);
@@ -179,7 +244,9 @@ signal dec_disable : std_logic;
 
 
 -- Tmp signals
-signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset : std_logic := '0';
+signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset, Wolvie_life_dec : std_logic := '0';
+
+
 
 signal start : STD_LOGIC;
 
@@ -238,6 +305,11 @@ end process;
 Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
                 else Wolvie_jump_image when W_jump_status = '1'
                 else Wolvie_mov_image when W_dec_mov_disable = '1';
+
+GreenGoblin_image <= GreenGoblin_att_image when GG_dec_att_disable = '1'
+                else GreenGoblin_jump_image when GG_jump_status = '1'
+                else GreenGoblin_mov_image when GG_dec_mov_disable = '1';
+
                 
 process(frame_clk)
                 begin   
@@ -249,6 +321,8 @@ process(frame_clk)
                             else 
                                 Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
                                 Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
+                                GreenGoblin_pos (18 downto 10) <= GreenGoblin_vert_pos (8 downto 0);
+                                GreenGoblin_pos (9 downto 0) <= GreenGoblin_hor_pos (9 downto 0);
                             end if;        
                         end if;
                 end process;
@@ -444,7 +518,7 @@ inst_graphic : graphic
 port map
 (   pixel_clk               => pixel_clk,
     GreenGoblin_pos         => GreenGoblin_pos,
-    GreenGoblin_reversed    => GreenGoblin_reversed,
+    GreenGoblin_reversed    => GreenGoblin_reversed_in,
     GreenGoblin_image       => GreenGoblin_image,
     Wolvie_pos              => Wolvie_pos,
     Wolvie_reversed         => Wolvie_reversed_out,
@@ -512,5 +586,58 @@ port map
     Pedana3_pos         => Pedana3_pos,
     Pedana3_image       => Pedana3_image
 );
+
+inst_Green_Goblin_mov : Green_Goblin_movement
+port map 
+(   frame_clk           => frame_clk,
+    enable              => GreenGoblin_mov_enable,
+    movement_type       => GreenGoblin_mov_type,
+    Wolvie_pos          => Wolvie_pos,
+    Pedana1_pos         => Pedana1_pos,
+    Pedana2_pos         => Pedana2_pos,
+    Pedana3_pos         => Pedana3_pos,
+    Green_Goblin_curr_pos     => GreenGoblin_pos,
+    Green_Goblin_curr_image   => GreenGoblin_image,
+    Green_Goblin_reversed_in  => GreenGoblin_reversed_in,
+    dec_disable         => GG_dec_mov_disable,
+    Green_Goblin_reversed_out => GreenGoblin_reversed_out,
+    Green_Goblin_hor_new_pos      => GreenGoblin_hor_pos,
+    Green_Goblin_new_image    => GreenGoblin_mov_image
+);
+
+inst_Green_Goblin_att : Green_Goblin_attack
+port map 
+(   frame_clk           => frame_clk,
+    enable              => wolvie_att_enable,
+    attack_reset        => Wolvie_attack_reset,
+    GreenGoblin_pos     => GreenGoblin_pos,
+    Wolvie_pos          => Wolvie_pos,
+    GreenGoblin_curr_image   => GreenGoblin_image,
+    GreenGoblin_reversed     => GreenGoblin_reversed_in,
+    GreenGoblin_dec_disable  => W_dec_att_disable,
+    GreenGoblin_new_image    => GreenGoblin_att_image,
+    Wolvie_life_dec    => GreenGoblin_life_dec,
+    Wolvie_attack_reset_out    => GreenGoblin_attack_reset,
+    Sbam_active_out     => Sbam_enable
+);
+
+inst_Green_Goblin_jump : Green_Goblin_jump
+port map
+(   frame_clk           => frame_clk,
+    enable              => GreenGoblin_jump_enable,
+    GreenGoblin_vert_new_pos      => GreenGoblin_vert_pos,
+    GreenGoblin_new_image    => GreenGoblin_jump_image,
+    GreenGoblin_curr_pos     => GreenGoblin_pos,
+    GreenGoblin_curr_image   => GreenGoblin_image,
+    GreenGoblin_status       => GG_jump_status,
+    Wolvie_pos          => Wolvie_pos,
+    Pedana1_pos         => Pedana1_pos,
+    Pedana1_image       => Pedana1_image,
+    Pedana2_pos         => Pedana2_pos,
+    Pedana2_image       => Pedana2_image,
+    Pedana3_pos         => Pedana3_pos,
+    Pedana3_image       => Pedana3_image
+);
+
 
 end Behavioral;
