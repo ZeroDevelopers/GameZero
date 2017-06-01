@@ -240,7 +240,9 @@ signal Sbam_enable : std_logic := '0';
 
 
 -- Decoder control signals
-signal dec_disable : std_logic;
+signal W_dec_disable : std_logic;
+
+signal GG_dec_disable : std_logic;
 
 
 -- Tmp signals
@@ -276,12 +278,13 @@ end process;
 
 
 
--- Build the decoder
-dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among all the disablers
-process (frame_clk, dec_disable)
+-- Decoder for Wolverine
+W_dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among all the disablers
+
+process (frame_clk, W_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if dec_disable = '0' then
+        if W_dec_disable = '0' then
             if but_right = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= RIGHT;
@@ -301,6 +304,34 @@ begin
     end if;
 end process;
 
+
+--decoder for GreenGoblin
+GG_dec_disable <= GG_dec_mov_disable OR GG_dec_att_disable;
+
+process (frame_clk, GG_dec_disable)
+begin
+    if rising_edge(frame_clk) then
+        if GG_dec_disable = '0' then
+            if but_right = '1' then
+                GreenGoblin_mov_enable <= '1';
+                GreenGoblin_mov_type <= RIGHT;
+            elsif but_left = '1' then
+                GreenGoblin_mov_enable <= '1';
+                GreenGoblin_mov_type <= LEFT;
+           elsif but_mid = '1' then
+                GreenGoblin_att_enable <= '1';
+           elsif but_up = '1' AND W_jump_status = '0' then
+                GreenGoblin_jump_enable <= '1'; 
+           end if;
+        else
+            GreenGoblin_att_enable <= '0';
+            GreenGoblin_mov_enable <= '0';
+            GreenGoblin_jump_enable <= '0';
+        end if;
+    end if;
+end process;
+
+
 -- Choose among the different images
 Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
                 else Wolvie_jump_image when W_jump_status = '1'
@@ -312,20 +343,20 @@ GreenGoblin_image <= GreenGoblin_att_image when GG_dec_att_disable = '1'
 
                 
 process(frame_clk)
-                begin   
-                        if rising_edge(frame_clk) then
-                            if start = '1' then
-                                start <= '0';
-                                GreenGoblin_pos (18 downto 0) <= "1100100000000010100";
-                                Wolvie_pos (18 downto 0) <= "1100100000101110010";
-                            else 
-                                Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
-                                Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
-                                GreenGoblin_pos (18 downto 10) <= GreenGoblin_vert_pos (8 downto 0);
-                                GreenGoblin_pos (9 downto 0) <= GreenGoblin_hor_pos (9 downto 0);
-                            end if;        
-                        end if;
-                end process;
+begin   
+        if rising_edge(frame_clk) then
+            if start = '1' then
+                start <= '0';
+                GreenGoblin_pos (18 downto 0) <= "1100100000000010100";
+                Wolvie_pos (18 downto 0) <= "1100100000101110010";
+            else 
+                Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
+                Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
+                GreenGoblin_pos (18 downto 10) <= GreenGoblin_vert_pos (8 downto 0);
+                GreenGoblin_pos (9 downto 0) <= GreenGoblin_hor_pos (9 downto 0);
+            end if;        
+        end if;
+end process;
 
 ---- Process to move the Green Goblin
 
@@ -514,6 +545,9 @@ port map
     clk_out1    => pixel_clk
 );
 
+
+
+
 inst_graphic : graphic
 port map
 (   pixel_clk               => pixel_clk,
@@ -536,6 +570,9 @@ port map
     VS                      => VS
 );
 
+
+
+
 inst_Wolvie_mov : Wolverine_movement
 port map 
 (   frame_clk           => frame_clk,
@@ -554,6 +591,8 @@ port map
     Wolvie_new_image    => Wolvie_mov_image
 );
 
+
+
 inst_Wolvie_att : Wolvie_attack
 port map 
 (   frame_clk           => frame_clk,
@@ -569,6 +608,9 @@ port map
     GreenGoblin_attack_reset_out    => GreenGoblin_attack_reset,
     Sbam_active_out     => Sbam_enable
 );
+
+
+
 
 inst_Wolvie_jump : Wolvie_jump
 port map
@@ -586,6 +628,9 @@ port map
     Pedana3_pos         => Pedana3_pos,
     Pedana3_image       => Pedana3_image
 );
+
+
+
 
 inst_Green_Goblin_mov : Green_Goblin_movement
 port map 
@@ -605,10 +650,13 @@ port map
     Green_Goblin_new_image    => GreenGoblin_mov_image
 );
 
+
+
+
 inst_Green_Goblin_att : Green_Goblin_attack
 port map 
 (   frame_clk           => frame_clk,
-    enable              => wolvie_att_enable,
+    enable              => GreenGoblin_att_enable,
     attack_reset        => Wolvie_attack_reset,
     GreenGoblin_pos     => GreenGoblin_pos,
     Wolvie_pos          => Wolvie_pos,
@@ -620,6 +668,9 @@ port map
     Wolvie_attack_reset_out    => GreenGoblin_attack_reset,
     Sbam_active_out     => Sbam_enable
 );
+
+
+
 
 inst_Green_Goblin_jump : Green_Goblin_jump
 port map
