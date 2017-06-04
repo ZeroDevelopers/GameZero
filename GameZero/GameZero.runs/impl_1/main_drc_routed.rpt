@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sun Jun 04 21:33:32 2017
+| Date         : Sun Jun 04 22:10:27 2017
 | Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command      : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
 | Design       : main
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 8
+             Violations found: 6
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning  | Gated clock check                                   | 7          |
+| PDRC-153 | Warning  | Gated clock check                                   | 5          |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -54,30 +54,20 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net inst_Wolvie_jump/W_action_cnt_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_Wolvie_jump/W_action_cnt_reg[6]_i_2/O, cell inst_Wolvie_jump/W_action_cnt_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Wolvie_mov/movement_enable_reg_i_1_n_0 is a gated clock net sourced by a combinational pin inst_Wolvie_mov/movement_enable_reg_i_1/O, cell inst_Wolvie_mov/movement_enable_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net inst_Wolvie_jump/jump_enable_reg_i_1_n_0 is a gated clock net sourced by a combinational pin inst_Wolvie_jump/jump_enable_reg_i_1/O, cell inst_Wolvie_jump/jump_enable_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Wolvie_offset_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Wolvie_offset_reg[16]_i_2/O, cell inst_graphic/Wolvie_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net inst_Wolvie_mov/movement_enable_reg_i_1_n_0 is a gated clock net sourced by a combinational pin inst_Wolvie_mov/movement_enable_reg_i_1/O, cell inst_Wolvie_mov/movement_enable_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#5 Warning
-Gated clock check  
-Net inst_graphic/Wolvie_offset_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Wolvie_offset_reg[16]_i_2/O, cell inst_graphic/Wolvie_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#6 Warning
-Gated clock check  
 Net inst_graphic/brom_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_addr_reg[16]_i_2/O, cell inst_graphic/brom_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
-PDRC-153#7 Warning
+PDRC-153#5 Warning
 Gated clock check  
 Net inst_graphic/brom_util_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_util_addr_reg[16]_i_2/O, cell inst_graphic/brom_util_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

@@ -296,8 +296,12 @@ begin
                 Wolvie_mov_type <= LEFT;
            elsif but_mid = '1' then
                 Wolvie_att_enable <= '1';
-           elsif but_up = '1' AND W_jump_status = '0' then
-                Wolvie_jump_enable <= '1'; 
+           elsif but_up = '1' then
+                if W_jump_status = '0' then
+                    Wolvie_jump_enable <= '1';
+                else
+                    Wolvie_jump_enable <= '0';
+                end if;     
            end if;
         else
             Wolvie_att_enable <= '0';
