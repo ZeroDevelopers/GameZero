@@ -38,9 +38,9 @@ entity Green_Goblin_jump is
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
           GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
-          GreenGoblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+          GreenGoblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
-          GreenGoblin_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+          GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_status : out STD_LOGIC;
           Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
           Pedana1_pos : in std_logic_vector (18 downto 0);  
@@ -115,7 +115,7 @@ descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pe
                   
 GreenGoblin_status <= rising OR descending;
 
---process for the jumping image of wolverine
+--process for the jumping image of Green Goblin
 
 process(frame_clk)
 begin
@@ -124,7 +124,7 @@ begin
                  GG_action_cnt <= 0;
             else
                 if GG_action_cnt = 0 then
-                    GreenGoblin_new_image <= "1001";
+                    GreenGoblin_new_image <= "000";
                 end if;
                 GG_action_cnt <= GG_action_cnt + 1;    
                 if GreenGoblin_curr_image = "1001" then

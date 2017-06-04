@@ -42,9 +42,9 @@ entity Green_Goblin_attack is
             GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             GreenGoblin_reversed : in std_logic;
-            GreenGoblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+            GreenGoblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
             GreenGoblin_dec_disable : out STD_LOGIC;
-            GreenGoblin_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+            GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
             Wolvie_life_dec : out std_logic;
             Wolvie_attack_reset_out : out std_logic;
             Sbam_active_out : out std_logic
@@ -68,7 +68,7 @@ constant ATTACK_IMG : natural := 4;
 
 -- signals
 signal attack_enable : std_logic := '0';
-signal attack_frame_cnt : natural range 0 to GG_ATTACK_FRAMES * 4 -1 := 0;  -- 4 is the number of frames for the attack
+signal attack_frame_cnt : natural range 0 to GG_ATTACK_FRAMES * 2 -1 := 0;  -- 2 is the number of frames for the attack
 signal inRange : std_logic := '0';
 signal Wolvie_hit, Sbam_active, Wolvie_attack_reset : std_logic := '0';
 
@@ -117,15 +117,11 @@ begin
         end if;  
         if attack_enable = '1' then
             if attack_frame_cnt < GG_ATTACK_FRAMES -1 then
-                GreenGoblin_new_image <= "0101";
+                GreenGoblin_new_image <= "001";
             elsif attack_frame_cnt = GG_ATTACK_FRAMES -1 then
-                GreenGoblin_new_image <= "0110";
+                GreenGoblin_new_image <= "010";
             elsif attack_frame_cnt = GG_ATTACK_FRAMES *2 -1 then
-                GreenGoblin_new_image <= "0111";
-            elsif attack_frame_cnt = GG_ATTACK_FRAMES *3 -1 then
-                GreenGoblin_new_image <= "1000";
-            elsif attack_frame_cnt = GG_ATTACK_FRAMES *4 -1 then
-                GreenGoblin_new_image <= "0000";                
+                GreenGoblin_new_image <= "000";               
             end if;
         end if;
     end if;

@@ -41,12 +41,12 @@ entity Green_Goblin_movement is
             movement_type: in STD_LOGIC_VECTOR (1 downto 0);
             Wolvie_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Green_Goblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
-            Green_Goblin_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
+            Green_Goblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
             dec_disable : out STD_LOGIC;
             Green_Goblin_reversed_in : in STD_LOGIC;
             Green_Goblin_reversed_out : out STD_LOGIC;
             Green_Goblin_hor_new_pos : out STD_LOGIC_VECTOR (9 downto 0);
-            Green_Goblin_new_image : out STD_LOGIC_VECTOR (3 downto 0)
+            Green_Goblin_new_image : out STD_LOGIC_VECTOR (2 downto 0)
        );
 end Green_Goblin_movement;
 

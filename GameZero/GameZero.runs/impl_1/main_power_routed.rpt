@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Wed May 31 18:56:13 2017
-| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date             : Fri Jun 02 14:42:17 2017
+| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.228 |
-| Dynamic (W)              | 0.128 |
+| Total On-Chip Power (W)  | 0.230 |
+| Dynamic (W)              | 0.130 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 84.0  |
-| Junction Temperature (C) | 26.0  |
+| Max Ambient (C)          | 83.9  |
+| Junction Temperature (C) | 26.1  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,20 +49,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1310 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      616 |     63400 |            0.97 |
-|   Register     |    <0.001 |      280 |    126800 |            0.22 |
-|   CARRY4       |    <0.001 |       83 |     15850 |            0.52 |
-|   F7/F8 Muxes  |    <0.001 |       54 |     63400 |            0.09 |
-|   Others       |     0.000 |      129 |       --- |             --- |
+| Clocks         |     0.001 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1758 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      889 |     63400 |            1.40 |
+|   Register     |    <0.001 |      367 |    126800 |            0.29 |
+|   CARRY4       |    <0.001 |      133 |     15850 |            0.84 |
+|   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
+|   Others       |     0.000 |      123 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |     1174 |       --- |             --- |
-| Block RAM      |     0.004 |     52.5 |       135 |           38.89 |
+| Signals        |    <0.001 |     1624 |       --- |             --- |
+| Block RAM      |     0.005 |     56.5 |       135 |           41.85 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.228 |          |           |                 |
+| Total          |     0.230 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.006 |      0.017 |
+| Vccint    |       1.000 |     0.024 |       0.007 |      0.017 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -81,7 +81,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -129,10 +129,10 @@ Table of Contents
 | Clock                  | Domain                                     | Constraint (ns) |
 +------------------------+--------------------------------------------+-----------------+
 | clk                    | clk                                        |            10.0 |
-| clk_out1_pixelClkGen   | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            41.7 |
-| clk_out1_pixelClkGen_1 | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            41.7 |
-| clkfbout_pixelClkGen   | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            50.0 |
-| clkfbout_pixelClkGen_1 | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            50.0 |
+| clk_out1_pixelClkGen   | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            43.5 |
+| clk_out1_pixelClkGen_1 | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            43.5 |
+| clkfbout_pixelClkGen   | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            20.0 |
+| clkfbout_pixelClkGen_1 | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            20.0 |
 | sys_clk_pin            | clk                                        |            10.0 |
 +------------------------+--------------------------------------------+-----------------+
 
@@ -146,11 +146,11 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.128 |
+| main                                           |     0.130 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.005 |
+|   inst_graphic                                 |     0.007 |
 |     inst_brom_player                           |     0.003 |
 |       U0                                       |     0.003 |
 |         inst_blk_mem_gen                       |     0.003 |
@@ -216,12 +216,12 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
-|     inst_brom_util                             |     0.001 |
-|       U0                                       |     0.001 |
-|         inst_blk_mem_gen                       |     0.001 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.001 |
-|             valid.cstr                         |     0.001 |
-|               bindec_a.bindec_inst_a           |     0.000 |
+|     inst_brom_util                             |     0.002 |
+|       U0                                       |     0.002 |
+|         inst_blk_mem_gen                       |     0.002 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.002 |
+|             valid.cstr                         |     0.002 |
+|               bindec_a.bindec_inst_a           |    <0.001 |
 |               has_mux_a.A                      |    <0.001 |
 |               ramloop[0].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
@@ -243,7 +243,17 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[18].ram.r                |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
+|               ramloop[19].ram.r                |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
 |               ramloop[1].ram.r                 |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
+|               ramloop[20].ram.r                |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
+|               ramloop[21].ram.r                |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
+|               ramloop[22].ram.r                |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
+|               ramloop[23].ram.r                |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[2].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |

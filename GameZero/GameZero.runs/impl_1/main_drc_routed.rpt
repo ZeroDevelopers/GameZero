@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Wed May 31 18:56:06 2017
-| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date         : Fri Jun 02 14:42:14 2017
+| Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -74,7 +74,7 @@ Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net inst_graphic/inst_vga/Wolvie_Life_cntV_reg[5] is a gated clock net sourced by a combinational pin inst_graphic/inst_vga/brom_util_addr_reg[12]_i_4/O, cell inst_graphic/inst_vga/brom_util_addr_reg[12]_i_4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/brom_util_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_util_addr_reg[16]_i_2/O, cell inst_graphic/brom_util_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

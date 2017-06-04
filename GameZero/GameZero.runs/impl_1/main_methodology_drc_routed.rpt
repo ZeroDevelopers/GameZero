@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Wed May 31 18:56:09 2017
-| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date         : Fri Jun 02 14:42:15 2017
+| Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 137
+             Violations found: 141
 +-----------+----------+------------------------------------------------+------------+
 | Rule      | Severity | Description                                    | Violations |
 +-----------+----------+------------------------------------------------+------------+
 | TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                    | 70         |
 | TIMING-18 | Warning  | Missing input or output delay                  | 14         |
-| TIMING-20 | Warning  | Non-clocked latch                              | 51         |
+| TIMING-20 | Warning  | Non-clocked latch                              | 55         |
 +-----------+----------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -677,45 +677,65 @@ Related violations: <none>
 
 TIMING-20#43 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[1] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[1]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[13] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#44 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[2] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[2]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[14] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#45 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[3] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[3]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[15] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#46 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[4] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[4]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[16] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[16]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#47 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[5] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[5]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[1] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#48 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[6] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[6]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[2] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#49 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[7] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[7]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[3] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#50 Warning
 Non-clocked latch  
-The latch inst_graphic/brom_util_addr_reg[8] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[8]/G is not reached by a timing clock
+The latch inst_graphic/brom_util_addr_reg[4] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#51 Warning
+Non-clocked latch  
+The latch inst_graphic/brom_util_addr_reg[5] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch inst_graphic/brom_util_addr_reg[6] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch inst_graphic/brom_util_addr_reg[7] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch inst_graphic/brom_util_addr_reg[8] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
 Non-clocked latch  
 The latch inst_graphic/brom_util_addr_reg[9] cannot be properly analyzed as its control pin inst_graphic/brom_util_addr_reg[9]/G is not reached by a timing clock
 Related violations: <none>

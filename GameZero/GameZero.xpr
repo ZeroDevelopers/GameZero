@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/edoardo/Desktop/GameZero/GameZero.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0bd86a4875b1456bb971827f95f78ecf"/>
@@ -36,13 +36,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="8"/>
-    <Option Name="WTModelSimExportSim" Val="8"/>
-    <Option Name="WTQuestaExportSim" Val="8"/>
-    <Option Name="WTIesExportSim" Val="8"/>
-    <Option Name="WTVcsExportSim" Val="8"/>
-    <Option Name="WTRivieraExportSim" Val="8"/>
-    <Option Name="WTActivehdlExportSim" Val="8"/>
+    <Option Name="WTXSimExportSim" Val="15"/>
+    <Option Name="WTModelSimExportSim" Val="15"/>
+    <Option Name="WTQuestaExportSim" Val="15"/>
+    <Option Name="WTIesExportSim" Val="15"/>
+    <Option Name="WTVcsExportSim" Val="15"/>
+    <Option Name="WTRivieraExportSim" Val="15"/>
+    <Option Name="WTActivehdlExportSim" Val="15"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -53,24 +53,6 @@
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/new/vga.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_movement.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_jump.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_attack.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -102,6 +84,27 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/main.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_attack.vhd">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_movement.vhd">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Green_Goblin_jump.vhd">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -148,19 +151,6 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="pixelClkGen" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pixelClkGen">
-      <File Path="$PSRCDIR/sources_1/ip/pixelClkGen_1/pixelClkGen.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="pixelClkGen"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="playerBROM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/playerBROM">
       <File Path="$PSRCDIR/sources_1/ip/playerBROM/playerBROM.xci">
         <FileInfo>
@@ -184,6 +174,19 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="utilBROM"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="pixelClkGen" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pixelClkGen">
+      <File Path="$PSRCDIR/sources_1/ip/pixelClkGen_1/pixelClkGen.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="pixelClkGen"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -215,14 +218,6 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pixelClkGen_synth_1" Type="Ft3:Synth" SrcSet="pixelClkGen" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/pixelClkGen_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="playerBROM_synth_1" Type="Ft3:Synth" SrcSet="playerBROM" Part="xc7a100tcsg324-1" ConstrsSet="playerBROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/playerBROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
@@ -234,6 +229,16 @@
     <Run Id="utilBROM_synth_1" Type="Ft3:Synth" SrcSet="utilBROM" Part="xc7a100tcsg324-1" ConstrsSet="utilBROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/utilBROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="pixelClkGen_synth_1" Type="Ft3:Synth" SrcSet="pixelClkGen" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/pixelClkGen_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -255,21 +260,6 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pixelClkGen_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Default settings for Implementation." SynthRun="pixelClkGen_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="playerBROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="playerBROM" Description="Default settings for Implementation." SynthRun="playerBROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
@@ -288,6 +278,23 @@
     <Run Id="utilBROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="utilBROM" Description="Default settings for Implementation." SynthRun="utilBROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="pixelClkGen_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="pixelClkGen" Description="Default settings for Implementation." SynthRun="pixelClkGen_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

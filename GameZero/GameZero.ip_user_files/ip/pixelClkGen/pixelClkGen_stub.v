@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Wed May 31 12:47:39 2017
+// Date        : Fri Jun 02 14:33:33 2017
 // Host        : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen_stub.v
+//               C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen_stub.v
 // Design      : pixelClkGen
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
