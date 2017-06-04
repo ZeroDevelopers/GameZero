@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Sun Jun 04 22:10:36 2017
+| Date             : Sun Jun 04 22:46:51 2017
 | Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.230 |
+| Total On-Chip Power (W)  | 0.231 |
 | Dynamic (W)              | 0.130 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
@@ -50,10 +50,10 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1839 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1838 |       --- |             --- |
 |   LUT as Logic |    <0.001 |      934 |     63400 |            1.47 |
-|   CARRY4       |    <0.001 |      147 |     15850 |            0.93 |
 |   Register     |    <0.001 |      366 |    126800 |            0.29 |
+|   CARRY4       |    <0.001 |      147 |     15850 |            0.93 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
 |   Others       |     0.000 |      122 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
@@ -62,7 +62,7 @@ Table of Contents
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.230 |          |           |                 |
+| Total          |     0.231 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 

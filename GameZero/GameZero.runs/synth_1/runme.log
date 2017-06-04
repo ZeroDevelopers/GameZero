@@ -14,23 +14,23 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 31044 
+INFO: Helper process launched with PID 25932 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 283.594 ; gain = 73.250
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 284.563 ; gain = 74.117
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:40]
-INFO: [Synth 8-3491] module 'pixelClkGen' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:5' bound to instance 'inst_pixelClkGen' of component 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:545]
-INFO: [Synth 8-638] synthesizing module 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'pixelClkGen' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:5' bound to instance 'inst_pixelClkGen' of component 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:545]
+INFO: [Synth 8-638] synthesizing module 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:13]
 INFO: [Synth 8-3491] module 'graphic' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:37' bound to instance 'inst_graphic' of component 'graphic' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:554]
 INFO: [Synth 8-638] synthesizing module 'graphic' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
 WARNING: [Synth 8-614] signal 'reset_graphic' is read in the process but is not in the sensitivity list [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:323]
 INFO: [Synth 8-3491] module 'vga' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:32' bound to instance 'inst_vga' of component 'vga' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:627]
 INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'vga' (1#1) [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
-INFO: [Synth 8-3491] module 'playerBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:5' bound to instance 'inst_brom_player' of component 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
-INFO: [Synth 8-638] synthesizing module 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'utilBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:5' bound to instance 'inst_brom_util' of component 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
-INFO: [Synth 8-638] synthesizing module 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'playerBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:5' bound to instance 'inst_brom_player' of component 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
+INFO: [Synth 8-638] synthesizing module 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'utilBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:5' bound to instance 'inst_brom_util' of component 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
+INFO: [Synth 8-638] synthesizing module 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'graphic' (2#1) [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
 INFO: [Synth 8-3491] module 'Wolverine_movement' declared at 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:37' bound to instance 'inst_Wolvie_mov' of component 'Wolverine_movement' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:581]
 INFO: [Synth 8-638] synthesizing module 'Wolverine_movement' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:53]
@@ -115,7 +115,7 @@ WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana3_p
 WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana3_pos[0]
 WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Wolvie_reversed_in
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 322.059 ; gain = 111.715
+Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 323.035 ; gain = 112.590
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -144,7 +144,7 @@ WARNING: [Synth 8-3295] tying undriven pin inst_Wolvie_jump:GreenGoblin_pos[2] t
 WARNING: [Synth 8-3295] tying undriven pin inst_Wolvie_jump:GreenGoblin_pos[1] to constant 0 [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:620]
 WARNING: [Synth 8-3295] tying undriven pin inst_Wolvie_jump:GreenGoblin_pos[0] to constant 0 [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:620]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 322.059 ; gain = 111.715
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 323.035 ; gain = 112.590
 ---------------------------------------------------------------------------------
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'pixelClkGen' instantiated as 'inst_pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:545]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'playerBROM' instantiated as 'inst_graphic/inst_brom_player' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
@@ -154,12 +154,12 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
 Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
 Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
@@ -169,24 +169,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 642.223 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 642.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:42 ; elapsed = 00:00:52 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished Constraint Validation : Time (s): cpu = 00:00:55 ; elapsed = 00:01:09 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:42 ; elapsed = 00:00:52 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:55 ; elapsed = 00:01:09 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-26796-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-25300-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 4).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:53 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:09 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
@@ -261,7 +261,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'movement_enable_reg' [C:/Us
 WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_image_reg' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:347]
 WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_image_reg' [C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:343]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:44 ; elapsed = 00:00:55 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:13 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,13 +310,13 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 6     
 	   2 Input      4 Bit        Muxes := 6     
 	   6 Input      4 Bit        Muxes := 1     
 	   3 Input      4 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 39    
+	   2 Input      1 Bit        Muxes := 38    
 	   7 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
 	  11 Input      1 Bit        Muxes := 1     
@@ -433,9 +433,8 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      9 Bit        Muxes := 2     
-	   2 Input      7 Bit        Muxes := 1     
 	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -517,7 +516,7 @@ WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana2_p
 WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana2_pos[13]
 WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Pedana2_pos[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'inst_Wolvie_jump/Wolvie_new_image_reg[1]' (FDSE) to 'inst_Wolvie_jump/Wolvie_new_image_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst_Wolvie_jump/Wolvie_new_image_reg[0]' (FDRE) to 'inst_Wolvie_jump/Wolvie_new_image_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Wolvie_jump/\Wolvie_new_image_reg[2] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_Wolvie_jump/\Wolvie_new_image_reg[3] )
 INFO: [Synth 8-3886] merging instance 'GreenGoblin_image_reg[2]' (LDC) to 'GreenGoblin_image_reg[0]'
@@ -757,7 +756,7 @@ INFO: [Synth 8-3886] merging instance 'inst_graphic/Wolvie_head_cntH_reg[2]' (FD
 INFO: [Synth 8-3886] merging instance 'inst_graphic/Wolvie_head_cntH_reg[1]' (FDE) to 'inst_graphic/Wolvie_head_cntH_reg[1]__0'
 INFO: [Synth 8-3886] merging instance 'inst_graphic/Wolvie_head_cntH_reg[0]' (FDE) to 'inst_graphic/Wolvie_head_cntH_reg[0]__0'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:16 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:37 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -774,10 +773,10 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'inst_pixelClkGen/clk_out1' to pin 'inst_pixelClkGen/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:33 ; elapsed = 00:01:45 . Memory (MB): peak = 642.223 ; gain = 431.879
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:56 ; elapsed = 00:02:12 . Memory (MB): peak = 642.219 ; gain = 431.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:44 ; elapsed = 00:01:56 . Memory (MB): peak = 713.238 ; gain = 502.895
+Finished Timing Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:30 . Memory (MB): peak = 713.324 ; gain = 502.879
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -789,7 +788,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:46 ; elapsed = 00:01:58 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Technology Mapping : Time (s): cpu = 00:02:16 ; elapsed = 00:02:32 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -813,7 +812,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:47 ; elapsed = 00:01:59 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished IO Insertion : Time (s): cpu = 00:02:18 ; elapsed = 00:02:35 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -826,7 +825,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:47 ; elapsed = 00:01:59 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:18 ; elapsed = 00:02:35 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -838,25 +837,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:19 ; elapsed = 00:02:35 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:19 ; elapsed = 00:02:35 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:19 ; elapsed = 00:02:36 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:19 ; elapsed = 00:02:36 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -880,12 +879,12 @@ Report Cell Usage:
 |3     |utilBROM_bbox    |     1|
 |4     |BUFG             |     1|
 |5     |CARRY4           |   147|
-|6     |LUT1             |   225|
-|7     |LUT2             |   231|
-|8     |LUT3             |   153|
-|9     |LUT4             |   158|
-|10    |LUT5             |   126|
-|11    |LUT6             |   205|
+|6     |LUT1             |   226|
+|7     |LUT2             |   232|
+|8     |LUT3             |   151|
+|9     |LUT4             |   157|
+|10    |LUT5             |   124|
+|11    |LUT6             |   207|
 |12    |FDRE             |   294|
 |13    |FDSE             |     5|
 |14    |LD               |    50|
@@ -899,19 +898,19 @@ Report Instance Areas:
 +------+-------------------+-------------------+------+
 |      |Instance           |Module             |Cells |
 +------+-------------------+-------------------+------+
-|1     |top                |                   |  1642|
+|1     |top                |                   |  1641|
 |2     |  inst_Wolvie_att  |Wolvie_attack      |    29|
-|3     |  inst_Wolvie_jump |Wolvie_jump        |    83|
+|3     |  inst_Wolvie_jump |Wolvie_jump        |    82|
 |4     |  inst_Wolvie_mov  |Wolverine_movement |   145|
 |5     |  inst_graphic     |graphic            |  1068|
 |6     |    inst_vga       |vga                |   124|
 +------+-------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:19 ; elapsed = 00:02:36 . Memory (MB): peak = 719.617 ; gain = 509.172
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 180 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:14 ; elapsed = 00:01:31 . Memory (MB): peak = 720.250 ; gain = 188.523
-Synthesis Optimization Complete : Time (s): cpu = 00:01:48 ; elapsed = 00:02:00 . Memory (MB): peak = 720.250 ; gain = 509.906
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:36 ; elapsed = 00:01:57 . Memory (MB): peak = 719.617 ; gain = 189.613
+Synthesis Optimization Complete : Time (s): cpu = 00:02:20 ; elapsed = 00:02:36 . Memory (MB): peak = 719.617 ; gain = 509.172
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 205 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -926,7 +925,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 274 Infos, 241 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:01:55 . Memory (MB): peak = 720.250 ; gain = 509.906
+synth_design: Time (s): cpu = 00:02:20 ; elapsed = 00:02:30 . Memory (MB): peak = 719.617 ; gain = 509.172
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/main.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 720.250 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jun 04 22:06:45 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 719.617 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 04 22:41:26 2017...

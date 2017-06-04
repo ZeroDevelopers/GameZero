@@ -80,12 +80,14 @@ begin
 process(enable)
 begin   
         if rising_edge(frame_clk) then
-            if enable = '1' then
-                jump_enable <= '1';
-                W_action_cnt <= W_action_cnt + 1;
-            elsif W_action_cnt = W_ACTION_FRAMES -1 then
+            if W_action_cnt = W_ACTION_FRAMES -1 then
                 W_action_cnt <= 0;
                 jump_enable <= '0';
+            else    
+                if enable = '1' then
+                    jump_enable <= '1';
+                end if;
+            W_action_cnt <= W_action_cnt + 1;
             end if;
         end if;
 end process;
@@ -97,10 +99,10 @@ begin
         if rising_edge(frame_clk)  then
             if rising = '1' AND jump_enable = '1' then
                 Wolvie_vert_new_pos (8 downto 0) <= Wolvie_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT;
-                Wolvie_new_image <= "1010";
+                Wolvie_new_image <= "1000";
             elsif descending = '1' then
                 Wolvie_vert_new_pos (8 downto 0) <= Wolvie_curr_pos (18 downto 10) + PIXEL_INCREMENT;
-                Wolvie_new_image <= "1011";
+                Wolvie_new_image <= "1010";
             end if;
         end if;
 end process;

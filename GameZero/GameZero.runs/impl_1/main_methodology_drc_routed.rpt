@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sun Jun 04 22:10:31 2017
+| Date         : Sun Jun 04 22:46:44 2017
 | Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -rpx main_methodology_drc_routed.rpx
 | Design       : main
@@ -247,7 +247,7 @@ Related violations: <none>
 
 TIMING-17#41 Warning
 Non-clocked sequential cell  
-The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[0]/C is not reached by a timing clock
+The clock pin inst_Wolvie_jump/Wolvie_new_image_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Warning
