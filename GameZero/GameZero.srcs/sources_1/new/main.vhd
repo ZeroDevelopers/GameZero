@@ -29,6 +29,7 @@ use ieee.numeric_std.all;
 entity main is
     Port (  clk : in STD_LOGIC;
             but_left, but_right, but_mid, but_up : in std_logic;
+            reset : in std_logic; -- Starting position of players with all lives
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -66,6 +67,7 @@ end component;
 component Wolverine_movement is
 port (  frame_clk : in std_logic;
         enable : in std_logic;
+        reset : in std_logic;
         movement_type : in std_logic_vector (1 downto 0);
         GreenGoblin_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in std_logic_vector (18 downto 0);
         Wolvie_curr_pos : in std_logic_vector (18 downto 0);
@@ -102,11 +104,13 @@ component Wolvie_jump is
 Port (
        frame_clk : in STD_LOGIC; 
        enable :  in STD_LOGIC;
+       reset : in std_logic;
        Wolvie_curr_pos : in std_logic_vector (18 downto 0);
        Wolvie_curr_image : in std_logic_vector (3 downto 0); 
        Wolvie_vert_new_pos : out std_logic_vector (8 downto 0);
        Wolvie_new_image : out std_logic_vector (3 downto 0);
        Wolvie_status : out STD_LOGIC;
+       GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
        Pedana1_pos : in std_logic_vector (18 downto 0);  
        Pedana1_image : in std_logic_vector (1 downto 0);
        Pedana2_pos : in std_logic_vector (18 downto 0);
@@ -195,6 +199,10 @@ constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
 constant LEFT : STD_LOGIC_VECTOR (1 downto 0) := "01";
 constant JUMP : STD_LOGIC_VECTOR (1 downto 0) := "10";
 
+-- Starting Positions
+constant WOLVIE_START_HOR_POS : std_logic_vector(9 downto 0) := "0101111110";
+constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
+
 
 -- signals to create the FRAME_CLOCK
 constant FRAME_PIXELS : natural := 420000;
@@ -218,8 +226,8 @@ signal GG_dec_mov_disable, GG_dec_att_disable, GG_jump_status: std_logic;
 -- Signals for Wolverine
 signal Wolvie_lives : std_logic_vector(2 downto 0) := "100";
 signal Wolvie_pos: std_logic_vector (18 downto 0);
-signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0) := "0101110010";
-signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0) := "110010000";
+signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0);
+signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0);
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
 signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image, Wolvie_jump_image : std_logic_vector (3 downto 0) := "0000";
 -- Movement signals
@@ -352,10 +360,9 @@ GreenGoblin_image <= GreenGoblin_att_image when GG_dec_att_disable = '1'
 process(frame_clk)
 begin   
         if rising_edge(frame_clk) then
-            if start = '1' then
-                start <= '0';
+            if reset = '0' then
                 GreenGoblin_pos (18 downto 0) <= "1100100000000010100";
-                Wolvie_pos (18 downto 0) <= "1100100000101110010";
+                Wolvie_pos <= "1100000000101111110";
             else 
                 Wolvie_pos (18 downto 10) <= Wolvie_vert_pos (8 downto 0);
                 Wolvie_pos (9 downto 0) <= Wolvie_hor_pos (9 downto 0);
@@ -582,6 +589,7 @@ inst_Wolvie_mov : Wolverine_movement
 port map 
 (   frame_clk           => frame_clk,
     enable              => wolvie_mov_enable,
+    reset               => reset,
     movement_type       => wolvie_mov_type,
     GreenGoblin_pos     => GreenGoblin_pos,
     Pedana1_pos         => Pedana1_pos,
@@ -621,11 +629,13 @@ inst_Wolvie_jump : Wolvie_jump
 port map
 (   frame_clk           => frame_clk,
     enable              => Wolvie_jump_enable,
+    reset               => reset,
     Wolvie_vert_new_pos      => Wolvie_vert_pos,
     Wolvie_new_image    => Wolvie_jump_image,
     Wolvie_curr_pos     => Wolvie_pos,
     Wolvie_curr_image   => Wolvie_image,
     Wolvie_status       => W_jump_status,
+    GreenGoblin_pos     => GreenGoblin_pos,
     Pedana1_pos         => Pedana1_pos,
     Pedana1_image       => Pedana1_image,
     Pedana2_pos         => Pedana2_pos,

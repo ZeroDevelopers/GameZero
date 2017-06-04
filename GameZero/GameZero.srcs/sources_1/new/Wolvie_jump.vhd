@@ -37,6 +37,7 @@ entity Wolvie_jump is
     Port (
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
+          reset : in std_logic;
           Wolvie_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
           Wolvie_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
           Wolvie_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
@@ -64,8 +65,11 @@ constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural :=100;
 constant MOVEMENT_FRAMES : natural := 4;
 
+constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
+
+
 -- Signals for Wolverine
-constant W_ACTION_FRAMES : natural := 100;
+constant W_ACTION_FRAMES : natural := 150;
 signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1 := 0;
 
 
@@ -97,9 +101,11 @@ end process;
 process(frame_clk, jump_enable)
 begin
         if rising_edge(frame_clk)  then
-            if rising = '1' AND jump_enable = '1' then
+            if reset = '0' then
+                Wolvie_vert_new_pos <= WOLVIE_START_VERT_POS;
+            elsif rising = '1' AND jump_enable = '1' then
                 Wolvie_vert_new_pos (8 downto 0) <= Wolvie_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT;
-                Wolvie_new_image <= "1000";
+                Wolvie_new_image <= "1001";
             elsif descending = '1' then
                 Wolvie_vert_new_pos (8 downto 0) <= Wolvie_curr_pos (18 downto 10) + PIXEL_INCREMENT;
                 Wolvie_new_image <= "1010";
@@ -117,7 +123,7 @@ rising <= '1' when jump_enable = '1' AND
 descending <= '0' when  ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
                         ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
                         ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
-                        (Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = SCREEN_HEIGHT -WALL_WIDTH)OR
+                        (Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE >= SCREEN_HEIGHT -WALL_WIDTH)OR
                         (Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = GreenGoblin_pos (18 downto 10) AND Wolvie_curr_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) AND Wolvie_curr_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0)+ PLAYER_SIZE)
                   else '1';
                   

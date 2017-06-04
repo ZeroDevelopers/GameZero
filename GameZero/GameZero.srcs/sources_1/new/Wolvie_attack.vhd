@@ -61,7 +61,7 @@ constant PIXEL_INCREMENT : natural := 1;
 constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 
-constant W_ATTACK_FRAMES : natural := 5;
+constant W_ATTACK_FRAMES : natural := 10;
 constant MOV_IMG : natural := 5;
 constant ATTACK_IMG : natural := 4;
 
