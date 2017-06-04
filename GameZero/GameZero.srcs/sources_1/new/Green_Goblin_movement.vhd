@@ -67,8 +67,8 @@ constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
 constant LEFT : STD_LOGIC_VECTOR (1 downto 0) := "01";
 
 -- Signals for Wolverine
-constant W_ACTION_FRAMES : natural := 10;
-signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1;
+constant GG_ACTION_FRAMES : natural := 10;
+signal GG_action_cnt : natural range 0 to GG_ACTION_FRAMES -1;
 
 
 --enables for movements
@@ -85,7 +85,7 @@ process(enable, Green_Goblin_curr_image)
 begin 
         if enable = '1' then
             movement_enable <= '1';
-        elsif enable = '0' AND  W_action_cnt = W_ACTION_FRAMES -1 then
+        elsif enable = '0' AND  GG_action_cnt = GG_ACTION_FRAMES -1 then
             movement_enable <= '0';
         end if;
 end process;
@@ -94,7 +94,7 @@ end process;
 
 
 
---manage reversed, image and new position of wolverine
+--manage reversed, image and new position of greengoblin
 process(frame_clk, movement_type, movement_enable)
 begin
         if rising_edge(frame_clk) AND movement_enable = '1' then
@@ -133,21 +133,17 @@ right_enable <=  '0' when Green_Goblin_curr_pos (9 downto 0) + PLAYER_SIZE + PIX
                            Green_Goblin_curr_pos (18 downto 10) >= Wolvie_pos (18 downto 10)) 
                      else '1';    
 
---process to modify the image of wolverine in movement
+--process to modify the image of greengoblin in movement
 
 process(frame_clk, enable)
 begin
        if rising_edge(frame_clk) then    
             if movement_enable = '1' then
-                if W_action_cnt = W_ACTION_FRAMES -1 then
-                    W_action_cnt <= 0;
-                    if Green_Goblin_curr_image + 1 < MOVEMENT_FRAMES then
-                        Green_Goblin_new_image <= Green_Goblin_curr_image + 1;
-                    else
-                        Green_Goblin_new_image <= (others => '0');    
-                    end if;
+                if GG_action_cnt = GG_ACTION_FRAMES -1 then
+                    GG_action_cnt <= 0;
+                    Green_Goblin_new_image <= "000";
                 else
-                    W_action_cnt <= W_action_cnt +1;    
+                    GG_action_cnt <= GG_action_cnt +1;    
                 end if;
             end if;
         end if;

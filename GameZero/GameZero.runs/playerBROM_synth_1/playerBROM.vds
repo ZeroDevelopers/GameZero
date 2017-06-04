@@ -2,12 +2,12 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Fri Jun 02 10:35:10 2017
-# Process ID: 5992
-# Current directory: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1
+# Start of session at: Sun Jun 04 21:26:05 2017
+# Process ID: 35132
+# Current directory: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/playerBROM_synth_1
 # Command line: vivado.exe -log playerBROM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source playerBROM.tcl
-# Log file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1/playerBROM.vds
-# Journal file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1\vivado.jou
+# Log file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/playerBROM_synth_1/playerBROM.vds
+# Journal file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/playerBROM_synth_1\vivado.jou
 #-----------------------------------------------------------
 source playerBROM.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP playerBROM, cache-ID = d4069c64ecbd066e.

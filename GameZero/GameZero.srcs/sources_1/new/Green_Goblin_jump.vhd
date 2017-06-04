@@ -87,7 +87,7 @@ begin
 end process;
 
 
--- process to move upward or downward wolverine
+-- process to move upward or downward greengoblin
 process(frame_clk, jump_enable)
 begin
         if rising_edge(frame_clk)  then
@@ -106,9 +106,9 @@ rising <= '1' when jump_enable = '1' AND
               else '0';  
 
 
-descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "11")OR
-                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "11")OR
-                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "11")OR
+descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
+                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
+                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
                         (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = SCREEN_HEIGHT -WALL_WIDTH)OR
                         (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Wolvie_pos (18 downto 10) AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE)
                   else '1';
@@ -123,15 +123,8 @@ begin
             if  GG_action_cnt = GG_ACTION_FRAMES -1 then
                  GG_action_cnt <= 0;
             else
-                if GG_action_cnt = 0 then
-                    GreenGoblin_new_image <= "000";
-                end if;
-                GG_action_cnt <= GG_action_cnt + 1;    
-                if GreenGoblin_curr_image = "1001" then
-                    GreenGoblin_new_image <= "1010";
-                elsif GreenGoblin_curr_image = "1010" OR GreenGoblin_curr_image = "1011" then
-                    GreenGoblin_new_image <= "1011";
-                end if;
+                 GreenGoblin_new_image <= "000";
+                 GG_action_cnt <= GG_action_cnt + 1;
             end if;    
         end if;
 end process;
