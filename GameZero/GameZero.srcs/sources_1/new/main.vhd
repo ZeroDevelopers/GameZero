@@ -28,7 +28,8 @@ use ieee.numeric_std.all;
 
 entity main is
     Port (  clk : in STD_LOGIC;
-            but_left, but_right, but_mid, but_up : in std_logic;
+            W_but_left, W_but_right, W_but_mid, W_but_up : in std_logic;
+            GG_but_left, GG_but_right, GG_but_mid, GG_but_up : in std_logic;
             reset : in std_logic; -- Starting position of players with all lives
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
@@ -192,6 +193,7 @@ constant FIRE_SIZE : natural := 20;
 constant DELAY : natural := 1;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
+constant PEDANA_WIDTH : natural := 200;
 
 --constants for mapping movement
 constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
@@ -201,6 +203,10 @@ constant JUMP : STD_LOGIC_VECTOR (1 downto 0) := "10";
 -- Starting Positions
 constant WOLVIE_START_HOR_POS : std_logic_vector(9 downto 0) := "0101111110";
 constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
+
+-- Pedana constants for movement
+constant P_ACTION_FRAME : natural := 30;
+constant P_MOVING_FRAMES : natural := 600;
 
 
 -- signals to create the FRAME_CLOCK
@@ -242,8 +248,14 @@ signal Pedana3_pos: std_logic_vector (18 downto 0) := "1001111110101110010"; --"
 signal Pedana1_image : std_logic_vector(1 downto 0) := "10";
 signal Pedana2_image : std_logic_vector(1 downto 0) := "10";
 signal Pedana3_image : std_logic_vector(1 downto 0) := "10";
-constant P_ACTION_FRAME : natural := 10;
-signal P_action_cnt : natural range 0 to P_ACTION_FRAME -1;
+signal P1_action_cnt, P2_action_cnt, P3_action_cnt : natural range 0 to P_ACTION_FRAME -1 := 0;
+signal P_moving_cnt : natural range 0 to P_MOVING_FRAMES -1 := 0;
+signal P_select : std_logic_vector (1 downto 0);
+signal P_pos_tmp, P_tmp_tmp : std_logic_vector(9 downto 0);
+signal P1_moving, P2_moving, P3_moving : std_logic := '0'; -- These are the enablers 
+signal P1_actual_moving, P2_actual_moving, P3_actual_moving : std_logic := '0';  -- flags to determine wether finishing the animation
+signal P1_closing, P2_closing, P3_closing : std_logic; 
+
 
 -- Signals for the sbam
 signal Sbam_enable : std_logic := '0';
@@ -295,15 +307,15 @@ process (frame_clk, W_dec_disable)
 begin
     if rising_edge(frame_clk) then
         if W_dec_disable = '0' then
-            if but_right = '1' then
+            if W_but_right = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= RIGHT;
-            elsif but_left = '1' then
+            elsif W_but_left = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= LEFT;
-           elsif but_mid = '1' then
+           elsif W_but_mid = '1' then
                 Wolvie_att_enable <= '1';
-           elsif but_up = '1' then
+           elsif W_but_up = '1' then
                 if W_jump_status = '0' then
                     Wolvie_jump_enable <= '1';
                 else
@@ -326,15 +338,15 @@ process (frame_clk, GG_dec_disable)
 begin
     if rising_edge(frame_clk) then
         if GG_dec_disable = '0' then
-            if but_right = '1' then
+            if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
-            elsif but_left = '1' then
+            elsif GG_but_left = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= LEFT;
-           elsif but_mid = '1' then
+           elsif GG_but_mid = '1' then
                 GreenGoblin_att_enable <= '1';
-           elsif but_up = '1' AND W_jump_status = '0' then
+           elsif GG_but_up = '1' AND W_jump_status = '0' then
                 GreenGoblin_jump_enable <= '1'; 
            end if;
         else
@@ -370,6 +382,141 @@ begin
             end if;        
         end if;
 end process;
+
+-- Defining the "random" position of pedanas
+process (frame_clk, GreenGoblin_pos, Wolvie_pos)
+begin
+    if rising_edge(frame_clk) then
+        if P_moving_cnt = P_MOVING_FRAMES -1 then
+            P_moving_cnt <= 0;
+            
+            P_select <= GreenGoblin_pos(1 downto 0) XOR Wolvie_pos(1 downto 0) XOR Wolvie_pos(10 downto 9) XOR GreenGoblin_pos(10 downto 9);
+            if P_select = "11" then
+                P_select <= "00";
+            end if;
+            
+            -- Selection of the next position for the pedana selected
+            P_pos_tmp <= (GreenGoblin_pos(9 downto 0) OR Wolvie_pos(9 downto 0)) XOR Wolvie_pos(18 downto 9) XOR GreenGoblin_pos(18 downto 9);
+            
+            if P_select = "00" then   
+                P1_moving <= '1';
+            elsif P_select = "01" then
+                P2_moving <= '1';
+            elsif P_select = "10" then
+                P3_moving <= '1';
+            end if;
+        else
+            P_moving_cnt <= P_moving_cnt +1;
+            P1_moving <= '0';
+            P2_moving <= '0';
+            P3_moving <= '0';
+        end if;
+    end if;
+end process;
+
+
+
+-----------------------------------------
+-- Processes to move the pedanas ;) ahah
+-----------------------------------------
+
+process (frame_clk)
+begin
+    if rising_edge(frame_clk) and (P1_moving = '1' or P1_actual_moving = '1')  then
+        if (P1_moving = '1') then
+            P1_actual_moving <= '1';
+            Pedana1_image <= "01";  -- Start closing the selected pedana
+            P1_closing <= '1';
+        end if;
+        if P1_action_cnt = P_ACTION_FRAME -1 then
+            P1_action_cnt <= 0;
+            if Pedana1_image = "10" then
+                P1_actual_moving <= '0';
+            elsif Pedana1_image = "00" and P1_closing = '0' then
+                Pedana1_image <= "01";
+            elsif Pedana1_image = "01" and P1_closing = '0' then
+                Pedana1_image <= "10";
+            elsif Pedana1_image = "01" and P1_closing = '1' then
+                Pedana1_image <= "00";
+            elsif Pedana1_image = "00" and P1_closing = '1' then
+                P1_closing <= '0';
+                if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+                    Pedana1_pos (9 downto 0) <= "0010110100";
+                else
+                    Pedana1_pos (9 downto 0) <= P_pos_tmp;
+                end if;
+            end if;
+        else
+            P1_action_cnt <= P1_action_cnt +1;
+        end if;
+    end if;
+end process;
+
+process (frame_clk)
+begin
+    if rising_edge(frame_clk) and (P2_moving = '1' or P2_actual_moving = '1')  then
+        if (P2_moving = '1') then
+            P2_actual_moving <= '1';
+            Pedana2_image <= "01";  -- Start closing the selected pedana
+            P2_closing <= '1';
+        end if;
+        if P2_action_cnt = P_ACTION_FRAME -1 then
+            P2_action_cnt <= 0;
+           if Pedana2_image = "10" then
+                P2_actual_moving <= '0';
+            elsif Pedana2_image = "00" and P2_closing = '0' then
+                Pedana2_image <= "01";
+            elsif Pedana2_image = "01" and P2_closing = '0' then
+                Pedana2_image <= "10";
+            elsif Pedana2_image = "01" and P2_closing = '1' then
+                Pedana2_image <= "00";
+            elsif Pedana2_image = "00" and P2_closing = '1' then
+                P2_closing <= '0';
+                if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+                    Pedana2_pos (9 downto 0) <= "0010110100";
+                else
+                    Pedana2_pos (9 downto 0) <= P_pos_tmp;
+                end if;
+            end if;
+        else
+            P2_action_cnt <= P2_action_cnt +1;
+        end if;
+    end if;
+end process;
+
+process (frame_clk)
+begin
+    if rising_edge(frame_clk) and (P3_moving = '1' or P3_actual_moving = '1')  then
+        if (P3_moving = '1') then
+            P3_actual_moving <= '1';
+            Pedana3_image <= "01";  -- Start closing the selected pedana
+            P3_closing <= '1';
+        end if;
+        if P3_action_cnt = P_ACTION_FRAME -1 then
+            P3_action_cnt <= 0;
+            if Pedana3_image = "10" then
+                P3_actual_moving <= '0';
+            elsif Pedana3_image = "00" and P3_closing = '0' then
+                Pedana3_image <= "01";
+            elsif Pedana3_image = "01" and P3_closing = '0' then
+                Pedana3_image <= "10";
+            elsif Pedana3_image = "01" and P3_closing = '1' then
+                Pedana3_image <= "00";
+            elsif Pedana3_image = "00" and P3_closing = '1' then
+                P3_closing <= '0';
+               if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+                    Pedana3_pos (9 downto 0) <= "0010110100";
+                else
+                    Pedana3_pos (9 downto 0) <= P_pos_tmp;
+                end if;
+            end if;
+        else
+            P3_action_cnt <= P3_action_cnt +1;
+        end if;
+    end if;
+end process;
+
+
 
 ---- Process to move the Green Goblin
 
@@ -434,115 +581,9 @@ end process;
 --    end if;
 --end process;
 
--- Process to animate the pedanas ;) ahah
---process (frame_clk)
---begin
---    if rising_edge(frame_clk) then
---        if P_action_cnt = P_ACTION_FRAME -1 then
---            P_action_cnt <= 0;
---            if Pedana1_image < 3 then
---                Pedana1_image <= Pedana1_image +1;
---                Pedana2_image <= Pedana2_image +1;
---                Pedana3_image <= Pedana3_image +1;
---            else
---                Pedana1_image <= "00";
---                Pedana2_image <= "00";
---                Pedana3_image <= "00";
---            end if;
---        else
---            P_action_cnt <= P_action_cnt +1;
---        end if;
---    end if;
---end process;
 
 
 
-
----- Process to make the Silver Surfer fire
---process (frame_clk, SilverSurfer_image, SilverSurfer_reversed, FireBall_active)
---begin
---    if rising_edge(frame_clk) then
---        if SS_action_cnt = SS_ACTION_FRAMES -1 then
---            if SilverSurfer_image = "00" and FireBall_start = '1' then
---                FireBall_start <= '0';
---            elsif SilverSurfer_image = "11" and FireBall_start = '0' then
---                FireBall_start <= '1';
---                SilverSurfer_image <= "00";
---            else
---                if FireBall_active = '0' and SilverSurfer_fires = '1' then
---                    SilverSurfer_image <= SilverSurfer_image +1;
---                end if;
---            end if;
---            SS_action_cnt <= 0;
---        else
---            SS_action_cnt <= SS_action_cnt +1;
---        end if;
---    end if;
---end process;
-
-----process (frame_clk, FireBall_active, SilverSurfer_pos, delay_cnt)
-----begin
-----    if rising_edge (frame_clk) then
-----        if FireBall_active = '1' and delay_cnt = DELAY then
-----            if FireBall_pos(9 downto 0) > WALL_WIDTH then
-----                FireBall_active <= '0';
-----                SilverSurfer_canFire <= '1';
-----                delay_cnt <= 0;
-----            else
-----                FireBall_pos <= FireBall_pos +1;
-----            end if;
-----        elsif FireBall_active = '1' and delay_cnt < DELAY then
-----            delay_cnt <= delay_cnt +1;
-----        end if;  
-----    end if;
-----end process;
-
-
---FireBall_active <= '0' when FireBall_pos = "0000000000000000000"
---                    else '1';
-
-
---process(frame_clk, FireBall_active)
---begin
---    if rising_edge(frame_clk) then
---        if FireBall_active = '1' then
---            if FireBall_pos(9 downto 0) >= SCREEN_WIDTH - WALL_WIDTH - FIRE_SIZE then
---                FireBall_end <= '1';
---            else
---                FireBall_end <= '0';
---            end if;
---        end if;
---    end if;
---end process;
-
---process (frame_clk, FireBall_active, FireBall_end, FireBall_start)
---begin
---    if rising_edge(frame_clk) then
---        if frame_mov_cnt = '1' then
---            if FireBall_start = '1' and FireBall_active = '0' then
---                FireBall_pos <= SilverSurfer_pos + PLAYER_SIZE - FIRE_SIZE;
---            elsif FireBall_end = '1' then
---                FireBall_pos <= "0000000000000000000";
---            elsif FireBall_active = '1' then
---                FireBall_pos <= FireBall_pos +2;
---            end if;
---        end if;
---    end if;
---end process;
-
-
-
---process(frame_clk)
---begin
---    if rising_edge(frame_clk) then
---        if FireBall_cnt = 120 then
---            FireBall_cnt <= 0;
---            SilverSurfer_fires <= not SilverSurfer_fires;
---        else
---            FireBall_cnt <= FireBall_cnt +1;
---        end if;
---    end if;
---end process;
 
 
 
@@ -679,7 +720,7 @@ port map
     GreenGoblin_dec_disable  => GG_dec_att_disable,
     GreenGoblin_new_image    => GreenGoblin_att_image,
     Wolvie_life_dec    => GreenGoblin_life_dec,
-    Wolvie_attack_reset_out    => GreenGoblin_attack_reset,
+    Wolvie_attack_reset_out    => Wolvie_attack_reset,
     Sbam_active_out     => Sbam_enable
 );
 

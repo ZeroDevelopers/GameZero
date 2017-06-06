@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Tue Jun 06 17:13:44 2017
-# Process ID: 18412
-# Current directory: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1
+# Start of session at: Tue Jun 06 21:54:48 2017
+# Process ID: 10820
+# Current directory: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-# Log file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/main.vds
-# Journal file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1\vivado.jou
+# Log file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/main.vds
+# Journal file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source main.tcl -notrace

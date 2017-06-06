@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Tue Jun 06 17:20:22 2017
-| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date             : Tue Jun 06 21:57:57 2017
+| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.231 |
-| Dynamic (W)              | 0.131 |
+| Total On-Chip Power (W)  | 0.227 |
+| Dynamic (W)              | 0.127 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 83.9  |
-| Junction Temperature (C) | 26.1  |
+| Max Ambient (C)          | 84.0  |
+| Junction Temperature (C) | 26.0  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     2265 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1166 |     63400 |            1.84 |
-|   Register     |    <0.001 |      433 |    126800 |            0.34 |
-|   CARRY4       |    <0.001 |      194 |     15850 |            1.22 |
+| Slice Logic    |    <0.001 |     2690 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1401 |     63400 |            2.21 |
+|   Register     |    <0.001 |      527 |    126800 |            0.42 |
+|   CARRY4       |    <0.001 |      204 |     15850 |            1.29 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
-|   Others       |     0.000 |      129 |       --- |             --- |
+|   Others       |     0.000 |      142 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |     1871 |       --- |             --- |
-| Block RAM      |     0.005 |     56.5 |       135 |           41.85 |
-| MMCM           |     0.122 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       20 |       210 |            9.52 |
+| Signals        |     0.002 |     2119 |       --- |             --- |
+| Block RAM      |     0.006 |     56.5 |       135 |           41.85 |
+| MMCM           |     0.116 |        1 |         6 |           16.67 |
+| I/O            |     0.001 |       24 |       210 |           11.43 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.231 |          |           |                 |
+| Total          |     0.227 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,8 +72,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.009 |      0.017 |
-| Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
+| Vccint    |       1.000 |     0.026 |       0.010 |      0.017 |
+| Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -81,7 +81,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -129,10 +129,10 @@ Table of Contents
 | Clock                  | Domain                                     | Constraint (ns) |
 +------------------------+--------------------------------------------+-----------------+
 | clk                    | clk                                        |            10.0 |
-| clk_out1_pixelClkGen   | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            43.5 |
-| clk_out1_pixelClkGen_1 | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            43.5 |
-| clkfbout_pixelClkGen   | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            20.0 |
-| clkfbout_pixelClkGen_1 | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            20.0 |
+| clk_out1_pixelClkGen   | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            40.0 |
+| clk_out1_pixelClkGen_1 | inst_pixelClkGen/inst/clk_out1_pixelClkGen |            40.0 |
+| clkfbout_pixelClkGen   | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            10.0 |
+| clkfbout_pixelClkGen_1 | inst_pixelClkGen/inst/clkfbout_pixelClkGen |            10.0 |
 | sys_clk_pin            | clk                                        |            10.0 |
 +------------------------+--------------------------------------------+-----------------+
 
@@ -146,7 +146,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.131 |
+| main                                           |     0.127 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
@@ -154,11 +154,17 @@ Table of Contents
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
 |   inst_graphic                                 |     0.008 |
-|     inst_brom_player                           |     0.003 |
-|       U0                                       |     0.003 |
-|         inst_blk_mem_gen                       |     0.003 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.003 |
-|             valid.cstr                         |     0.003 |
+|     Pedana1_offset_reg[11]                     |     0.000 |
+|     Pedana1_offset_reg[14]                     |     0.000 |
+|     Pedana2_offset_reg[11]                     |     0.000 |
+|     Pedana2_offset_reg[14]                     |     0.000 |
+|     Pedana3_offset_reg[11]                     |     0.000 |
+|     Pedana3_offset_reg[14]                     |     0.000 |
+|     inst_brom_player                           |     0.004 |
+|       U0                                       |     0.004 |
+|         inst_blk_mem_gen                       |     0.004 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.004 |
+|             valid.cstr                         |     0.004 |
 |               bindec_a.bindec_inst_a           |    <0.001 |
 |               has_mux_a.A                      |    <0.001 |
 |               ramloop[0].ram.r                 |    <0.001 |
@@ -275,8 +281,8 @@ Table of Contents
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |     inst_vga                                   |    <0.001 |
-|   inst_pixelClkGen                             |     0.122 |
-|     inst                                       |     0.122 |
+|   inst_pixelClkGen                             |     0.116 |
+|     inst                                       |     0.116 |
 +------------------------------------------------+-----------+
 
 

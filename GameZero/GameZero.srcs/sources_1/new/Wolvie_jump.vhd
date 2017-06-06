@@ -69,7 +69,7 @@ constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 
 
 -- Signals for Wolverine
-constant W_ACTION_FRAMES : natural := 150;
+constant W_ACTION_FRAMES : natural := 200;
 signal W_action_cnt : natural range 0 to W_ACTION_FRAMES -1 := 0;
 
 

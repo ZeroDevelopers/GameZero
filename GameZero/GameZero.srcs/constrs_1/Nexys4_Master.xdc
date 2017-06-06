@@ -191,17 +191,17 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 set_property PACKAGE_PIN C12 [get_ports reset]
 set_property IOSTANDARD LVCMOS33 [get_ports reset]
 ##Bank = 15, Pin name = IO_L11N_T1_SRCC_15,					Sch name = BTNC
-set_property PACKAGE_PIN E16 [get_ports but_mid]
-set_property IOSTANDARD LVCMOS33 [get_ports but_mid]
+set_property PACKAGE_PIN E16 [get_ports W_but_mid]
+set_property IOSTANDARD LVCMOS33 [get_ports W_but_mid]
 ##Bank = 15, Pin name = IO_L14P_T2_SRCC_15,					Sch name = BTNU
-set_property PACKAGE_PIN F15 [get_ports but_up]
-set_property IOSTANDARD LVCMOS33 [get_ports but_up]
+set_property PACKAGE_PIN F15 [get_ports W_but_up]
+set_property IOSTANDARD LVCMOS33 [get_ports W_but_up]
 ##Bank = CONFIG, Pin name = IO_L15N_T2_DQS_DOUT_CSO_B_14,	Sch name = BTNL
-set_property PACKAGE_PIN T16 [get_ports but_left]
-set_property IOSTANDARD LVCMOS33 [get_ports but_left]
+set_property PACKAGE_PIN T16 [get_ports W_but_left]
+set_property IOSTANDARD LVCMOS33 [get_ports W_but_left]
 ##Bank = 14, Pin name = IO_25_14,							Sch name = BTNR
-set_property PACKAGE_PIN R10 [get_ports but_right]
-set_property IOSTANDARD LVCMOS33 [get_ports but_right]
+set_property PACKAGE_PIN R10 [get_ports W_but_right]
+set_property IOSTANDARD LVCMOS33 [get_ports W_but_right]
 ##Bank = 14, Pin name = IO_L21P_T3_DQS_14,					Sch name = BTND
 #set_property PACKAGE_PIN V10 [get_ports btnD]
 #set_property IOSTANDARD LVCMOS33 [get_ports btnD]
@@ -210,17 +210,17 @@ set_property IOSTANDARD LVCMOS33 [get_ports but_right]
 
 ##Pmod Header JA
 ##Bank = 15, Pin name = IO_L1N_T0_AD0N_15,					Sch name = JA1
-#set_property PACKAGE_PIN B13 [get_ports {JA[0]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {JA[0]}]
+set_property PACKAGE_PIN B13 [get_ports GG_but_mid]
+set_property IOSTANDARD LVCMOS33 [get_ports GG_but_mid]
 ##Bank = 15, Pin name = IO_L5N_T0_AD9N_15,					Sch name = JA2
-#set_property PACKAGE_PIN F14 [get_ports {JA[1]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {JA[1]}]
+set_property PACKAGE_PIN F14 [get_ports GG_but_up]
+set_property IOSTANDARD LVCMOS33 [get_ports GG_but_up]
 ##Bank = 15, Pin name = IO_L16N_T2_A27_15,					Sch name = JA3
-#set_property PACKAGE_PIN D17 [get_ports {JA[2]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {JA[2]}]
+set_property PACKAGE_PIN D17 [get_ports GG_but_left]
+set_property IOSTANDARD LVCMOS33 [get_ports GG_but_left]
 ##Bank = 15, Pin name = IO_L16P_T2_A28_15,					Sch name = JA4
-#set_property PACKAGE_PIN E17 [get_ports {JA[3]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {JA[3]}]
+set_property PACKAGE_PIN E17 [get_ports GG_but_right]
+set_property IOSTANDARD LVCMOS33 [get_ports GG_but_right]
 ##Bank = 15, Pin name = IO_0_15,								Sch name = JA7
 #set_property PACKAGE_PIN G13 [get_ports {JA[4]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {JA[4]}]
@@ -723,3 +723,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports VS]
 ##Bank = 14, Pin name = IO_L23N_T3_A02_D18_14,				Sch name = CRAM_A22
 #set_property PACKAGE_PIN U13 [get_ports {MemAdr[22]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {MemAdr[22]}]
+
+
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+set_property CONFIG_MODE SPIx4 [current_design]
