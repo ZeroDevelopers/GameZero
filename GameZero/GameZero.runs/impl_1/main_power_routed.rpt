@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Mon Jun 05 00:35:17 2017
-| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
+| Date             : Tue Jun 06 17:20:22 2017
+| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.232 |
-| Dynamic (W)              | 0.132 |
+| Total On-Chip Power (W)  | 0.231 |
+| Dynamic (W)              | 0.131 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1840 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      932 |     63400 |            1.47 |
-|   CARRY4       |    <0.001 |      147 |     15850 |            0.93 |
-|   Register     |    <0.001 |      369 |    126800 |            0.29 |
+| Slice Logic    |    <0.001 |     2265 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1166 |     63400 |            1.84 |
+|   Register     |    <0.001 |      433 |    126800 |            0.34 |
+|   CARRY4       |    <0.001 |      194 |     15850 |            1.22 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
-|   Others       |     0.000 |      122 |       --- |             --- |
+|   Others       |     0.000 |      129 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |     1641 |       --- |             --- |
+| Signals        |     0.002 |     1871 |       --- |             --- |
 | Block RAM      |     0.005 |     56.5 |       135 |           41.85 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       20 |       210 |            9.52 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.232 |          |           |                 |
+| Total          |     0.231 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.008 |      0.017 |
+| Vccint    |       1.000 |     0.025 |       0.009 |      0.017 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -146,7 +146,10 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.132 |
+| main                                           |     0.131 |
+|   inst_Green_Goblin_att                        |    <0.001 |
+|   inst_Green_Goblin_jump                       |    <0.001 |
+|   inst_Green_Goblin_mov                        |    <0.001 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |

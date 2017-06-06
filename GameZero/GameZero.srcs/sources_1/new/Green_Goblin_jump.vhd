@@ -38,7 +38,6 @@ entity Green_Goblin_jump is
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
           GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
-          GreenGoblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
           GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_status : out STD_LOGIC;
@@ -78,11 +77,17 @@ begin
 
 
 process(enable)
-begin
-        if enable = '1' then
-            jump_enable <= '1';
-        elsif GG_action_cnt = GG_ACTION_FRAMES -1 then
-            jump_enable <= '0';
+begin   
+        if rising_edge(frame_clk) then
+            if GG_action_cnt = GG_ACTION_FRAMES -1 then
+                GG_action_cnt <= 0;
+                jump_enable <= '0';
+            else    
+                if enable = '1' then
+                    jump_enable <= '1';
+                end if;
+            GG_action_cnt <= GG_action_cnt + 1;
+            end if;
         end if;
 end process;
 
@@ -93,8 +98,10 @@ begin
         if rising_edge(frame_clk)  then
             if rising = '1' AND jump_enable = '1' then
                 GreenGoblin_vert_new_pos (8 downto 0) <= GreenGoblin_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT;
+                GreenGoblin_new_image <= "000";
             elsif descending = '1' then
                 GreenGoblin_vert_new_pos (8 downto 0) <= GreenGoblin_curr_pos (18 downto 10) + PIXEL_INCREMENT;
+                GreenGoblin_new_image <= "000";
             end if;
         end if;
 end process;
@@ -115,18 +122,5 @@ descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pe
                   
 GreenGoblin_status <= rising OR descending;
 
---process for the jumping image of Green Goblin
-
-process(frame_clk)
-begin
-        if rising_edge(frame_clk) then
-            if  GG_action_cnt = GG_ACTION_FRAMES -1 then
-                 GG_action_cnt <= 0;
-            else
-                 GreenGoblin_new_image <= "000";
-                 GG_action_cnt <= GG_action_cnt + 1;
-            end if;    
-        end if;
-end process;
 
 end Behavioral;
