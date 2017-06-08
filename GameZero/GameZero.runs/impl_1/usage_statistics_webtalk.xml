@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Jun 08 18:57:16 2017'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Jun 08 19:30:40 2017'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1756540" description="" />
-  <keyValuePair key="date_generated" value="Thu Jun 08 18:57:16 2017" description="" />
+  <keyValuePair key="date_generated" value="Thu Jun 08 19:30:40 2017" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2016.4 (64-bit)" description="" />
   <keyValuePair key="project_id" value="0bd86a4875b1456bb971827f95f78ecf" description="" />
-  <keyValuePair key="project_iteration" value="45" description="" />
+  <keyValuePair key="project_iteration" value="46" description="" />
   <keyValuePair key="random_id" value="c6c1c5af329f546eae3473cf474104d0" description="" />
   <keyValuePair key="registration_id" value="211327551_0_0_345" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -341,7 +341,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="csg324" description="" />
-   <keyValuePair key="pct_clock_constrained" value="6.000000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="7.000000" description="" />
    <keyValuePair key="pct_inputs_defined" value="9" description="" />
    <keyValuePair key="platform" value="nt64" description="" />
    <keyValuePair key="process" value="typical" description="" />
@@ -717,10 +717,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:02:28s" description="" />
+   <keyValuePair key="elapsed" value="00:02:40s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="532.703MB" description="" />
-   <keyValuePair key="memory_peak" value="742.742MB" description="" />
+   <keyValuePair key="memory_gain" value="527.449MB" description="" />
+   <keyValuePair key="memory_peak" value="737.129MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="11" description="">
@@ -789,7 +789,7 @@
    <keyValuePair key="programdevice" value="40" description="" />
    <keyValuePair key="projectsettingscmdhandler" value="1" description="" />
    <keyValuePair key="recustomizecore" value="22" description="" />
-   <keyValuePair key="runbitgen" value="60" description="" />
+   <keyValuePair key="runbitgen" value="61" description="" />
    <keyValuePair key="runimplementation" value="7" description="" />
    <keyValuePair key="runsynthesis" value="15" description="" />
    <keyValuePair key="savefileproxyhandler" value="5" description="" />
