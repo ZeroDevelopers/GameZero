@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 -- Date        : Tue Jun 06 21:01:18 2017
 -- Host        : DESKTOP-K472J0U running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top pixelClkGen -prefix
+--               pixelClkGen_ pixelClkGen_sim_netlist.vhdl
 -- Design      : pixelClkGen
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity pixelClkGen_pixelClkGen_clk_wiz is
     clk_out1 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pixelClkGen_pixelClkGen_clk_wiz : entity is "pixelClkGen_clk_wiz";
 end pixelClkGen_pixelClkGen_clk_wiz;
 
 architecture STRUCTURE of pixelClkGen_pixelClkGen_clk_wiz is

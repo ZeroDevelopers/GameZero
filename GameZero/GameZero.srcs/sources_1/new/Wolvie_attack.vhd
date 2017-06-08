@@ -39,6 +39,8 @@ entity Wolvie_attack is
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
             attack_reset : in std_logic;
+            GreenGoblin_lives_in : in std_logic_vector(2 downto 0);
+            GreenGoblin_lives_out : out std_logic_vector(2 downto 0);
             GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_reversed : in std_logic;
@@ -156,6 +158,7 @@ begin
             GreenGoblin_hit <= '1';
             Sbam_active <= '1';
             GreenGoblin_attack_reset <= '1';
+            GreenGoblin_lives_out <= GreenGoblin_lives_in - 1;
         end if;  
     end if;
 end process;

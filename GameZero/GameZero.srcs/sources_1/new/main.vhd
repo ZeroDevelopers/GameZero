@@ -87,6 +87,8 @@ component Wolvie_attack is
        frame_clk : in STD_LOGIC;
        enable : in STD_LOGIC;
        attack_reset : in std_logic;
+       GreenGoblin_lives_in : in std_logic_vector(2 downto 0);
+       GreenGoblin_lives_out : out std_logic_vector(2 downto 0);
        GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
        Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
        Wolvie_reversed : in std_logic;
@@ -306,7 +308,7 @@ W_dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among al
 process (frame_clk, W_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if W_dec_disable = '0' then
+        if W_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if W_but_right = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= RIGHT;
@@ -337,7 +339,7 @@ GG_dec_disable <= GG_dec_mov_disable OR GG_dec_att_disable;
 process (frame_clk, GG_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if GG_dec_disable = '0' then
+        if GG_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
@@ -651,6 +653,8 @@ port map
 (   frame_clk           => frame_clk,
     enable              => wolvie_att_enable,
     attack_reset        => Wolvie_attack_reset,
+    GreenGoblin_lives_in =>  GreenGoblin_lives,
+    GreenGoblin_lives_out =>  GreenGoblin_lives,
     GreenGoblin_pos     => GreenGoblin_pos,
     Wolvie_pos          => Wolvie_pos,
     Wolvie_curr_image   => Wolvie_image,

@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Tue Jun 06 21:57:57 2017
-| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
+| Date             : Thu Jun 08 17:00:13 2017
+| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -50,17 +50,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     2690 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1401 |     63400 |            2.21 |
-|   Register     |    <0.001 |      527 |    126800 |            0.42 |
-|   CARRY4       |    <0.001 |      204 |     15850 |            1.29 |
+| Slice Logic    |    <0.001 |     2744 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1434 |     63400 |            2.26 |
+|   Register     |    <0.001 |      536 |    126800 |            0.42 |
+|   CARRY4       |    <0.001 |      207 |     15850 |            1.31 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
 |   Others       |     0.000 |      142 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |     2119 |       --- |             --- |
+| Signals        |     0.002 |     2161 |       --- |             --- |
 | Block RAM      |     0.006 |     56.5 |       135 |           41.85 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |     0.001 |       24 |       210 |           11.43 |
+| I/O            |    <0.001 |       24 |       210 |           11.43 |
 | Static Power   |     0.100 |          |           |                 |
 | Total          |     0.227 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -153,7 +153,7 @@ Table of Contents
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.008 |
+|   inst_graphic                                 |     0.009 |
 |     Pedana1_offset_reg[11]                     |     0.000 |
 |     Pedana1_offset_reg[14]                     |     0.000 |
 |     Pedana2_offset_reg[11]                     |     0.000 |
