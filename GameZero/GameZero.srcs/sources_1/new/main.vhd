@@ -28,6 +28,7 @@ use ieee.numeric_std.all;
 
 entity main is
     Port (  clk : in STD_LOGIC;
+            start : in std_logic;
             W_but_left, W_but_right, W_but_mid, W_but_up : in std_logic;
             GG_but_left, GG_but_right, GG_but_mid, GG_but_up : in std_logic;
             reset : in std_logic; -- Starting position of players with all lives
@@ -87,8 +88,7 @@ component Wolvie_attack is
        frame_clk : in STD_LOGIC;
        enable : in STD_LOGIC;
        attack_reset : in std_logic;
-       GreenGoblin_lives_in : in std_logic_vector(2 downto 0);
-       GreenGoblin_lives_out : out std_logic_vector(2 downto 0);
+       GreenGoblin_lives : in std_logic_vector(2 downto 0);
        GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
        Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
        Wolvie_reversed : in std_logic;
@@ -231,7 +231,7 @@ signal GG_dec_mov_disable, GG_dec_att_disable, GG_jump_status: std_logic;
 
 
 -- Signals for Wolverine
-signal Wolvie_lives : std_logic_vector(2 downto 0) := "100";
+signal Wolvie_lives, Wolvie_lives_tmp : std_logic_vector(2 downto 0) := "100";
 signal Wolvie_pos: std_logic_vector (18 downto 0);
 signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0);
 signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0);
@@ -274,9 +274,6 @@ signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset, Wolv
 
 
 
-signal start : STD_LOGIC;
-
-
 
 
 ---- Sinals for the Fire Ball
@@ -300,6 +297,16 @@ begin
     end if;
 end process;
 
+process(pixel_clk, start)
+begin
+    if rising_edge(pixel_clk) then
+        if start = '1' then
+            GreenGoblin_lives <= "100";
+        elsif GreenGoblin_life_dec = '1' then
+            GreenGoblin_lives <= GreenGoblin_lives -1;
+        end if;
+    end if;
+end process;
 
 
 -- Decoder for Wolverine
@@ -308,7 +315,7 @@ W_dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among al
 process (frame_clk, W_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if W_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+        if W_dec_disable = '0' then --and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if W_but_right = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= RIGHT;
@@ -334,12 +341,12 @@ end process;
 
 
 --decoder for GreenGoblin
-GG_dec_disable <= GG_dec_mov_disable OR GG_dec_att_disable;
+GG_dec_disable <= (GG_dec_mov_disable OR GG_dec_att_disable);
 
 process (frame_clk, GG_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if GG_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+        if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
@@ -442,7 +449,7 @@ begin
                 Pedana1_image <= "00";
             elsif Pedana1_image = "00" and P1_closing = '1' then
                 P1_closing <= '0';
-                if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+                if P_pos_tmp < WALL_WIDTH  OR  conv_integer(P_pos_tmp) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana1_pos (9 downto 0) <= "0010110100";
                 else
                     Pedana1_pos (9 downto 0) <= P_pos_tmp;
@@ -474,7 +481,7 @@ begin
                 Pedana2_image <= "00";
             elsif Pedana2_image = "00" and P2_closing = '1' then
                 P2_closing <= '0';
-                if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+                if P_pos_tmp < WALL_WIDTH  OR  conv_integer(P_pos_tmp) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana2_pos (9 downto 0) <= "0010110100";
                 else
                     Pedana2_pos (9 downto 0) <= P_pos_tmp;
@@ -653,8 +660,7 @@ port map
 (   frame_clk           => frame_clk,
     enable              => wolvie_att_enable,
     attack_reset        => Wolvie_attack_reset,
-    GreenGoblin_lives_in =>  GreenGoblin_lives,
-    GreenGoblin_lives_out =>  GreenGoblin_lives,
+    GreenGoblin_lives =>  GreenGoblin_lives,
     GreenGoblin_pos     => GreenGoblin_pos,
     Wolvie_pos          => Wolvie_pos,
     Wolvie_curr_image   => Wolvie_image,

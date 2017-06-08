@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/edoardo/Desktop/GameZero/GameZero.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0bd86a4875b1456bb971827f95f78ecf"/>
@@ -58,13 +58,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/graphic.vhd">
+      <File Path="$PSRCDIR/sources_1/new/Wolvie_attack.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/Wolvie_attack.vhd">
+      <File Path="$PSRCDIR/sources_1/new/graphic.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
