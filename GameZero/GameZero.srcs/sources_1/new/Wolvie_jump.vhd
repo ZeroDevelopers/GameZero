@@ -120,37 +120,12 @@ rising <= '1' when jump_enable = '1' AND
               else '0';  
 
 
-descending <= '0' when  ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
-                        ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
-                        ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/4 > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
+descending <= '0' when  ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
+                        ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
+                        ((Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
                         (Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE >= SCREEN_HEIGHT -WALL_WIDTH)OR
                         (Wolvie_curr_pos (18 downto 10) + PLAYER_SIZE = GreenGoblin_pos (18 downto 10) AND Wolvie_curr_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) +20 AND Wolvie_curr_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0)+ PLAYER_SIZE -20)
                   else '1';
                   
 Wolvie_status <= rising OR descending;
-
---process for the jumping image of wolverine
-
---process(frame_clk)
---begin
---        if rising_edge(frame_clk) then
---            if  W_action_cnt = W_ACTION_FRAMES -1 then
---                 W_action_cnt <= 0;
---            else
---                if W_action_cnt = 0 then
---                    Wolvie_new_image <= "1001";
---                end if;
---                W_action_cnt <= W_action_cnt + 1;    
---                if Wolvie_curr_image = "1001" then
---                    Wolvie_new_image <= "1010";
---                elsif Wolvie_curr_image = "1010" OR Wolvie_curr_image = "1011" then
---                    Wolvie_new_image <= "1011";
---                end if;
---            end if;    
---        end if;
---end process;
-
-
- 
-
 end Behavioral;

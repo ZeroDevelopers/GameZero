@@ -2,12 +2,12 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Thu Jun 08 16:49:50 2017
-# Process ID: 39340
-# Current directory: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1
+# Start of session at: Thu Jun 08 18:47:20 2017
+# Process ID: 36688
+# Current directory: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1
 # Command line: vivado.exe -log pixelClkGen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pixelClkGen.tcl
-# Log file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1/pixelClkGen.vds
-# Journal file: C:/Users/Andrea Diecidue/Documents/GitHub/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1\vivado.jou
+# Log file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1/pixelClkGen.vds
+# Journal file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1\vivado.jou
 #-----------------------------------------------------------
 source pixelClkGen.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP pixelClkGen, cache-ID = 93d1de4a50527a7d.
