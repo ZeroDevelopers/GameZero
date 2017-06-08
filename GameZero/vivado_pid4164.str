@@ -1,0 +1,152 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 4164
+
+Current time: 	6/8/17 6:06:21 PM CEST
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	edoardo
+User home directory: C:/Users/edoardo
+User working directory: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI base root directory: C:/Xilinx/Vivado
+RDI data directory: C:/Xilinx/Vivado/2016.4/data
+RDI bin directory: C:/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: C:/Users/edoardo/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: C:/Users/edoardo/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	208 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 488 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\edoardo\Documents\GitHub\GameZero\GameZero\GameZero.xpr. Version: Vivado v2016.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 39 MB (+38476kb) [00:00:04]
+// [Engine Memory]: 471 MB (+342862kb) [00:00:04]
+// [GUI Memory]: 61 MB (+21210kb) [00:00:04]
+// Tcl Message: open_project C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/edoardo/Desktop/GameZero' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'. 
+// Project name: GameZero; location: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero; part: xc7a100tcsg324-1
+// [Engine Memory]: 495 MB (+127kb) [00:00:06]
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// [GUI Memory]: 65 MB (+286kb) [00:00:07]
+// HMemoryUtils.trashcanNow. Engine heap size: 500 MB. GUI used memory: 38 MB. Current time: 6/8/17 6:06:22 PM CEST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main - Behavioral (main.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("main.vhd", 246, 230); // bF:I (JPanel:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 533 MB. GUI used memory: 41 MB. Current time: 6/8/17 6:06:47 PM CEST
+// [Engine Memory]: 533 MB (+13937kb) [00:00:34]
+// Elapsed time: 21 seconds
+selectCodeEditor("main.vhd", 579, 280); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 68 MB (+354kb) [00:01:04]
+// [GUI Memory]: 73 MB (+1215kb) [00:01:09]
+// [GUI Memory]: 81 MB (+4466kb) [00:01:19]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 67 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 11, true); // y:i (D:JPanel, cd:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 11); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4_Master.xdc]", 13, false); // y:i (D:JPanel, cd:JFrame)
+// [GUI Memory]: 85 MB (+570kb) [00:01:49]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4_Master.xdc]", 13, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("Nexys4_Master.xdc", 8, 143); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 10, 198); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 9, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 9, 302); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 11, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 10, 350); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Nexys4_Master.xdc", 315, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 11 seconds
+typeControlKey((HResource) null, "Nexys4_Master.xdc", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Nexys4_Master.xdc", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 67 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "main.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("main.vhd", 97, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 38 seconds
+selectCodeEditor("main.vhd", 28, 295); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 31 seconds
+selectCodeEditor("main.vhd", 33, 168); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("main.vhd", 16, 180); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("main.vhd", 52, 174); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("main.vhd", 44, 162); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("main.vhd", 45, 157); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 11 seconds
+selectCodeEditor("main.vhd", 0, 159); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "main.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("main.vhd", 77, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 13 seconds
+typeControlKey((HResource) null, "main.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 556 MB. GUI used memory: 48 MB. Current time: 6/8/17 6:13:22 PM CEST
+// [GUI Memory]: 96 MB (+6205kb) [00:07:24]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 119 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Bitstream Settings]", 24, false, false, false, false, true, false); // u:K (t:D, cd:JFrame) - Popup Trigger
+// [Engine Memory]: 566 MB (+6870kb) [00:07:38]

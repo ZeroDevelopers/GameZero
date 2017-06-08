@@ -32,6 +32,7 @@ entity main is
             W_but_left, W_but_right, W_but_mid, W_but_up : in std_logic;
             GG_but_left, GG_but_right, GG_but_mid, GG_but_up : in std_logic;
             reset : in std_logic; -- Starting position of players with all lives
+            led : out std_logic_vector(4 downto 0);
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -273,9 +274,6 @@ signal GG_dec_disable : std_logic;
 signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset, Wolvie_life_dec : std_logic := '0';
 
 
-
-
-
 ---- Sinals for the Fire Ball
 --signal FireBall_active, FireBall_end, FireBall_start : std_logic := '0';
 --signal FireBall_pos : std_logic_vector (18 downto 0) := "0000000000000000000";
@@ -283,6 +281,13 @@ signal Wolvie_attack_reset, GreenGoblin_life_dec, GreenGoblin_attack_reset, Wolv
 
 
 begin
+
+-- Switching on leds
+led(0) <= start;
+led(1) <= GG_but_left;
+led(2) <= GG_but_right;
+led(3) <= GG_but_mid;
+led(4) <= GG_but_up;
 
 -- Process to create the frame clock
 process(pixel_clk)
