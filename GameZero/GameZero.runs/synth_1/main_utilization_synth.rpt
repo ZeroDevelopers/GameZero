@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Thu Jun 08 17:50:04 2017
+| Date         : Thu Jun 08 18:15:04 2017
 | Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
 | Design       : main
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   23 |     0 |       210 | 10.95 |
+| Bonded IOB                  |   29 |     0 |       210 | 13.81 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -156,8 +156,8 @@ Table of Contents
 | LUT1     |  194 |                 LUT |
 | LDCE     |   64 |        Flop & Latch |
 | FDSE     |   40 |        Flop & Latch |
-| OBUF     |   14 |                  IO |
-| IBUF     |    9 |                  IO |
+| OBUF     |   19 |                  IO |
+| IBUF     |   10 |                  IO |
 | LDPE     |    3 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

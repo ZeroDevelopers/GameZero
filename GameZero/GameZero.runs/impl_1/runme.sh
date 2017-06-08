@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/edoardo/Desktop/GameZero/GameZero.runs/impl_1'
+HD_PWD='C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

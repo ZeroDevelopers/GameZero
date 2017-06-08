@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Thu Jun 08 17:51:31 2017
+| Date             : Thu Jun 08 18:16:30 2017
 | Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.227 |
-| Dynamic (W)              | 0.127 |
+| Total On-Chip Power (W)  | 0.231 |
+| Dynamic (W)              | 0.131 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 84.0  |
-| Junction Temperature (C) | 26.0  |
+| Max Ambient (C)          | 83.9  |
+| Junction Temperature (C) | 26.1  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -57,12 +57,12 @@ Table of Contents
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
 |   Others       |     0.000 |      142 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |     2148 |       --- |             --- |
+| Signals        |     0.002 |     2161 |       --- |             --- |
 | Block RAM      |     0.006 |     56.5 |       135 |           41.85 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       24 |       210 |           11.43 |
+| I/O            |     0.005 |       30 |       210 |           14.29 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.227 |          |           |                 |
+| Total          |     0.231 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.026 |       0.010 |      0.017 |
+| Vccint    |       1.000 |     0.027 |       0.010 |      0.017 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,14 +146,14 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.127 |
+| main                                           |     0.131 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.008 |
+|   inst_graphic                                 |     0.009 |
 |     Pedana1_offset_reg[11]                     |     0.000 |
 |     Pedana1_offset_reg[14]                     |     0.000 |
 |     Pedana2_offset_reg[11]                     |     0.000 |
