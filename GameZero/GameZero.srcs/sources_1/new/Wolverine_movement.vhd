@@ -62,7 +62,7 @@ constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 constant MOVEMENT_FRAMES : natural := 4;
 
-constant WOLVIE_START_HOR_POS : std_logic_vector(9 downto 0) := "0101111110";
+constant WOLVIE_START_HOR_POS : std_logic_vector(9 downto 0) := "0001001110";
 
 
 --constants for mapping movement

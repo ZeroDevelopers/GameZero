@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Fri Jun 09 17:04:04 2017
+| Date             : Fri Jun 09 17:56:50 2017
 | Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.230 |
-| Dynamic (W)              | 0.130 |
+| Total On-Chip Power (W)  | 0.231 |
+| Dynamic (W)              | 0.131 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     2468 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1290 |     63400 |            2.03 |
-|   Register     |    <0.001 |      507 |    126800 |            0.40 |
+| Slice Logic    |    <0.001 |     2452 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1283 |     63400 |            2.02 |
+|   Register     |    <0.001 |      506 |    126800 |            0.40 |
 |   CARRY4       |    <0.001 |      176 |     15850 |            1.11 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
 |   Others       |     0.000 |      140 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |     2074 |       --- |             --- |
+| Signals        |     0.002 |     2067 |       --- |             --- |
 | Block RAM      |     0.006 |     56.5 |       135 |           41.85 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |     0.004 |       30 |       210 |           14.29 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.230 |          |           |                 |
+| Total          |     0.231 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -146,7 +146,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.130 |
+| main                                           |     0.131 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
@@ -158,8 +158,8 @@ Table of Contents
 |     Pedana1_offset_reg[14]                     |     0.000 |
 |     Pedana2_offset_reg[11]                     |     0.000 |
 |     Pedana2_offset_reg[14]                     |     0.000 |
-|     Pedana3_offset_reg[11]                     |    <0.001 |
-|     Pedana3_offset_reg[14]                     |    <0.001 |
+|     Pedana3_offset_reg[11]                     |     0.000 |
+|     Pedana3_offset_reg[14]                     |     0.000 |
 |     inst_brom_player                           |     0.004 |
 |       U0                                       |     0.004 |
 |         inst_blk_mem_gen                       |     0.004 |

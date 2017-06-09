@@ -63,7 +63,7 @@ constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 constant MOVEMENT_FRAMES : natural := 4;
 
-constant GG_START_HOR_POS : std_logic_vector(9 downto 0) := "0000010100";
+constant GG_START_HOR_POS : std_logic_vector(9 downto 0) := "0111101111";
 
 
 --constants for mapping movement

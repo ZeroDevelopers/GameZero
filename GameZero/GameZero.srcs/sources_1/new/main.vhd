@@ -223,8 +223,8 @@ signal pixel_clk, frame_clk : std_logic := '0';
 -- Signals for the Green Goblin
 signal GreenGoblin_lives : std_logic_vector(2 downto 0) := "100";
 signal GreenGoblin_pos : std_logic_vector (18 downto 0);
-signal GreenGoblin_hor_pos : STD_LOGIC_VECTOR (9 downto 0) := "0000010100";
-signal GreenGoblin_vert_pos : STD_LOGIC_VECTOR (8 downto 0) := "110010000";
+signal GreenGoblin_hor_pos : STD_LOGIC_VECTOR (9 downto 0):= "0111101111";
+signal GreenGoblin_vert_pos : STD_LOGIC_VECTOR (8 downto 0):= "110000000";
 signal GreenGoblin_reversed_in : std_logic := '0';
 signal GreenGoblin_image, GreenGoblin_mov_image, GreenGoblin_att_image, GreenGoblin_jump_image : std_logic_vector (2 downto 0) := (others => '0');
 signal GreenGoblin_mov_enable, GreenGoblin_att_enable, GreenGoblin_jump_enable : std_logic;
@@ -236,8 +236,8 @@ signal GG_dec_mov_disable, GG_dec_att_disable, GG_jump_status: std_logic;
 -- Signals for Wolverine
 signal Wolvie_lives, Wolvie_lives_tmp : std_logic_vector(2 downto 0) := "100";
 signal Wolvie_pos: std_logic_vector (18 downto 0);
-signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0);
-signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0);
+signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0):= "0001001110";
+signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0):= "110000000";
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
 signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image, Wolvie_jump_image : std_logic_vector (3 downto 0) := "0000";
 -- Movement signals
@@ -363,8 +363,12 @@ begin
                 GreenGoblin_mov_type <= LEFT;
            elsif GG_but_mid = '1' then
                 GreenGoblin_att_enable <= '1';
-           elsif GG_but_up = '1' AND W_jump_status = '0' then
-                GreenGoblin_jump_enable <= '1'; 
+           elsif GG_but_up = '1' then
+                if GG_jump_status = '0' then
+                    GreenGoblin_jump_enable <= '1'; 
+                else
+                    GreenGoblin_jump_enable <= '0'; 
+                end if;    
            end if;
         else
             GreenGoblin_att_enable <= '0';

@@ -65,7 +65,7 @@ constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural :=100;
 constant MOVEMENT_FRAMES : natural := 4;
 
-constant GG_START_VERT_POS : std_logic_vector(8 downto 0) := "110010000";
+constant GG_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 
 -- Signals for GreenGoblin
 constant GG_ACTION_FRAMES : natural := 100;
