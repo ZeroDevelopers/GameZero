@@ -54,3 +54,5 @@ WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 close_hw
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 09 15:41:43 2017...
