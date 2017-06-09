@@ -37,6 +37,7 @@ entity Green_Goblin_jump is
     Port (
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
+          reset : in std_logic;
           GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
           GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
           GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
@@ -51,6 +52,7 @@ entity Green_Goblin_jump is
     );
 end Green_Goblin_jump;
 
+
 architecture Behavioral of Green_Goblin_jump is
 
 --general constants
@@ -63,7 +65,9 @@ constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural :=100;
 constant MOVEMENT_FRAMES : natural := 4;
 
--- Signals for Wolverine
+constant GG_START_VERT_POS : std_logic_vector(8 downto 0) := "110010000";
+
+-- Signals for GreenGoblin
 constant GG_ACTION_FRAMES : natural := 100;
 signal GG_action_cnt : natural range 0 to GG_ACTION_FRAMES -1;
 
@@ -76,12 +80,19 @@ signal descending : STD_LOGIC := '0';
 begin
 
 
-process(enable, GG_action_cnt)
-begin
-        if enable = '1' then
-            jump_enable <= '1';
-        elsif GG_action_cnt = GG_ACTION_FRAMES -1 then
-            jump_enable <= '0';
+process(enable, frame_clk)
+begin   
+        if rising_edge(frame_clk) then
+            if GG_action_cnt = GG_ACTION_FRAMES -1 then
+                GG_action_cnt <= 0;
+                jump_enable <= '0';
+            else    
+                if enable = '1' then
+                    jump_enable <= '1';
+                end if;
+            GreenGoblin_new_image <= "000";    
+            GG_action_cnt <= GG_action_cnt + 1;
+            end if;
         end if;
 end process;
 
@@ -90,7 +101,9 @@ end process;
 process(frame_clk, jump_enable)
 begin
         if rising_edge(frame_clk)  then
-            if rising = '1' AND jump_enable = '1' then
+            if reset = '0' then
+                GreenGoblin_vert_new_pos <= GG_START_VERT_POS;
+            elsif rising = '1' AND jump_enable = '1' then
                 GreenGoblin_vert_new_pos (8 downto 0) <= GreenGoblin_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT;
             elsif descending = '1' then
                 GreenGoblin_vert_new_pos (8 downto 0) <= GreenGoblin_curr_pos (18 downto 10) + PIXEL_INCREMENT;
@@ -105,27 +118,14 @@ rising <= '1' when jump_enable = '1' AND
               else '0';  
 
 
-descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
-                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
-                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
+descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
+                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana2_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana2_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana2_pos (9 downto 0) -1)  AND Pedana2_image = "10")OR
+                        ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Pedana3_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana3_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana3_pos (9 downto 0) -1) AND Pedana3_image = "10")OR
                         (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = SCREEN_HEIGHT -WALL_WIDTH)OR
-                        (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Wolvie_pos (18 downto 10) AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE)
+                        (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE = Wolvie_pos (18 downto 10) -1 AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) +20 AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE -20)
                   else '1';
                   
 GreenGoblin_status <= rising OR descending;
 
---process for the jumping image of Green Goblin
-
-process(frame_clk)
-begin
-        if rising_edge(frame_clk) then
-            if  GG_action_cnt = GG_ACTION_FRAMES -1 then
-                 GG_action_cnt <= 0;
-            else
-                 GreenGoblin_new_image <= "000";
-                 GG_action_cnt <= GG_action_cnt + 1;
-            end if;    
-        end if;
-end process;
 
 end Behavioral;
