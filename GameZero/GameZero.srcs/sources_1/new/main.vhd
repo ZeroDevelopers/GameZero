@@ -128,6 +128,7 @@ component Green_Goblin_movement is
       Port (
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
+            reset : in STD_LOGIC;
             movement_type: in STD_LOGIC_VECTOR (1 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Green_Goblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
@@ -164,6 +165,7 @@ component Green_Goblin_jump is
     Port (
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
+          reset : in STD_LOGIC;
           GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
           GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
           GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
@@ -354,7 +356,7 @@ GG_dec_disable <= (GG_dec_mov_disable OR GG_dec_att_disable);
 process (frame_clk, GG_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        --if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+        if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
@@ -370,11 +372,11 @@ begin
                     GreenGoblin_jump_enable <= '0'; 
                 end if;    
            end if;
---        else
---            GreenGoblin_att_enable <= '0';
---            GreenGoblin_mov_enable <= '0';
---            GreenGoblin_jump_enable <= '0';
---        end if;
+        else
+            GreenGoblin_att_enable <= '0';
+            GreenGoblin_mov_enable <= '0';
+            GreenGoblin_jump_enable <= '0';
+        end if;
     end if;
 end process;
 
@@ -710,6 +712,7 @@ inst_Green_Goblin_mov : Green_Goblin_movement
 port map 
 (   frame_clk           => frame_clk,
     enable              => GreenGoblin_mov_enable,
+    reset               => reset,
     movement_type       => GreenGoblin_mov_type,
     Wolvie_pos          => Wolvie_pos,
     Green_Goblin_curr_pos     => GreenGoblin_pos,
@@ -746,6 +749,7 @@ inst_Green_Goblin_jump : Green_Goblin_jump
 port map
 (   frame_clk           => frame_clk,
     enable              => GreenGoblin_jump_enable,
+    reset               => reset,
     GreenGoblin_vert_new_pos      => GreenGoblin_vert_pos,
     GreenGoblin_new_image    => GreenGoblin_jump_image,
     GreenGoblin_curr_pos     => GreenGoblin_pos,
