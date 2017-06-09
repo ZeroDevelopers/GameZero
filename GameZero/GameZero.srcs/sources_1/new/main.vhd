@@ -354,7 +354,7 @@ GG_dec_disable <= (GG_dec_mov_disable OR GG_dec_att_disable);
 process (frame_clk, GG_dec_disable)
 begin
     if rising_edge(frame_clk) then
-        if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+        --if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
@@ -370,11 +370,11 @@ begin
                     GreenGoblin_jump_enable <= '0'; 
                 end if;    
            end if;
-        else
-            GreenGoblin_att_enable <= '0';
-            GreenGoblin_mov_enable <= '0';
-            GreenGoblin_jump_enable <= '0';
-        end if;
+--        else
+--            GreenGoblin_att_enable <= '0';
+--            GreenGoblin_mov_enable <= '0';
+--            GreenGoblin_jump_enable <= '0';
+--        end if;
     end if;
 end process;
 
