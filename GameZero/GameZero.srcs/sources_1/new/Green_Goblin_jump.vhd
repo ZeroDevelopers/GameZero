@@ -38,7 +38,6 @@ entity Green_Goblin_jump is
           frame_clk : in STD_LOGIC;  
           enable : in STD_LOGIC;
           GreenGoblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
-          GreenGoblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
           GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
           GreenGoblin_status : out STD_LOGIC;
@@ -77,7 +76,7 @@ signal descending : STD_LOGIC := '0';
 begin
 
 
-process(enable)
+process(enable, GG_action_cnt)
 begin
         if enable = '1' then
             jump_enable <= '1';

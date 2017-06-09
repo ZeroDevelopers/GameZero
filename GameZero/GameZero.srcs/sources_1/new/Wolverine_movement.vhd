@@ -40,7 +40,7 @@ entity Wolverine_movement is
             enable : in STD_LOGIC;
             reset : in std_logic;
             movement_type: in STD_LOGIC_VECTOR (1 downto 0);
-            GreenGoblin_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
             dec_disable : out STD_LOGIC;
@@ -84,7 +84,7 @@ begin
 
 --this process creates the movement enabler
 
-process(enable, Wolvie_curr_image)
+process(enable, Wolvie_curr_image, W_action_cnt)
 begin 
         if enable = '1' then
             movement_enable <= '1';

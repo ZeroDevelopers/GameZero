@@ -42,7 +42,6 @@ entity Green_Goblin_attack is
             GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             GreenGoblin_reversed : in std_logic;
-            GreenGoblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
             GreenGoblin_dec_disable : out STD_LOGIC;
             GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
             Wolvie_life_dec : out std_logic;

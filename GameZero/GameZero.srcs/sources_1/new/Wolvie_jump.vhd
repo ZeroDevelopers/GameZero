@@ -39,7 +39,6 @@ entity Wolvie_jump is
           enable : in STD_LOGIC;
           reset : in std_logic;
           Wolvie_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
-          Wolvie_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
           Wolvie_vert_new_pos : out STD_LOGIC_VECTOR (8 downto 0);
           Wolvie_new_image : out STD_LOGIC_VECTOR (3 downto 0);
           Wolvie_status : out STD_LOGIC;
@@ -81,7 +80,7 @@ signal descending : STD_LOGIC := '0';
 begin
 
 
-process(enable)
+process(enable, frame_clk)
 begin   
         if rising_edge(frame_clk) then
             if W_action_cnt = W_ACTION_FRAMES -1 then

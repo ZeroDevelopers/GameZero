@@ -144,10 +144,9 @@ inRange <= '1' when (GreenGoblin_pos (18 downto 10) >= Wolvie_pos (18 downto 10)
                     Wolvie_reversed = '1')                   
            else '0';
 
-process (frame_clk, GreenGoblin_pos)
+process (frame_clk, GreenGoblin_pos, attack_enable)
 begin
     if rising_edge(frame_clk) and attack_enable = '1' then
-  
         if GreenGoblin_hit = '1' then
             GreenGoblin_hit <= '0';
         elsif Sbam_active = '1' and attack_frame_cnt = W_ATTACK_FRAMES *4 -1 then

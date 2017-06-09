@@ -320,7 +320,7 @@ GreenGoblin_offset <= GG_OFFSET_1 when GreenGoblin_image = "000"
 ---------------------------------------
 
 -- Handling the counter for Wolverine
-process(pixel_clk, Wolvie_enable)
+process(pixel_clk, Wolvie_enable, reset_graphic)
 begin
     if reset_graphic = '1' then
         Wolvie_cntH <= 0;

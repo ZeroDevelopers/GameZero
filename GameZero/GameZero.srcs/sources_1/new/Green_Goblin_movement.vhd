@@ -39,7 +39,7 @@ entity Green_Goblin_movement is
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
             movement_type: in STD_LOGIC_VECTOR (1 downto 0);
-            Wolvie_pos, Pedana1_pos, Pedana2_pos, Pedana3_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Green_Goblin_curr_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Green_Goblin_curr_image : in STD_LOGIC_VECTOR (2 downto 0);
             dec_disable : out STD_LOGIC;
@@ -81,12 +81,17 @@ begin
 
 --this process creates the movement enabler
 
-process(enable, Green_Goblin_curr_image)
+process(enable, Green_Goblin_curr_image, GG_action_cnt, frame_clk)
 begin 
-        if enable = '1' then
-            movement_enable <= '1';
-        elsif enable = '0' AND  GG_action_cnt = GG_ACTION_FRAMES -1 then
-            movement_enable <= '0';
+        if rising_edge(frame_clk) then   
+            if enable = '1' then    
+                movement_enable <= '1';
+                GG_action_cnt <= 0;
+            elsif enable = '0' AND  GG_action_cnt = GG_ACTION_FRAMES -1 then
+                movement_enable <= '0';
+                GG_action_cnt <= 0;
+            end if;
+            GG_action_cnt <= GG_action_cnt +1;
         end if;
 end process;
 
@@ -101,9 +106,11 @@ begin
             if movement_type = RIGHT and right_enable = '1' then
                 Green_Goblin_hor_new_pos <= Green_Goblin_curr_pos (9 downto 0)+ PIXEL_INCREMENT;
                 Green_Goblin_reversed_out <= '0';
+                Green_Goblin_new_image <= "000";
             elsif movement_type = LEFT and left_enable = '1' then
                 Green_Goblin_hor_new_pos <= Green_Goblin_curr_pos (9 downto 0)- PIXEL_INCREMENT;
                 Green_Goblin_reversed_out <= '1';
+                Green_Goblin_new_image <= "000";
             end if;
         end if;
 end process;
@@ -132,23 +139,6 @@ right_enable <=  '0' when Green_Goblin_curr_pos (9 downto 0) + PLAYER_SIZE + PIX
                            Green_Goblin_curr_pos (18 downto 10) <= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND
                            Green_Goblin_curr_pos (18 downto 10) >= Wolvie_pos (18 downto 10)) 
                      else '1';    
-
---process to modify the image of greengoblin in movement
-
-process(frame_clk, enable)
-begin
-       if rising_edge(frame_clk) then    
-            if movement_enable = '1' then
-                if GG_action_cnt = GG_ACTION_FRAMES -1 then
-                    GG_action_cnt <= 0;
-                    Green_Goblin_new_image <= "000";
-                else
-                    GG_action_cnt <= GG_action_cnt +1;    
-                end if;
-            end if;
-        end if;
-end process;
-
 
 dec_disable <= movement_enable;
 
