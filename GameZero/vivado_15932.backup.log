@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Jun 08 18:36:38 2017
+# Process ID: 15932
+# Current directory: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent37012 C:\Users\Andrea Diecidue\Documents\GameZero\GameZero\GameZero.xpr
+# Log file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/vivado.log
+# Journal file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/edoardo/Documents/GitHub/GameZero/GameZero' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/.Xilinx/Vivado/2016.4/data/ip'.
+open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:13 . Memory (MB): peak = 772.652 ; gain = 99.602
+reset_run synth_1
+reset_run playerBROM_synth_1
+reset_run utilBROM_synth_1
+reset_run pixelClkGen_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'playerBROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'utilBROM'...
+[Thu Jun 08 18:47:16 2017] Launched playerBROM_synth_1, utilBROM_synth_1, pixelClkGen_synth_1, synth_1...
+Run output will be captured here:
+playerBROM_synth_1: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/playerBROM_synth_1/runme.log
+utilBROM_synth_1: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/utilBROM_synth_1/runme.log
+pixelClkGen_synth_1: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/pixelClkGen_synth_1/runme.log
+synth_1: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/runme.log
+[Thu Jun 08 18:47:16 2017] Launched impl_1...
+Run output will be captured here: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 834.320 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun 08 19:20:19 2017] Launched synth_1...
+Run output will be captured here: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/runme.log
+[Thu Jun 08 19:20:19 2017] Launched impl_1...
+Run output will be captured here: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/impl_1/runme.log

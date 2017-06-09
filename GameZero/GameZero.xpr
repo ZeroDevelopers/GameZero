@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0bd86a4875b1456bb971827f95f78ecf"/>

@@ -39,7 +39,6 @@ entity Wolvie_attack is
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
             attack_reset : in std_logic;
-            GreenGoblin_lives : in std_logic_vector(2 downto 0);
             GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_reversed : in std_logic;
@@ -132,28 +131,32 @@ begin
     end if;
 end process;
 
-inRange <= '1' when (GreenGoblin_pos (18 downto 10) >= Wolvie_pos (18 downto 10) - 40 and
-                    GreenGoblin_pos (18 downto 10) <= Wolvie_pos (18 downto 10) + 40 and
-                    GreenGoblin_pos (9 downto 0) >= Wolvie_pos (9 downto 0) + PLAYER_SIZE and
-                    GreenGoblin_pos (9 downto 0) <= Wolvie_pos (9 downto 0) + PLAYER_SIZE - 20 and
-                    Wolvie_reversed = '0')  or
-                    (GreenGoblin_pos (18 downto 10) >= Wolvie_pos (18 downto 10) - 40 and
-                    GreenGoblin_pos (18 downto 10) <= Wolvie_pos (18 downto 10) + 40 and
-                    GreenGoblin_pos (9 downto 0) >= Wolvie_pos (9 downto 0) - 20 and
-                    GreenGoblin_pos (9 downto 0) <= Wolvie_pos (9 downto 0) and
-                    Wolvie_reversed = '1')                   
-           else '0';
+--inRange <= '1' when (GreenGoblin_pos (18 downto 10) >= Wolvie_pos (18 downto 10) - 40 and
+--                    GreenGoblin_pos (18 downto 10) <= Wolvie_pos (18 downto 10) + 40 and
+--                    GreenGoblin_pos (9 downto 0) >= Wolvie_pos (9 downto 0) + PLAYER_SIZE and
+--                    GreenGoblin_pos (9 downto 0) <= Wolvie_pos (9 downto 0) + PLAYER_SIZE - 20 and
+--                    Wolvie_reversed = '0')  or
+--                    (conv_integer(GreenGoblin_pos (18 downto 10)) >= conv_integer(Wolvie_pos (18 downto 10)) - 40 and
+--                    conv_integer(GreenGoblin_pos (18 downto 10)) <= conv_integer(Wolvie_pos (18 downto 10)) + 40 and
+----                    GreenGoblin_pos (9 downto 0) >= Wolvie_pos (9 downto 0) - 20 and
+----                    GreenGoblin_pos (9 downto 0) <= Wolvie_pos (9 downto 0) and
+--                    conv_integer(GreenGoblin_pos (9 downto 0)) >= conv_integer(Wolvie_pos (9 downto 0)) - 10 - PLAYER_SIZE and
+--                    conv_integer(GreenGoblin_pos (9 downto 0)) <= conv_integer(Wolvie_pos (9 downto 0)) - PLAYER_SIZE +10 and
+--                    Wolvie_reversed = '1')                   
+--           else '0';
+inRange <= '1';
 
-process (frame_clk, GreenGoblin_pos, attack_enable)
+process (frame_clk)
 begin
-    if rising_edge(frame_clk) and attack_enable = '1' then
-        if GreenGoblin_hit = '1' then
-            GreenGoblin_hit <= '0';
-        elsif Sbam_active = '1' and attack_frame_cnt = W_ATTACK_FRAMES *4 -1 then
-            Sbam_active <= '0';
-        elsif GreenGoblin_attack_reset = '1' then
-            GreenGoblin_attack_reset <= '0';
-        elsif attack_frame_cnt >= W_ATTACK_FRAMES * 2  and  inRange = '1' then
+    if rising_edge(frame_clk) then
+  
+--        if GreenGoblin_hit = '1' then
+--            GreenGoblin_hit <= '0';
+--        if Sbam_active = '1' and attack_frame_cnt = W_ATTACK_FRAMES *4 -1 then
+--            Sbam_active <= '0';
+--        elsif GreenGoblin_attack_reset = '1' then
+--            GreenGoblin_attack_reset <= '0';
+        if inRange = '1' then --attack_frame_cnt >= W_ATTACK_FRAMES * 2  and  
             GreenGoblin_hit <= '1';
             Sbam_active <= '1';
             GreenGoblin_attack_reset <= '1';
