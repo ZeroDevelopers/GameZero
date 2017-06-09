@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Thu Jun 08 18:47:20 2017
-# Process ID: 5048
-# Current directory: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/playerBROM_synth_1
+# Start of session at: Fri Jun 09 15:45:39 2017
+# Process ID: 13908
+# Current directory: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1
 # Command line: vivado.exe -log playerBROM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source playerBROM.tcl
-# Log file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/playerBROM_synth_1/playerBROM.vds
-# Journal file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/playerBROM_synth_1\vivado.jou
+# Log file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1/playerBROM.vds
+# Journal file: C:/Users/edoardo/Desktop/GameZero/GameZero.runs/playerBROM_synth_1\vivado.jou
 #-----------------------------------------------------------
 source playerBROM.tcl -notrace

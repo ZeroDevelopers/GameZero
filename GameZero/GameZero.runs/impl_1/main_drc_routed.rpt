@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Fri Jun 09 15:25:56 2017
-| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date         : Fri Jun 09 15:52:04 2017
+| Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 17
+             Violations found: 18
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning  | Gated clock check                                   | 16         |
+| PDRC-153 | Warning  | Gated clock check                                   | 17         |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -49,12 +49,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net inst_Green_Goblin_jump/jump_enable_reg_i_1_n_0 is a gated clock net sourced by a combinational pin inst_Green_Goblin_jump/jump_enable_reg_i_1/O, cell inst_Green_Goblin_jump/jump_enable_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Green_Goblin_jump/E[0] is a gated clock net sourced by a combinational pin inst_Green_Goblin_jump/GreenGoblin_image_reg[1]_i_2/O, cell inst_Green_Goblin_jump/GreenGoblin_image_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net inst_Green_Goblin_jump/red_reg[3][0] is a gated clock net sourced by a combinational pin inst_Green_Goblin_jump/GreenGoblin_image_reg[1]_i_2/O, cell inst_Green_Goblin_jump/GreenGoblin_image_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Green_Goblin_jump/jump_enable_reg_i_1_n_0 is a gated clock net sourced by a combinational pin inst_Green_Goblin_jump/jump_enable_reg_i_1/O, cell inst_Green_Goblin_jump/jump_enable_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
@@ -69,60 +69,65 @@ Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net inst_graphic/Pedana1_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana1_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana1_offset_reg[11]/L3_2 (in inst_graphic/Pedana1_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/GreenGoblin_life_offset_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/GreenGoblin_life_offset_reg[16]_i_2/O, cell inst_graphic/GreenGoblin_life_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net inst_graphic/Pedana1_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana1_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana1_offset_reg[14]/L3_2 (in inst_graphic/Pedana1_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana1_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana1_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana1_offset_reg[11]/L3_2 (in inst_graphic/Pedana1_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net inst_graphic/Pedana2_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana2_offset_reg[11]/L3_2 (in inst_graphic/Pedana2_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana1_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana1_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana1_offset_reg[14]/L3_2 (in inst_graphic/Pedana1_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net inst_graphic/Pedana2_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana2_offset_reg[14]/L3_2 (in inst_graphic/Pedana2_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana2_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana2_offset_reg[11]/L3_2 (in inst_graphic/Pedana2_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net inst_graphic/Pedana2_offset_reg[15]_i_1_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[15]_i_1/O, cell inst_graphic/Pedana2_offset_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana2_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana2_offset_reg[14]/L3_2 (in inst_graphic/Pedana2_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#10 Warning
 Gated clock check  
-Net inst_graphic/Pedana3_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana3_offset_reg[11]/L3_2 (in inst_graphic/Pedana3_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana2_offset_reg[15]_i_1_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana2_offset_reg[15]_i_1/O, cell inst_graphic/Pedana2_offset_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#11 Warning
 Gated clock check  
-Net inst_graphic/Pedana3_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana3_offset_reg[14]/L3_2 (in inst_graphic/Pedana3_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana3_offset_reg[11]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[11]/L3_2/O, cell inst_graphic/Pedana3_offset_reg[11]/L3_2 (in inst_graphic/Pedana3_offset_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net inst_graphic/Pedana3_offset_reg[15]_i_1_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[15]_i_1/O, cell inst_graphic/Pedana3_offset_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana3_offset_reg[14]/G0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[14]/L3_2/O, cell inst_graphic/Pedana3_offset_reg[14]/L3_2 (in inst_graphic/Pedana3_offset_reg[14] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning
 Gated clock check  
-Net inst_graphic/Wolvie_offset_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Wolvie_offset_reg[16]_i_2/O, cell inst_graphic/Wolvie_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Pedana3_offset_reg[15]_i_1_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Pedana3_offset_reg[15]_i_1/O, cell inst_graphic/Pedana3_offset_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#14 Warning
 Gated clock check  
-Net inst_graphic/brom_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_addr_reg[16]_i_2/O, cell inst_graphic/brom_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/Wolvie_offset_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/Wolvie_offset_reg[16]_i_2/O, cell inst_graphic/Wolvie_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net inst_graphic/brom_util_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_util_addr_reg[16]_i_2/O, cell inst_graphic/brom_util_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_graphic/brom_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_addr_reg[16]_i_2/O, cell inst_graphic/brom_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
+Gated clock check  
+Net inst_graphic/brom_util_addr_reg[16]_i_2_n_0 is a gated clock net sourced by a combinational pin inst_graphic/brom_util_addr_reg[16]_i_2/O, cell inst_graphic/brom_util_addr_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
 Gated clock check  
 Net inst_graphic/eqOp is a gated clock net sourced by a combinational pin inst_graphic/Pedana1_offset_reg[15]_i_1/O, cell inst_graphic/Pedana1_offset_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

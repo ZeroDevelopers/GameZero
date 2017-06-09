@@ -14,42 +14,50 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26936 
+INFO: Helper process launched with PID 4396 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 283.520 ; gain = 73.910
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 283.305 ; gain = 73.270
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:44]
-INFO: [Synth 8-3491] module 'pixelClkGen' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:5' bound to instance 'inst_pixelClkGen' of component 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:604]
-INFO: [Synth 8-638] synthesizing module 'pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/pixelClkGen_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'graphic' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:37' bound to instance 'inst_graphic' of component 'graphic' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:613]
-INFO: [Synth 8-638] synthesizing module 'graphic' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
-INFO: [Synth 8-3491] module 'vga' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:32' bound to instance 'inst_vga' of component 'vga' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:627]
-INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'vga' (1#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
-INFO: [Synth 8-3491] module 'playerBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:5' bound to instance 'inst_brom_player' of component 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
-INFO: [Synth 8-638] synthesizing module 'playerBROM' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/playerBROM_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'utilBROM' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:5' bound to instance 'inst_brom_util' of component 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
-INFO: [Synth 8-638] synthesizing module 'utilBROM' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/realtime/utilBROM_stub.vhdl:14]
-INFO: [Synth 8-256] done synthesizing module 'graphic' (2#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
-INFO: [Synth 8-3491] module 'Wolverine_movement' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:37' bound to instance 'inst_Wolvie_mov' of component 'Wolverine_movement' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:640]
-INFO: [Synth 8-638] synthesizing module 'Wolverine_movement' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:54]
-INFO: [Synth 8-256] done synthesizing module 'Wolverine_movement' (3#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:54]
-INFO: [Synth 8-3491] module 'Wolvie_attack' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:37' bound to instance 'inst_Wolvie_att' of component 'Wolvie_attack' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:658]
-INFO: [Synth 8-638] synthesizing module 'Wolvie_attack' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'Wolvie_attack' (4#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:55]
-INFO: [Synth 8-3491] module 'Wolvie_jump' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:36' bound to instance 'inst_Wolvie_jump' of component 'Wolvie_jump' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:678]
-INFO: [Synth 8-638] synthesizing module 'Wolvie_jump' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'Wolvie_jump' (5#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:55]
-INFO: [Synth 8-3491] module 'Green_Goblin_movement' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:37' bound to instance 'inst_Green_Goblin_mov' of component 'Green_Goblin_movement' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:699]
-INFO: [Synth 8-638] synthesizing module 'Green_Goblin_movement' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_movement' (6#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:53]
-INFO: [Synth 8-3491] module 'Green_Goblin_attack' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:37' bound to instance 'inst_Green_Goblin_att' of component 'Green_Goblin_attack' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:717]
-INFO: [Synth 8-638] synthesizing module 'Green_Goblin_attack' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_attack' (7#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:53]
-INFO: [Synth 8-3491] module 'Green_Goblin_jump' declared at 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:36' bound to instance 'inst_Green_Goblin_jump' of component 'Green_Goblin_jump' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:735]
-INFO: [Synth 8-638] synthesizing module 'Green_Goblin_jump' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:54]
-INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_jump' (8#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:54]
-INFO: [Synth 8-256] done synthesizing module 'main' (9#1) [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:44]
+WARNING: [Synth 8-614] signal 'P1_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:435]
+WARNING: [Synth 8-614] signal 'P1_actual_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:435]
+WARNING: [Synth 8-614] signal 'P2_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:467]
+WARNING: [Synth 8-614] signal 'P2_actual_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:467]
+WARNING: [Synth 8-614] signal 'P3_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:499]
+WARNING: [Synth 8-614] signal 'P3_actual_moving' is read in the process but is not in the sensitivity list [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:499]
+INFO: [Synth 8-3491] module 'pixelClkGen' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/pixelClkGen_stub.vhdl:5' bound to instance 'inst_pixelClkGen' of component 'pixelClkGen' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:604]
+INFO: [Synth 8-638] synthesizing module 'pixelClkGen' [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/pixelClkGen_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'graphic' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:37' bound to instance 'inst_graphic' of component 'graphic' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:613]
+INFO: [Synth 8-638] synthesizing module 'graphic' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
+INFO: [Synth 8-3491] module 'vga' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/vga.vhd:32' bound to instance 'inst_vga' of component 'vga' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:627]
+INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'vga' (1#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/vga.vhd:43]
+INFO: [Synth 8-3491] module 'playerBROM' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/playerBROM_stub.vhdl:5' bound to instance 'inst_brom_player' of component 'playerBROM' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
+INFO: [Synth 8-638] synthesizing module 'playerBROM' [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/playerBROM_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'utilBROM' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/utilBROM_stub.vhdl:5' bound to instance 'inst_brom_util' of component 'utilBROM' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
+INFO: [Synth 8-638] synthesizing module 'utilBROM' [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/realtime/utilBROM_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'graphic' (2#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:60]
+INFO: [Synth 8-3491] module 'Wolverine_movement' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:37' bound to instance 'inst_Wolvie_mov' of component 'Wolverine_movement' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:640]
+INFO: [Synth 8-638] synthesizing module 'Wolverine_movement' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'Wolverine_movement' (3#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:54]
+INFO: [Synth 8-3491] module 'Wolvie_attack' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:37' bound to instance 'inst_Wolvie_att' of component 'Wolvie_attack' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:658]
+INFO: [Synth 8-638] synthesizing module 'Wolvie_attack' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:54]
+INFO: [Synth 8-4471] merging register 'Sbam_active_reg' into 'GreenGoblin_hit_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:161]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_attack_reset_reg' into 'GreenGoblin_hit_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:162]
+INFO: [Synth 8-256] done synthesizing module 'Wolvie_attack' (4#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:54]
+INFO: [Synth 8-3491] module 'Wolvie_jump' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:36' bound to instance 'inst_Wolvie_jump' of component 'Wolvie_jump' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:677]
+INFO: [Synth 8-638] synthesizing module 'Wolvie_jump' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'Wolvie_jump' (5#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd:55]
+INFO: [Synth 8-3491] module 'Green_Goblin_movement' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:37' bound to instance 'inst_Green_Goblin_mov' of component 'Green_Goblin_movement' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:698]
+INFO: [Synth 8-638] synthesizing module 'Green_Goblin_movement' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_movement' (6#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd:53]
+INFO: [Synth 8-3491] module 'Green_Goblin_attack' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:37' bound to instance 'inst_Green_Goblin_att' of component 'Green_Goblin_attack' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:716]
+INFO: [Synth 8-638] synthesizing module 'Green_Goblin_attack' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_attack' (7#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd:53]
+INFO: [Synth 8-3491] module 'Green_Goblin_jump' declared at 'C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:36' bound to instance 'inst_Green_Goblin_jump' of component 'Green_Goblin_jump' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:734]
+INFO: [Synth 8-638] synthesizing module 'Green_Goblin_jump' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'Green_Goblin_jump' (8#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'main' (9#1) [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:44]
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[18]
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[17]
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[16]
@@ -93,16 +101,52 @@ WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_
 WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_curr_image[1]
 WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_curr_image[0]
 WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_reversed_in
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[2]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[1]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[0]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[18]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[17]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[16]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[15]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[14]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[13]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[12]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[11]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[10]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[18]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[17]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[16]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[15]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[14]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[13]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[12]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[11]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[10]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[9]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[8]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[7]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[6]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[5]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[4]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[3]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[2]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[1]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_pos[0]
+WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_reversed
 WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[3]
 WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[2]
 WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[1]
 WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[0]
 WARNING: [Synth 8-3331] design Wolverine_movement has unconnected port Wolvie_reversed_in
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 326.598 ; gain = 116.988
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 325.484 ; gain = 115.449
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -112,79 +156,79 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 326.598 ; gain = 116.988
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 325.484 ; gain = 115.449
 ---------------------------------------------------------------------------------
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'pixelClkGen' instantiated as 'inst_pixelClkGen' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:604]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'playerBROM' instantiated as 'inst_graphic/inst_brom_player' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'utilBROM' instantiated as 'inst_graphic/inst_brom_util' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'pixelClkGen' instantiated as 'inst_pixelClkGen' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:604]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'playerBROM' instantiated as 'inst_graphic/inst_brom_player' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:639]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'utilBROM' instantiated as 'inst_graphic/inst_brom_util' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:646]
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
-Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
-Finished Parsing XDC File [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp/playerBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_player'
+Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_2/utilBROM_in_context.xdc] for cell 'inst_graphic/inst_brom_util'
+Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc] for cell 'inst_pixelClkGen'
+Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
+Finished Parsing XDC File [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 647.160 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 644.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:59 ; elapsed = 00:01:13 . Memory (MB): peak = 647.160 ; gain = 437.551
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 644.883 ; gain = 434.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:59 ; elapsed = 00:01:13 . Memory (MB): peak = 647.160 ; gain = 437.551
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 644.883 ; gain = 434.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  {C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/.Xil/Vivado-33748-DESKTOP-V9D0PGF/dcp_3/pixelClkGen_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/.Xil/Vivado-5524-DESKTOP-K472J0U/dcp_3/pixelClkGen_in_context.xdc, line 4).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:14 . Memory (MB): peak = 647.160 ; gain = 437.551
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 644.883 ; gain = 434.848
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
 INFO: [Synth 8-5546] ROM "BG_pixel" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "GreenGoblin_cntV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Wolvie_cntV" won't be mapped to RAM because it is too sparse
@@ -216,44 +260,44 @@ INFO: [Synth 8-5544] ROM "movement_enable" won't be mapped to Block RAM because 
 INFO: [Synth 8-5546] ROM "attack_enable" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "jump_enable" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "GreenGoblin_new_image" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:109]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:110]
 INFO: [Synth 8-5546] ROM "jump_enable" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "GreenGoblin_new_image" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "frame_clk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "P_select" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "P1_moving" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'brom_util_addr_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:595]
-WARNING: [Synth 8-327] inferring latch for variable 'brom_addr_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:592]
-WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_life_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:578]
-WARNING: [Synth 8-327] inferring latch for variable 'Pedana1_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:447]
-WARNING: [Synth 8-327] inferring latch for variable 'Pedana2_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:451]
-WARNING: [Synth 8-327] inferring latch for variable 'Pedana3_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:455]
-WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_life_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:572]
-WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:355]
-WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_offset_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:308]
-WARNING: [Synth 8-327] inferring latch for variable 'movement_enable_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:90]
-WARNING: [Synth 8-327] inferring latch for variable 'jump_enable_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:82]
-WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_image_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:378]
-WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_image_reg' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/main.vhd:374]
+WARNING: [Synth 8-327] inferring latch for variable 'brom_util_addr_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:595]
+WARNING: [Synth 8-327] inferring latch for variable 'brom_addr_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:592]
+WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_life_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:578]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana1_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:447]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana2_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:451]
+WARNING: [Synth 8-327] inferring latch for variable 'Pedana3_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:455]
+WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_life_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:572]
+WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:355]
+WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_offset_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:308]
+WARNING: [Synth 8-327] inferring latch for variable 'movement_enable_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd:90]
+WARNING: [Synth 8-327] inferring latch for variable 'jump_enable_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:82]
+WARNING: [Synth 8-327] inferring latch for variable 'Wolvie_image_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:374]
+WARNING: [Synth 8-327] inferring latch for variable 'GreenGoblin_image_reg' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/main.vhd:378]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:05 ; elapsed = 00:01:21 . Memory (MB): peak = 647.160 ; gain = 437.551
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 644.883 ; gain = 434.848
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -272,9 +316,9 @@ Detailed RTL Component Info :
 	   2 Input     15 Bit       Adders := 1     
 	   3 Input     11 Bit       Adders := 6     
 	   2 Input     11 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 39    
+	   2 Input     10 Bit       Adders := 36    
 	   3 Input     10 Bit       Adders := 5     
-	   2 Input      9 Bit       Adders := 21    
+	   2 Input      9 Bit       Adders := 19    
 	   3 Input      9 Bit       Adders := 5     
 	   2 Input      8 Bit       Adders := 4     
 	   2 Input      7 Bit       Adders := 15    
@@ -297,7 +341,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 11    
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 7     
-	                1 Bit    Registers := 29    
+	                1 Bit    Registers := 27    
 +---Muxes : 
 	   2 Input     18 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 2     
@@ -320,7 +364,7 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 14    
 	   4 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 98    
+	   2 Input      1 Bit        Muxes := 96    
 	   7 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
 	  11 Input      1 Bit        Muxes := 1     
@@ -427,17 +471,15 @@ Detailed RTL Component Info :
 Module Wolvie_attack 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 3     
-	   2 Input      9 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input      6 Bit        Muxes := 1     
 	   6 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 3     
 	   5 Input      1 Bit        Muxes := 1     
 Module Wolvie_jump 
 Detailed RTL Component Info : 
@@ -511,28 +553,28 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'GreenGoblin_Life_cntV_reg[3:0]' into 'GreenGoblin_Life_cntV_reg[3:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:508]
-INFO: [Synth 8-4471] merging register 'GreenGoblin_head_cntV_reg[4:0]' into 'GreenGoblin_head_cntV_reg[4:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:526]
-INFO: [Synth 8-4471] merging register 'Wolvie_head_cntV_reg[4:0]' into 'Wolvie_head_cntV_reg[4:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:489]
-INFO: [Synth 8-4471] merging register 'Pedana1_cntV_reg[6:0]' into 'Pedana1_cntV_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:380]
-INFO: [Synth 8-4471] merging register 'Pedana2_cntV_reg[6:0]' into 'Pedana2_cntV_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:398]
-INFO: [Synth 8-4471] merging register 'Pedana3_cntV_reg[6:0]' into 'Pedana3_cntV_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:416]
-INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntV_reg[3:0]' into 'Wolvie_Life_cntV_reg[3:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:471]
-INFO: [Synth 8-4471] merging register 'Wolvie_cntV_reg[6:0]' into 'Wolvie_cntV_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:327]
-INFO: [Synth 8-4471] merging register 'GreenGoblin_cntV_reg[6:0]' into 'GreenGoblin_cntV_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:285]
-INFO: [Synth 8-4471] merging register 'Pedana1_cntH_reg[7:0]' into 'Pedana1_cntH_reg[7:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:379]
-INFO: [Synth 8-4471] merging register 'Pedana2_cntH_reg[7:0]' into 'Pedana2_cntH_reg[7:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:397]
-INFO: [Synth 8-4471] merging register 'Pedana3_cntH_reg[7:0]' into 'Pedana3_cntH_reg[7:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:415]
-INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntH_reg[6:0]' into 'Wolvie_Life_cntH_reg[6:0]' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:470]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_Life_cntV_reg[3:0]' into 'GreenGoblin_Life_cntV_reg[3:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:508]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_head_cntV_reg[4:0]' into 'GreenGoblin_head_cntV_reg[4:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:526]
+INFO: [Synth 8-4471] merging register 'Wolvie_head_cntV_reg[4:0]' into 'Wolvie_head_cntV_reg[4:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:489]
+INFO: [Synth 8-4471] merging register 'Pedana1_cntV_reg[6:0]' into 'Pedana1_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:380]
+INFO: [Synth 8-4471] merging register 'Pedana2_cntV_reg[6:0]' into 'Pedana2_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:398]
+INFO: [Synth 8-4471] merging register 'Pedana3_cntV_reg[6:0]' into 'Pedana3_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:416]
+INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntV_reg[3:0]' into 'Wolvie_Life_cntV_reg[3:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:471]
+INFO: [Synth 8-4471] merging register 'Wolvie_cntV_reg[6:0]' into 'Wolvie_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:327]
+INFO: [Synth 8-4471] merging register 'GreenGoblin_cntV_reg[6:0]' into 'GreenGoblin_cntV_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:285]
+INFO: [Synth 8-4471] merging register 'Pedana1_cntH_reg[7:0]' into 'Pedana1_cntH_reg[7:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:379]
+INFO: [Synth 8-4471] merging register 'Pedana2_cntH_reg[7:0]' into 'Pedana2_cntH_reg[7:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:397]
+INFO: [Synth 8-4471] merging register 'Pedana3_cntH_reg[7:0]' into 'Pedana3_cntH_reg[7:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:415]
+INFO: [Synth 8-4471] merging register 'Wolvie_Life_cntH_reg[6:0]' into 'Wolvie_Life_cntH_reg[6:0]' [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:470]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:563]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:568]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:442]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:443]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:444]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:561]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:350]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:303]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/graphic.vhd:566]
 INFO: [Synth 8-5546] ROM "GreenGoblin_Life_cntV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Pedana1_cntV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Pedana2_cntV" won't be mapped to RAM because it is too sparse
@@ -541,9 +583,9 @@ INFO: [Synth 8-5546] ROM "Wolvie_Life_cntV" won't be mapped to RAM because it is
 INFO: [Synth 8-5546] ROM "Wolvie_cntV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "GreenGoblin_cntV" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "jump_enable" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/edoardo/Desktop/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_jump.vhd:108]
 INFO: [Synth 8-5546] ROM "GreenGoblin_new_image" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "jump_enable" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "frame_clk" won't be mapped to RAM because it is too sparse
@@ -562,42 +604,6 @@ WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGob
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[8]
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[7]
 WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[6]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[5]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[4]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[3]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[2]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[1]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_pos[0]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[18]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[17]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[16]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[15]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[14]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[13]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[12]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[11]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[10]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[9]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[8]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[7]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[6]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[5]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[4]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[3]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[2]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[1]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port Wolvie_pos[0]
-WARNING: [Synth 8-3331] design Green_Goblin_attack has unconnected port GreenGoblin_reversed
-WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_curr_image[2]
-WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_curr_image[1]
-WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_curr_image[0]
-WARNING: [Synth 8-3331] design Green_Goblin_movement has unconnected port Green_Goblin_reversed_in
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[2]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[1]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port GreenGoblin_lives[0]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[3]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[2]
-WARNING: [Synth 8-3331] design Wolvie_attack has unconnected port Wolvie_curr_image[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Green_Goblin_att/Wolvie_attack_reset_reg)
 INFO: [Synth 8-3886] merging instance 'inst_Green_Goblin_jump/GreenGoblin_new_image_reg[2]' (FDRE) to 'inst_Green_Goblin_jump/GreenGoblin_new_image_reg[1]'
@@ -608,7 +614,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Gree
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Green_Goblin_mov/\Green_Goblin_new_image_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Wolvie_jump/\Wolvie_new_image_reg[2] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_Wolvie_jump/\Wolvie_new_image_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Green_Goblin_att/Wolvie_hit_reg)
 INFO: [Synth 8-3886] merging instance 'inst_graphic/GreenGoblin_Life_cntH_reg[5]' (FDE) to 'inst_graphic/B[5]'
 INFO: [Synth 8-3886] merging instance 'inst_graphic/GreenGoblin_Life_cntH_reg[6]' (FDE) to 'inst_graphic/B[6]'
 INFO: [Synth 8-3886] merging instance 'inst_graphic/GreenGoblin_Life_cntH_reg[4]' (FDE) to 'inst_graphic/B[4]'
@@ -693,6 +698,8 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_grap
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_graphic/\Wolvie_life_offset_reg[14] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_graphic/\Wolvie_life_offset_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_graphic/\Wolvie_life_offset_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_Green_Goblin_att/Wolvie_hit_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst_Wolvie_att/GreenGoblin_hit_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\GreenGoblin_image_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst_graphic/\GreenGoblin_offset_reg[2] )
 INFO: [Synth 8-3886] merging instance 'inst_graphic/GreenGoblin_offset_reg[9]' (LD) to 'inst_graphic/GreenGoblin_offset_reg[13]'
@@ -727,6 +734,7 @@ WARNING: [Synth 8-3332] Sequential element (GreenGoblin_offset_reg[4]) is unused
 WARNING: [Synth 8-3332] Sequential element (GreenGoblin_offset_reg[3]) is unused and will be removed from module graphic.
 WARNING: [Synth 8-3332] Sequential element (GreenGoblin_offset_reg[2]) is unused and will be removed from module graphic.
 WARNING: [Synth 8-3332] Sequential element (GreenGoblin_offset_reg[1]) is unused and will be removed from module graphic.
+WARNING: [Synth 8-3332] Sequential element (GreenGoblin_hit_reg) is unused and will be removed from module Wolvie_attack.
 WARNING: [Synth 8-3332] Sequential element (Wolvie_new_image_reg[3]) is unused and will be removed from module Wolvie_jump.
 WARNING: [Synth 8-3332] Sequential element (Wolvie_new_image_reg[2]) is unused and will be removed from module Wolvie_jump.
 WARNING: [Synth 8-3332] Sequential element (Green_Goblin_reversed_out_reg) is unused and will be removed from module Green_Goblin_movement.
@@ -747,7 +755,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Pedana1_
 WARNING: [Synth 8-3332] Sequential element (Pedana1_pos_reg[9]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (Pedana2_pos_reg[9]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:46 ; elapsed = 00:02:05 . Memory (MB): peak = 647.160 ; gain = 437.551
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 644.883 ; gain = 434.848
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -764,10 +772,10 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'inst_pixelClkGen/clk_out1' to pin 'inst_pixelClkGen/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:26 ; elapsed = 00:02:48 . Memory (MB): peak = 648.809 ; gain = 439.199
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 647.801 ; gain = 437.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:43 ; elapsed = 00:03:06 . Memory (MB): peak = 730.660 ; gain = 521.051
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 728.641 ; gain = 518.605
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -778,25 +786,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (inst_Wolvie_att/GreenGoblin_hit_reg) is unused and will be removed from module main.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'inst_Wolvie_att/GreenGoblin_hit_reg/Q' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:150]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:150]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd:150]
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[16]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[9]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (GreenGoblin_lives_reg[2]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (GreenGoblin_lives_reg[1]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (GreenGoblin_lives_reg[0]) is unused and will be removed from module main.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_graphic/GreenGoblin_life_offset_reg[10] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_graphic/GreenGoblin_life_offset_reg[11] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_graphic/GreenGoblin_life_offset_reg[12] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_graphic/GreenGoblin_life_offset_reg[15] )
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[15]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[12]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[11]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (inst_graphic/GreenGoblin_life_offset_reg[10]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:47 ; elapsed = 00:03:10 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -820,7 +811,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:50 ; elapsed = 00:03:13 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -833,7 +824,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:50 ; elapsed = 00:03:13 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -845,25 +836,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:51 ; elapsed = 00:03:14 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:51 ; elapsed = 00:03:14 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:51 ; elapsed = 00:03:14 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:51 ; elapsed = 00:03:14 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -886,16 +877,16 @@ Report Cell Usage:
 |2     |playerBROM_bbox  |     1|
 |3     |utilBROM_bbox    |     1|
 |4     |BUFG             |     1|
-|5     |CARRY4           |   205|
-|6     |LUT1             |   195|
-|7     |LUT2             |   295|
-|8     |LUT3             |   198|
-|9     |LUT4             |   340|
-|10    |LUT5             |   270|
-|11    |LUT6             |   392|
-|12    |FDRE             |   405|
+|5     |CARRY4           |   197|
+|6     |LUT1             |   201|
+|7     |LUT2             |   297|
+|8     |LUT3             |   201|
+|9     |LUT4             |   325|
+|10    |LUT5             |   252|
+|11    |LUT6             |   372|
+|12    |FDRE             |   406|
 |13    |FDSE             |    40|
-|14    |LD               |    52|
+|14    |LD               |    58|
 |15    |LDC              |     6|
 |16    |LDCP             |     6|
 |17    |LDP              |     2|
@@ -907,38 +898,38 @@ Report Instance Areas:
 +------+-------------------------+----------------------+------+
 |      |Instance                 |Module                |Cells |
 +------+-------------------------+----------------------+------+
-|1     |top                      |                      |  2461|
-|2     |  inst_Green_Goblin_att  |Green_Goblin_attack   |    24|
+|1     |top                      |                      |  2418|
+|2     |  inst_Green_Goblin_att  |Green_Goblin_attack   |    23|
 |3     |  inst_Green_Goblin_jump |Green_Goblin_jump     |   143|
-|4     |  inst_Green_Goblin_mov  |Green_Goblin_movement |   121|
-|5     |  inst_Wolvie_att        |Wolvie_attack         |    74|
-|6     |  inst_Wolvie_jump       |Wolvie_jump           |   148|
+|4     |  inst_Green_Goblin_mov  |Green_Goblin_movement |   120|
+|5     |  inst_Wolvie_att        |Wolvie_attack         |    32|
+|6     |  inst_Wolvie_jump       |Wolvie_jump           |   145|
 |7     |  inst_Wolvie_mov        |Wolverine_movement    |   171|
-|8     |  inst_graphic           |graphic               |  1123|
+|8     |  inst_graphic           |graphic               |  1147|
 |9     |    inst_vga             |vga                   |   129|
 +------+-------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:51 ; elapsed = 00:03:14 . Memory (MB): peak = 736.918 ; gain = 527.309
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 117 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:06 ; elapsed = 00:02:37 . Memory (MB): peak = 736.918 ; gain = 205.648
-Synthesis Optimization Complete : Time (s): cpu = 00:02:52 ; elapsed = 00:03:15 . Memory (MB): peak = 736.918 ; gain = 527.309
+Synthesis finished with 0 errors, 0 critical warnings and 144 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 729.680 ; gain = 199.609
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 729.680 ; gain = 519.645
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 281 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 279 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 66 instances were transformed.
-  LD => LDCE: 52 instances
+  A total of 72 instances were transformed.
+  LD => LDCE: 58 instances
   LDC => LDCE: 6 instances
   LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 6 instances
   LDP => LDPE: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-285 Infos, 169 Warnings, 3 Critical Warnings and 0 Errors encountered.
+284 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:55 ; elapsed = 00:03:13 . Memory (MB): peak = 736.918 ; gain = 527.309
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/main.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.151 . Memory (MB): peak = 736.918 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 09 12:55:45 2017...
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 729.680 ; gain = 519.645
+INFO: [Common 17-1381] The checkpoint 'C:/Users/edoardo/Desktop/GameZero/GameZero.runs/synth_1/main.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 729.680 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 09 15:50:18 2017...

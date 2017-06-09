@@ -70,7 +70,7 @@ constant ATTACK_IMG : natural := 4;
 signal attack_enable : std_logic := '0';
 signal attack_frame_cnt : natural range 0 to W_ATTACK_FRAMES * 4 -1 := 0;  -- 4 is the number of frames for the attack
 signal inRange : std_logic := '0';
-signal GreenGoblin_hit, Sbam_active, GreenGoblin_attack_reset : std_logic := '0';
+signal GreenGoblin_hit, Sbam_active, GreenGoblin_attack_reset : std_logic;
 
 begin
 
@@ -146,17 +146,17 @@ end process;
 --           else '0';
 inRange <= '1';
 
-process (frame_clk)
+process (frame_clk, attack_enable)
 begin
-    if rising_edge(frame_clk) then
+    if rising_edge(frame_clk) and attack_enable = '1' then
   
---        if GreenGoblin_hit = '1' then
---            GreenGoblin_hit <= '0';
---        if Sbam_active = '1' and attack_frame_cnt = W_ATTACK_FRAMES *4 -1 then
---            Sbam_active <= '0';
---        elsif GreenGoblin_attack_reset = '1' then
---            GreenGoblin_attack_reset <= '0';
-        if inRange = '1' then --attack_frame_cnt >= W_ATTACK_FRAMES * 2  and  
+        if GreenGoblin_hit = '1' then
+            GreenGoblin_hit <= '0';
+        elsif Sbam_active = '1' and attack_frame_cnt = W_ATTACK_FRAMES *4 -1 then
+            Sbam_active <= '0';
+        elsif GreenGoblin_attack_reset = '1' then
+            GreenGoblin_attack_reset <= '0';
+        elsif inRange = '1' and attack_frame_cnt >= W_ATTACK_FRAMES * 2  then  
             GreenGoblin_hit <= '1';
             Sbam_active <= '1';
             GreenGoblin_attack_reset <= '1';
