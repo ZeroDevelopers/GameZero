@@ -134,7 +134,7 @@ left_enable <=  '0' when Green_Goblin_curr_pos (9 downto 0) - PIXEL_INCREMENT = 
                           Green_Goblin_curr_pos (18 downto 10) >= Wolvie_pos (18 downto 10)) 
                     else '1';    
 
-right_enable <=  '0' when Green_Goblin_curr_pos (9 downto 0) + PLAYER_SIZE + PIXEL_INCREMENT = 640 - PLAYER_SIZE - WALL_WIDTH OR 
+right_enable <=  '0' when Green_Goblin_curr_pos (9 downto 0) + PLAYER_SIZE + PIXEL_INCREMENT = 640 - WALL_WIDTH OR 
                           (Green_Goblin_curr_pos (9 downto 0) + PIXEL_INCREMENT >= Wolvie_pos (9 downto 0) +20 AND 
                            Green_Goblin_curr_pos (9 downto 0) + PIXEL_INCREMENT <= Wolvie_pos (9 downto 0) + PLAYER_SIZE - 20 AND 
                            Green_Goblin_curr_pos (18 downto 10) + PLAYER_SIZE >= Wolvie_pos (18 downto 10) AND
