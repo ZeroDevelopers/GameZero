@@ -156,7 +156,7 @@ begin
             Sbam_active <= '0';
         elsif GreenGoblin_attack_reset = '1' then
             GreenGoblin_attack_reset <= '0';
-        elsif inRange = '1' and attack_frame_cnt >= W_ATTACK_FRAMES * 2  then  
+        elsif inRange = '1' then --and attack_frame_cnt >= W_ATTACK_FRAMES * 2  then  
             GreenGoblin_hit <= '1';
             Sbam_active <= '1';
             GreenGoblin_attack_reset <= '1';
