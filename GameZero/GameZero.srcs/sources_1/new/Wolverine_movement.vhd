@@ -102,6 +102,7 @@ process(frame_clk, movement_type, movement_enable)
 begin
         if rising_edge(frame_clk) then
             if reset = '0' then
+                Wolvie_reversed_out <= '0';
                 Wolvie_hor_new_pos <= WOLVIE_START_HOR_POS;
             elsif movement_type = RIGHT and right_enable = '1' AND movement_enable = '1' then
                 Wolvie_hor_new_pos <= Wolvie_curr_pos (9 downto 0)+ PIXEL_INCREMENT;
@@ -141,7 +142,10 @@ right_enable <=  '0' when Wolvie_curr_pos (9 downto 0) + PLAYER_SIZE + PIXEL_INC
 
 process(frame_clk, enable)
 begin
-       if rising_edge(frame_clk) then    
+       if rising_edge(frame_clk) then
+            if reset = '0' then
+                Wolvie_new_image <= "0000";
+            end if;    
             if movement_enable = '1' then
                 if W_action_cnt = W_ACTION_FRAMES -1 then
                     W_action_cnt <= 0;

@@ -21,8 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -33,6 +32,8 @@ entity vga is
     Port ( pixel_clk : in STD_LOGIC;
            pixel : in STD_LOGIC_VECTOR (11 downto 0);
            reset : in STD_LOGIC;
+           map_row : out std_logic_vector (8 downto 0);
+           map_col : out std_logic_vector (9 downto 0);
            red : out STD_LOGIC_VECTOR (3 downto 0);
            green : out STD_LOGIC_VECTOR (3 downto 0);
            blue : out STD_LOGIC_vector (3 downto 0);
@@ -58,10 +59,23 @@ constant V_POL : std_logic := '0';
  
 signal h_sync : std_logic := not(H_POL);
 signal v_sync : std_logic := not(V_POL);
-signal h_counter, v_counter : std_logic_vector(9 downto 0) := (others => '0');
+--signal h_counter, v_counter : std_logic_vector(9 downto 0) := (others => '0');
+signal h_counter : natural range 0 to 799;
+signal v_counter : natural range 0 to 524;
 signal video_on, video_on_h, video_on_v : std_logic := '0';
 
 begin
+
+
+process (pixel_clk, video_on)
+begin
+    if rising_edge(pixel_clk) then
+        if video_on = '1' then
+            map_row <= std_logic_vector (to_unsigned (v_counter, 9));
+            map_col <= std_logic_vector (to_unsigned (h_counter, 10));
+        end if; 
+    end if;
+end process;
 
 HS <= h_sync;
 VS <= v_sync;
@@ -72,7 +86,7 @@ process(pixel_clk, reset)
 begin
     if (rising_edge(pixel_clk) and reset = '0') then
         if h_counter = H_MAX -1 then
-            h_counter <= (others => '0');
+            h_counter <= 0;
         else
             h_counter <= h_counter +1;
         end if;
@@ -84,7 +98,7 @@ process (pixel_clk, reset)
   begin
     if (rising_edge(pixel_clk) and reset = '0') then
       if ((h_counter = (H_MAX - 1)) and (v_counter = (V_MAX - 1))) then
-        v_counter <= (others =>'0');
+        v_counter <= 0;
       elsif (h_counter = (H_MAX - 1)) then
         v_counter <= v_counter + 1;
       end if;

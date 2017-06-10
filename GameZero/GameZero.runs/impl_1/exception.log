@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\Users\edoardo\Documents\GitHub\GameZero\GameZero\GameZero.runs\impl_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Autorizzazione negata

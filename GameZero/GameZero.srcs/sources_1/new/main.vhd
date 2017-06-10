@@ -21,8 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_ARITH.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 
 
@@ -45,6 +45,7 @@ architecture Behavioral of main is
 
 component graphic is
     Port (  pixel_clk: in STD_LOGIC;
+            start : in std_logic;
             GreenGoblin_pos : in std_logic_vector (18 downto 0);
             GreenGoblin_reversed : in std_logic;
             GreenGoblin_image : in std_logic_vector (2 downto 0);
@@ -58,6 +59,7 @@ component graphic is
             Pedana3_pos : in std_logic_vector (18 downto 0);
             Pedana3_image : in std_logic_vector (1 downto 0);
             GreenGoblin_lives, Wolvie_lives : in std_logic_vector (2 downto 0);  -- 4 maximum lives
+            Sbam_pos : in std_logic_vector(18 downto 0);
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -85,20 +87,21 @@ end component;
 
 --Component for the Wolvie attack
 component Wolvie_attack is
- Port (
-       frame_clk : in STD_LOGIC;
-       enable : in STD_LOGIC;
-       attack_reset : in std_logic;
-       GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
-       Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
-       Wolvie_reversed : in std_logic;
-       Wolvie_curr_image : in STD_LOGIC_VECTOR (3 downto 0);
-       Wolvie_dec_disable : out STD_LOGIC;
-       Wolvie_new_image : out STD_LOGIC_VECTOR (3 downto 0);
-       GreenGoblin_life_dec : out std_logic;
-       GreenGoblin_attack_reset_out : out std_logic;
-       Sbam_active_out : out std_logic
-      );
+Port (
+            frame_clk : in STD_LOGIC;
+            enable : in STD_LOGIC;
+            start : in std_logic;
+            attack_reset : in std_logic;
+            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            GreenGoblin_lives_in : in std_logic_vector(2 downto 0);
+            Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Wolvie_reversed : in std_logic;
+            GreenGoblin_lives_out : out std_logic_vector(2 downto 0);
+            Wolvie_dec_disable : out STD_LOGIC;
+            Wolvie_new_image : out STD_LOGIC_VECTOR (3 downto 0);
+            GreenGoblin_attack_reset_out : out std_logic;
+            Sbam_pos : out std_logic_vector (18 downto 0)
+       );
 end component;
 
 -- Component for Wolverine jump
@@ -147,16 +150,18 @@ component Green_Goblin_attack is
     Port (
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
+            start : in std_logic;
             attack_reset : in std_logic;
-            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Wolvie_lives_in : in std_logic_vector(2 downto 0);
+            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             GreenGoblin_reversed : in std_logic;
+            Wolvie_lives_out : out std_logic_vector(2 downto 0);
             GreenGoblin_dec_disable : out STD_LOGIC;
             GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
-            Wolvie_life_dec : out std_logic;
             Wolvie_attack_reset_out : out std_logic;
-            Sbam_active_out : out std_logic
-       );
+            Sbam_pos : out std_logic_vector(18 downto 0)
+       ); 
 end component;
 
 -- Component for GreenGoblin jump
@@ -208,9 +213,6 @@ constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 constant GG_START_HOR_POS : std_logic_vector(9 downto 0) := "0111101111";
 constant GG_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 
---constant WOLVIE_START_POS : std_logic_vector (18 downto 0) := "1100000000001001110";
---constant GG_START_POS : std_logic_vector (18 downto 0) := "1100000000111101111";
-
 -- Pedana constants for movement
 constant P_ACTION_FRAME : natural := 30;
 constant P_MOVING_FRAMES : natural := 600;
@@ -258,14 +260,14 @@ signal Pedana3_image : std_logic_vector(1 downto 0) := "10";
 signal P1_action_cnt, P2_action_cnt, P3_action_cnt : natural range 0 to P_ACTION_FRAME -1 := 0;
 signal P_moving_cnt : natural range 0 to P_MOVING_FRAMES -1 := 0;
 signal P_select : std_logic_vector (1 downto 0);
-signal P_pos_tmp, P_tmp_tmp : std_logic_vector(9 downto 0);
+signal P_pos_tmp : std_logic_vector(9 downto 0);
 signal P1_moving, P2_moving, P3_moving : std_logic := '0'; -- These are the enablers 
 signal P1_actual_moving, P2_actual_moving, P3_actual_moving : std_logic := '0';  -- flags to determine wether finishing the animation
 signal P1_closing, P2_closing, P3_closing : std_logic; 
 
 
 -- Signals for the sbam
-signal Sbam_enable : std_logic := '0';
+signal GG_Sbam_pos, W_Sbam_pos, Sbam_pos : std_logic_vector (18 downto 0) := (others => '0');
 
 
 -- Decoder control signals
@@ -306,26 +308,18 @@ begin
     end if;
 end process;
 
-process(frame_clk, start)
-begin
-    if rising_edge(frame_clk) then
-        if start = '1' then
-            GreenGoblin_lives <= "100";
-        end if;
-        if GreenGoblin_life_dec = '1' then
-            GreenGoblin_lives <= GreenGoblin_lives -1;
-        end if;
-    end if;
-end process;
 
+-- Defining the position of the sbam image
+Sbam_pos <= W_Sbam_pos when GG_Sbam_pos = "0000000000000000000"
+            else GG_Sbam_pos;
 
 -- Decoder for Wolverine
 W_dec_disable <= W_dec_mov_disable or W_dec_att_disable;  -- Logical or among all the disablers
 
 process (frame_clk, W_dec_disable)
 begin
-    if rising_edge(frame_clk) then
-        if W_dec_disable = '0' then --and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+    if rising_edge(frame_clk) and start = '0' then
+        if W_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if W_but_right = '1' then
                 Wolvie_mov_enable <= '1';
                 Wolvie_mov_type <= RIGHT;
@@ -355,8 +349,8 @@ GG_dec_disable <= (GG_dec_mov_disable OR GG_dec_att_disable);
 
 process (frame_clk, GG_dec_disable)
 begin
-    if rising_edge(frame_clk) then
-        if GG_dec_disable = '0' then -- and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
+    if rising_edge(frame_clk) and start = '0' then
+        if GG_dec_disable = '0' and GreenGoblin_lives (2 downto 0) > "000" and Wolvie_lives(2 downto 0) > "000" then
             if GG_but_right = '1' then
                 GreenGoblin_mov_enable <= '1';
                 GreenGoblin_mov_type <= RIGHT;
@@ -397,7 +391,6 @@ begin
             if reset = '0' or start = '1' then
                 GreenGoblin_pos(18 downto 10) <= GG_START_VERT_POS;
                 GreenGoblin_pos(9 downto 0) <= GG_START_HOR_POS;
-                GreenGoblin_reversed_out <= '0';
                 Wolvie_pos(18 downto 10) <= WOLVIE_START_VERT_POS;
                 Wolvie_pos(9 downto 0) <= WOLVIE_START_HOR_POS;
             else 
@@ -412,7 +405,7 @@ end process;
 -- Defining the "random" position of pedanas
 process (frame_clk, GreenGoblin_pos, Wolvie_pos)
 begin
-    if rising_edge(frame_clk) then
+    if rising_edge(frame_clk) and start = '0' then
         if P_moving_cnt = P_MOVING_FRAMES -1 then
             P_moving_cnt <= 0;
             
@@ -448,7 +441,7 @@ end process;
 
 process (frame_clk)
 begin
-    if rising_edge(frame_clk) and (P1_moving = '1' or P1_actual_moving = '1')  then
+    if rising_edge(frame_clk) and (P1_moving = '1' or P1_actual_moving = '1') and start = '0'  then
         if (P1_moving = '1') then
             P1_actual_moving <= '1';
             Pedana1_image <= "01";  -- Start closing the selected pedana
@@ -466,7 +459,7 @@ begin
                 Pedana1_image <= "00";
             elsif Pedana1_image = "00" and P1_closing = '1' then
                 P1_closing <= '0';
-                if P_pos_tmp < WALL_WIDTH  OR  conv_integer(P_pos_tmp) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
+                if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana1_pos (9 downto 0) <= "0010110100";
                 else
                     Pedana1_pos (9 downto 0) <= P_pos_tmp;
@@ -480,7 +473,7 @@ end process;
 
 process (frame_clk)
 begin
-    if rising_edge(frame_clk) and (P2_moving = '1' or P2_actual_moving = '1')  then
+    if rising_edge(frame_clk) and (P2_moving = '1' or P2_actual_moving = '1') and start = '0' then
         if (P2_moving = '1') then
             P2_actual_moving <= '1';
             Pedana2_image <= "01";  -- Start closing the selected pedana
@@ -498,7 +491,7 @@ begin
                 Pedana2_image <= "00";
             elsif Pedana2_image = "00" and P2_closing = '1' then
                 P2_closing <= '0';
-                if P_pos_tmp < WALL_WIDTH  OR  conv_integer(P_pos_tmp) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
+                if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana2_pos (9 downto 0) <= "0010110100";
                 else
                     Pedana2_pos (9 downto 0) <= P_pos_tmp;
@@ -512,7 +505,7 @@ end process;
 
 process (frame_clk)
 begin
-    if rising_edge(frame_clk) and (P3_moving = '1' or P3_actual_moving = '1')  then
+    if rising_edge(frame_clk) and (P3_moving = '1' or P3_actual_moving = '1')  and start = '0' then
         if (P3_moving = '1') then
             P3_actual_moving <= '1';
             Pedana3_image <= "01";  -- Start closing the selected pedana
@@ -530,7 +523,7 @@ begin
                 Pedana3_image <= "00";
             elsif Pedana3_image = "00" and P3_closing = '1' then
                 P3_closing <= '0';
-               if P_pos_tmp < WALL_WIDTH  OR  P_pos_tmp + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
+               if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
                     Pedana3_pos (9 downto 0) <= "0010110100";
                 else
                     Pedana3_pos (9 downto 0) <= P_pos_tmp;
@@ -627,8 +620,9 @@ port map
 inst_graphic : graphic
 port map
 (   pixel_clk               => pixel_clk,
+    start                   => start,
     GreenGoblin_pos         => GreenGoblin_pos,
-    GreenGoblin_reversed    => GreenGoblin_reversed_in,
+    GreenGoblin_reversed    => GreenGoblin_reversed_out,
     GreenGoblin_image       => GreenGoblin_image,
     Wolvie_pos              => Wolvie_pos,
     Wolvie_reversed         => Wolvie_reversed_out,
@@ -641,6 +635,7 @@ port map
     Pedana3_image           => Pedana3_image,
     Wolvie_lives            => Wolvie_lives,
     GreenGoblin_lives       => GreenGoblin_lives,
+    Sbam_pos                => Sbam_pos,
     red                     => red,
     green                   => green,
     blue                    => blue,
@@ -673,18 +668,18 @@ inst_Wolvie_att : Wolvie_attack
 port map 
 (   frame_clk           => frame_clk,
     enable              => wolvie_att_enable,
+    start               => start,
     attack_reset        => Wolvie_attack_reset,
     GreenGoblin_pos     => GreenGoblin_pos,
+    GreenGoblin_lives_in => GreenGoblin_lives,
     Wolvie_pos          => Wolvie_pos,
-    Wolvie_curr_image   => Wolvie_image,
-    Wolvie_reversed     => Wolvie_reversed_in,
+    Wolvie_reversed     => Wolvie_reversed_out,
+    GreenGoblin_lives_out => GreenGoblin_lives,
     Wolvie_dec_disable  => W_dec_att_disable,
     Wolvie_new_image    => Wolvie_att_image,
-    GreenGoblin_life_dec    => GreenGoblin_life_dec,
     GreenGoblin_attack_reset_out    => GreenGoblin_attack_reset,
-    Sbam_active_out     => Sbam_enable
+    Sbam_pos     => W_Sbam_pos
 );
-
 
 
 
@@ -732,15 +727,17 @@ inst_Green_Goblin_att : Green_Goblin_attack
 port map 
 (   frame_clk           => frame_clk,
     enable              => GreenGoblin_att_enable,
+    start               => start,
     attack_reset        => GreenGoblin_attack_reset,
     GreenGoblin_pos     => GreenGoblin_pos,
     Wolvie_pos          => Wolvie_pos,
-    GreenGoblin_reversed     => GreenGoblin_reversed_in,
+    GreenGoblin_reversed     => GreenGoblin_reversed_out,
     GreenGoblin_dec_disable  => GG_dec_att_disable,
     GreenGoblin_new_image    => GreenGoblin_att_image,
-    Wolvie_life_dec    => GreenGoblin_life_dec,
+    Wolvie_lives_in    => Wolvie_lives,
+    Wolvie_lives_out    => Wolvie_lives,
     Wolvie_attack_reset_out    => Wolvie_attack_reset,
-    Sbam_active_out     => Sbam_enable
+    Sbam_pos     => GG_Sbam_pos
 );
 
 

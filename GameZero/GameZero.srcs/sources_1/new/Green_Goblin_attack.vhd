@@ -38,16 +38,18 @@ entity Green_Goblin_attack is
     Port (
             frame_clk : in STD_LOGIC;
             enable : in STD_LOGIC;
+            start : in std_logic;
             attack_reset : in std_logic;
-            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             Wolvie_pos : in STD_LOGIC_VECTOR (18 downto 0);
+            Wolvie_lives_in : in std_logic_vector(2 downto 0);
+            GreenGoblin_pos : in STD_LOGIC_VECTOR (18 downto 0);
             GreenGoblin_reversed : in std_logic;
+            Wolvie_lives_out : out std_logic_vector(2 downto 0);
             GreenGoblin_dec_disable : out STD_LOGIC;
             GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
-            Wolvie_life_dec : out std_logic;
             Wolvie_attack_reset_out : out std_logic;
-            Sbam_active_out : out std_logic
-       );
+            Sbam_pos : out std_logic_vector(18 downto 0)
+       ); 
 end Green_Goblin_attack;
 
 architecture Behavioral of Green_Goblin_attack is
@@ -60,16 +62,16 @@ constant PIXEL_INCREMENT : natural := 1;
 constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 
-constant GG_ATTACK_FRAMES : natural := 5;
-constant MOV_IMG : natural := 5;
-constant ATTACK_IMG : natural := 4;
+constant GG_ATTACK_FRAMES : natural := 10;
+--constant MOV_IMG : natural := 5;
+constant ATTACK_IMG : natural := 2;
 
 
 -- signals
 signal attack_enable : std_logic := '0';
-signal attack_frame_cnt : natural range 0 to GG_ATTACK_FRAMES * 2 -1 := 0;  -- 2 is the number of frames for the attack
+signal attack_frame_cnt : natural range 0 to GG_ATTACK_FRAMES * ATTACK_IMG -1 := 0;  -- 4 is the number of frames for the attack
 signal inRange : std_logic := '0';
-signal Wolvie_hit, Sbam_active, Wolvie_attack_reset : std_logic := '0';
+signal Wolvie_attack_reset : std_logic := '0';
 
 begin
 
@@ -83,7 +85,7 @@ begin
     if rising_edge(frame_clk) then
         if enable = '1' then
             attack_enable <= '1';
-        elsif enable = '0' and attack_frame_cnt = GG_ATTACK_FRAMES * 4 -1 then
+        elsif enable = '0' and attack_frame_cnt = GG_ATTACK_FRAMES * ATTACK_IMG -1 then
             attack_enable <= '0';
         end if;
     end if;
@@ -98,7 +100,7 @@ begin
             attack_frame_cnt <= 0;
         end if;  
         if attack_enable = '1' then
-            if attack_frame_cnt = GG_ATTACK_FRAMES *4 -1 then
+            if attack_frame_cnt = GG_ATTACK_FRAMES * ATTACK_IMG -1 then
                 attack_frame_cnt <= 0;
             else
                 attack_frame_cnt <= attack_frame_cnt +1;               
@@ -111,52 +113,47 @@ end process;
 process(frame_clk, enable)
 begin
    if rising_edge(frame_clk) then
-        if attack_reset = '1' then
+        if start = '1' then
+            Wolvie_lives_out <= "100";
+        elsif attack_reset = '1' then
             GreenGoblin_new_image <= (others => '0');
-        end if;  
-        if attack_enable = '1' then
+        elsif attack_enable = '1' then
             if attack_frame_cnt < GG_ATTACK_FRAMES -1 then
                 GreenGoblin_new_image <= "001";
             elsif attack_frame_cnt = GG_ATTACK_FRAMES -1 then
                 GreenGoblin_new_image <= "010";
-            elsif attack_frame_cnt = GG_ATTACK_FRAMES *2 -1 then
-                GreenGoblin_new_image <= "000";               
+                if inRange = '1' then
+                    Wolvie_lives_out <= Wolvie_lives_in -1;
+                    -- Defining the position of the sbam image
+                    Sbam_pos (18 downto 10) <= Wolvie_pos (18 downto 10) +13;
+                    if GreenGoblin_reversed = '1' then
+                        Sbam_pos(9 downto 0) <= GreenGoblin_pos(9 downto 0) - 15; 
+                    else
+                        Sbam_pos(9 downto 0) <= Wolvie_pos(9 downto 0) - 15;
+                    end if;
+                end if;
+            elsif attack_frame_cnt = GG_ATTACK_FRAMES * ATTACK_IMG -1 then
+                Sbam_pos <= (others => '0');
+                GreenGoblin_new_image <= "000";
             end if;
         end if;
     end if;
 end process;
 
-inRange <= '1' when (Wolvie_pos (18 downto 10) >= GreenGoblin_pos (18 downto 10) - 40 and
-                    Wolvie_pos (18 downto 10) <= GreenGoblin_pos (18 downto 10) + 40 and
-                    Wolvie_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE and
-                    Wolvie_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE - 20 and
-                    GreenGoblin_reversed = '0')  or
+inRange <= '1' when 
                     (Wolvie_pos (18 downto 10) >= GreenGoblin_pos (18 downto 10) - 40 and
                     Wolvie_pos (18 downto 10) <= GreenGoblin_pos (18 downto 10) + 40 and
-                    Wolvie_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) - 20 and
-                    Wolvie_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0) and
-                    GreenGoblin_reversed = '1')                   
+                    Wolvie_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) - PLAYER_SIZE and
+                    Wolvie_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0) - PLAYER_SIZE +30 and
+                    GreenGoblin_reversed = '1') or
+                    (Wolvie_pos (18 downto 10) >= GreenGoblin_pos (18 downto 10) - 40 and
+                    Wolvie_pos (18 downto 10) <= GreenGoblin_pos (18 downto 10) + 40 and
+                    Wolvie_pos (9 downto 0) >= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE -30 and
+                    Wolvie_pos (9 downto 0) <= GreenGoblin_pos (9 downto 0) + PLAYER_SIZE and
+                    GreenGoblin_reversed = '0')                  
            else '0';
 
-process (frame_clk, GreenGoblin_pos)
-begin
-    if rising_edge(frame_clk) then
-        if Wolvie_hit = '1' then
-            Wolvie_hit <= '0';
-        elsif Sbam_active = '1' and attack_frame_cnt = GG_ATTACK_FRAMES *4 -1 then
-            Sbam_active <= '0';
-        elsif Wolvie_attack_reset = '1' then
-            Wolvie_attack_reset <= '0';
-        elsif attack_frame_cnt >= GG_ATTACK_FRAMES * 2  and  inRange = '1' then
-            Wolvie_hit <= '1';
-            Sbam_active <= '1';
-            Wolvie_attack_reset <= '1';
-        end if;  
-    end if;
-end process;
 
-sbam_active_out <= Sbam_active;
-Wolvie_life_dec <= Wolvie_hit;
 Wolvie_attack_reset_out <= Wolvie_attack_reset;
 
 end Behavioral;
