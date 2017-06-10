@@ -108,6 +108,7 @@ begin
         if rising_edge(frame_clk) AND movement_enable = '1' then
             if reset = '0' then
                 Green_Goblin_hor_new_pos <= GG_START_HOR_POS;
+                Green_Goblin_reversed_out <= '1';
             elsif movement_type = RIGHT and right_enable = '1' then
                 Green_Goblin_hor_new_pos <= Green_Goblin_curr_pos (9 downto 0)+ PIXEL_INCREMENT;
                 Green_Goblin_reversed_out <= '0';

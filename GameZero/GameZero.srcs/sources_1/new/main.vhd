@@ -397,6 +397,7 @@ begin
             if reset = '0' or start = '1' then
                 GreenGoblin_pos(18 downto 10) <= GG_START_VERT_POS;
                 GreenGoblin_pos(9 downto 0) <= GG_START_HOR_POS;
+                GreenGoblin_reversed_out <= '0';
                 Wolvie_pos(18 downto 10) <= WOLVIE_START_VERT_POS;
                 Wolvie_pos(9 downto 0) <= WOLVIE_START_HOR_POS;
             else 

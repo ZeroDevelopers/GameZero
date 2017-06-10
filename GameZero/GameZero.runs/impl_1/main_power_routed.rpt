@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Fri Jun 09 19:28:59 2017
+| Date             : Sat Jun 10 11:36:10 2017
 | Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 0.231 |
-| Dynamic (W)              | 0.130 |
+| Dynamic (W)              | 0.131 |
 | Device Static (W)        | 0.100 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -49,9 +49,9 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     2667 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1415 |     63400 |            2.23 |
+| Clocks         |     0.002 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |     2671 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1410 |     63400 |            2.22 |
 |   Register     |    <0.001 |      525 |    126800 |            0.41 |
 |   CARRY4       |    <0.001 |      195 |     15850 |            1.23 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
@@ -146,14 +146,14 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.130 |
+| main                                           |     0.131 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.008 |
+|   inst_graphic                                 |     0.009 |
 |     Pedana1_offset_reg[11]                     |     0.000 |
 |     Pedana1_offset_reg[14]                     |     0.000 |
 |     Pedana2_offset_reg[11]                     |     0.000 |
