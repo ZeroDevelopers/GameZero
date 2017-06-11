@@ -22,7 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 --use IEEE.STD_LOGIC_ARITH.ALL;
---use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 
 
@@ -60,6 +60,8 @@ component graphic is
             Pedana3_image : in std_logic_vector (1 downto 0);
             GreenGoblin_lives, Wolvie_lives : in std_logic_vector (2 downto 0);  -- 4 maximum lives
             Sbam_pos : in std_logic_vector(18 downto 0);
+            Wolvie_won_pos, GreenGoblin_won_pos : in std_logic_vector (18 downto 0);
+            Heart_pos : in std_logic_vector (18 downto 0);
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -213,6 +215,9 @@ constant WOLVIE_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 constant GG_START_HOR_POS : std_logic_vector(9 downto 0) := "0111101111";
 constant GG_START_VERT_POS : std_logic_vector(8 downto 0) := "110000000";
 
+-- Final positions
+constant FINAL_IMG_POS : std_logic_vector (18 downto 0) := "0100011000001111000";
+
 -- Pedana constants for movement
 constant P_ACTION_FRAME : natural := 30;
 constant P_MOVING_FRAMES : natural := 600;
@@ -269,6 +274,13 @@ signal P1_closing, P2_closing, P3_closing : std_logic;
 -- Signals for the sbam
 signal GG_Sbam_pos, W_Sbam_pos, Sbam_pos : std_logic_vector (18 downto 0) := (others => '0');
 
+
+-- Signals for the final images
+signal Wolvie_won_pos, GreenGoblin_won_pos : std_logic_vector (18 downto 0) := (others => '0');
+
+-- Signals for the Heart
+signal heart_pos : std_logic_vector (18 downto 0) := (others => '0');
+signal heart1, heart2, heart3 : std_logic := '0';
 
 -- Decoder control signals
 signal W_dec_disable : std_logic;
@@ -383,6 +395,23 @@ Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
 GreenGoblin_image <= GreenGoblin_att_image when GG_dec_att_disable = '1'
                 else GreenGoblin_jump_image when GG_jump_status = '1'
                 else GreenGoblin_mov_image when GG_dec_mov_disable = '1';
+                
+                
+
+-- Projecting the final images
+process(frame_clk, start, reset)
+begin   
+    if rising_edge(frame_clk) then
+        if start = '1' or reset = '0' then
+            Wolvie_won_pos <= (others => '0');
+            GreenGoblin_won_pos <= (others => '0');
+        elsif GreenGoblin_lives = "000" then
+            Wolvie_won_pos <= FINAL_IMG_POS;
+        elsif Wolvie_lives = "000" then
+            GreenGoblin_won_pos <= FINAL_IMG_POS;
+        end if;  
+    end if;
+end process;
 
                 
 process(frame_clk)
@@ -451,6 +480,7 @@ begin
             P1_action_cnt <= 0;
             if Pedana1_image = "10" then
                 P1_actual_moving <= '0';
+                heart1 <= '0';
             elsif Pedana1_image = "00" and P1_closing = '0' then
                 Pedana1_image <= "01";
             elsif Pedana1_image = "01" and P1_closing = '0' then
@@ -459,6 +489,7 @@ begin
                 Pedana1_image <= "00";
             elsif Pedana1_image = "00" and P1_closing = '1' then
                 P1_closing <= '0';
+                heart1 <= '1';
                 if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana1_pos (9 downto 0) <= "0010110100";
                 else
@@ -483,6 +514,7 @@ begin
             P2_action_cnt <= 0;
            if Pedana2_image = "10" then
                 P2_actual_moving <= '0';
+                heart2 <= '0';
             elsif Pedana2_image = "00" and P2_closing = '0' then
                 Pedana2_image <= "01";
             elsif Pedana2_image = "01" and P2_closing = '0' then
@@ -491,6 +523,7 @@ begin
                 Pedana2_image <= "00";
             elsif Pedana2_image = "00" and P2_closing = '1' then
                 P2_closing <= '0';
+                heart2 <= '1';
                 if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH >= SCREEN_WIDTH then
                     Pedana2_pos (9 downto 0) <= "0010110100";
                 else
@@ -515,6 +548,7 @@ begin
             P3_action_cnt <= 0;
             if Pedana3_image = "10" then
                 P3_actual_moving <= '0';
+                heart3 <= '0';
             elsif Pedana3_image = "00" and P3_closing = '0' then
                 Pedana3_image <= "01";
             elsif Pedana3_image = "01" and P3_closing = '0' then
@@ -523,6 +557,7 @@ begin
                 Pedana3_image <= "00";
             elsif Pedana3_image = "00" and P3_closing = '1' then
                 P3_closing <= '0';
+                heart3 <= '1';
                if to_integer(unsigned(P_pos_tmp)) < WALL_WIDTH  OR  to_integer(unsigned(P_pos_tmp)) + PEDANA_WIDTH + WALL_WIDTH > SCREEN_WIDTH then
                     Pedana3_pos (9 downto 0) <= "0010110100";
                 else
@@ -534,6 +569,23 @@ begin
         end if;
     end if;
 end process;
+
+-- Process to project the heart
+process(frame_clk, heart1, heart2, heart3)
+begin
+    if rising_edge(frame_clk) then
+        if heart1 = '1' then
+            Heart_pos(18 downto 10) <= (Pedana1_pos(18 downto 10) + 27);
+            Heart_pos(9 downto 0) <= Pedana1_pos(9 downto 0) + 76;
+        elsif heart2 = '1' then
+            Heart_pos(18 downto 10) <= (Pedana2_pos(18 downto 10) + 27);
+            Heart_pos(9 downto 0) <= Pedana2_pos(9 downto 0) + 76;
+        elsif heart3 = '1' then
+            Heart_pos(18 downto 10) <= (Pedana3_pos(18 downto 10) + 27);
+            Heart_pos(9 downto 0) <= Pedana3_pos(9 downto 0) + 76;    
+        end if;
+    end if;
+end process; 
 
 
 
@@ -636,6 +688,9 @@ port map
     Wolvie_lives            => Wolvie_lives,
     GreenGoblin_lives       => GreenGoblin_lives,
     Sbam_pos                => Sbam_pos,
+    Wolvie_won_pos          => Wolvie_won_pos,
+    GreenGoblin_won_pos     => GreenGoblin_won_pos,
+    Heart_pos               => Heart_pos,
     red                     => red,
     green                   => green,
     blue                    => blue,

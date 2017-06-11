@@ -51,6 +51,8 @@ entity graphic is
             Pedana3_image : in std_logic_vector (1 downto 0);
             GreenGoblin_lives, Wolvie_lives : in std_logic_vector (2 downto 0);  -- 4 maximum lives
             sbam_pos : in std_logic_vector (18 downto 0);
+            Wolvie_won_pos, GreenGoblin_won_pos : in std_logic_vector (18 downto 0);
+            Heart_pos : in std_logic_vector (18 downto 0);
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_vector (3 downto 0);
@@ -85,7 +87,7 @@ END component;
 component utilBROM IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END component;
@@ -98,7 +100,7 @@ constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
 constant WALL : natural := 20;  -- Width of the wall at the borders of the screen
 constant BROM_DEPTH : natural := 17;  -- Bits needed to address a specific pixel in BROM
-constant BROM_PEDANA_DEPTH : natural := 17;  -- Bits needed to address a specific pixel in BROM PEDANA
+constant BROM_PEDANA_DEPTH : natural := 18;  -- Bits needed to address a specific pixel in BROM PEDANA
 constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural := 100;
 constant LIFE_SIZE : natural := 48;
@@ -106,6 +108,9 @@ constant LBAR_WIDTH : natural := 96;
 constant LBAR_HEIGHT : natural := 16;
 constant HEAD_SIZE : natural := 32;
 constant SBAM_SIZE : natural := 48;
+constant FINAL_IMG_WIDTH : natural := 400;
+constant FINAL_IMG_HEIGHT : natural := 200;
+
 
 -- BACKGROUND COLOR !!
 constant BG_COLOR : std_logic_vector (11 downto 0) := "011100110000";
@@ -154,6 +159,9 @@ constant LBAR_OFFSET_5 : natural := 70752;
 
 constant WHEAD_OFFSET : natural := 72288;
 constant GGHEAD_OFFSET : natural := 73312;
+
+constant WWON_OFFSET : natural := 74336;
+constant GGWON_OFFSET : natural := 154336;
 
 
 signal reset_graphic : std_logic := '0';
@@ -232,10 +240,22 @@ signal Sbam_enable, Sbam_colored : std_logic := '0';
 signal Sbam_cntV, Sbam_cntH : natural range 0 to SBAM_SIZE-1;
 signal Sbam_address : natural range 0 to SBAM_SIZE * SBAM_SIZE -1;
 
+-- Heart
+signal Heart_enable, Heart_colored : std_logic := '0';
+signal Heart_cntV, Heart_cntH : natural range 0 to LIFE_SIZE-1;
+signal Heart_address : natural range 0 to LIFE_SIZE * LIFE_SIZE -1;
+
+-- final images
+signal Wolvie_won_enable, Wolvie_won_colored : std_logic := '0';
+signal GreenGoblin_won_enable, GreenGoblin_won_colored : std_logic := '0';
+signal Wolvie_won_cntV, GreenGoblin_won_cntV : natural range 0 to FINAL_IMG_HEIGHT-1; 
+signal Wolvie_won_cntH, GreenGoblin_won_cntH : natural range 0 to FINAL_IMG_WIDTH-1;
+signal Wolvie_won_address, GreenGoblin_won_address : natural range 0 to FINAL_IMG_WIDTH * FINAL_IMG_HEIGHT -1;
+
 -- BROM signals
 signal brom_addr : STD_LOGIC_VECTOR(16 DOWNTO 0);
 signal brom_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
-signal brom_util_addr : STD_LOGIC_VECTOR(16 DOWNTO 0);
+signal brom_util_addr : STD_LOGIC_VECTOR(17 DOWNTO 0);
 signal brom_util_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
 
 begin
@@ -329,24 +349,64 @@ begin
             GreenGoblin_cntH <= GreenGoblin_cntH +1;
         end if;
     end if;
+    if start = '1' then
+        GreenGoblin_cntH <= 0;
+        GreenGoblin_cntH <= 0;
+    end if;
 end process;
 
 -- defining the Green Goblin enabler
-GreenGoblin_enable <= '1' when (map_row - GreenGoblin_pos(18 downto 10)) < PLAYER_SIZE and (map_col - GreenGoblin_pos(9 downto 0)) < PLAYER_SIZE
-                    else '0';
+--GreenGoblin_enable <= '1' when (map_row - unsigned(GreenGoblin_pos(18 downto 10))) < PLAYER_SIZE and (map_col - unsigned(GreenGoblin_pos(9 downto 0))) < PLAYER_SIZE
+--                    else '0';
+                    
+process(pixel_clk, GreenGoblin_pos, map_row, map_col)
+begin
+    if rising_edge(pixel_clk) then
+        if (map_row - unsigned(GreenGoblin_pos(18 downto 10))) < PLAYER_SIZE and (map_col - unsigned(GreenGoblin_pos(9 downto 0))) < PLAYER_SIZE then
+            GreenGoblin_enable <= '1';
+        else
+            GreenGoblin_enable <= '0';
+        end if;
+    end if;
+end process;
 
 -- Defining the address in rom of the Green Goblin
-GreenGoblin_address <= GreenGoblin_cntV * PLAYER_SIZE + GreenGoblin_cntH when GreenGoblin_reversed = '0'
-                        else GreenGoblin_cntV * PLAYER_SIZE + PLAYER_SIZE -1 - GreenGoblin_cntH;  -- Picking up the right pixel from BROM
-
+--GreenGoblin_address <= GreenGoblin_cntV * PLAYER_SIZE + GreenGoblin_cntH when GreenGoblin_reversed = '0'
+--                        else GreenGoblin_cntV * PLAYER_SIZE + PLAYER_SIZE -1 - GreenGoblin_cntH;  -- Picking up the right pixel from BROM
+process(pixel_clk, GreenGoblin_reversed, GreenGoblin_cntH, GreenGoblin_cntV)
+begin
+    if rising_edge(pixel_clk) then
+        if GreenGoblin_reversed = '0' then
+            GreenGoblin_address <= GreenGoblin_cntV * PLAYER_SIZE + GreenGoblin_cntH;
+        else
+            GreenGoblin_address <= GreenGoblin_cntV * PLAYER_SIZE + PLAYER_SIZE -1 - GreenGoblin_cntH;
+        end if;
+    end if;
+end process;
 
 -- Defining the offset of the Goblin accroding to the image input
-GreenGoblin_offset <= GG_OFFSET_1 when GreenGoblin_image = "000"
-                    else GG_OFFSET_2 when GreenGoblin_image = "001"
-                    else GG_OFFSET_3 when GreenGoblin_image = "010"
-                    else GG_OFFSET_4 when GreenGoblin_image = "011"
-                    else GG_OFFSET_5 when GreenGoblin_image = "100";
-                                        
+--GreenGoblin_offset <= GG_OFFSET_1 when GreenGoblin_image = "000"
+--                    else GG_OFFSET_2 when GreenGoblin_image = "001"
+--                    else GG_OFFSET_3 when GreenGoblin_image = "010"
+--                    else GG_OFFSET_4 when GreenGoblin_image = "011"
+--                    else GG_OFFSET_5 when GreenGoblin_image = "100";
+
+process(pixel_clk, GreenGoblin_image)
+begin
+    if rising_edge(pixel_clk) then
+        if GreenGoblin_image = "000" then
+            GreenGoblin_offset <= GG_OFFSET_1;
+        elsif GreenGoblin_image = "001" then
+            GreenGoblin_offset <= GG_OFFSET_2;
+        elsif GreenGoblin_image = "010" then
+            GreenGoblin_offset <= GG_OFFSET_3;
+        elsif GreenGoblin_image = "011" then
+            GreenGoblin_offset <= GG_OFFSET_4;
+        elsif GreenGoblin_image = "100" then
+            GreenGoblin_offset <= GG_OFFSET_5;
+        end if;
+    end if;
+end process;                                       
 
                     
 ---------------------------------------
@@ -647,8 +707,97 @@ Sbam_enable <=  '0' when Sbam_pos = "0000000000000000000"
 Sbam_address <= Sbam_cntV * SBAM_SIZE + Sbam_cntH;
 
 
+------------------------------------------------------------------------
+
+-- Projecting the HEART image
+
+-------------------------------------------------------------------------
+
+-- Handling the counter for the HEART image
+process(pixel_clk, Heart_enable)
+begin
+    if rising_edge(pixel_clk) and Heart_enable = '1' and start = '0' then
+        if (Heart_cntH = LIFE_SIZE -1) then
+            if (Heart_cntV < LIFE_SIZE -1) then
+                Heart_cntH <= 0;
+                Heart_cntV <= Heart_cntV +1;
+            else
+               Heart_cntH <= 0;
+               Heart_cntV <= 0;
+            end if;
+        else 
+            Heart_cntH <= Heart_cntH +1;
+        end if;
+    end if;
+end process;
+
+-- defining the Heart image enabler
+Heart_enable <=  '0' when Heart_pos = "0000000000000000000"
+                else '1' when (map_row - Heart_pos(18 downto 10)) < LIFE_SIZE and (map_col - Heart_pos(9 downto 0)) < LIFE_SIZE
+                else '0';
+
+-- Defining the address in rom of the Heart image
+Heart_address <= Heart_cntV * LIFE_SIZE + Heart_cntH;
 
 
+
+------------------------------------------------------------------------
+
+-- Projecting the final images
+
+-------------------------------------------------------------------------
+
+-- Handling the counter for the Wolvie won image
+process(pixel_clk, Wolvie_won_enable)
+begin
+    if rising_edge(pixel_clk) and Wolvie_won_enable = '1' and start = '0' then
+        if (Wolvie_won_cntH = FINAL_IMG_WIDTH -1) then
+            if (Wolvie_won_cntV < FINAL_IMG_HEIGHT -1) then
+                Wolvie_won_cntH <= 0;
+                Wolvie_won_cntV <= Wolvie_won_cntV +1;
+            else
+               Wolvie_won_cntH <= 0;
+               Wolvie_won_cntV <= 0;
+            end if;
+        else 
+            Wolvie_won_cntH <= Wolvie_won_cntH +1;
+        end if;
+    end if;
+end process;
+
+-- defining the Wolvie_won image enabler
+Wolvie_won_enable <=  '0' when Wolvie_won_pos = "0000000000000000000"
+                        else '1' when (map_row - Wolvie_won_pos(18 downto 10)) < FINAL_IMG_HEIGHT and (map_col - Wolvie_won_pos(9 downto 0)) < FINAL_IMG_WIDTH
+                        else '0';
+
+-- Defining the address in rom of the Wolvie_won image
+Wolvie_won_address <= Wolvie_won_cntV * FINAL_IMG_WIDTH + Wolvie_won_cntH;
+
+
+process(pixel_clk, GreenGoblin_won_enable)
+begin
+    if rising_edge(pixel_clk) and GreenGoblin_won_enable = '1' and start = '0' then
+        if (GreenGoblin_won_cntH = FINAL_IMG_WIDTH -1) then
+            if (GreenGoblin_won_cntV < FINAL_IMG_HEIGHT -1) then
+                GreenGoblin_won_cntH <= 0;
+                GreenGoblin_won_cntV <= GreenGoblin_won_cntV +1;
+            else
+               GreenGoblin_won_cntH <= 0;
+               GreenGoblin_won_cntV <= 0;
+            end if;
+        else 
+            GreenGoblin_won_cntH <= GreenGoblin_won_cntH +1;
+        end if;
+    end if;
+end process;
+
+-- defining the GreenGoblin_won image enabler
+GreenGoblin_won_enable <=  '0' when GreenGoblin_won_pos = "0000000000000000000"
+                        else '1' when (map_row - GreenGoblin_won_pos(18 downto 10)) < FINAL_IMG_HEIGHT and (map_col - GreenGoblin_won_pos(9 downto 0)) < FINAL_IMG_WIDTH
+                        else '0';
+
+-- Defining the address in rom of the GreenGoblin_won image
+GreenGoblin_won_address <= GreenGoblin_won_cntV * FINAL_IMG_WIDTH + GreenGoblin_won_cntH;
 
 ------------------------------------------------------------------------
 
@@ -671,8 +820,14 @@ end process;
 process(pixel_clk)
 begin
     if rising_edge(pixel_clk) and start = '0' then
-        if Sbam_enable = '1' then
+        if Wolvie_won_enable = '1' then
+            brom_util_addr <= std_logic_vector(to_unsigned(Wolvie_won_address + WWON_OFFSET, BROM_PEDANA_DEPTH));
+        elsif GreenGoblin_won_enable = '1' then
+            brom_util_addr <= std_logic_vector(to_unsigned(GreenGoblin_won_address + GGWON_OFFSET, BROM_PEDANA_DEPTH));
+        elsif Sbam_enable = '1' then
             brom_util_addr <= std_logic_vector(to_unsigned(Sbam_address + SBAM_OFFSET, BROM_PEDANA_DEPTH));
+        elsif Heart_enable = '1' then
+            brom_util_addr <= std_logic_vector(to_unsigned(Heart_address + LIFE_OFFSET, BROM_PEDANA_DEPTH));
         elsif Wolvie_life_enable = '1' then
              brom_util_addr <= std_logic_vector(to_unsigned(Wolvie_life_address + Wolvie_life_offset, BROM_PEDANA_DEPTH));
         elsif GreenGoblin_life_enable = '1' then
@@ -696,12 +851,19 @@ end process;
 -- Computing the enabler and the colored signals
 player_enable <= GreenGoblin_enable or Wolvie_enable;  -- Logical OR among all the possible objects
 util_enable <= Pedana1_enable or Pedana2_enable or Pedana3_enable or Wolvie_life_enable or GreenGoblin_life_enable 
-                or Wolvie_head_enable or GreenGoblin_head_enable or Sbam_enable;
+                or Wolvie_head_enable or GreenGoblin_head_enable or Heart_enable;
 
 player_colored <= '0' when brom_pixel_out = "111111111111"
                     else '1';
 util_colored <= '0' when brom_util_pixel_out = "111111111111" and util_enable = '1'
                     else '1';
+                    
+Wolvie_won_colored <= '0' when brom_util_pixel_out = "111111111111" and Wolvie_won_enable = '1'
+                        else '1';
+GreenGoblin_won_colored <= '0' when brom_util_pixel_out = "111111111111" and GreenGoblin_won_enable = '1'
+                        else '1';
+Sbam_colored <= '0' when brom_util_pixel_out = "111111111111" and Sbam_enable = '1'
+                        else '1';
 ------------------------------------------------------------------------
 
 -- Multiplexing the pixel to be given to the vga according to the enablers
@@ -712,8 +874,18 @@ util_colored <= '0' when brom_util_pixel_out = "111111111111" and util_enable = 
 process (pixel_clk)
 begin
     if rising_edge(pixel_clk) and start = '0' then
-        if util_colored = '1' and Sbam_enable = '1' then
+        if Wolvie_won_colored = '1' and Wolvie_won_enable = '1' then
             pixel_in <= brom_util_pixel_out;
+        elsif GreenGoblin_won_colored = '1' and GreenGoblin_won_enable = '1' then
+            pixel_in <= brom_util_pixel_out;
+        elsif Sbam_colored = '1' and Sbam_enable = '1' then
+            pixel_in <= brom_util_pixel_out;
+        elsif (Heart_enable = '1' and Pedana1_enable = '1') or (Heart_enable = '1' and Pedana1_enable = '1') or (Heart_enable = '1' and Pedana1_enable = '1') then
+            if util_colored = '0' then
+                pixel_in <= BG_pixel;
+            else
+                pixel_in <= brom_util_pixel_out;
+            end if;   
         elsif player_enable = '1' and player_colored = '1' then
             pixel_in <= brom_pixel_out;
         elsif util_enable = '1' and util_colored = '1' then

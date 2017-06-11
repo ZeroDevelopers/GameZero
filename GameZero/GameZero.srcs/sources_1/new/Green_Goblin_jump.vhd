@@ -59,7 +59,7 @@ architecture Behavioral of Green_Goblin_jump is
 constant WALL_WIDTH : natural := 20;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
-constant PIXEL_INCREMENT : natural := 1;
+constant PIXEL_INCREMENT : natural := 3;
 constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural :=100;

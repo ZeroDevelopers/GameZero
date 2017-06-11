@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sat Jun 10 18:51:36 2017
+| Date         : Sun Jun 11 12:11:20 2017
 | Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    71 |
-| Unused register locations in slices containing registers |   288 |
+| Number of unique control sets                            |    78 |
+| Unused register locations in slices containing registers |   301 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             115 |           57 |
+| No           | No                    | No                     |             145 |           64 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              84 |           39 |
-| Yes          | No                    | No                     |             213 |           82 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             212 |           86 |
+| No           | Yes                   | No                     |              86 |           37 |
+| Yes          | No                    | No                     |             243 |           90 |
+| Yes          | No                    | Yes                    |               7 |            2 |
+| Yes          | Yes                   | No                     |             234 |           97 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,77 +48,84 @@ Table of Contents
 +----------------------------------------------------+--------------------------------------------------+-------------------------------------------------------+------------------+----------------+
 |                    Clock Signal                    |                   Enable Signal                  |                    Set/Reset Signal                   | Slice Load Count | Bel Load Count |
 +----------------------------------------------------+--------------------------------------------------+-------------------------------------------------------+------------------+----------------+
-|  inst_graphic/Pedana3_offset_reg[15]_i_1_n_0       |                                                  | inst_graphic/Pedana3_offset_reg[15]_i_2_n_0           |                1 |              1 |
-|  inst_graphic/Pedana2_offset_reg[15]_i_1_n_0       |                                                  | inst_graphic/Pedana2_offset_reg[15]_i_2_n_0           |                1 |              1 |
-|  inst_Wolvie_mov/movement_enable_reg_i_1_n_0       |                                                  | enable                                                |                1 |              1 |
-|  inst_graphic/Pedana1_offset_reg[14]/G0            |                                                  |                                                       |                1 |              1 |
-|  inst_graphic/eqOp                                 |                                                  | inst_graphic/Pedana1_offset_reg[15]_i_2_n_0           |                1 |              1 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/h_sync0                         |                1 |              1 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/v_sync0                         |                1 |              1 |
-|  inst_graphic/Pedana1_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
-|  inst_graphic/Pedana2_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
-|  inst_graphic/Pedana2_offset_reg[14]/G0            |                                                  |                                                       |                1 |              1 |
-|  inst_graphic/Pedana3_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
 |  inst_graphic/Pedana3_offset_reg[14]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana3_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana2_offset_reg[14]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana2_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana1_offset_reg[11]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana1_offset_reg[14]/G0            |                                                  |                                                       |                1 |              1 |
+|  inst_graphic/Pedana1_offset_reg[15]_i_1_n_0       |                                                  | inst_graphic/Pedana1_offset_reg[15]_i_2_n_0           |                1 |              1 |
+|  inst_graphic/Pedana2_offset_reg[15]_i_1_n_0       |                                                  | inst_graphic/Pedana2_offset_reg[15]_i_2_n_0           |                1 |              1 |
+|  inst_graphic/Pedana3_offset_reg[15]_i_1_n_0       |                                                  | inst_graphic/Pedana3_offset_reg[15]_i_2_n_0           |                1 |              1 |
+|  inst_Wolvie_mov/movement_enable_reg_i_1_n_0       |                                                  | enable                                                |                1 |              1 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/v_sync0                         |                1 |              1 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/h_sync0                         |                1 |              1 |
 |  inst_Green_Goblin_mov/E[0]                        |                                                  |                                                       |                1 |              2 |
-|  inst_Wolvie_mov/Wolvie_new_image_reg[3]_0[0]      |                                                  |                                                       |                1 |              4 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_Life_cntV0              | inst_graphic/GreenGoblin_Life_cntV[3]_i_1_n_0         |                1 |              4 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_Life_cntV0                   | inst_graphic/Wolvie_Life_cntV[3]_i_1_n_0              |                1 |              4 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/Wolvie_new_image[3]_i_2_n_0      | inst_Wolvie_mov/Wolvie_new_image[3]_i_1_n_0           |                1 |              4 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/dec_disable                      |                                                       |                2 |              4 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/Wolvie_new_image[3]_i_2_n_0      | inst_Wolvie_mov/Wolvie_new_image[3]_i_1_n_0           |                2 |              4 |
 |  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_att/GG_dec_att_disable         | inst_Green_Goblin_att/attack_frame_cnt[4]_i_1__0_n_0  |                1 |              4 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/BG_section_cnt0                     |                                                       |                1 |              5 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_head_cntH0                   |                                                       |                1 |              5 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_head_cntV0              | inst_graphic/GreenGoblin_head_cntV[4]_i_1_n_0         |                1 |              5 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_head_cntV0                   | inst_graphic/Wolvie_head_cntV[4]_i_1_n_0              |                2 |              5 |
+|  inst_Wolvie_mov/Wolvie_new_image_reg[3]_0[0]      |                                                  |                                                       |                1 |              4 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_Life_cntV0                   | inst_graphic/Wolvie_Life_cntV[3]_i_1_n_0              |                1 |              4 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_Life_cntV0              | inst_graphic/GreenGoblin_Life_cntV[3]_i_1_n_0         |                1 |              4 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/dec_disable                      |                                                       |                1 |              4 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_head_cntV0                   | inst_graphic/Wolvie_head_cntV[4]_i_1_n_0              |                3 |              5 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_head_cntH[4]__0_i_1_n_0      |                                                       |                1 |              5 |
 |  frame_clk_reg_n_0_BUFG                            | P1_actual_moving2                                |                                                       |                1 |              5 |
 |  frame_clk_reg_n_0_BUFG                            | P2_actual_moving2                                |                                                       |                2 |              5 |
 |  frame_clk_reg_n_0_BUFG                            | P3_actual_moving2                                |                                                       |                2 |              5 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Sbam_cntV0                          | inst_graphic/Sbam_cntV[5]_i_1_n_0                     |                2 |              6 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/BG_section_cnt0                     |                                                       |                1 |              5 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_head_cntV0              | inst_graphic/GreenGoblin_head_cntV[4]_i_1_n_0         |                1 |              5 |
+|  inst_Green_Goblin_att/brom_util_addr_reg[16]_1[0] |                                                  |                                                       |                3 |              6 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Heart_cntV0                         | inst_graphic/Heart_cntV[5]_i_1_n_0                    |                2 |              6 |
 |  inst_Wolvie_att/brom_util_addr_reg[16]_0[0]       |                                                  |                                                       |                2 |              6 |
-|  inst_Green_Goblin_att/brom_util_addr_reg[15]_0[0] |                                                  |                                                       |                2 |              6 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_Green_Goblin_att/Sbam_cntH_reg[0]_1         |                                                       |                2 |              6 |
 |  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_att/W_dec_att_disable                |                                                       |                3 |              6 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Heart_cntH0                         |                                                       |                2 |              6 |
 |  frame_clk_reg_n_0_BUFG                            |                                                  | led_OBUF[0]                                           |                3 |              6 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_cntV0                   | inst_graphic/GreenGoblin_cntV[6]_i_1_n_0              |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_Life_cntH0                   |                                                       |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana3_cntV0                       | inst_graphic/Pedana3_cntV[6]_i_1_n_0                  |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_cntH[6]_i_1_n_0              |                                                       |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_cntV0                        | inst_graphic/Wolvie_cntV[6]_i_1_n_0                   |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Sbam_cntV0                          | inst_graphic/Sbam_cntV[5]_i_1_n_0                     |                2 |              6 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_Green_Goblin_att/E[0]                       |                                                       |                2 |              6 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_cntH0                        |                                                       |                3 |              7 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana1_cntV0                       | inst_graphic/Pedana1_cntV[6]_i_1_n_0                  |                3 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana3_cntV0                       | inst_graphic/Pedana3_cntV[6]_i_1_n_0                  |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_cntV0                   | inst_graphic/GreenGoblin_cntV[6]_i_1_n_0              |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_cntH0                   | led_OBUF[0]                                           |                2 |              7 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_Life_cntH0              |                                                       |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_cntH0                   |                                                       |                2 |              7 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana2_cntV0                       | inst_graphic/Pedana2_cntV[6]_i_1_n_0                  |                3 |              7 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana3_cntH0                       |                                                       |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_Life_cntH0                   |                                                       |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_cntV0                        | inst_graphic/Wolvie_cntV[6]_i_1_n_0                   |                2 |              7 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana1_cntH0                       |                                                       |                4 |              8 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana2_cntH[7]_i_1_n_0             |                                                       |                3 |              8 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana1_cntH0                       |                                                       |                3 |              8 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_jump/E[0]                      | inst_Wolvie_mov/SS[0]                                 |                5 |              9 |
-|  frame_clk_reg_n_0_BUFG                            | Pedana2_pos[8]_i_1_n_0                           |                                                       |                3 |              9 |
-|  frame_clk_reg_n_0_BUFG                            | p_5_out[9]                                       |                                                       |                5 |              9 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_jump/W_jump_status                   | inst_Wolvie_mov/SS[0]                                 |                3 |              9 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Pedana3_cntH0                       |                                                       |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_won_cntV0                    | inst_graphic/Wolvie_won_cntV[7]_i_1_n_0               |                3 |              8 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_won_cntV0               | inst_graphic/GreenGoblin_won_cntV[7]_i_1_n_0          |                3 |              8 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_jump/E[0]                      | inst_Wolvie_mov/SR[0]                                 |                3 |              9 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_jump/W_jump_status                   | inst_Wolvie_mov/SR[0]                                 |                3 |              9 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/Wolvie_won_cntH0                    |                                                       |                4 |              9 |
+|  frame_clk_reg_n_0_BUFG                            | Pedana2_pos[8]_i_1_n_0                           |                                                       |                4 |              9 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_won_cntH0               |                                                       |                4 |              9 |
+|  frame_clk_reg_n_0_BUFG                            | p_5_out[9]                                       |                                                       |                3 |              9 |
+|  frame_clk_reg_n_0_BUFG                            | P_select0                                        |                                                       |                7 |             10 |
 |  frame_clk_reg_n_0_BUFG                            | inst_graphic/inst_vga/E[0]                       |                                                       |                4 |             10 |
-|  frame_clk_reg_n_0_BUFG                            | Pedana3_pos[9]_i_2_n_0                           | p_6_out[9]                                            |                3 |             10 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_head_cntH0              |                                                       |                3 |             10 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/Wolvie_hor_new_pos[9]_i_2_n_0    | inst_Wolvie_mov/SR[0]                                 |                5 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/GreenGoblin_head_cntH0              |                                                       |                2 |             10 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/v_counter0                 | inst_graphic/inst_vga/v_counter[9]_i_1_n_0            |                4 |             10 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/counter_v[9]_i_2_n_0                | inst_graphic/counter_v[9]_i_1_n_0                     |                4 |             10 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/Wolvie_hor_new_pos[9]_i_2_n_0    | inst_Wolvie_mov/SS[0]                                 |                5 |             10 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_mov/Green_Goblin_reversed_out0 | inst_Green_Goblin_mov/Green_Goblin_reversed_out03_out |                5 |             11 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/pixel0                                   |                6 |             12 |
-|  frame_clk_reg_n_0_BUFG                            | P_select0                                        |                                                       |                5 |             12 |
+|  frame_clk_reg_n_0_BUFG                            | Pedana3_pos[9]_i_2_n_0                           | p_6_out[9]                                            |                4 |             10 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/counter_v[9]_i_2_n_0                | inst_graphic/counter_v[9]_i_1_n_0                     |                3 |             10 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_mov/Green_Goblin_reversed_out0 | inst_Green_Goblin_mov/Green_Goblin_reversed_out03_out |                6 |             11 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/red[3]_i_1_n_0                  |                5 |             12 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/pixel0                                   |                9 |             12 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/BG_pixel0                           | inst_graphic/counter_v[9]_i_1_n_0                     |                3 |             12 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       | inst_graphic/inst_vga/red[3]_i_1_n_0                  |                3 |             12 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/brom_addr[14]_i_1_n_0               |                                                       |                4 |             15 |
+|  frame_clk_reg_n_0_BUFG                            | heart_pos[17]_i_1_n_0                            |                                                       |                8 |             15 |
 |  inst_graphic/Wolvie_offset_reg[16]_i_2_n_0        |                                                  |                                                       |                4 |             15 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_Green_Goblin_att/brom_util_addr_reg[0]_0[0] |                                                       |                8 |             16 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/brom_addr[14]_i_1_n_0               |                                                       |                3 |             15 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/brom_util_addr[15]_i_1_n_0          |                                                       |                7 |             16 |
 |  inst_pixelClkGen/inst/clk_out1                    |                                                  | frame_clk                                             |                5 |             17 |
-|  inst_pixelClkGen/inst/clk_out1                    |                                                  |                                                       |               13 |             18 |
-|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_att/Sbam_pos[18]_i_2__0_n_0    | inst_Green_Goblin_att/Sbam_pos[18]_i_1_n_0            |               10 |             19 |
+|  inst_pixelClkGen/inst/clk_out1                    |                                                  | led_OBUF[0]                                           |                7 |             19 |
+|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/video_on                   |                                                       |                4 |             19 |
 |  frame_clk_reg_n_0_BUFG                            | inst_Wolvie_mov/E[0]                             | inst_Wolvie_att/Sbam_pos[18]_i_1__0_n_0               |               10 |             19 |
-|  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/map_row[8]_i_1_n_0         |                                                       |                9 |             19 |
-|  inst_pixelClkGen/inst/clk_out1                    |                                                  | led_OBUF[0]                                           |                9 |             19 |
+|  frame_clk_reg_n_0_BUFG                            | inst_Green_Goblin_att/Sbam_pos[18]_i_2__0_n_0    | inst_Green_Goblin_att/Sbam_pos[18]_i_1_n_0            |                9 |             19 |
 |  inst_pixelClkGen/inst/clk_out1                    | inst_graphic/inst_vga/E[0]                       |                                                       |                7 |             20 |
-|  frame_clk_reg_n_0_BUFG                            |                                                  | GreenGoblin_pos0                                      |               18 |             38 |
-|  frame_clk_reg_n_0_BUFG                            |                                                  |                                                       |               28 |             58 |
+|  frame_clk_reg_n_0_BUFG                            |                                                  | Wolvie_won_pos1                                       |               18 |             40 |
+|  inst_pixelClkGen/inst/clk_out1                    |                                                  |                                                       |               18 |             43 |
+|  frame_clk_reg_n_0_BUFG                            |                                                  |                                                       |               29 |             63 |
 +----------------------------------------------------+--------------------------------------------------+-------------------------------------------------------+------------------+----------------+
 
 
@@ -129,14 +136,14 @@ Table of Contents
 | 2      |                     1 |
 | 4      |                     6 |
 | 5      |                     7 |
-| 6      |                     6 |
+| 6      |                     8 |
 | 7      |                     9 |
-| 8      |                     3 |
-| 9      |                     4 |
-| 10     |                     6 |
+| 8      |                     5 |
+| 9      |                     6 |
+| 10     |                     7 |
 | 11     |                     1 |
-| 12     |                     4 |
-| 15     |                     2 |
+| 12     |                     3 |
+| 15     |                     3 |
 | 16+    |                    10 |
 +--------+-----------------------+
 

@@ -19,17 +19,17 @@ set_property ip_output_repo c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/bram_init.coe
 add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Brom_util_init.coe
-add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
-set_property used_in_implementation false [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
+add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
+set_property used_in_implementation false [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
 add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
 set_property used_in_implementation false [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
 add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp
 set_property used_in_implementation false [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp]
 read_vhdl -library xil_defaultlib {
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd
+  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_attack.vhd
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd
-  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/graphic.vhd
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolverine_movement.vhd
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_jump.vhd
   C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_movement.vhd
