@@ -60,8 +60,8 @@ set rc [catch {
   add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/main.dcp
   add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
   set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
-  add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
-  set_property netlist_only true [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
   add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp
   set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp]
   read_xdc -mode out_of_context -ref playerBROM -cells U0 c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_ooc.xdc

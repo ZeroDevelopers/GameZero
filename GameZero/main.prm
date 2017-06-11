@@ -8,4 +8,4 @@ Start Address      0x00000000
 End Address        0x00FFFFFF
 
 Addr1         Addr2         Date                    File(s)
-0x00000000    0x003A607B    Jun 06 00:31:41 2017    ./GameZero.runs/impl_1/main.bit
+0x00000000    0x003A607B    Jun 11 17:32:20 2017    ./GameZero.runs/impl_1/main.bit

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="utilBROM_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497168457">
-  <File Type="RDS-PROPCONSTRS" Name="utilBROM_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="utilBROM.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="utilBROM_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="utilBROM.vds"/>
   <File Type="RDS-UTIL" Name="utilBROM_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="utilBROM_utilization_synth.pb"/>

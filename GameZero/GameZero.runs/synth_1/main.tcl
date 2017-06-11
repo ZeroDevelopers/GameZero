@@ -21,8 +21,8 @@ add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sour
 add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Brom_util_init.coe
 add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
 set_property used_in_implementation false [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
-add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
-set_property used_in_implementation false [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
+add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
+set_property used_in_implementation false [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
 add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp
 set_property used_in_implementation false [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp]
 read_vhdl -library xil_defaultlib {

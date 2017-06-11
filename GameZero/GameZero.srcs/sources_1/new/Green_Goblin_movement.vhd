@@ -58,7 +58,7 @@ architecture Behavioral of Green_Goblin_movement is
 constant WALL_WIDTH : natural := 20;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
-constant PIXEL_INCREMENT : natural := 3;
+constant PIXEL_INCREMENT : natural := 2;
 constant PLAYER_SIZE : natural := 75;
 constant PEDANA_WIDTH : natural := 200;
 constant MOVEMENT_FRAMES : natural := 4;
