@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497254358">
-  <File Type="PA-TCL" Name="main.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497258960">
   <File Type="RDS-PROPCONSTRS" Name="main_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="main.tcl"/>
   <File Type="RDS-RDS" Name="main.vds"/>
   <File Type="RDS-UTIL" Name="main_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="main_utilization_synth.pb"/>
@@ -76,6 +76,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Wolvie_init.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_level_brom_init.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="main"/>
@@ -99,7 +111,9 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Wolvie_BROM"/>
   <BlockFileSet Type="BlockSrcs" Name="playerBROM"/>
   <BlockFileSet Type="BlockSrcs" Name="utilBROM"/>
   <BlockFileSet Type="BlockSrcs" Name="pixelClkGen"/>
+  <BlockFileSet Type="BlockSrcs" Name="Top_level_BROM"/>
 </GenRun>

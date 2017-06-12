@@ -2,88 +2,27 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Mon Jun 12 09:20:44 2017
-# Process ID: 1556
+# Start of session at: Mon Jun 12 10:48:23 2017
+# Process ID: 5584
 # Current directory: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4684 C:\Users\edoardo\Documents\GitHub\GameZero\GameZero\GameZero.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7960 C:\Users\edoardo\Documents\GitHub\GameZero\GameZero\GameZero.xpr
 # Log file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/vivado.log
 # Journal file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.xpr
 reset_run synth_1
-reset_run playerBROM_synth_1
-reset_run utilBROM_synth_1
-reset_run pixelClkGen_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
 set_property PROGRAM.FILE {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1/main.bit} [lindex [get_hw_devices xc7a100t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
 create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx0-spi-x1_x2_x4}] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
 set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
 set_property PROGRAM.FILE {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1/main.bit} [lindex [get_hw_devices xc7a100t_0] 0]
 program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 close_hw
-close_project
-open_project C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.xpr
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.3 -module_name Wolvie_BROM -dir c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip
-set_property -dict [list CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {12} CONFIG.Write_Depth_A {61875} CONFIG.Enable_A {Always_Enabled} CONFIG.Load_Init_File {false} CONFIG.Read_Width_A {12} CONFIG.Write_Width_B {12} CONFIG.Read_Width_B {12} CONFIG.Port_A_Write_Rate {0}] [get_ips Wolvie_BROM]
-generate_target {instantiation_template} [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci]
-generate_target all [get_files  c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci]
-catch { config_ip_cache -export [get_ips -all Wolvie_BROM] }
-export_ip_user_files -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci]
-launch_runs -jobs 4 Wolvie_BROM_synth_1
-export_simulation -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-close [ open C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_init.coe w ]
-add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_init.coe
-set_property file_type VHDL [get_files  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_init.coe]
-set_property -dict [list CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_init.coe}] [get_ips Wolvie_BROM]
-generate_target all [get_files  c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci]
-catch { config_ip_cache -export [get_ips -all Wolvie_BROM] }
-export_ip_user_files -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci] -no_script -sync -force -quiet
-reset_run Wolvie_BROM_synth_1
-launch_runs -jobs 4 Wolvie_BROM_synth_1
-export_simulation -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.Write_Depth_A {28125} CONFIG.Coe_File {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/bram_init.coe}] [get_ips playerBROM]
-generate_target all [get_files  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.xci]
-catch { config_ip_cache -export [get_ips -all playerBROM] }
-export_ip_user_files -of_objects [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.xci] -no_script -sync -force -quiet
-reset_run playerBROM_synth_1
-launch_runs -jobs 4 playerBROM_synth_1
-export_simulation -of_objects [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.3 -module_name Top_level_BROM -dir c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip
-set_property -dict [list CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {12} CONFIG.Write_Depth_A {164608} CONFIG.Enable_A {Always_Enabled} CONFIG.Read_Width_A {12} CONFIG.Write_Width_B {12} CONFIG.Read_Width_B {12} CONFIG.Port_A_Write_Rate {0}] [get_ips Top_level_BROM]
-generate_target {instantiation_template} [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci]
-generate_target all [get_files  c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci]
-catch { config_ip_cache -export [get_ips -all Top_level_BROM] }
-export_ip_user_files -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci]
-launch_runs -jobs 4 Top_level_BROM_synth_1
-export_simulation -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-close [ open C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/top_level_brom_init.coe w ]
-add_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/top_level_brom_init.coe
-set_property file_type VHDL [get_files  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/top_level_brom_init.coe]
-set_property -dict [list CONFIG.Write_Depth_A {69728} CONFIG.Coe_File {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/Brom_util_init.coe}] [get_ips utilBROM]
-generate_target all [get_files  C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.xci]
-catch { config_ip_cache -export [get_ips -all utilBROM] }
-export_ip_user_files -of_objects [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.xci] -no_script -sync -force -quiet
-reset_run utilBROM_synth_1
-launch_runs -jobs 4 utilBROM_synth_1
-export_simulation -of_objects [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/new/top_level_brom_init.coe}] [get_ips Top_level_BROM]
-generate_target all [get_files  c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci]
-catch { config_ip_cache -export [get_ips -all Top_level_BROM] }
-export_ip_user_files -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci] -no_script -sync -force -quiet
-reset_run Top_level_BROM_synth_1
-launch_runs -jobs 4 Top_level_BROM_synth_1
-export_simulation -of_objects [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.xci] -directory C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files -ipstatic_source_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/modelsim} {questa=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/questa} {riviera=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/riviera} {activehdl=C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

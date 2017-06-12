@@ -49,7 +49,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.cache/wt [current_project]
@@ -58,12 +57,16 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/main.dcp
-  add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
-  set_property netlist_only true [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
-  add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
-  set_property netlist_only true [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
-  add_files -quiet C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp
-  set_property netlist_only true [get_files C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp]
+  add_files -quiet c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp
+  set_property netlist_only true [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp]
   read_xdc -mode out_of_context -ref playerBROM -cells U0 c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_ooc.xdc
   set_property processing_order EARLY [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_ooc.xdc]
   read_xdc -mode out_of_context -ref utilBROM -cells U0 c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM_ooc.xdc
@@ -74,6 +77,10 @@ set rc [catch {
   set_property processing_order EARLY [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen_board.xdc]
   read_xdc -ref pixelClkGen -cells inst c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.xdc
   set_property processing_order EARLY [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.xdc]
+  read_xdc -mode out_of_context -ref Wolvie_BROM -cells U0 c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM_ooc.xdc
+  set_property processing_order EARLY [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM_ooc.xdc]
+  read_xdc -mode out_of_context -ref Top_level_BROM -cells U0 c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM_ooc.xdc
+  set_property processing_order EARLY [get_files c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM_ooc.xdc]
   read_xdc C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/constrs_1/Nexys4_Master.xdc
   link_design -top main -part xc7a100tcsg324-1
   write_hwdef -file main.hwdef

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="Top_level_BROM_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497256987">
-  <File Type="RDS-PROPCONSTRS" Name="Top_level_BROM_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="Top_level_BROM.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Top_level_BROM_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Top_level_BROM.vds"/>
   <File Type="RDS-UTIL" Name="Top_level_BROM_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Top_level_BROM_utilization_synth.pb"/>
@@ -35,9 +35,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

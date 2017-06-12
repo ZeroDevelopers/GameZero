@@ -79,12 +79,28 @@ end component;
 component playerBROM IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END component;
 
 component utilBROM IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  );
+END component;
+
+component Wolvie_BROM IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  );
+END component;
+
+component Top_level_BROM IS
   PORT (
     clka : IN STD_LOGIC;
     addra : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
@@ -99,8 +115,13 @@ constant PLAYER_SIZE : natural := 75;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
 constant WALL : natural := 20;  -- Width of the wall at the borders of the screen
-constant BROM_DEPTH : natural := 17;  -- Bits needed to address a specific pixel in BROM
-constant BROM_PEDANA_DEPTH : natural := 18;  -- Bits needed to address a specific pixel in BROM PEDANA
+
+
+constant BROM_GG_DEPTH : natural := 15;  -- Bits needed to address a specific pixel in BROM
+constant BROM_PEDANA_DEPTH : natural := 17;  -- Bits needed to address a specific pixel in BROM PEDANA
+constant BROM_W_DEPTH : natural := 16;
+constant BROM_TOP_DEPTH : natural := 18;
+
 constant PEDANA_WIDTH : natural := 200;
 constant PEDANA_HEIGHT : natural := 100;
 constant LIFE_SIZE : natural := 48;
@@ -130,17 +151,17 @@ constant GG_OFFSET_4 : natural := 16875;  -- Bomb 1
 constant GG_OFFSET_5 : natural := 22500;  -- Bomb 2
 
 -- Wolverine
-constant W_OFFSET_1 : natural := 28125;     -- Run 1
-constant W_OFFSET_2 : natural := 33750;     -- Run 2
-constant W_OFFSET_3 : natural := 39375;     -- Run 3
-constant W_OFFSET_4 : natural := 45000;     -- Run 4
-constant W_OFFSET_5 : natural := 50625;     -- Run 5
-constant W_OFFSET_6 : natural := 56250;     -- Attack 1
-constant W_OFFSET_7 : natural := 61875;     -- Attack 2
-constant W_OFFSET_8 : natural := 67500;     -- Attack 3
-constant W_OFFSET_9 : natural := 73125;     -- Attack 4
-constant W_OFFSET_10 : natural := 78750;    -- Up
-constant W_OFFSET_11 : natural := 84375;    -- Down
+constant W_OFFSET_1 : natural := 0;     -- Run 1
+constant W_OFFSET_2 : natural := 5625;     -- Run 2
+constant W_OFFSET_3 : natural := 11250;     -- Run 3
+constant W_OFFSET_4 : natural := 16875;     -- Run 4
+constant W_OFFSET_5 : natural := 22500;     -- Run 5
+constant W_OFFSET_6 : natural := 28125;     -- Attack 1
+constant W_OFFSET_7 : natural := 33750;     -- Attack 2
+constant W_OFFSET_8 : natural := 39375;     -- Attack 3
+constant W_OFFSET_9 : natural := 45000;     -- Attack 4
+constant W_OFFSET_10 : natural := 50625;    -- Up
+constant W_OFFSET_11 : natural := 56250;    -- Down
 
 -- Pedana
 constant P_OFFSET_1 : natural := 0;
@@ -148,20 +169,20 @@ constant P_OFFSET_2 : natural := 20000;
 constant P_OFFSET_3 : natural := 40000;
 
 -- Util
-constant LIFE_OFFSET : natural := 60000;
-constant SBAM_OFFSET : natural := 62304;
+constant LIFE_OFFSET : natural := 0;
+constant SBAM_OFFSET : natural := 2304;
 
-constant LBAR_OFFSET_1 : natural := 64608;
-constant LBAR_OFFSET_2 : natural := 66144;
-constant LBAR_OFFSET_3 : natural := 67680;
-constant LBAR_OFFSET_4 : natural := 69216;
-constant LBAR_OFFSET_5 : natural := 70752;
+constant LBAR_OFFSET_1 : natural := 60000;
+constant LBAR_OFFSET_2 : natural := 61536;
+constant LBAR_OFFSET_3 : natural := 63072;
+constant LBAR_OFFSET_4 : natural := 64608;
+constant LBAR_OFFSET_5 : natural := 66144;
 
-constant WHEAD_OFFSET : natural := 72288;
-constant GGHEAD_OFFSET : natural := 73312;
+constant WHEAD_OFFSET : natural := 67680;
+constant GGHEAD_OFFSET : natural := 68704;
 
-constant WWON_OFFSET : natural := 74336;
-constant GGWON_OFFSET : natural := 154336;
+constant WWON_OFFSET : natural := 4608;
+constant GGWON_OFFSET : natural := 84608;
 
 
 signal reset_graphic : std_logic := '0';
@@ -209,11 +230,11 @@ signal Pedana1_pixel, Pedana2_pixel, Pedana3_pixel : std_logic_vector (11 downto
 
 -- Control signals for objects
 -- Green Goblin
-signal GreenGoblin_enable : std_logic := '0';
+signal GreenGoblin_enable, GreenGoblin_colored : std_logic := '0';
 signal GreenGoblin_cntH, GreenGoblin_cntV : natural range 0 to PLAYER_SIZE -1 := 0;
 
 -- Wolverine
-signal Wolvie_enable : std_logic := '0';
+signal Wolvie_enable, Wolvie_colored : std_logic := '0';
 signal Wolvie_cntH, Wolvie_cntV : natural range 0 to PLAYER_SIZE -1 := 0;
 
 -- Pedana
@@ -253,10 +274,16 @@ signal Wolvie_won_cntH, GreenGoblin_won_cntH : natural range 0 to FINAL_IMG_WIDT
 signal Wolvie_won_address, GreenGoblin_won_address : natural range 0 to FINAL_IMG_WIDTH * FINAL_IMG_HEIGHT -1;
 
 -- BROM signals
-signal brom_addr : STD_LOGIC_VECTOR(16 DOWNTO 0);
+signal brom_addr : STD_LOGIC_VECTOR(14 DOWNTO 0);
 signal brom_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
-signal brom_util_addr : STD_LOGIC_VECTOR(17 DOWNTO 0);
+signal brom_util_addr : STD_LOGIC_VECTOR(16 DOWNTO 0);
 signal brom_util_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
+signal brom_wolvie_addr : STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal brom_wolvie_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
+signal brom_top_addr : STD_LOGIC_VECTOR(17 DOWNTO 0);
+signal brom_top_pixel_out : STD_LOGIC_VECTOR(11 DOWNTO 0);
+signal top_enable, top_colored: std_logic := '0';
+
 
 begin
 
@@ -682,9 +709,10 @@ process(pixel_clk)
 begin
     if rising_edge(pixel_clk) and start = '0' then
         if GreenGoblin_enable = '1' then
-            brom_addr <= std_logic_vector(to_unsigned(GreenGoblin_address + GreenGoblin_offset, BROM_DEPTH));
-        elsif Wolvie_enable = '1' then
-            brom_addr <= std_logic_vector(to_unsigned(Wolvie_address + Wolvie_offset, BROM_DEPTH));
+            brom_addr <= std_logic_vector(to_unsigned(GreenGoblin_address + GreenGoblin_offset, BROM_GG_DEPTH));
+        end if;
+        if Wolvie_enable = '1' then
+            brom_wolvie_addr <= std_logic_vector(to_unsigned(Wolvie_address + Wolvie_offset, BROM_W_DEPTH));
         end if;
     end if;
 end process;
@@ -694,14 +722,16 @@ process(pixel_clk)
 begin
     if rising_edge(pixel_clk) and start = '0' then
         if Wolvie_won_enable = '1' then
-            brom_util_addr <= std_logic_vector(to_unsigned(Wolvie_won_address + WWON_OFFSET, BROM_PEDANA_DEPTH));
+            brom_top_addr <= std_logic_vector(to_unsigned(Wolvie_won_address + WWON_OFFSET, BROM_TOP_DEPTH));
         elsif GreenGoblin_won_enable = '1' then
-            brom_util_addr <= std_logic_vector(to_unsigned(GreenGoblin_won_address + GGWON_OFFSET, BROM_PEDANA_DEPTH));
+            brom_top_addr <= std_logic_vector(to_unsigned(GreenGoblin_won_address + GGWON_OFFSET, BROM_TOP_DEPTH));
         elsif Sbam_enable = '1' then
-            brom_util_addr <= std_logic_vector(to_unsigned(Sbam_address + SBAM_OFFSET, BROM_PEDANA_DEPTH));
+            brom_top_addr <= std_logic_vector(to_unsigned(Sbam_address + SBAM_OFFSET, BROM_TOP_DEPTH));
         elsif Heart_enable = '1' then
-            brom_util_addr <= std_logic_vector(to_unsigned(Heart_address + LIFE_OFFSET, BROM_PEDANA_DEPTH));
-        elsif Wolvie_life_enable = '1' then
+            brom_top_addr <= std_logic_vector(to_unsigned(Heart_address + LIFE_OFFSET, BROM_TOP_DEPTH));
+        end if;
+        
+        if Wolvie_life_enable = '1' then
              brom_util_addr <= std_logic_vector(to_unsigned(Wolvie_life_address + Wolvie_life_offset, BROM_PEDANA_DEPTH));
         elsif GreenGoblin_life_enable = '1' then
             brom_util_addr <= std_logic_vector(to_unsigned(GreenGoblin_life_address + GreenGoblin_life_offset, BROM_PEDANA_DEPTH));
@@ -722,20 +752,18 @@ end process;
 
 
 -- Computing the enabler and the colored signals
-player_enable <= GreenGoblin_enable or Wolvie_enable;  -- Logical OR among all the possible objects
 util_enable <= Pedana1_enable or Pedana2_enable or Pedana3_enable or Wolvie_life_enable or GreenGoblin_life_enable 
-                or Wolvie_head_enable or GreenGoblin_head_enable or Heart_enable;
+                or Wolvie_head_enable or GreenGoblin_head_enable;
+top_enable <= Wolvie_won_enable or GreenGoblin_won_enable or Heart_enable or Sbam_enable;
 
-player_colored <= '0' when brom_pixel_out = "111111111111"
+GreenGoblin_colored <= '0' when brom_pixel_out = "111111111111"
                     else '1';
+Wolvie_colored <= '0' when brom_wolvie_pixel_out = "111111111111"
+                    else '1';                 
 util_colored <= '0' when brom_util_pixel_out = "111111111111" and util_enable = '1'
                     else '1';
                     
-Wolvie_won_colored <= '0' when brom_util_pixel_out = "111111111111" and Wolvie_won_enable = '1'
-                        else '1';
-GreenGoblin_won_colored <= '0' when brom_util_pixel_out = "111111111111" and GreenGoblin_won_enable = '1'
-                        else '1';
-Sbam_colored <= '0' when brom_util_pixel_out = "111111111111" and Sbam_enable = '1'
+top_colored <= '0' when brom_top_pixel_out = "111111111111" and top_enable = '1'
                         else '1';
 ------------------------------------------------------------------------
 
@@ -747,19 +775,11 @@ Sbam_colored <= '0' when brom_util_pixel_out = "111111111111" and Sbam_enable = 
 process (pixel_clk)
 begin
     if rising_edge(pixel_clk) and start = '0' then
-        if Wolvie_won_colored = '1' and Wolvie_won_enable = '1' then
-            pixel_in <= brom_util_pixel_out;
-        elsif GreenGoblin_won_colored = '1' and GreenGoblin_won_enable = '1' then
-            pixel_in <= brom_util_pixel_out;
-        elsif Sbam_colored = '1' and Sbam_enable = '1' then
-            pixel_in <= brom_util_pixel_out;
-        elsif (Heart_enable = '1' and Pedana1_enable = '1') or (Heart_enable = '1' and Pedana1_enable = '1') or (Heart_enable = '1' and Pedana1_enable = '1') then
-            if util_colored = '0' then
-                pixel_in <= BG_pixel;
-            else
-                pixel_in <= brom_util_pixel_out;
-            end if;   
-        elsif player_enable = '1' and player_colored = '1' then
+        if top_colored = '1' and top_enable = '1' then
+            pixel_in <= brom_top_pixel_out;
+        elsif Wolvie_colored = '1' and Wolvie_enable = '1' then
+            pixel_in <= brom_wolvie_pixel_out;
+        elsif GreenGoblin_colored = '1' and GreenGoblin_enable = '1' then
             pixel_in <= brom_pixel_out;
         elsif util_enable = '1' and util_colored = '1' then
             pixel_in <= brom_util_pixel_out;
@@ -805,5 +825,18 @@ port map
     douta   => brom_util_pixel_out
 );
 
+inst_brom_wolvie : Wolvie_BROM
+port map
+(   clka    => pixel_clk,
+    addra   => brom_wolvie_addr,
+    douta   => brom_wolvie_pixel_out
+);
+
+inst_brom_top : top_level_BROM
+port map
+(   clka    => pixel_clk,
+    addra   => brom_top_addr,
+    douta   => brom_top_pixel_out
+);
 
 end Behavioral;

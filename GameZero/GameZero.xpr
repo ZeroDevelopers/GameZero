@@ -203,7 +203,6 @@
     <FileSet Name="Wolvie_BROM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Wolvie_BROM">
       <File Path="$PSRCDIR/sources_1/ip/Wolvie_BROM/Wolvie_BROM.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -217,7 +216,6 @@
     <FileSet Name="Top_level_BROM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Top_level_BROM">
       <File Path="$PSRCDIR/sources_1/ip/Top_level_BROM/Top_level_BROM.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -282,9 +280,7 @@
     </Run>
     <Run Id="Wolvie_BROM_synth_1" Type="Ft3:Synth" SrcSet="Wolvie_BROM" Part="xc7a100tcsg324-1" ConstrsSet="Wolvie_BROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Wolvie_BROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -292,9 +288,7 @@
     </Run>
     <Run Id="Top_level_BROM_synth_1" Type="Ft3:Synth" SrcSet="Top_level_BROM" Part="xc7a100tcsg324-1" ConstrsSet="Top_level_BROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Top_level_BROM_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -363,9 +357,7 @@
     </Run>
     <Run Id="Wolvie_BROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="Wolvie_BROM" Description="Default settings for Implementation." SynthRun="Wolvie_BROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -380,9 +372,7 @@
     </Run>
     <Run Id="Top_level_BROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="Top_level_BROM" Description="Default settings for Implementation." SynthRun="Top_level_BROM_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

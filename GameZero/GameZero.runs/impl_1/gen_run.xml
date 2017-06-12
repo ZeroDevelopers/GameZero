@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497254358">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497258960">
+  <File Type="PWROPT-DRC" Name="main_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="main_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="main_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="main_power_routed.rpx"/>
   <File Type="PA-TCL" Name="main.tcl"/>
-  <File Type="INIT-TIMING" Name="main_timing_summary_init.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="main_methodology_drc_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="main_drc_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="main.hwdef"/>
   <File Type="RDI-RDI" Name="main.vdi"/>
   <File Type="OPT-DCP" Name="main_opt.dcp"/>
-  <File Type="OPT-HWDEF" Name="main.hwdef"/>
   <File Type="OPT-DRC" Name="main_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="main_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="main_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="main_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="main_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="main_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="main_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="main.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="main_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="main_drc_routed.rpx"/>
   <File Type="BG-DRC" Name="main.drc"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="main_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="main_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MSK" Name="main.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="main_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="main_methodology_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="main.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="main_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="main_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="main_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="main_route_status.rpt"/>
@@ -128,6 +128,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Wolvie_init.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_level_brom_init.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="main"/>
@@ -159,7 +171,9 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Wolvie_BROM"/>
   <BlockFileSet Type="BlockSrcs" Name="playerBROM"/>
   <BlockFileSet Type="BlockSrcs" Name="utilBROM"/>
   <BlockFileSet Type="BlockSrcs" Name="pixelClkGen"/>
+  <BlockFileSet Type="BlockSrcs" Name="Top_level_BROM"/>
 </GenRun>
