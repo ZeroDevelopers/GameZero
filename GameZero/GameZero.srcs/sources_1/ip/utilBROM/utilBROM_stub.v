@@ -1,8 +1,8 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Sun Jun 11 10:10:48 2017
-// Host        : DESKTOP-K472J0U running 64-bit major release  (build 9200)
+// Date        : Mon Jun 12 10:44:04 2017
+// Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM_stub.v
 // Design      : utilBROM
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_3_5,Vivado 2016.4" *)
 module utilBROM(clka, addra, douta)
-/* synthesis syn_black_box black_box_pad_pin="clka,addra[17:0],douta[11:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,addra[16:0],douta[11:0]" */;
   input clka;
-  input [17:0]addra;
+  input [16:0]addra;
   output [11:0]douta;
 endmodule

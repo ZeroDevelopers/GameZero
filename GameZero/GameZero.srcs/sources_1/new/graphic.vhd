@@ -333,32 +333,15 @@ reset_graphic <= '1' when map_row = 0 and map_col = 0
 ---------------------------------------
 
 
--- Handling the counter for the Green Goblin
-process(pixel_clk, GreenGoblin_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and GreenGoblin_enable = '1' and start = '0' then
-        if (GreenGoblin_cntH = PLAYER_SIZE -1) then
-            if (GreenGoblin_cntV < PLAYER_SIZE -1) then
-                GreenGoblin_cntH <= 0;
-                GreenGoblin_cntV <= GreenGoblin_cntV +1;
-            else
-               GreenGoblin_cntH <= 0;
-               GreenGoblin_cntV <= 0;
-            end if;
-        else 
-            GreenGoblin_cntH <= GreenGoblin_cntH +1;
-        end if;
-    end if;
-    if start = '1' then
-        GreenGoblin_cntH <= 0;
-        GreenGoblin_cntH <= 0;
+    if GreenGoblin_enable = '1' then
+        GreenGoblin_cntH <= map_col - to_integer(unsigned (GreenGoblin_pos (9 downto 0)));
+        GreenGoblin_cntV <= map_row - to_integer(unsigned (GreenGoblin_pos(18 downto 10)));
     end if;
 end process;
 
--- defining the Green Goblin enabler
---GreenGoblin_enable <= '1' when (map_row - unsigned(GreenGoblin_pos(18 downto 10))) < PLAYER_SIZE and (map_col - unsigned(GreenGoblin_pos(9 downto 0))) < PLAYER_SIZE
---                    else '0';
-                    
+
 process(pixel_clk, GreenGoblin_pos, map_row, map_col)
 begin
     if rising_edge(pixel_clk) then
@@ -416,20 +399,11 @@ end process;
 ---------------------------------------
 
 -- Handling the counter for Wolverine
-process(pixel_clk, Wolvie_enable, reset_graphic)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Wolvie_enable = '1' and start = '0' then
-        if (Wolvie_cntH = PLAYER_SIZE -1) then
-            if (Wolvie_cntV < PLAYER_SIZE -1) then
-                Wolvie_cntH <= 0;
-                Wolvie_cntV <= Wolvie_cntV +1;
-            else
-               Wolvie_cntH <= 0;
-               Wolvie_cntV <= 0;
-            end if;
-        else 
-            Wolvie_cntH <= Wolvie_cntH +1;
-        end if;
+    if Wolvie_enable = '1' then
+        Wolvie_cntH <= map_col - to_integer(unsigned (Wolvie_pos (9 downto 0)));
+        Wolvie_cntV <= map_row - to_integer(unsigned (Wolvie_pos(18 downto 10)));
     end if;
 end process;
 
@@ -465,56 +439,29 @@ Wolvie_offset <= W_OFFSET_1 when Wolvie_image = "0000"
 ---------------------------------------
 
 -- Handling the counter for the Pedana 1
-process(pixel_clk, Pedana1_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Pedana1_enable = '1' and start = '0' then
-        if (Pedana1_cntH = PEDANA_WIDTH -1) then
-            if (Pedana1_cntV < PEDANA_HEIGHT -1) then
-                Pedana1_cntH <= 0;
-                Pedana1_cntV <= Pedana1_cntV +1;
-            else
-               Pedana1_cntH <= 0;
-               Pedana1_cntV <= 0;
-            end if;
-        else 
-            Pedana1_cntH <= Pedana1_cntH +1;
-        end if;
+    if Pedana1_enable = '1' then
+        Pedana1_cntH <= map_col - to_integer(unsigned (Pedana1_pos (9 downto 0)));
+        Pedana1_cntV <= map_row - to_integer(unsigned (Pedana1_pos(18 downto 10)));
     end if;
 end process;
 
 -- Handling the counter for the Pedana 2
-process(pixel_clk, Pedana2_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Pedana2_enable = '1' and start = '0' then
-        if (Pedana2_cntH = PEDANA_WIDTH -1) then
-            if (Pedana2_cntV < PEDANA_HEIGHT -1) then
-                Pedana2_cntH <= 0;
-                Pedana2_cntV <= Pedana2_cntV +1;
-            else
-               Pedana2_cntH <= 0;
-               Pedana2_cntV <= 0;
-            end if;
-        else 
-            Pedana2_cntH <= Pedana2_cntH +1;
-        end if;
+    if Pedana2_enable = '1' then
+        Pedana2_cntH <= map_col - to_integer(unsigned (Pedana2_pos (9 downto 0)));
+        Pedana2_cntV <= map_row - to_integer(unsigned (Pedana2_pos(18 downto 10)));
     end if;
 end process;
 
 -- Handling the counter for the Pedana 3
-process(pixel_clk, Pedana3_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Pedana3_enable = '1' and start = '0' then
-        if (Pedana3_cntH = PEDANA_WIDTH -1) then
-            if (Pedana3_cntV < PEDANA_HEIGHT -1) then
-                Pedana3_cntH <= 0;
-                Pedana3_cntV <= Pedana3_cntV +1;
-            else
-               Pedana3_cntH <= 0;
-               Pedana3_cntV <= 0;
-            end if;
-        else 
-            Pedana3_cntH <= Pedana3_cntH +1;
-        end if;
+    if Pedana3_enable = '1' then
+        Pedana3_cntH <= map_col - to_integer(unsigned (Pedana3_pos (9 downto 0)));
+        Pedana3_cntV <= map_row - to_integer(unsigned (Pedana3_pos(18 downto 10)));
     end if;
 end process;
 
@@ -526,10 +473,8 @@ Pedana2_enable <= '1' when (map_row - Pedana2_pos(18 downto 10)) < PEDANA_HEIGHT
                     else '0';
 Pedana3_enable <= '1' when (map_row - Pedana3_pos(18 downto 10)) < PEDANA_HEIGHT and (map_col - Pedana3_pos(9 downto 0)) < PEDANA_WIDTH
                     else '0';
---Pedana1_enable <= '0';
---Pedana2_enable <= '0';
---Pedana3_enable <= '0';
-
+                    
+                    
 -- Defining the address in rom of the Pedana
 Pedana1_address <= Pedana1_cntV * PEDANA_WIDTH + Pedana1_cntH; 
 Pedana2_address <= Pedana2_cntV * PEDANA_WIDTH + Pedana2_cntH;
@@ -556,75 +501,39 @@ Pedana3_offset <= P_OFFSET_1 when Pedana3_image = "00"
 ---------------------------------------
 
 -- Handling the counter for Wolverine Life BAR
-process(pixel_clk, Wolvie_life_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Wolvie_life_enable = '1' and start = '0' then
-        if (Wolvie_life_cntH = LBAR_WIDTH -1) then
-            if (Wolvie_life_cntV < LBAR_HEIGHT -1) then
-                Wolvie_life_cntH <= 0;
-                Wolvie_life_cntV <= Wolvie_life_cntV +1;
-            else
-               Wolvie_life_cntH <= 0;
-               Wolvie_life_cntV <= 0;
-            end if;
-        else 
-            Wolvie_life_cntH <= Wolvie_life_cntH +1;
-        end if;
+    if Wolvie_life_enable = '1' then
+        Wolvie_life_cntH <= map_col - to_integer(unsigned (W_LBAR_POS (9 downto 0)));
+        Wolvie_life_cntV <= map_row - to_integer(unsigned (W_LBAR_POS(18 downto 10)));
     end if;
 end process;
 
 -- Handling the counter for Wolverine HEAD
-process(pixel_clk, Wolvie_head_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Wolvie_head_enable = '1' and start = '0' then
-        if (Wolvie_head_cntH = HEAD_SIZE -1) then
-            if (Wolvie_head_cntV < HEAD_SIZE -1) then
-                Wolvie_head_cntH <= 0;
-                Wolvie_head_cntV <= Wolvie_head_cntV +1;
-            else
-               Wolvie_head_cntH <= 0;
-               Wolvie_head_cntV <= 0;
-            end if;
-        else 
-            Wolvie_head_cntH <= Wolvie_head_cntH +1;
-        end if;
+    if Wolvie_head_enable = '1' then
+        Wolvie_head_cntH <= map_col - to_integer(unsigned (W_HEAD_POS (9 downto 0)));
+        Wolvie_head_cntV <= map_row - to_integer(unsigned (W_HEAD_POS(18 downto 10)));
     end if;
 end process;
 
 
 ---- Handling the counter for Green Goblin Life BAR
-process(pixel_clk, GreenGoblin_life_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and GreenGoblin_life_enable = '1' and start = '0' then
-        if (GreenGoblin_life_cntH = LBAR_WIDTH -1) then
-            if (GreenGoblin_life_cntV < LBAR_HEIGHT -1) then
-                GreenGoblin_life_cntH <= 0;
-                GreenGoblin_life_cntV <= GreenGoblin_life_cntV +1;
-            else
-               GreenGoblin_life_cntH <= 0;
-               GreenGoblin_life_cntV <= 0;
-            end if;
-        else 
-            GreenGoblin_life_cntH <= GreenGoblin_life_cntH +1;
-        end if;
+    if GreenGoblin_life_enable = '1' then
+        GreenGoblin_life_cntH <= map_col - to_integer(unsigned (GG_LBAR_POS (9 downto 0)));
+        GreenGoblin_life_cntV <= map_row - to_integer(unsigned (GG_LBAR_POS(18 downto 10)));
     end if;
 end process;
 
 -- Handling the counter for Green Goblin HEAD
-process(pixel_clk, GreenGoblin_head_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and GreenGoblin_head_enable = '1' and start = '0' then
-        if (GreenGoblin_head_cntH = HEAD_SIZE -1) then
-            if (GreenGoblin_head_cntV < HEAD_SIZE -1) then
-                GreenGoblin_head_cntH <= 0;
-                GreenGoblin_head_cntV <= GreenGoblin_head_cntV +1;
-            else
-               GreenGoblin_head_cntH <= 0;
-               GreenGoblin_head_cntV <= 0;
-            end if;
-        else 
-            GreenGoblin_head_cntH <= GreenGoblin_head_cntH +1;
-        end if;
+    if GreenGoblin_head_enable = '1' then
+        GreenGoblin_head_cntH <= map_col - to_integer(unsigned (GG_HEAD_POS (9 downto 0)));
+        GreenGoblin_head_cntV <= map_row - to_integer(unsigned (GG_HEAD_POS(18 downto 10)));
     end if;
 end process;
 
@@ -681,20 +590,11 @@ GreenGoblin_life_offset <= LBAR_OFFSET_1 when GreenGoblin_lives = "100"
 -------------------------------------------------------------------------
 
 -- Handling the counter for the SBAM image
-process(pixel_clk, Sbam_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Sbam_enable = '1' and start = '0' then
-        if (Sbam_cntH = SBAM_SIZE -1) then
-            if (Sbam_cntV < SBAM_SIZE -1) then
-                Sbam_cntH <= 0;
-                Sbam_cntV <= Sbam_cntV +1;
-            else
-               Sbam_cntH <= 0;
-               Sbam_cntV <= 0;
-            end if;
-        else 
-            Sbam_cntH <= Sbam_cntH +1;
-        end if;
+    if Sbam_enable = '1' then
+        Sbam_cntH <= map_col - to_integer(unsigned (Sbam_pos (9 downto 0)));
+        Sbam_cntV <= map_row - to_integer(unsigned (Sbam_pos (18 downto 10)));
     end if;
 end process;
 
@@ -714,20 +614,11 @@ Sbam_address <= Sbam_cntV * SBAM_SIZE + Sbam_cntH;
 -------------------------------------------------------------------------
 
 -- Handling the counter for the HEART image
-process(pixel_clk, Heart_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Heart_enable = '1' and start = '0' then
-        if (Heart_cntH = LIFE_SIZE -1) then
-            if (Heart_cntV < LIFE_SIZE -1) then
-                Heart_cntH <= 0;
-                Heart_cntV <= Heart_cntV +1;
-            else
-               Heart_cntH <= 0;
-               Heart_cntV <= 0;
-            end if;
-        else 
-            Heart_cntH <= Heart_cntH +1;
-        end if;
+    if Heart_enable = '1' then
+        Heart_cntH <= map_col - to_integer(unsigned (Heart_pos (9 downto 0)));
+        Heart_cntV <= map_row - to_integer(unsigned (Heart_pos (18 downto 10)));
     end if;
 end process;
 
@@ -748,20 +639,11 @@ Heart_address <= Heart_cntV * LIFE_SIZE + Heart_cntH;
 -------------------------------------------------------------------------
 
 -- Handling the counter for the Wolvie won image
-process(pixel_clk, Wolvie_won_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and Wolvie_won_enable = '1' and start = '0' then
-        if (Wolvie_won_cntH = FINAL_IMG_WIDTH -1) then
-            if (Wolvie_won_cntV < FINAL_IMG_HEIGHT -1) then
-                Wolvie_won_cntH <= 0;
-                Wolvie_won_cntV <= Wolvie_won_cntV +1;
-            else
-               Wolvie_won_cntH <= 0;
-               Wolvie_won_cntV <= 0;
-            end if;
-        else 
-            Wolvie_won_cntH <= Wolvie_won_cntH +1;
-        end if;
+    if Wolvie_won_enable = '1' then
+        Wolvie_won_cntH <= map_col - to_integer(unsigned (Wolvie_won_pos (9 downto 0)));
+        Wolvie_won_cntV <= map_row - to_integer(unsigned (Wolvie_won_pos (18 downto 10)));
     end if;
 end process;
 
@@ -774,20 +656,11 @@ Wolvie_won_enable <=  '0' when Wolvie_won_pos = "0000000000000000000"
 Wolvie_won_address <= Wolvie_won_cntV * FINAL_IMG_WIDTH + Wolvie_won_cntH;
 
 
-process(pixel_clk, GreenGoblin_won_enable)
+process(map_col)
 begin
-    if rising_edge(pixel_clk) and GreenGoblin_won_enable = '1' and start = '0' then
-        if (GreenGoblin_won_cntH = FINAL_IMG_WIDTH -1) then
-            if (GreenGoblin_won_cntV < FINAL_IMG_HEIGHT -1) then
-                GreenGoblin_won_cntH <= 0;
-                GreenGoblin_won_cntV <= GreenGoblin_won_cntV +1;
-            else
-               GreenGoblin_won_cntH <= 0;
-               GreenGoblin_won_cntV <= 0;
-            end if;
-        else 
-            GreenGoblin_won_cntH <= GreenGoblin_won_cntH +1;
-        end if;
+    if GreenGoblin_won_enable = '1' then
+        GreenGoblin_won_cntH <= map_col - to_integer(unsigned (GreenGoblin_won_pos (9 downto 0)));
+        GreenGoblin_won_cntV <= map_row - to_integer(unsigned (GreenGoblin_won_pos (18 downto 10)));
     end if;
 end process;
 

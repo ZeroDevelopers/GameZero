@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Sun Jun 11 17:31:50 2017
-| Host             : DESKTOP-K472J0U running 64-bit major release  (build 9200)
+| Date             : Mon Jun 12 10:01:49 2017
+| Host             : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.233 |
-| Dynamic (W)              | 0.130 |
+| Total On-Chip Power (W)  | 0.240 |
+| Dynamic (W)              | 0.138 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |     0.001 |     3997 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     2139 |     63400 |            3.37 |
-|   Register     |    <0.001 |      709 |    126800 |            0.56 |
-|   CARRY4       |    <0.001 |      322 |     15850 |            2.03 |
+| Slice Logic    |     0.004 |     4066 |       --- |             --- |
+|   LUT as Logic |     0.003 |     2151 |     63400 |            3.39 |
+|   CARRY4       |    <0.001 |      360 |     15850 |            2.27 |
+|   Register     |    <0.001 |      730 |    126800 |            0.58 |
 |   F7/F8 Muxes  |    <0.001 |       99 |     63400 |            0.16 |
-|   Others       |     0.000 |      232 |       --- |             --- |
-|   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.001 |     3401 |       --- |             --- |
+|   BUFG         |    <0.001 |       10 |        32 |           31.25 |
+|   Others       |     0.000 |      282 |       --- |             --- |
+| Signals        |     0.005 |     3428 |       --- |             --- |
 | Block RAM      |     0.005 |      110 |       135 |           81.48 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |     0.005 |       30 |       210 |           14.29 |
+| I/O            |     0.006 |       30 |       210 |           14.29 |
 | Static Power   |     0.103 |          |           |                 |
-| Total          |     0.233 |          |           |                 |
+| Total          |     0.240 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.009 |      0.018 |
-| Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vccint    |       1.000 |     0.034 |       0.016 |      0.018 |
+| Vccaux    |       1.800 |     0.083 |       0.065 |      0.018 |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,14 +146,14 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.130 |
+| main                                           |     0.138 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.008 |
+|   inst_graphic                                 |     0.014 |
 |     Pedana1_offset_reg[11]                     |    <0.001 |
 |     Pedana1_offset_reg[14]                     |    <0.001 |
 |     Pedana2_offset_reg[11]                     |    <0.001 |
@@ -225,11 +225,11 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
-|     inst_brom_util                             |     0.003 |
-|       U0                                       |     0.003 |
-|         inst_blk_mem_gen                       |     0.003 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.003 |
-|             valid.cstr                         |     0.003 |
+|     inst_brom_util                             |     0.004 |
+|       U0                                       |     0.004 |
+|         inst_blk_mem_gen                       |     0.004 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.004 |
+|             valid.cstr                         |     0.004 |
 |               has_mux_a.A                      |    <0.001 |
 |               ramloop[0].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
