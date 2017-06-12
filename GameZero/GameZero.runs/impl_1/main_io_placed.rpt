@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Mon Jun 12 15:12:49 2017
-| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
+| Date         : Mon Jun 12 17:07:50 2017
+| Host         : DESKTOP-K472J0U running 64-bit major release  (build 9200)
 | Command      : report_io -file main_io_placed.rpt
 | Design       : main
 | Device       : xc7a100t

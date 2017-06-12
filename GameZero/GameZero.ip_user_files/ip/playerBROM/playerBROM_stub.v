@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 // Date        : Mon Jun 12 10:30:15 2017
 // Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top playerBROM -prefix
+//               playerBROM_ playerBROM_stub.v
 // Design      : playerBROM
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

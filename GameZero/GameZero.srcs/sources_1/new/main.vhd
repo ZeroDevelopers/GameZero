@@ -428,18 +428,15 @@ begin
         if rising_edge(frame_clk) then
             if Wolvie_Heart_coll = '1' then
                 if Wolvie_lives < 4 then
-                    Wolvie_life_incr <= '1';
-                else 
-                    Wolvie_life_incr <= '0';    
+                    Wolvie_life_incr <= '1';  
                 end if;
-                GreenGoblin_life_incr <= '0';
             elsif GreenGoblin_Heart_coll = '1' then
                 if GreenGoblin_lives < 4 then
-                    GreenGoblin_life_incr <= '1';
-                else 
-                    GreenGoblin_life_incr <= '0';    
+                    GreenGoblin_life_incr <= '1';  
                 end if;
-                Wolvie_life_incr <= '0';    
+            else
+                Wolvie_life_incr <= '0';
+                GreenGoblin_life_incr <= '0';    
             end if;
         end if;
 end process;
@@ -528,7 +525,6 @@ begin
             P1_action_cnt <= 0;
             if Pedana1_image = "10" then
                 P1_actual_moving <= '0';
-                heart1 <= '0';
             elsif Pedana1_image = "00" and P1_closing = '0' then
                 Pedana1_image <= "01";
             elsif Pedana1_image = "01" and P1_closing = '0' then
@@ -546,6 +542,7 @@ begin
             end if;
         else
             P1_action_cnt <= P1_action_cnt +1;
+            Heart1 <= '0';
         end if;
     end if;
 end process;
@@ -562,7 +559,6 @@ begin
             P2_action_cnt <= 0;
            if Pedana2_image = "10" then
                 P2_actual_moving <= '0';
-                heart2 <= '0';
             elsif Pedana2_image = "00" and P2_closing = '0' then
                 Pedana2_image <= "01";
             elsif Pedana2_image = "01" and P2_closing = '0' then
@@ -580,6 +576,7 @@ begin
             end if;
         else
             P2_action_cnt <= P2_action_cnt +1;
+            heart2 <= '0';
         end if;
     end if;
 end process;
@@ -596,7 +593,6 @@ begin
             P3_action_cnt <= 0;
             if Pedana3_image = "10" then
                 P3_actual_moving <= '0';
-                heart3 <= '0';
             elsif Pedana3_image = "00" and P3_closing = '0' then
                 Pedana3_image <= "01";
             elsif Pedana3_image = "01" and P3_closing = '0' then
@@ -614,6 +610,7 @@ begin
             end if;
         else
             P3_action_cnt <= P3_action_cnt +1;
+            heart3 <= '0';
         end if;
     end if;
 end process;
@@ -621,31 +618,19 @@ end process;
 -- Process to project the heart
 process(frame_clk, heart1, heart2, heart3)
 begin
-    if rising_edge(frame_clk) then
-        if heart1 = '1' then
-            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then
+   if rising_edge(frame_clk) then
+        if GreenGoblin_heart_coll = '1' OR Wolvie_heart_coll = '1' then
+                Heart_pos(18 downto 10) <= (others => '0');
+                Heart_pos(9 downto 0) <= (others => '0');
+        elsif heart1 = '1' then
                 Heart_pos(18 downto 10) <= (Pedana1_pos(18 downto 10) + 27);
                 Heart_pos(9 downto 0) <= Pedana1_pos(9 downto 0) + 76;
-            else
-                Heart_pos(18 downto 10) <= (others => '0');
-                Heart_pos(9 downto 0) <= (others => '0');
-            end if;
         elsif heart2 = '1' then
-            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then
                 Heart_pos(18 downto 10) <= (Pedana2_pos(18 downto 10) + 27);
-                Heart_pos(9 downto 0) <= Pedana2_pos(9 downto 0) + 76;
-            else
-                Heart_pos(18 downto 10) <= (others => '0');
-                Heart_pos(9 downto 0) <= (others => '0');
-            end if;        
-        elsif heart3 = '1' then
-            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then        
+                Heart_pos(9 downto 0) <= Pedana2_pos(9 downto 0) + 76;      
+        elsif heart3 = '1' then        
                 Heart_pos(18 downto 10) <= (Pedana3_pos(18 downto 10) + 27);
                 Heart_pos(9 downto 0) <= Pedana3_pos(9 downto 0) + 76;
-            else
-                Heart_pos(18 downto 10) <= (others => '0');
-                Heart_pos(9 downto 0) <= (others => '0');    
-            end if;        
         end if;
     end if;
 end process; 
