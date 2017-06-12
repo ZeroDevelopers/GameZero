@@ -112,16 +112,11 @@ begin
 end process;
 
 
-rising <= '1' when jump_enable = '1' AND 
-                   GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT > WALL_WIDTH AND
-                   GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT > 0 AND
-                   (((GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE -20)OR
-                   (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE >= Wolvie_pos (9 downto 0) +20 AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE))OR
---                   ((GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE -20)OR
---                   (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE >= Wolvie_pos (9 downto 0) +20 AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE))OR
-                   GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0) OR
-                   GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) + PLAYER_SIZE)
-              else '0';  
+rising <= '0' when jump_enable = '0' OR
+                   GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT > WALL_WIDTH OR
+                   (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE -20) OR
+                   (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE >= Wolvie_pos (9 downto 0) +20 AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE)
+              else '1';  
 
 
 descending <= '0' when  ((GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE >= Pedana1_pos (18 downto 10) + PEDANA_HEIGHT - 25) AND (GreenGoblin_curr_pos (18 downto 10) + PLAYER_SIZE <= Pedana1_pos (18 downto 10) + PEDANA_HEIGHT) and (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/2 < Pedana1_pos (9 downto 0) + PEDANA_WIDTH +1) AND (GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE/5 > Pedana1_pos (9 downto 0) -1) AND Pedana1_image = "10")OR
