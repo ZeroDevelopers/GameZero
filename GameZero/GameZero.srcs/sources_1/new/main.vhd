@@ -102,7 +102,8 @@ Port (
             Wolvie_dec_disable : out STD_LOGIC;
             Wolvie_new_image : out STD_LOGIC_VECTOR (3 downto 0);
             GreenGoblin_attack_reset_out : out std_logic;
-            Sbam_pos : out std_logic_vector (18 downto 0)
+            Sbam_pos : out std_logic_vector (18 downto 0);
+            Life_incr : in std_logic
        );
 end component;
 
@@ -162,7 +163,8 @@ component Green_Goblin_attack is
             GreenGoblin_dec_disable : out STD_LOGIC;
             GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
             Wolvie_attack_reset_out : out std_logic;
-            Sbam_pos : out std_logic_vector(18 downto 0)
+            Sbam_pos : out std_logic_vector(18 downto 0);
+            Life_incr : in std_logic
        ); 
 end component;
 
@@ -203,6 +205,7 @@ constant DELAY : natural := 1;
 constant SCREEN_WIDTH : natural := 640;
 constant SCREEN_HEIGHT : natural := 480;
 constant PEDANA_WIDTH : natural := 200;
+constant LIFE_SIZE : natural := 48;
 
 --constants for mapping movement
 constant RIGHT : STD_LOGIC_VECTOR (1 downto 0) := "00";
@@ -240,6 +243,8 @@ signal GreenGoblin_mov_enable, GreenGoblin_att_enable, GreenGoblin_jump_enable :
 signal GreenGoblin_mov_type : std_logic_vector (1 downto 0);
 signal GreenGoblin_reversed_out : std_logic;
 signal GG_dec_mov_disable, GG_dec_att_disable, GG_jump_status: std_logic;
+signal GreenGoblin_Heart_coll : std_logic := '0';
+signal GreenGoblin_life_incr : std_logic := '0';
 
 
 -- Signals for Wolverine
@@ -249,6 +254,8 @@ signal Wolvie_hor_pos : STD_LOGIC_VECTOR (9 downto 0):= "0001001110";
 signal Wolvie_vert_pos : STD_LOGIC_VECTOR (8 downto 0):= "110000000";
 signal Wolvie_reversed_in : std_logic := '0';  -- At the normal orientation it is towrd right
 signal Wolvie_image, Wolvie_mov_image, Wolvie_att_image, Wolvie_jump_image : std_logic_vector (3 downto 0) := "0000";
+signal Wolvie_Heart_coll : std_logic := '0';
+signal Wolvie_life_incr : std_logic := '0';
 -- Movement signals
 signal Wolvie_mov_enable, Wolvie_att_enable, Wolvie_jump_enable : std_logic;
 signal Wolvie_mov_type : std_logic_vector (1 downto 0);
@@ -395,6 +402,47 @@ Wolvie_image <= Wolvie_att_image when W_dec_att_disable = '1'
 GreenGoblin_image <= GreenGoblin_att_image when GG_dec_att_disable = '1'
                 else GreenGoblin_jump_image when GG_jump_status = '1'
                 else GreenGoblin_mov_image when GG_dec_mov_disable = '1';
+                
+--collision between characters and the heart
+                
+Wolvie_Heart_coll <= '1' when (Wolvie_pos (18 downto 10) >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                              (Wolvie_pos (18 downto 10) >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                              (Wolvie_pos (18 downto 10) + PLAYER_SIZE >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) + PLAYER_SIZE <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                              (Wolvie_pos (18 downto 10) + PLAYER_SIZE >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) + PLAYER_SIZE <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE) OR
+                              (Wolvie_pos (18 downto 10) + PLAYER_SIZE/2 >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) + PLAYER_SIZE/2 <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                              (Wolvie_pos (18 downto 10) + PLAYER_SIZE/2 >= Heart_pos (18 downto 10) AND Wolvie_pos (18 downto 10) + PLAYER_SIZE/2 <= Heart_pos (18 downto 10) + LIFE_SIZE AND Wolvie_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND Wolvie_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE)      
+                         else '0';   
+
+GreenGoblin_Heart_coll <= '1' when (GreenGoblin_pos (18 downto 10) >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                                   (GreenGoblin_pos (18 downto 10) >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                                   (GreenGoblin_pos (18 downto 10) + PLAYER_SIZE >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) + PLAYER_SIZE <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                                   (GreenGoblin_pos (18 downto 10) + PLAYER_SIZE >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) + PLAYER_SIZE <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE) OR
+                                   (GreenGoblin_pos (18 downto 10) + PLAYER_SIZE/2 >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) + PLAYER_SIZE/2 <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) <= Heart_pos (9 downto 0) + LIFE_SIZE)OR
+                                   (GreenGoblin_pos (18 downto 10) + PLAYER_SIZE/2 >= Heart_pos (18 downto 10) AND GreenGoblin_pos (18 downto 10) + PLAYER_SIZE/2 <= Heart_pos (18 downto 10) + LIFE_SIZE AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE >= Heart_pos (9 downto 0) AND GreenGoblin_pos (9 downto 0) + PLAYER_SIZE <= Heart_pos (9 downto 0) + LIFE_SIZE)      
+                              else '0';  
+                
+--process to increment Wolvie and GreenGoblin lives
+
+process (frame_clk)
+begin
+        if rising_edge(frame_clk) then
+            if Wolvie_Heart_coll = '1' then
+                if Wolvie_lives < 4 then
+                    Wolvie_life_incr <= '1';
+                else 
+                    Wolvie_life_incr <= '0';    
+                end if;
+                GreenGoblin_life_incr <= '0';
+            elsif GreenGoblin_Heart_coll = '1' then
+                if GreenGoblin_lives < 4 then
+                    GreenGoblin_life_incr <= '1';
+                else 
+                    GreenGoblin_life_incr <= '0';    
+                end if;
+                Wolvie_life_incr <= '0';    
+            end if;
+        end if;
+end process;
                 
                 
 
@@ -575,88 +623,32 @@ process(frame_clk, heart1, heart2, heart3)
 begin
     if rising_edge(frame_clk) then
         if heart1 = '1' then
-            Heart_pos(18 downto 10) <= (Pedana1_pos(18 downto 10) + 27);
-            Heart_pos(9 downto 0) <= Pedana1_pos(9 downto 0) + 76;
+            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then
+                Heart_pos(18 downto 10) <= (Pedana1_pos(18 downto 10) + 27);
+                Heart_pos(9 downto 0) <= Pedana1_pos(9 downto 0) + 76;
+            else
+                Heart_pos(18 downto 10) <= (others => '0');
+                Heart_pos(9 downto 0) <= (others => '0');
+            end if;
         elsif heart2 = '1' then
-            Heart_pos(18 downto 10) <= (Pedana2_pos(18 downto 10) + 27);
-            Heart_pos(9 downto 0) <= Pedana2_pos(9 downto 0) + 76;
+            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then
+                Heart_pos(18 downto 10) <= (Pedana2_pos(18 downto 10) + 27);
+                Heart_pos(9 downto 0) <= Pedana2_pos(9 downto 0) + 76;
+            else
+                Heart_pos(18 downto 10) <= (others => '0');
+                Heart_pos(9 downto 0) <= (others => '0');
+            end if;        
         elsif heart3 = '1' then
-            Heart_pos(18 downto 10) <= (Pedana3_pos(18 downto 10) + 27);
-            Heart_pos(9 downto 0) <= Pedana3_pos(9 downto 0) + 76;    
+            if GreenGoblin_heart_coll = '0' AND Wolvie_heart_coll = '0' then        
+                Heart_pos(18 downto 10) <= (Pedana3_pos(18 downto 10) + 27);
+                Heart_pos(9 downto 0) <= Pedana3_pos(9 downto 0) + 76;
+            else
+                Heart_pos(18 downto 10) <= (others => '0');
+                Heart_pos(9 downto 0) <= (others => '0');    
+            end if;        
         end if;
     end if;
 end process; 
-
-
-
----- Process to move the Green Goblin
-
---process(frame_clk, GreenGoblin_reversed)
---begin
---    if rising_edge(frame_clk) then
---        if GreenGoblin_reversed = '0' and GreenGoblin_pos (9 downto 0) <= (WALL_WIDTH) then
---                GreenGoblin_reversed <= '1';
---        elsif GreenGoblin_reversed = '1' and GreenGoblin_pos (9 downto 0) >= (640 - 63 - WALL_WIDTH) then
---            GreenGoblin_reversed <= '0';
---        end if;
---    end if;
---end process;
-
---process(frame_clk, GreenGoblin_reversed)
---begin
---    if rising_edge(frame_clk) then
---        if frame_mov_cnt = '1' then
---            if GreenGoblin_reversed = '1' then
---                GreenGoblin_pos <= GreenGoblin_pos +2;
---            else
---                GreenGoblin_pos <= GreenGoblin_pos -2;
---            end if;
---        else
---            frame_mov_cnt <= not frame_mov_cnt;
---        end if;
---    end if;
---end process;
-
----- Process to animate the Green Goblin
---process (frame_clk)
---begin
---    if rising_edge(frame_clk) then
---        if GG_action_cnt = GG_ACTION_FRAMES -1 then
---            GG_action_cnt <= 0;
---            if GreenGoblin_image < 5 then
---                GreenGoblin_image <= GreenGoblin_image+1;
---            else
---                GreenGoblin_image <= "000";
---            end if;
---        else
---            GG_action_cnt <= GG_action_cnt +1;   
---        end if;
---    end if;
---end process;
-
-
----- Process to animate Wolverine
---process (frame_clk)
---begin
---    if rising_edge(frame_clk) then
---        if W_action_cnt = W_ACTION_FRAMES -1 then
---            W_action_cnt <= 0;
---            if Wolvie_image < 11 then
---                Wolvie_image <= Wolvie_image+1;
---            else
---                Wolvie_image <= "0000";
---            end if;
---        else
---            W_action_cnt <= W_action_cnt +1;   
---        end if;
---    end if;
---end process;
-
-
-
-
-
-
 
 
 
@@ -733,7 +725,8 @@ port map
     Wolvie_dec_disable  => W_dec_att_disable,
     Wolvie_new_image    => Wolvie_att_image,
     GreenGoblin_attack_reset_out    => GreenGoblin_attack_reset,
-    Sbam_pos     => W_Sbam_pos
+    Sbam_pos     => W_Sbam_pos,
+    Life_incr => GreenGoblin_life_incr
 );
 
 
@@ -792,7 +785,8 @@ port map
     Wolvie_lives_in    => Wolvie_lives,
     Wolvie_lives_out    => Wolvie_lives,
     Wolvie_attack_reset_out    => Wolvie_attack_reset,
-    Sbam_pos     => GG_Sbam_pos
+    Sbam_pos     => GG_Sbam_pos,
+    Life_incr => Wolvie_life_incr
 );
 
 

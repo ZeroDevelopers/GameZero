@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Mon Jun 12 11:18:38 2017
-| Host         : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
+| Date         : Mon Jun 12 13:51:07 2017
+| Host         : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command      : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
 | Design       : main
 | Device       : xc7a100tcsg324-1
@@ -49,12 +49,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net inst_Green_Goblin_att/Sbam_enable is a gated clock net sourced by a combinational pin inst_Green_Goblin_att/Sbam_cntH_reg[5]_i_2/O, cell inst_Green_Goblin_att/Sbam_cntH_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Green_Goblin_att/E[0] is a gated clock net sourced by a combinational pin inst_Green_Goblin_att/Wolvie_life_offset_reg[16]_i_2/O, cell inst_Green_Goblin_att/Wolvie_life_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net inst_Green_Goblin_att/brom_util_addr_reg[16]_0[0] is a gated clock net sourced by a combinational pin inst_Green_Goblin_att/Wolvie_life_offset_reg[16]_i_2/O, cell inst_Green_Goblin_att/Wolvie_life_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Green_Goblin_att/Sbam_enable is a gated clock net sourced by a combinational pin inst_Green_Goblin_att/Sbam_cntH_reg[5]_i_2/O, cell inst_Green_Goblin_att/Sbam_cntH_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
@@ -64,12 +64,12 @@ Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net inst_Wolvie_att/brom_util_addr_reg[16]_0[0] is a gated clock net sourced by a combinational pin inst_Wolvie_att/GreenGoblin_life_offset_reg[16]_i_2/O, cell inst_Wolvie_att/GreenGoblin_life_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Wolvie_att/brom_util_addr_reg[16][0] is a gated clock net sourced by a combinational pin inst_Wolvie_att/GreenGoblin_life_offset_reg[16]_i_2/O, cell inst_Wolvie_att/GreenGoblin_life_offset_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net inst_Wolvie_mov/Wolvie_new_image_reg[3]_0[0] is a gated clock net sourced by a combinational pin inst_Wolvie_mov/Wolvie_image_reg[3]_i_2/O, cell inst_Wolvie_mov/Wolvie_image_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net inst_Wolvie_mov/E[0] is a gated clock net sourced by a combinational pin inst_Wolvie_mov/Wolvie_image_reg[3]_i_2/O, cell inst_Wolvie_mov/Wolvie_image_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning

@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Mon Jun 12 10:45:36 2017
+// Date        : Mon Jun 12 10:45:35 2017
 // Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Top_level_BROM -prefix
+//               Top_level_BROM_ Top_level_BROM_sim_netlist.v
 // Design      : Top_level_BROM
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -186,7 +186,6 @@ module Top_level_BROM
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module Top_level_BROM_blk_mem_gen_generic_cstr
    (douta,
     addra,
@@ -933,7 +932,6 @@ module Top_level_BROM_blk_mem_gen_generic_cstr
         .clka(clka));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
 module Top_level_BROM_blk_mem_gen_mux
    (douta,
     DOADO,
@@ -2936,7 +2934,6 @@ module Top_level_BROM_blk_mem_gen_mux
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module Top_level_BROM_blk_mem_gen_prim_width
    (DOUTA,
     clka,
@@ -4128,7 +4125,6 @@ module Top_level_BROM_blk_mem_gen_prim_width__parameterized9
         .\douta[2] (\douta[2] ));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module Top_level_BROM_blk_mem_gen_prim_wrapper_init
    (DOUTA,
     clka,
@@ -18088,7 +18084,6 @@ module Top_level_BROM_blk_mem_gen_prim_wrapper_init__parameterized9
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module Top_level_BROM_blk_mem_gen_top
    (douta,
     addra,
@@ -18131,7 +18126,7 @@ endmodule
 (* C_USE_URAM = "0" *) (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) 
 (* C_WRITE_DEPTH_A = "164608" *) (* C_WRITE_DEPTH_B = "164608" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
 (* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "12" *) (* C_WRITE_WIDTH_B = "12" *) 
-(* C_XDEVICEFAMILY = "artix7" *) (* ORIG_REF_NAME = "blk_mem_gen_v8_3_5" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* C_XDEVICEFAMILY = "artix7" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module Top_level_BROM_blk_mem_gen_v8_3_5
    (clka,
     rsta,
@@ -18357,7 +18352,6 @@ module Top_level_BROM_blk_mem_gen_v8_3_5
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_3_5_synth" *) 
 module Top_level_BROM_blk_mem_gen_v8_3_5_synth
    (douta,
     addra,

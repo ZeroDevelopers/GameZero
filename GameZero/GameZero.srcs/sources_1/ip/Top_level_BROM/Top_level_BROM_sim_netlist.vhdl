@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
--- Date        : Mon Jun 12 10:45:36 2017
+-- Date        : Mon Jun 12 10:45:35 2017
 -- Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top Top_level_BROM -prefix
+--               Top_level_BROM_ Top_level_BROM_sim_netlist.vhdl
 -- Design      : Top_level_BROM
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -112,8 +112,6 @@ entity Top_level_BROM_blk_mem_gen_mux is
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_78\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_79\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end Top_level_BROM_blk_mem_gen_mux;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_mux is
@@ -2343,8 +2341,6 @@ entity Top_level_BROM_blk_mem_gen_prim_wrapper_init is
     ENA : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end Top_level_BROM_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_prim_wrapper_init is
@@ -16907,8 +16903,6 @@ entity Top_level_BROM_blk_mem_gen_prim_width is
     ENA : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end Top_level_BROM_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_prim_width is
@@ -18204,8 +18198,6 @@ entity Top_level_BROM_blk_mem_gen_generic_cstr is
     addra : in STD_LOGIC_VECTOR ( 17 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end Top_level_BROM_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_generic_cstr is
@@ -19621,8 +19613,6 @@ entity Top_level_BROM_blk_mem_gen_top is
     addra : in STD_LOGIC_VECTOR ( 17 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end Top_level_BROM_blk_mem_gen_top;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_top is
@@ -19644,8 +19634,6 @@ entity Top_level_BROM_blk_mem_gen_v8_3_5_synth is
     addra : in STD_LOGIC_VECTOR ( 17 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_v8_3_5_synth : entity is "blk_mem_gen_v8_3_5_synth";
 end Top_level_BROM_blk_mem_gen_v8_3_5_synth;
 
 architecture STRUCTURE of Top_level_BROM_blk_mem_gen_v8_3_5_synth is
@@ -19873,8 +19861,6 @@ entity Top_level_BROM_blk_mem_gen_v8_3_5 is
   attribute C_WRITE_WIDTH_B of Top_level_BROM_blk_mem_gen_v8_3_5 : entity is 12;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of Top_level_BROM_blk_mem_gen_v8_3_5 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Top_level_BROM_blk_mem_gen_v8_3_5 : entity is "blk_mem_gen_v8_3_5";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of Top_level_BROM_blk_mem_gen_v8_3_5 : entity is "yes";
 end Top_level_BROM_blk_mem_gen_v8_3_5;

@@ -48,7 +48,8 @@ entity Green_Goblin_attack is
             GreenGoblin_dec_disable : out STD_LOGIC;
             GreenGoblin_new_image : out STD_LOGIC_VECTOR (2 downto 0);
             Wolvie_attack_reset_out : out std_logic;
-            Sbam_pos : out std_logic_vector(18 downto 0)
+            Sbam_pos : out std_logic_vector(18 downto 0);
+            Life_incr : in std_logic
        ); 
 end Green_Goblin_attack;
 
@@ -115,6 +116,8 @@ begin
    if rising_edge(frame_clk) then
         if start = '1' then
             Wolvie_lives_out <= "100";
+        elsif Life_incr = '1'then
+            Wolvie_lives_out <= Wolvie_lives_in + 1;    
         elsif attack_reset = '1' then
             GreenGoblin_new_image <= (others => '0');
         elsif attack_enable = '1' then

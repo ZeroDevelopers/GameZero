@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Mon Jun 12 11:18:43 2017
-| Host             : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
+| Date             : Mon Jun 12 13:51:25 2017
+| Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
 | Device           : xc7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.243 |
-| Dynamic (W)              | 0.140 |
+| Total On-Chip Power (W)  | 0.244 |
+| Dynamic (W)              | 0.141 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        8 |       --- |             --- |
-| Slice Logic    |     0.004 |     4283 |       --- |             --- |
-|   LUT as Logic |     0.003 |     2206 |     63400 |            3.48 |
-|   CARRY4       |    <0.001 |      350 |     15850 |            2.21 |
-|   Register     |    <0.001 |      825 |    126800 |            0.65 |
+| Slice Logic    |     0.004 |     4605 |       --- |             --- |
+|   LUT as Logic |     0.003 |     2381 |     63400 |            3.76 |
+|   CARRY4       |    <0.001 |      400 |     15850 |            2.52 |
+|   Register     |    <0.001 |      823 |    126800 |            0.65 |
 |   F7/F8 Muxes  |    <0.001 |       81 |     63400 |            0.13 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
 |   Others       |     0.000 |      386 |       --- |             --- |
-| Signals        |     0.004 |     3541 |       --- |             --- |
+| Signals        |     0.004 |     3641 |       --- |             --- |
 | Block RAM      |     0.009 |    112.5 |       135 |           83.33 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |     0.005 |       30 |       210 |           14.29 |
 | Static Power   |     0.103 |          |           |                 |
-| Total          |     0.243 |          |           |                 |
+| Total          |     0.244 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.019 |      0.018 |
+| Vccint    |       1.000 |     0.038 |       0.020 |      0.018 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -146,14 +146,14 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.140 |
+| main                                           |     0.141 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
 |   inst_Wolvie_att                              |    <0.001 |
 |   inst_Wolvie_jump                             |    <0.001 |
 |   inst_Wolvie_mov                              |    <0.001 |
-|   inst_graphic                                 |     0.017 |
+|   inst_graphic                                 |     0.018 |
 |     Pedana1_offset_reg[11]                     |    <0.001 |
 |     Pedana1_offset_reg[14]                     |    <0.001 |
 |     Pedana2_offset_reg[11]                     |    <0.001 |

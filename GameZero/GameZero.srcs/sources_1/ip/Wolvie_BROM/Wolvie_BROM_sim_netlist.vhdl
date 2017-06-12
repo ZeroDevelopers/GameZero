@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 -- Date        : Mon Jun 12 10:29:40 2017
 -- Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top Wolvie_BROM -prefix
+--               Wolvie_BROM_ Wolvie_BROM_sim_netlist.vhdl
 -- Design      : Wolvie_BROM
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -50,8 +50,6 @@ entity Wolvie_BROM_blk_mem_gen_mux is
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_23\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_24\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end Wolvie_BROM_blk_mem_gen_mux;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_mux is
@@ -957,8 +955,6 @@ entity Wolvie_BROM_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end Wolvie_BROM_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_prim_wrapper_init is
@@ -6427,8 +6423,6 @@ entity Wolvie_BROM_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end Wolvie_BROM_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_prim_width is
@@ -6892,8 +6886,6 @@ entity Wolvie_BROM_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end Wolvie_BROM_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_generic_cstr is
@@ -7397,8 +7389,6 @@ entity Wolvie_BROM_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end Wolvie_BROM_blk_mem_gen_top;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_top is
@@ -7420,8 +7410,6 @@ entity Wolvie_BROM_blk_mem_gen_v8_3_5_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_v8_3_5_synth : entity is "blk_mem_gen_v8_3_5_synth";
 end Wolvie_BROM_blk_mem_gen_v8_3_5_synth;
 
 architecture STRUCTURE of Wolvie_BROM_blk_mem_gen_v8_3_5_synth is
@@ -7649,8 +7637,6 @@ entity Wolvie_BROM_blk_mem_gen_v8_3_5 is
   attribute C_WRITE_WIDTH_B of Wolvie_BROM_blk_mem_gen_v8_3_5 : entity is 12;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of Wolvie_BROM_blk_mem_gen_v8_3_5 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Wolvie_BROM_blk_mem_gen_v8_3_5 : entity is "blk_mem_gen_v8_3_5";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of Wolvie_BROM_blk_mem_gen_v8_3_5 : entity is "yes";
 end Wolvie_BROM_blk_mem_gen_v8_3_5;

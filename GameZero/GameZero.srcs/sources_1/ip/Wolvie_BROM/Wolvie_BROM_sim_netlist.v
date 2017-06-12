@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 // Date        : Mon Jun 12 10:29:40 2017
 // Host        : DESKTOP-PK5D2H9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Wolvie_BROM -prefix
+//               Wolvie_BROM_ Wolvie_BROM_sim_netlist.v
 // Design      : Wolvie_BROM
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -186,7 +186,6 @@ module Wolvie_BROM
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module Wolvie_BROM_blk_mem_gen_generic_cstr
    (douta,
     clka,
@@ -453,7 +452,6 @@ module Wolvie_BROM_blk_mem_gen_generic_cstr
         .\douta[8] (\ramloop[9].ram.r_n_8 ));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
 module Wolvie_BROM_blk_mem_gen_mux
    (douta,
     DOPADOP,
@@ -1238,7 +1236,6 @@ module Wolvie_BROM_blk_mem_gen_mux
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module Wolvie_BROM_blk_mem_gen_prim_width
    (ram_douta,
     clka,
@@ -1655,7 +1652,6 @@ module Wolvie_BROM_blk_mem_gen_prim_width__parameterized9
         .\douta[8] (\douta[8] ));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module Wolvie_BROM_blk_mem_gen_prim_wrapper_init
    (ram_douta,
     clka,
@@ -6897,7 +6893,6 @@ module Wolvie_BROM_blk_mem_gen_prim_wrapper_init__parameterized9
         .O(\DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_i_1__3_n_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module Wolvie_BROM_blk_mem_gen_top
    (douta,
     clka,
@@ -6940,7 +6935,7 @@ endmodule
 (* C_USE_URAM = "0" *) (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) 
 (* C_WRITE_DEPTH_A = "61875" *) (* C_WRITE_DEPTH_B = "61875" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
 (* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "12" *) (* C_WRITE_WIDTH_B = "12" *) 
-(* C_XDEVICEFAMILY = "artix7" *) (* ORIG_REF_NAME = "blk_mem_gen_v8_3_5" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* C_XDEVICEFAMILY = "artix7" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module Wolvie_BROM_blk_mem_gen_v8_3_5
    (clka,
     rsta,
@@ -7162,7 +7157,6 @@ module Wolvie_BROM_blk_mem_gen_v8_3_5
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_3_5_synth" *) 
 module Wolvie_BROM_blk_mem_gen_v8_3_5_synth
    (douta,
     clka,

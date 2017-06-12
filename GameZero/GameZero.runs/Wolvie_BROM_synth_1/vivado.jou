@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Mon Jun 12 10:28:05 2017
-# Process ID: 5792
-# Current directory: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1
+# Start of session at: Mon Jun 12 13:41:21 2017
+# Process ID: 36856
+# Current directory: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1
 # Command line: vivado.exe -log Wolvie_BROM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wolvie_BROM.tcl
-# Log file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1/Wolvie_BROM.vds
-# Journal file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1\vivado.jou
+# Log file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1/Wolvie_BROM.vds
+# Journal file: C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1\vivado.jou
 #-----------------------------------------------------------
 source Wolvie_BROM.tcl -notrace
