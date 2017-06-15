@@ -223,7 +223,7 @@ constant FINAL_IMG_POS : std_logic_vector (18 downto 0) := "0100011000001111000"
 
 -- Pedana constants for movement
 constant P_ACTION_FRAME : natural := 30;
-constant P_MOVING_FRAMES : natural := 600;
+constant P_MOVING_FRAMES : natural := 300;
 
 
 -- signals to create the FRAME_CLOCK
