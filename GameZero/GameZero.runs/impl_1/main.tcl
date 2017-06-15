@@ -57,16 +57,16 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.runs/synth_1/main.dcp}}
-  add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}
-  set_property netlist_only true [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}]
-  add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}
-  set_property netlist_only true [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}]
+  add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}
+  set_property netlist_only true [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}]
+  add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}
+  set_property netlist_only true [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}]
   add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp}}
   set_property netlist_only true [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp}}]
-  add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}
-  set_property netlist_only true [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}]
-  add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}
-  set_property netlist_only true [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}]
+  add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}
+  set_property netlist_only true [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}]
+  add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}
+  set_property netlist_only true [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}]
   read_xdc -mode out_of_context -ref playerBROM -cells U0 {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_ooc.xdc}}
   set_property processing_order EARLY [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM_ooc.xdc}}]
   read_xdc -mode out_of_context -ref utilBROM -cells U0 {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM_ooc.xdc}}

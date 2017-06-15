@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="Wolvie_BROM_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1497282009">
-  <File Type="RDS-PROPCONSTRS" Name="Wolvie_BROM_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="Wolvie_BROM.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Wolvie_BROM_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Wolvie_BROM.vds"/>
   <File Type="RDS-UTIL" Name="Wolvie_BROM_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Wolvie_BROM_utilization_synth.pb"/>

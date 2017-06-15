@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Mon Jun 12 17:50:32 2017
+| Date             : Thu Jun 15 19:59:03 2017
 | Host             : DESKTOP-V9D0PGF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 0.243 |
-| Dynamic (W)              | 0.140 |
+| Dynamic (W)              | 0.141 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.9  |
@@ -50,14 +50,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        8 |       --- |             --- |
-| Slice Logic    |     0.004 |     4529 |       --- |             --- |
-|   LUT as Logic |     0.003 |     2338 |     63400 |            3.69 |
+| Slice Logic    |     0.004 |     4527 |       --- |             --- |
+|   LUT as Logic |     0.003 |     2335 |     63400 |            3.68 |
 |   CARRY4       |    <0.001 |      388 |     15850 |            2.45 |
 |   Register     |    <0.001 |      823 |    126800 |            0.65 |
 |   F7/F8 Muxes  |    <0.001 |       81 |     63400 |            0.13 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
 |   Others       |     0.000 |      386 |       --- |             --- |
-| Signals        |     0.004 |     3613 |       --- |             --- |
+| Signals        |     0.004 |     3616 |       --- |             --- |
 | Block RAM      |     0.009 |    112.5 |       135 |           83.33 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |     0.005 |       30 |       210 |           14.29 |
@@ -146,7 +146,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| main                                           |     0.140 |
+| main                                           |     0.141 |
 |   inst_Green_Goblin_att                        |    <0.001 |
 |   inst_Green_Goblin_jump                       |    <0.001 |
 |   inst_Green_Goblin_mov                        |    <0.001 |
@@ -187,11 +187,11 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
-|     inst_brom_top                              |     0.003 |
-|       U0                                       |     0.003 |
-|         inst_blk_mem_gen                       |     0.003 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.003 |
-|             valid.cstr                         |     0.003 |
+|     inst_brom_top                              |     0.004 |
+|       U0                                       |     0.004 |
+|         inst_blk_mem_gen                       |     0.004 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.004 |
+|             valid.cstr                         |     0.004 |
 |               has_mux_a.A                      |    <0.001 |
 |               ramloop[0].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |

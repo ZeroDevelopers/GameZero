@@ -20,16 +20,16 @@ add_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/s
 add_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Brom_util_init.coe}}
 add_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Wolvie_init.coe}}
 add_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/top_level_brom_init.coe}}
-add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}
-set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}]
-add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}
-set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}]
+add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}
+set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/playerBROM/playerBROM.dcp}}]
+add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}
+set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/utilBROM/utilBROM.dcp}}]
 add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp}}
 set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/pixelClkGen_1/pixelClkGen.dcp}}]
-add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}
-set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}]
-add_files -quiet {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}
-set_property used_in_implementation false [get_files {{C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}]
+add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}
+set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Wolvie_BROM/Wolvie_BROM.dcp}}]
+add_files -quiet {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}
+set_property used_in_implementation false [get_files {{c:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/ip/Top_level_BROM/Top_level_BROM.dcp}}]
 read_vhdl -library xil_defaultlib {
   {C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/vga.vhd}
   {C:/Users/Andrea Diecidue/Documents/GameZero/GameZero/GameZero.srcs/sources_1/new/Green_Goblin_attack.vhd}
