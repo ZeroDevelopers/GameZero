@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Jun 15 11:55:11 2017
+# Process ID: 4244
+# Current directory: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5392 C:\Users\edoardo\Documents\GitHub\GameZero\GameZero\GameZero.xpr
+# Log file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/vivado.log
+# Journal file: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Andrea Diecidue/Documents/GameZero/GameZero' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2016.4
+  **** Build date : Jan 23 2017-19:37:29
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210274551945A
+set_property PROGRAM.FILE {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1/main.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl128sxxxxxx0-spi-x1_x2_x4}] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1/main.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210274551945A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210274551945A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210274551945A
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210274551945A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+close_hw
+reset_run synth_1
+reset_run playerBROM_synth_1
+reset_run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 897.898 ; gain = 45.156
+reset_run utilBROM_synth_1
+reset_run Wolvie_BROM_synth_1
+reset_run Top_level_BROM_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'playerBROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'utilBROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Wolvie_BROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Top_level_BROM'...
+[Thu Jun 15 12:01:50 2017] Launched playerBROM_synth_1, utilBROM_synth_1, Wolvie_BROM_synth_1, Top_level_BROM_synth_1, synth_1...
+Run output will be captured here:
+playerBROM_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/playerBROM_synth_1/runme.log
+utilBROM_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/utilBROM_synth_1/runme.log
+Wolvie_BROM_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/Wolvie_BROM_synth_1/runme.log
+Top_level_BROM_synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/Top_level_BROM_synth_1/runme.log
+synth_1: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/synth_1/runme.log
+[Thu Jun 15 12:01:50 2017] Launched impl_1...
+Run output will be captured here: C:/Users/edoardo/Documents/GitHub/GameZero/GameZero/GameZero.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 901.863 ; gain = 3.965
