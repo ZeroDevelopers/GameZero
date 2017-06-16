@@ -113,7 +113,7 @@ end process;
 
 
 rising <= '0' when jump_enable = '0' OR
-                   GreenGoblin_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT < WALL_WIDTH OR
+                   GreenGoblin_curr_pos (18 downto 10) - 2*PIXEL_INCREMENT <= WALL_WIDTH OR
                    (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) >= Wolvie_pos (9 downto 0) AND GreenGoblin_curr_pos (9 downto 0) <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE -20)OR
                    (GreenGoblin_curr_pos (18 downto 10) -2*PIXEL_INCREMENT >= Wolvie_pos (18 downto 10) + PLAYER_SIZE AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE >= Wolvie_pos (9 downto 0) +20 AND GreenGoblin_curr_pos (9 downto 0) + PLAYER_SIZE <= Wolvie_pos (9 downto 0)+ PLAYER_SIZE)
               else '1';  
